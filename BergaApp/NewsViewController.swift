@@ -20,6 +20,8 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initVisuals()
+        
         newsViewModel.data.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "newsCell", cellType: NewsTableViewCell.self)){
                 _, news, cell in
@@ -27,6 +29,11 @@ class NewsViewController: UIViewController {
             }
             .addDisposableTo(disposeBag)
         
+    }
+    
+    func initVisuals() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
     }
 
     
