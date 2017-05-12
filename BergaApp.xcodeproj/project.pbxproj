@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
+		479315DB1EC5FDED00845C6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315DA1EC5FDED00845C6C /* ViewController.swift */; };
+		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
+		479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479315DF1EC5FDED00845C6C /* Assets.xcassets */; };
+		479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */; };
+		479315EE1EC5FDED00845C6C /* BergaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315ED1EC5FDED00845C6C /* BergaAppTests.swift */; };
+		479315F91EC5FDED00845C6C /* BergaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315F81EC5FDED00845C6C /* BergaAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		479315EA1EC5FDED00845C6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479315CD1EC5FDED00845C6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 479315D41EC5FDED00845C6C;
+			remoteInfo = BergaApp;
+		};
+		479315F51EC5FDED00845C6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479315CD1EC5FDED00845C6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 479315D41EC5FDED00845C6C;
+			remoteInfo = BergaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		479315DA1EC5FDED00845C6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		479315DD1EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		479315DF1EC5FDED00845C6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		479315E21EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		479315E41EC5FDED00845C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		479315E91EC5FDED00845C6C /* BergaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BergaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		479315ED1EC5FDED00845C6C /* BergaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BergaAppTests.swift; sourceTree = "<group>"; };
+		479315EF1EC5FDED00845C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		479315F41EC5FDED00845C6C /* BergaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BergaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		479315F81EC5FDED00845C6C /* BergaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BergaAppUITests.swift; sourceTree = "<group>"; };
+		479315FA1EC5FDED00845C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		479315D21EC5FDED00845C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479315E61EC5FDED00845C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479315F11EC5FDED00845C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		479315CC1EC5FDED00845C6C = {
+			isa = PBXGroup;
+			children = (
+				479315D71EC5FDED00845C6C /* BergaApp */,
+				479315EC1EC5FDED00845C6C /* BergaAppTests */,
+				479315F71EC5FDED00845C6C /* BergaAppUITests */,
+				479315D61EC5FDED00845C6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		479315D61EC5FDED00845C6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				479315D51EC5FDED00845C6C /* BergaApp.app */,
+				479315E91EC5FDED00845C6C /* BergaAppTests.xctest */,
+				479315F41EC5FDED00845C6C /* BergaAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		479315D71EC5FDED00845C6C /* BergaApp */ = {
+			isa = PBXGroup;
+			children = (
+				479315D81EC5FDED00845C6C /* AppDelegate.swift */,
+				479315DA1EC5FDED00845C6C /* ViewController.swift */,
+				479315DC1EC5FDED00845C6C /* Main.storyboard */,
+				479315DF1EC5FDED00845C6C /* Assets.xcassets */,
+				479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */,
+				479315E41EC5FDED00845C6C /* Info.plist */,
+			);
+			path = BergaApp;
+			sourceTree = "<group>";
+		};
+		479315EC1EC5FDED00845C6C /* BergaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				479315ED1EC5FDED00845C6C /* BergaAppTests.swift */,
+				479315EF1EC5FDED00845C6C /* Info.plist */,
+			);
+			path = BergaAppTests;
+			sourceTree = "<group>";
+		};
+		479315F71EC5FDED00845C6C /* BergaAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				479315F81EC5FDED00845C6C /* BergaAppUITests.swift */,
+				479315FA1EC5FDED00845C6C /* Info.plist */,
+			);
+			path = BergaAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		479315D41EC5FDED00845C6C /* BergaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 479315FD1EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaApp" */;
+			buildPhases = (
+				479315D11EC5FDED00845C6C /* Sources */,
+				479315D21EC5FDED00845C6C /* Frameworks */,
+				479315D31EC5FDED00845C6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BergaApp;
+			productName = BergaApp;
+			productReference = 479315D51EC5FDED00845C6C /* BergaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		479315E81EC5FDED00845C6C /* BergaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 479316001EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaAppTests" */;
+			buildPhases = (
+				479315E51EC5FDED00845C6C /* Sources */,
+				479315E61EC5FDED00845C6C /* Frameworks */,
+				479315E71EC5FDED00845C6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				479315EB1EC5FDED00845C6C /* PBXTargetDependency */,
+			);
+			name = BergaAppTests;
+			productName = BergaAppTests;
+			productReference = 479315E91EC5FDED00845C6C /* BergaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		479315F31EC5FDED00845C6C /* BergaAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 479316031EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaAppUITests" */;
+			buildPhases = (
+				479315F01EC5FDED00845C6C /* Sources */,
+				479315F11EC5FDED00845C6C /* Frameworks */,
+				479315F21EC5FDED00845C6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				479315F61EC5FDED00845C6C /* PBXTargetDependency */,
+			);
+			name = BergaAppUITests;
+			productName = BergaAppUITests;
+			productReference = 479315F41EC5FDED00845C6C /* BergaAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		479315CD1EC5FDED00845C6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Xavier Pedrals";
+				TargetAttributes = {
+					479315D41EC5FDED00845C6C = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					479315E81EC5FDED00845C6C = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 479315D41EC5FDED00845C6C;
+					};
+					479315F31EC5FDED00845C6C = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 479315D41EC5FDED00845C6C;
+					};
+				};
+			};
+			buildConfigurationList = 479315D01EC5FDED00845C6C /* Build configuration list for PBXProject "BergaApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 479315CC1EC5FDED00845C6C;
+			productRefGroup = 479315D61EC5FDED00845C6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				479315D41EC5FDED00845C6C /* BergaApp */,
+				479315E81EC5FDED00845C6C /* BergaAppTests */,
+				479315F31EC5FDED00845C6C /* BergaAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		479315D31EC5FDED00845C6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
+				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
+				479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479315E71EC5FDED00845C6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479315F21EC5FDED00845C6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		479315D11EC5FDED00845C6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479315DB1EC5FDED00845C6C /* ViewController.swift in Sources */,
+				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479315E51EC5FDED00845C6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479315EE1EC5FDED00845C6C /* BergaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479315F01EC5FDED00845C6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479315F91EC5FDED00845C6C /* BergaAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		479315EB1EC5FDED00845C6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 479315D41EC5FDED00845C6C /* BergaApp */;
+			targetProxy = 479315EA1EC5FDED00845C6C /* PBXContainerItemProxy */;
+		};
+		479315F61EC5FDED00845C6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 479315D41EC5FDED00845C6C /* BergaApp */;
+			targetProxy = 479315F51EC5FDED00845C6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		479315DC1EC5FDED00845C6C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				479315DD1EC5FDED00845C6C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				479315E21EC5FDED00845C6C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		479315FB1EC5FDED00845C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		479315FC1EC5FDED00845C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		479315FE1EC5FDED00845C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BergaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		479315FF1EC5FDED00845C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BergaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		479316011EC5FDED00845C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BergaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BergaApp.app/BergaApp";
+			};
+			name = Debug;
+		};
+		479316021EC5FDED00845C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BergaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BergaApp.app/BergaApp";
+			};
+			name = Release;
+		};
+		479316041EC5FDED00845C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BergaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BergaApp;
+			};
+			name = Debug;
+		};
+		479316051EC5FDED00845C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BergaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BergaApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		479315D01EC5FDED00845C6C /* Build configuration list for PBXProject "BergaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479315FB1EC5FDED00845C6C /* Debug */,
+				479315FC1EC5FDED00845C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		479315FD1EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479315FE1EC5FDED00845C6C /* Debug */,
+				479315FF1EC5FDED00845C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		479316001EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479316011EC5FDED00845C6C /* Debug */,
+				479316021EC5FDED00845C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		479316031EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479316041EC5FDED00845C6C /* Debug */,
+				479316051EC5FDED00845C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 479315CD1EC5FDED00845C6C /* Project object */;
+}
