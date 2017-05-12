@@ -20,6 +20,10 @@
 		479316101EC603E500845C6C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4793160F1EC603E500845C6C /* RxCocoa.framework */; };
 		479316121EC603EB00845C6C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479316111EC603EB00845C6C /* RxSwift.framework */; };
 		479316141EC603F400845C6C /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479316131EC603F400845C6C /* SwiftyJSON.framework */; };
+		479316181EC605C400845C6C /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479316171EC605C400845C6C /* NewsViewModel.swift */; };
+		4793161A1EC605E000845C6C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479316191EC605E000845C6C /* News.swift */; };
+		4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */; };
+		479316201EC60B7400845C6C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4793161F1EC60B7400845C6C /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		4793160F1EC603E500845C6C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		479316111EC603EB00845C6C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		479316131EC603F400845C6C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		479316171EC605C400845C6C /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		479316191EC605E000845C6C /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		4793161F1EC60B7400845C6C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +124,11 @@
 		479315D71EC5FDED00845C6C /* BergaApp */ = {
 			isa = PBXGroup;
 			children = (
-				479315D81EC5FDED00845C6C /* AppDelegate.swift */,
-				479316061EC5FE2800845C6C /* NewsViewController.swift */,
+				479316161EC605AE00845C6C /* News */,
 				479315DC1EC5FDED00845C6C /* Main.storyboard */,
 				479315DF1EC5FDED00845C6C /* Assets.xcassets */,
+				4793161F1EC60B7400845C6C /* Media.xcassets */,
+				479315D81EC5FDED00845C6C /* AppDelegate.swift */,
 				479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */,
 				479315E41EC5FDED00845C6C /* Info.plist */,
 			);
@@ -155,6 +164,17 @@
 				479316091EC603C800845C6C /* Alamofire.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		479316161EC605AE00845C6C /* News */ = {
+			isa = PBXGroup;
+			children = (
+				479316061EC5FE2800845C6C /* NewsViewController.swift */,
+				479316171EC605C400845C6C /* NewsViewModel.swift */,
+				479316191EC605E000845C6C /* News.swift */,
+				4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */,
+			);
+			name = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +287,7 @@
 			files = (
 				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
+				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
 				479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +336,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
+				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
+				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
+				4793161A1EC605E000845C6C /* News.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

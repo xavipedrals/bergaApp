@@ -6,4 +6,28 @@
 //  Copyright © 2017 Xavier Pedrals. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import RxSwift
+import RxCocoa
+
+class NewsViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let newsViewModel = NewsViewModel()
+    let disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        newsViewModel.data.asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "newsCell", cellType: NewsTableViewCell.self)){
+                _, news, cell in
+                cell.initCell(from: news)
+            }
+            .addDisposableTo(disposeBag)
+        
+    }
+
+    
+}
