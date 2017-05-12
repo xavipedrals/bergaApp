@@ -1,0 +1,4 @@
+github "onevcat/Kingfisher" ~> 3.0
+github "SwiftyJSON/SwiftyJSON"
+github "ReactiveX/RxSwift" ~> 3.0
+github "RxSwiftCommunity/RxAlamofire" "master"
