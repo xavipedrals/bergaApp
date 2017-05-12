@@ -24,6 +24,8 @@
 		4793161A1EC605E000845C6C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479316191EC605E000845C6C /* News.swift */; };
 		4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */; };
 		479316201EC60B7400845C6C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4793161F1EC60B7400845C6C /* Media.xcassets */; };
+		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
+		47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* CustomImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		479316191EC605E000845C6C /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		4793161F1EC60B7400845C6C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		47C9422B1EC65B9800B3F617 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 		479315D71EC5FDED00845C6C /* BergaApp */ = {
 			isa = PBXGroup;
 			children = (
+				47C942281EC65B4F00B3F617 /* Utils */,
 				479316161EC605AE00845C6C /* News */,
 				479315DC1EC5FDED00845C6C /* Main.storyboard */,
 				479315DF1EC5FDED00845C6C /* Assets.xcassets */,
@@ -175,6 +180,15 @@
 				4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */,
 			);
 			name = News;
+			sourceTree = "<group>";
+		};
+		47C942281EC65B4F00B3F617 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				47C942291EC65B8400B3F617 /* CustomView.swift */,
+				47C9422B1EC65B9800B3F617 /* CustomImage.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,9 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
+				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
 			);
@@ -594,6 +610,7 @@
 				479315FF1EC5FDED00845C6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		479316001EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -602,6 +619,7 @@
 				479316021EC5FDED00845C6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		479316031EC5FDED00845C6C /* Build configuration list for PBXNativeTarget "BergaAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -610,6 +628,7 @@
 				479316051EC5FDED00845C6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
