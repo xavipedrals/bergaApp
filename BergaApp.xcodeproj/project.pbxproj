@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551231EC6F9690016E366 /* CalendarViewController.swift */; };
+		470551261EC704170016E366 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551251EC704170016E366 /* CalendarEvent.swift */; };
+		470551281EC704950016E366 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551271EC704950016E366 /* CalendarViewModel.swift */; };
+		4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551291EC7067A0016E366 /* DayCollectionViewCell.swift */; };
+		4705512C1EC717E70016E366 /* NewsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512B1EC717E70016E366 /* NewsStub.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
 		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
 		479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479315DF1EC5FDED00845C6C /* Assets.xcassets */; };
@@ -46,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		470551231EC6F9690016E366 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		470551251EC704170016E366 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		470551271EC704950016E366 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		470551291EC7067A0016E366 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		4705512B1EC717E70016E366 /* NewsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStub.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479315DD1EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +114,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		470551211EC6F9290016E366 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				470551231EC6F9690016E366 /* CalendarViewController.swift */,
+				470551271EC704950016E366 /* CalendarViewModel.swift */,
+				470551251EC704170016E366 /* CalendarEvent.swift */,
+				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		470551221EC6F93B0016E366 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				479315DF1EC5FDED00845C6C /* Assets.xcassets */,
+				4793161F1EC60B7400845C6C /* Media.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		479315CC1EC5FDED00845C6C = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +158,11 @@
 		479315D71EC5FDED00845C6C /* BergaApp */ = {
 			isa = PBXGroup;
 			children = (
+				470551221EC6F93B0016E366 /* Assets */,
 				47C942281EC65B4F00B3F617 /* Utils */,
 				479316161EC605AE00845C6C /* News */,
+				470551211EC6F9290016E366 /* Calendar */,
 				479315DC1EC5FDED00845C6C /* Main.storyboard */,
-				479315DF1EC5FDED00845C6C /* Assets.xcassets */,
-				4793161F1EC60B7400845C6C /* Media.xcassets */,
 				479315D81EC5FDED00845C6C /* AppDelegate.swift */,
 				479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */,
 				479315E41EC5FDED00845C6C /* Info.plist */,
@@ -178,6 +208,7 @@
 				479316171EC605C400845C6C /* NewsViewModel.swift */,
 				479316191EC605E000845C6C /* News.swift */,
 				4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */,
+				4705512B1EC717E70016E366 /* NewsStub.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -260,6 +291,7 @@
 				TargetAttributes = {
 					479315D41EC5FDED00845C6C = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 7XMX4W3K45;
 						ProvisioningStyle = Automatic;
 					};
 					479315E81EC5FDED00845C6C = {
@@ -349,8 +381,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
+				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
+				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */,
+				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
+				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
@@ -509,6 +546,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7XMX4W3K45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -525,6 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7XMX4W3K45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

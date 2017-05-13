@@ -18,13 +18,7 @@ class NewsViewModel {
     }
     
     func getNews() {
-        let new1 = News()
-        let new2 = News()
-        let new3 = News()
-        data.value.append(new1)
-        data.value.append(new2)
-        data.value.append(new3)
-
+        data.value = NewsStub().getStub()
     }
     
 }

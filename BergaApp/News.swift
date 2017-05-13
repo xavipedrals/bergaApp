@@ -10,11 +10,12 @@ import Foundation
 
 struct News {
     
-    var title: String?
-    var subtitle: String?
-    var provider: String?
-    var providerImgUrl: String?
-    var imageUrl: String?
-    var timestamp: Date?
+    var title: String
+    var subtitle: String
+    var url: String
+    var provider: String
+    var providerImgUrl: String
+    var imageUrl: String
+    var timestamp: Date
     
 }
