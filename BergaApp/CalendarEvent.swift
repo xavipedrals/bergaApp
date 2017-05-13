@@ -8,9 +8,16 @@
 
 import Foundation
 
+enum CalendarEventType {
+    case sport
+    case townFest
+    case fair
+}
+
 class CalendarEvent {
     
     var date: Date?
     var title: String?
+    var type: CalendarEventType?
 
 }

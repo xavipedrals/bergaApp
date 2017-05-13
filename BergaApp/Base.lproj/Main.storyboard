@@ -35,12 +35,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzw-CI-qNp">
+                                                <rect key="frame" x="87" y="11" width="36.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="EnW-eS-Cc0" firstAttribute="leading" secondItem="UEU-Ou-cO4" secondAttribute="leading" constant="15" id="Afk-GG-bfs"/>
                                             <constraint firstAttribute="height" constant="44" id="KE2-gx-SlC"/>
+                                            <constraint firstItem="Gzw-CI-qNp" firstAttribute="leading" secondItem="EnW-eS-Cc0" secondAttribute="trailing" constant="8" id="bR0-1y-afS"/>
                                             <constraint firstItem="EnW-eS-Cc0" firstAttribute="centerY" secondItem="UEU-Ou-cO4" secondAttribute="centerY" id="tYv-EX-5Oz"/>
+                                            <constraint firstItem="Gzw-CI-qNp" firstAttribute="centerY" secondItem="EnW-eS-Cc0" secondAttribute="centerY" id="zZn-eA-yrl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -122,8 +130,21 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MB2-nk-zF8">
                                                     <rect key="frame" x="0.0" y="0.0" width="73" height="76"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIy-VK-4sP">
-                                                            <rect key="frame" x="33" y="30" width="7" height="17"/>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0X-V6-vsD" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                            <rect key="frame" x="21" y="23" width="30" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="V0X-V6-vsD" secondAttribute="height" id="E3k-np-iYu"/>
+                                                                <constraint firstAttribute="width" constant="30" id="HjC-GA-UGJ"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIy-VK-4sP">
+                                                            <rect key="frame" x="28" y="30" width="17" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -132,6 +153,8 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="pIy-VK-4sP" firstAttribute="centerY" secondItem="MB2-nk-zF8" secondAttribute="centerY" id="D5r-fC-GhU"/>
+                                                        <constraint firstItem="V0X-V6-vsD" firstAttribute="centerY" secondItem="MB2-nk-zF8" secondAttribute="centerY" id="FNW-Vj-fX4"/>
+                                                        <constraint firstItem="V0X-V6-vsD" firstAttribute="centerX" secondItem="MB2-nk-zF8" secondAttribute="centerX" id="O9V-OF-Qfe"/>
                                                         <constraint firstItem="pIy-VK-4sP" firstAttribute="centerX" secondItem="MB2-nk-zF8" secondAttribute="centerX" id="we6-WO-Skb"/>
                                                     </constraints>
                                                 </view>
@@ -145,6 +168,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="numberLabel" destination="pIy-VK-4sP" id="Z3a-06-IwI"/>
+                                            <outlet property="todayBackground" destination="V0X-V6-vsD" id="lGc-fq-FL3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -167,6 +191,8 @@
                     <tabBarItem key="tabBarItem" title="Calendari" image="calendar" id="8cX-HS-E5k"/>
                     <connections>
                         <outlet property="calendarCollectionView" destination="8mv-3N-a4Z" id="z2k-cy-QBd"/>
+                        <outlet property="monthLabel" destination="EnW-eS-Cc0" id="QuT-WN-QFP"/>
+                        <outlet property="yearLabel" destination="Gzw-CI-qNp" id="IWv-3Z-IcL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2Q-vN-2q3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -349,6 +375,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.20000000000000001" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="bKW-7e-uWM" kind="relationship" relationship="viewControllers" id="jJe-mR-pCS"/>

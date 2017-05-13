@@ -12,6 +12,8 @@
 		470551281EC704950016E366 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551271EC704950016E366 /* CalendarViewModel.swift */; };
 		4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551291EC7067A0016E366 /* DayCollectionViewCell.swift */; };
 		4705512C1EC717E70016E366 /* NewsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512B1EC717E70016E366 /* NewsStub.swift */; };
+		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
+		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
 		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
 		479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479315DF1EC5FDED00845C6C /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		470551271EC704950016E366 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		470551291EC7067A0016E366 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		4705512B1EC717E70016E366 /* NewsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStub.swift; sourceTree = "<group>"; };
+		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479315DD1EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				470551271EC704950016E366 /* CalendarViewModel.swift */,
 				470551251EC704170016E366 /* CalendarEvent.swift */,
 				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
+				4705512D1EC74BDA0016E366 /* Day.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				47C942291EC65B8400B3F617 /* CustomView.swift */,
 				47C9422B1EC65B9800B3F617 /* CustomImage.swift */,
+				4705512F1EC751ED0016E366 /* Commons.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -381,12 +387,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470551301EC751ED0016E366 /* Commons.swift in Sources */,
 				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
 				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
+				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
 				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
@@ -552,6 +560,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BergaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -569,6 +578,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BergaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bergaapp.BergaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

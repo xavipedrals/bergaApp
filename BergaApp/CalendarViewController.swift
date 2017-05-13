@@ -13,6 +13,8 @@ import RxCocoa
 class CalendarViewController: UIViewController {
 
     @IBOutlet weak var calendarCollectionView: UICollectionView!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     
     var cellWidth: Double?
     let calendarViewModel = CalendarViewModel()
@@ -30,6 +32,14 @@ class CalendarViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         calendarCollectionView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
+        
+        calendarViewModel.monthStr.asObservable()
+            .bind(to: monthLabel.rx.text)
+            .addDisposableTo(disposeBag)
+        
+        calendarViewModel.yearStr.asObservable()
+            .bind(to: yearLabel.rx.text)
             .addDisposableTo(disposeBag)
     }
     
