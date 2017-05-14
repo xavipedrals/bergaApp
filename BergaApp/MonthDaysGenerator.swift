@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CalendarDaysGenerator {
+class MonthDaysGenerator {
     
     var monthPointer: Date
     private var days: [Day]

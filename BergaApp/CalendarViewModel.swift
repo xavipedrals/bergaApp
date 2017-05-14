@@ -15,7 +15,6 @@ class CalendarViewModel {
     let days = Variable<[Day]>([])
     let monthStr = Variable<String>("")
     let yearStr = Variable<String>("")
-//    let today = Date()
     var monthPointer: Variable<Date>
     let disposeBag = DisposeBag()
     
@@ -46,11 +45,34 @@ class CalendarViewModel {
             })
             .addDisposableTo(disposeBag)
 
+        updateDaysSection()
+        updateEventsSection()
     }
     
     func setMonthDays() {
         days.value.removeAll()
-        days.value = CalendarDaysGenerator(from: monthPointer.value).generate()
+        days.value = MonthDaysGenerator(from: monthPointer.value).generate()
+    }
+    
+    func updateDaysSection() {
+        var items = [CalendarModelType]()
+        for day in days.value {
+            let calendarModel = CalendarModelType.day(day)
+            items.append(calendarModel)
+        }
+        let calendarSection = CalendarSection(original: sections[CALENDAR_SECTION], items: items)
+        sections[CALENDAR_SECTION] = calendarSection
+    }
+    
+    func updateEventsSection() {
+        let stub = CalendarEventStub().getStub()
+        var items = [CalendarModelType]()
+        for event in stub {
+            let calendarModel = CalendarModelType.calendarEvent(event)
+            items.append(calendarModel)
+        }
+        let eventsSection = CalendarSection(original: sections[EVENTS_SECTION], items: items)
+        sections[EVENTS_SECTION] = eventsSection
     }
     
     func addAMonth() {

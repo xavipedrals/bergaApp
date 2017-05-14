@@ -34,7 +34,7 @@
 		47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */; };
 		47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */; };
 		47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9C8B21EC882E200CA173E /* RxDataSources.framework */; };
-		47A9C8B51EC890E300CA173E /* CalendarDaysGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B41EC890E300CA173E /* CalendarDaysGenerator.swift */; };
+		47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* CustomImage.swift */; };
 /* End PBXBuildFile section */
@@ -90,7 +90,7 @@
 		47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventStub.swift; sourceTree = "<group>"; };
 		47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModelType.swift; sourceTree = "<group>"; };
 		47A9C8B21EC882E200CA173E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
-		47A9C8B41EC890E300CA173E /* CalendarDaysGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDaysGenerator.swift; sourceTree = "<group>"; };
+		47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDaysGenerator.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,7 +132,7 @@
 			children = (
 				470551231EC6F9690016E366 /* CalendarViewController.swift */,
 				470551271EC704950016E366 /* CalendarViewModel.swift */,
-				47A9C8B41EC890E300CA173E /* CalendarDaysGenerator.swift */,
+				47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */,
 				470551251EC704170016E366 /* CalendarEvent.swift */,
 				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
 				4705512D1EC74BDA0016E366 /* Day.swift */,
@@ -409,7 +409,7 @@
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
-				47A9C8B51EC890E300CA173E /* CalendarDaysGenerator.swift in Sources */,
+				47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */,
 				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
 				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
