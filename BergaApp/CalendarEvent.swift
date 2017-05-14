@@ -14,10 +14,16 @@ enum CalendarEventType {
     case fair
 }
 
-class CalendarEvent {
+struct CalendarEvent {
     
-    var date: Date?
-    var title: String?
-    var type: CalendarEventType?
-
+    var date: Date
+    var name: String
+    var type: CalendarEventType
+    var localization: String?
+    
+    init(date: Date, name: String, type: CalendarEventType) {
+        self.date = date
+        self.name = name
+        self.type = type
+    }
 }

@@ -31,6 +31,10 @@
 		4793161A1EC605E000845C6C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479316191EC605E000845C6C /* News.swift */; };
 		4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */; };
 		479316201EC60B7400845C6C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4793161F1EC60B7400845C6C /* Media.xcassets */; };
+		47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */; };
+		47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */; };
+		47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9C8B21EC882E200CA173E /* RxDataSources.framework */; };
+		47A9C8B51EC890E300CA173E /* CalendarDaysGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B41EC890E300CA173E /* CalendarDaysGenerator.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* CustomImage.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +87,10 @@
 		479316191EC605E000845C6C /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		4793161F1EC60B7400845C6C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventStub.swift; sourceTree = "<group>"; };
+		47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModelType.swift; sourceTree = "<group>"; };
+		47A9C8B21EC882E200CA173E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		47A9C8B41EC890E300CA173E /* CalendarDaysGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDaysGenerator.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +103,7 @@
 				479316121EC603EB00845C6C /* RxSwift.framework in Frameworks */,
 				479316101EC603E500845C6C /* RxCocoa.framework in Frameworks */,
 				479316141EC603F400845C6C /* SwiftyJSON.framework in Frameworks */,
+				47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */,
 				4793160C1EC603D200845C6C /* Kingfisher.framework in Frameworks */,
 				4793160A1EC603C800845C6C /* Alamofire.framework in Frameworks */,
 				4793160E1EC603D700845C6C /* RxAlamofire.framework in Frameworks */,
@@ -123,9 +132,12 @@
 			children = (
 				470551231EC6F9690016E366 /* CalendarViewController.swift */,
 				470551271EC704950016E366 /* CalendarViewModel.swift */,
+				47A9C8B41EC890E300CA173E /* CalendarDaysGenerator.swift */,
 				470551251EC704170016E366 /* CalendarEvent.swift */,
 				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
 				4705512D1EC74BDA0016E366 /* Day.swift */,
+				47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */,
+				47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -196,6 +208,7 @@
 		479316081EC6039F00845C6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47A9C8B21EC882E200CA173E /* RxDataSources.framework */,
 				479316131EC603F400845C6C /* SwiftyJSON.framework */,
 				479316111EC603EB00845C6C /* RxSwift.framework */,
 				4793160F1EC603E500845C6C /* RxCocoa.framework */,
@@ -373,6 +386,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxAlamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 			);
 			outputPaths = (
 			);
@@ -395,12 +409,15 @@
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
+				47A9C8B51EC890E300CA173E /* CalendarDaysGenerator.swift in Sources */,
 				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
+				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
+				47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

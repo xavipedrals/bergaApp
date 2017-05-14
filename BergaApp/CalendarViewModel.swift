@@ -15,21 +15,20 @@ class CalendarViewModel {
     let days = Variable<[Day]>([])
     let monthStr = Variable<String>("")
     let yearStr = Variable<String>("")
-    let today = Date()
-    var todayDayNumber: Int
-    var todayMonthNumber: Int
-    var todayYearNumber: Int
-
+//    let today = Date()
     var monthPointer: Variable<Date>
     let disposeBag = DisposeBag()
     
-    init() {
-        let calendar = Calendar.current
-        todayDayNumber = calendar.component(.day, from: today)
-        todayMonthNumber = calendar.component(.month, from: today)
-        todayYearNumber = calendar.component(.year, from: today)
+    let CALENDAR_SECTION = 0
+    let EVENTS_SECTION = 1
     
-        monthPointer = Variable<Date>(today.startOfMonth())
+    var sections = [
+        CalendarSection(header: "Calendar", items: []),
+        CalendarSection(header: "Events", items: [])
+    ]
+
+    init() {
+        monthPointer = Variable<Date>(Date().startOfMonth())
         
         monthPointer.asObservable()
             .map({ Commons.getStringFromDate(date: $0, format: "MMMM yyyy") })
@@ -43,49 +42,15 @@ class CalendarViewModel {
         monthPointer.asObservable()
             .distinctUntilChanged()
             .subscribe(onNext: { _ in
-                self.loadMonth()
+                self.setMonthDays()
             })
             .addDisposableTo(disposeBag)
-        
-//        addAMonth()
-//        substractAMonth()
-        
-//        loadMonth()
+
     }
     
-    func loadMonth() {
+    func setMonthDays() {
         days.value.removeAll()
-        addDaysBeforeMonthFirstDay()
-        loadMonthDays()
-    }
-    
-    func addDaysBeforeMonthFirstDay() {
-        let weekday = Calendar.current.component(.weekday, from: monthPointer.value)
-        //sunday = 1
-        var europeanWeekday = weekday - 1
-        if europeanWeekday == 0 {
-            europeanWeekday = 7
-        }
-        
-        for _ in 1..<europeanWeekday {
-            let day = Day(number: 0)
-            days.value.append(day)
-        }
-    }
-    
-    func loadMonthDays() {
-        let endDate = monthPointer.value.endOfMonth()
-        let calendar = Calendar.current
-        let endDayNumber  = calendar.component(.day, from: endDate)
-        let monthNumber = calendar.component(.month, from: monthPointer.value)
-        let yearNumber = calendar.component(.year, from: monthPointer.value)
-        
-        for i in 1...endDayNumber {
-            var day = Day(number: i)
-            day.isToday = (i == todayDayNumber && monthNumber == todayMonthNumber && yearNumber == todayYearNumber)
-            days.value.append(day)
-        }
-        
+        days.value = CalendarDaysGenerator(from: monthPointer.value).generate()
     }
     
     func addAMonth() {

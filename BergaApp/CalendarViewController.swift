@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class CalendarViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     
     var cellWidth: Double?
+    let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
     let calendarViewModel = CalendarViewModel()
     let disposeBag = DisposeBag()
     
