@@ -12,8 +12,11 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var todayBackground: CustomView!
+    @IBOutlet weak var eventsMarkerView: CustomView!
+    
     var isToday: Bool?
     var isEmpty: Bool?
+    
     
     func initFrom(day: Day) {
         configureEmpty(day.number)
@@ -21,6 +24,7 @@ class DayCollectionViewCell: UICollectionViewCell {
         numberLabel.textColor = isToday! ? UIColor.white : UIColor.darkGray
         todayBackground.backgroundColor = isToday! ? UIColor(r: 255, g: 52, b: 43) : UIColor.white
         numberLabel.text = String(day.number)
+        eventsMarkerView.isHidden = !day.hasEvents
     }
     
     func configureEmpty(_ num: Int) {

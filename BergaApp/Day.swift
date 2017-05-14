@@ -11,12 +11,12 @@ import Foundation
 struct Day {
     
     var number: Int
-    var events: [CalendarEvent]
+    var hasEvents: Bool
     var isToday: Bool
     
     init(number: Int) {
         self.number = number
-        self.events = []
+        self.hasEvents = false
         self.isToday = false
     }
 }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -148,12 +147,27 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntf-nj-YGi" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                            <rect key="frame" x="33" y="50" width="4" height="4"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="ntf-nj-YGi" secondAttribute="height" id="4il-Uf-Lo7"/>
+                                                                <constraint firstAttribute="height" constant="4" id="D7X-2z-qcF"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="pIy-VK-4sP" firstAttribute="centerY" secondItem="MB2-nk-zF8" secondAttribute="centerY" id="D5r-fC-GhU"/>
                                                         <constraint firstItem="V0X-V6-vsD" firstAttribute="centerY" secondItem="MB2-nk-zF8" secondAttribute="centerY" id="FNW-Vj-fX4"/>
                                                         <constraint firstItem="V0X-V6-vsD" firstAttribute="centerX" secondItem="MB2-nk-zF8" secondAttribute="centerX" id="O9V-OF-Qfe"/>
+                                                        <constraint firstItem="ntf-nj-YGi" firstAttribute="centerX" secondItem="MB2-nk-zF8" secondAttribute="centerX" id="TCR-Rd-Sbx"/>
+                                                        <constraint firstItem="ntf-nj-YGi" firstAttribute="top" secondItem="pIy-VK-4sP" secondAttribute="bottom" constant="3" id="Vok-yl-ZGO"/>
                                                         <constraint firstItem="pIy-VK-4sP" firstAttribute="centerX" secondItem="MB2-nk-zF8" secondAttribute="centerX" id="we6-WO-Skb"/>
                                                     </constraints>
                                                 </view>
@@ -167,6 +181,7 @@
                                         </constraints>
                                         <size key="customSize" width="71" height="76"/>
                                         <connections>
+                                            <outlet property="eventsMarkerView" destination="ntf-nj-YGi" id="6DU-wk-eYp"/>
                                             <outlet property="numberLabel" destination="pIy-VK-4sP" id="Z3a-06-IwI"/>
                                             <outlet property="todayBackground" destination="V0X-V6-vsD" id="lGc-fq-FL3"/>
                                         </connections>

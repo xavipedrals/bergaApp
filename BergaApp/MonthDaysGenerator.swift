@@ -30,7 +30,15 @@ class MonthDaysGenerator {
         monthPointer = from
         days.removeAll()
         addDaysBeforeMonthFirstDay()
-        loadMonthDays()
+        loadMonthDays(markedDays: [])
+        return self.days
+    }
+    
+    func generate(from: Date, markedDays: [Int]) -> [Day] {
+        monthPointer = from
+        days.removeAll()
+        addDaysBeforeMonthFirstDay()
+        loadMonthDays(markedDays: markedDays)
         return self.days
     }
     
@@ -48,7 +56,7 @@ class MonthDaysGenerator {
         }
     }
     
-    func loadMonthDays() {
+    func loadMonthDays(markedDays: [Int]) {
         let endDate = monthPointer.endOfMonth()
         let calendar = Calendar.current
         let endDayNumber  = calendar.component(.day, from: endDate)
@@ -57,6 +65,9 @@ class MonthDaysGenerator {
         
         for i in 1...endDayNumber {
             var day = Day(number: i)
+            if markedDays.contains(i) {
+                day.hasEvents = true
+            }
             day.isToday = (i == todayDayNumber && monthNumber == todayMonthNumber && yearNumber == todayYearNumber)
             days.append(day)
         }
