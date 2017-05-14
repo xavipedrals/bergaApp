@@ -12,10 +12,33 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var todayBackground: CustomView!
+    var isToday: Bool?
+    var isEmpty: Bool?
     
     func initFrom(day: Day) {
-        numberLabel.textColor = day.isToday ? UIColor.white : UIColor.darkGray
-        todayBackground.isHidden = day.isToday ? false : true
+        if day.number == 0 {
+            setEmpty()
+        }
+        isToday = day.isToday
+        numberLabel.textColor = isToday! ? UIColor.white : UIColor.darkGray
+        todayBackground.backgroundColor = isToday! ? UIColor(r: 255, g: 52, b: 43) : UIColor.white
         numberLabel.text = String(day.number)
+    }
+    
+    func setEmpty() {
+        numberLabel.isHidden = true
+        todayBackground.isHidden = true
+    }
+    
+    func setSelected() {
+        if (!isToday!) {
+            todayBackground.backgroundColor = UIColor.groupTableViewBackground
+        }
+    }
+    
+    func setUnselected() {
+        if (!isToday!) {
+            todayBackground.backgroundColor = UIColor.white
+        }
     }
 }

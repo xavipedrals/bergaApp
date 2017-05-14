@@ -6,7 +6,7 @@
 //  Copyright © 2017 Xavier Pedrals. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Commons {
     
@@ -39,4 +39,20 @@ extension Date {
     func previousMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: -1), to: self)!
     }
+}
+
+extension UIColor {
+    convenience init(r: Int, g: Int, b: Int) {
+        self.init(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: 1)
+    }
+    
+    convenience init(hex:Int, alpha:CGFloat = 1.0) {
+        self.init(
+            red:   CGFloat((hex & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((hex & 0x00FF00) >> 8)  / 255.0,
+            blue:  CGFloat((hex & 0x0000FF) >> 0)  / 255.0,
+            alpha: alpha
+        )
+    }
+    
 }

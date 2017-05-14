@@ -130,9 +130,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MB2-nk-zF8">
                                                     <rect key="frame" x="0.0" y="0.0" width="73" height="76"/>
                                                     <subviews>
-                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0X-V6-vsD" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0X-V6-vsD" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
                                                             <rect key="frame" x="21" y="23" width="30" height="30"/>
-                                                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="V0X-V6-vsD" secondAttribute="height" id="E3k-np-iYu"/>
                                                                 <constraint firstAttribute="width" constant="30" id="HjC-GA-UGJ"/>

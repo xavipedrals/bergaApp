@@ -31,6 +31,20 @@ class CalendarViewController: UIViewController {
             }
             .addDisposableTo(disposeBag)
         
+        calendarCollectionView.rx.itemSelected
+            .subscribe(onNext: { indexPath in
+                let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
+                cell.setSelected()
+            })
+            .addDisposableTo(disposeBag)
+        
+        calendarCollectionView.rx.itemDeselected
+            .subscribe(onNext: { indexPath in
+                let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
+                cell.setUnselected()
+            })
+            .addDisposableTo(disposeBag)
+        
         calendarCollectionView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
         

@@ -38,7 +38,7 @@ class CalendarViewModel {
             .addDisposableTo(disposeBag)
         
 //        addAMonth()
-        substractAMonth()
+//        substractAMonth()
         
         loadMonth()
     }
