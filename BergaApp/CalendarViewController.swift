@@ -27,7 +27,21 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         
         initVisuals()
+        configureCollectionView()
+        configureSwipe()
+    }
+    
+    func initVisuals() {
+        calendarViewModel.monthStr.asObservable()
+            .bind(to: monthLabel.rx.text)
+            .addDisposableTo(disposeBag)
         
+        calendarViewModel.yearStr.asObservable()
+            .bind(to: yearLabel.rx.text)
+            .addDisposableTo(disposeBag)
+    }
+    
+    func configureCollectionView() {
         calendarViewModel.sections.asObservable()
             .bind(to: calendarCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
@@ -68,25 +82,6 @@ class CalendarViewController: UIViewController {
         
         calendarCollectionView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
-        
-        
-        
-        configureSwipe()
-        
-    }
-    
-    func initVisuals() {
-        calendarViewModel.monthStr.asObservable()
-            .bind(to: monthLabel.rx.text)
-            .addDisposableTo(disposeBag)
-        
-        calendarViewModel.yearStr.asObservable()
-            .bind(to: yearLabel.rx.text)
-            .addDisposableTo(disposeBag)
-    }
-    
-    func configureCollectionView() {
-        
     }
     
     func configureSwipe() {

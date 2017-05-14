@@ -25,65 +25,65 @@ class CalendarEventStub {
         )
         
         let event3 = CalendarEvent(
-            date: Commons.getDateFromString(date: "06-15-2017", format: "MM-dd-yyyy")!,
+            date: Commons.getDateFromString(date: "06-14-2017", format: "MM-dd-yyyy")!,
             name: "La Patum de Berga",
-            type: .fair
+            type: .townFest
         )
         
         let event4 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
-            type: .fair
+            date: Commons.getDateFromString(date: "06-15-2017", format: "MM-dd-yyyy")!,
+            name: "La Patum de Berga",
+            type: .townFest
+        )
+        
+        let event11 = CalendarEvent(
+            date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
+            name: "Patum Infantil",
+            type: .townFest
+        )
+        
+        let event12 = CalendarEvent(
+            date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
+            name: "Barraques",
+            type: .townFest
         )
         
         let event5 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
-            type: .fair
+            date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
+            name: "La Patum de Berga",
+            type: .townFest
         )
         
         let event6 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
-            type: .fair
+            date: Commons.getDateFromString(date: "06-17-2017", format: "MM-dd-yyyy")!,
+            name: "La Patum de Berga",
+            type: .townFest
         )
         
         let event7 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
-            type: .fair
+            date: Commons.getDateFromString(date: "06-18-2017", format: "MM-dd-yyyy")!,
+            name: "La Patum de Berga",
+            type: .townFest
         )
         
         let event8 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
+            date: Commons.getDateFromString(date: "05-23-2017", format: "MM-dd-yyyy")!,
+            name: "Event de prova",
             type: .fair
         )
         
         let event9 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
+            date: Commons.getDateFromString(date: "06-24-2017", format: "MM-dd-yyyy")!,
+            name: "Sant Joan",
             type: .fair
         )
         
         let event10 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
-            type: .fair
+            date: Commons.getDateFromString(date: "06-5-2017", format: "MM-dd-yyyy")!,
+            name: "San Hilari",
+            type: .townFest
         )
         
-        let event11 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
-            type: .fair
-        )
-        
-        let event12 = CalendarEvent(
-            date: Date(),
-            name: "Fira de Sant Isidre",
-            type: .fair
-        )
-        
-        return [event1, event2, event3]
+        return [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12]
     }
 }

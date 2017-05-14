@@ -34,8 +34,9 @@ class CalendarEventsManager {
     }
     
     func getEventsFor(day: Date) -> [CalendarEvent] {
+        let calendar = Calendar.current
         let filteredEvents = calendarEvents.filter({
-            $0.date == day
+            calendar.startOfDay(for: $0.date) == calendar.startOfDay(for: day)
         })
         return filteredEvents
     }
