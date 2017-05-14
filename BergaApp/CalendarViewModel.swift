@@ -18,27 +18,27 @@ class CalendarViewModel {
     let today = Date()
     var todayDayNumber: Int
     var todayMonthNumber: Int
-    var monthPointer: Date
+    var monthPointer: Variable<Date>
+    let disposeBag = DisposeBag()
     
     init() {
         let calendar = Calendar.current
         todayDayNumber = calendar.component(.day, from: today)
         todayMonthNumber = calendar.component(.month, from: today)
+    
+        monthPointer = Variable<Date>(today.startOfMonth())
         
-        let monthYear = Commons.getStringFromDate(date: today, format: "MMM yyyy")
-        let monthYearArr = monthYear.components(separatedBy: " ")
-        monthStr.value = monthYearArr[0].uppercased()
-        yearStr.value = monthYearArr[1]
-        
-        
-        monthPointer = today.startOfMonth()
-        
-        print(Date())
-        print(Date().startOfMonth())
-        print(Date().endOfMonth())
+        monthPointer.asObservable()
+            .map({ Commons.getStringFromDate(date: $0, format: "MMMM yyyy") })
+            .subscribe(onNext: { monthYear in
+                let monthYearArr = monthYear.components(separatedBy: " ")
+                self.monthStr.value = monthYearArr[0].uppercased()
+                self.yearStr.value = monthYearArr[1]
+            })
+            .addDisposableTo(disposeBag)
         
 //        addAMonth()
-//        substractAMonth()
+        substractAMonth()
         
         loadMonth()
     }
@@ -50,7 +50,7 @@ class CalendarViewModel {
     }
     
     func addDaysBeforeMonthFirstDay() {
-        let weekday = Calendar.current.component(.weekday, from: monthPointer)
+        let weekday = Calendar.current.component(.weekday, from: monthPointer.value)
         //sunday = 1
         var europeanWeekday = weekday - 1
         if europeanWeekday == 0 {
@@ -64,10 +64,10 @@ class CalendarViewModel {
     }
     
     func loadMonthDays() {
-        let endDate = monthPointer.endOfMonth()
+        let endDate = monthPointer.value.endOfMonth()
         let calendar = Calendar.current
         let endDayNumber  = calendar.component(.day, from: endDate)
-        let monthNumber = calendar.component(.month, from: monthPointer)
+        let monthNumber = calendar.component(.month, from: monthPointer.value)
         
         for i in 1...endDayNumber {
             var day = Day(number: i)
@@ -78,10 +78,10 @@ class CalendarViewModel {
     }
     
     func addAMonth() {
-        monthPointer = monthPointer.nextMonth()
+        monthPointer.value = monthPointer.value.nextMonth()
     }
     
     func substractAMonth() {
-        monthPointer = monthPointer.previousMonth()
+        monthPointer.value = monthPointer.value.previousMonth()
     }
 }
