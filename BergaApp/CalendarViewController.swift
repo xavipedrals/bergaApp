@@ -26,17 +26,36 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        calendarViewModel.days.asObservable()
-            .bind(to: calendarCollectionView.rx.items(cellIdentifier: "dayCell", cellType: DayCollectionViewCell.self)) {
-                _, day, cell in
+        initVisuals()
+        
+        calendarViewModel.sections.asObservable()
+            .bind(to: calendarCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        dataSource.configureCell = { (ds, cv, indexPath, item) in
+            switch item {
+            case .day(let day):
+                let cell = cv.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
                 cell.initFrom(day: day)
+                return cell
+                
+            case .calendarEvent(let event):
+                let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
+                cell.initCell(from: event)
+                return cell
             }
-            .addDisposableTo(disposeBag)
+        }
         
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
-                let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
-                cell.setSelected()
+                if indexPath.section == 0 {
+                    let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
+                    cell.setSelected()
+                    self.calendarViewModel.updateEventsSection(dayAt: indexPath.row)
+                }
+                else {
+                    //Show a map?
+                }
             })
             .addDisposableTo(disposeBag)
         
@@ -50,6 +69,13 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
         
+        
+        
+        configureSwipe()
+        
+    }
+    
+    func initVisuals() {
         calendarViewModel.monthStr.asObservable()
             .bind(to: monthLabel.rx.text)
             .addDisposableTo(disposeBag)
@@ -57,8 +83,13 @@ class CalendarViewController: UIViewController {
         calendarViewModel.yearStr.asObservable()
             .bind(to: yearLabel.rx.text)
             .addDisposableTo(disposeBag)
+    }
+    
+    func configureCollectionView() {
         
-        
+    }
+    
+    func configureSwipe() {
         let swipeLeft = UISwipeGestureRecognizer()
         swipeLeft.direction = .left
         swipeLeft.rx.event
@@ -77,24 +108,7 @@ class CalendarViewController: UIViewController {
         
         calendarCollectionView.addGestureRecognizer(swipeLeft)
         calendarCollectionView.addGestureRecognizer(swipeRight)
-
-        
-//        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
-//        self.addGestureRecognizer(swipeLeft)
-//        
-//        // Add Right Swipe Gesture
-//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft()))
-//        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-//        self.addGestureRecognizer(swipeRight)
     }
-    
-//    func swipeRight() {
-//        calendarViewModel.substractAMonth()
-//    }
-//    
-//    func swipeLeft() {
-//        calendarViewModel.addAMonth()
-//    }
     
     override func viewDidLayoutSubviews() {
         setCellWidth()
@@ -111,6 +125,10 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth!, height: cellWidth!)
+        if indexPath.section == 0 {
+            return CGSize(width: cellWidth!, height: cellWidth!)
+        }
+        let width = UIScreen.main.bounds.width - 20
+        return CGSize(width: width, height: 50)
     }
 }

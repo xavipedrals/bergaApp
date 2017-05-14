@@ -12,22 +12,25 @@ import RxCocoa
 
 class CalendarViewModel {
     
-    let days = Variable<[Day]>([])
+    var days = [Day]()
     let monthStr = Variable<String>("")
     let yearStr = Variable<String>("")
     var monthPointer: Variable<Date>
+    let daysGenerator: MonthDaysGenerator
+    
     let disposeBag = DisposeBag()
     
     let CALENDAR_SECTION = 0
     let EVENTS_SECTION = 1
     
-    var sections = [
+    let sections = Variable<[CalendarSection]>([
         CalendarSection(header: "Calendar", items: []),
         CalendarSection(header: "Events", items: [])
-    ]
+    ])
 
     init() {
         monthPointer = Variable<Date>(Date().startOfMonth())
+        daysGenerator = MonthDaysGenerator()
         
         monthPointer.asObservable()
             .map({ Commons.getStringFromDate(date: $0, format: "MMMM yyyy") })
@@ -44,35 +47,42 @@ class CalendarViewModel {
                 self.setMonthDays()
             })
             .addDisposableTo(disposeBag)
-
-        updateDaysSection()
-        updateEventsSection()
+        
+        updateEventsSection(day: Date())
     }
     
     func setMonthDays() {
-        days.value.removeAll()
-        days.value = MonthDaysGenerator(from: monthPointer.value).generate()
+        days.removeAll()
+        days = daysGenerator.generate(from: monthPointer.value)
+        updateDaysSection()
     }
     
     func updateDaysSection() {
         var items = [CalendarModelType]()
-        for day in days.value {
+        for day in days {
             let calendarModel = CalendarModelType.day(day)
             items.append(calendarModel)
         }
-        let calendarSection = CalendarSection(original: sections[CALENDAR_SECTION], items: items)
-        sections[CALENDAR_SECTION] = calendarSection
+        let calendarSection = CalendarSection(original: sections.value[CALENDAR_SECTION], items: items)
+        sections.value[CALENDAR_SECTION] = calendarSection
     }
     
-    func updateEventsSection() {
-        let stub = CalendarEventStub().getStub()
+    func updateEventsSection(dayAt: Int) {
+        let dayNumber = days[dayAt].number
+        if let date = daysGenerator.getDay(number: dayNumber) {
+            updateEventsSection(day: date)
+        }
+    }
+    
+    func updateEventsSection(day: Date) {
+        let events = CalendarEventsManager().getEventsFor(day: day)
         var items = [CalendarModelType]()
-        for event in stub {
+        for event in events {
             let calendarModel = CalendarModelType.calendarEvent(event)
             items.append(calendarModel)
         }
-        let eventsSection = CalendarSection(original: sections[EVENTS_SECTION], items: items)
-        sections[EVENTS_SECTION] = eventsSection
+        let eventsSection = CalendarSection(original: sections.value[EVENTS_SECTION], items: items)
+        sections.value[EVENTS_SECTION] = eventsSection
     }
     
     func addAMonth() {

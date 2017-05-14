@@ -121,17 +121,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="PZT-wl-Zfv" customClass="DayCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="73" height="76"/>
+                                        <rect key="frame" x="152" y="0.0" width="71" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MB2-nk-zF8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="76"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="76"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0X-V6-vsD" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
-                                                            <rect key="frame" x="21" y="23" width="30" height="30"/>
+                                                            <rect key="frame" x="20" y="23" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="V0X-V6-vsD" secondAttribute="height" id="E3k-np-iYu"/>
                                                                 <constraint firstAttribute="width" constant="30" id="HjC-GA-UGJ"/>
@@ -143,7 +143,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIy-VK-4sP">
-                                                            <rect key="frame" x="28" y="30" width="17" height="17"/>
+                                                            <rect key="frame" x="27" y="30" width="17" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -165,9 +165,46 @@
                                             <constraint firstAttribute="trailing" secondItem="MB2-nk-zF8" secondAttribute="trailing" id="wqo-bK-lrT"/>
                                             <constraint firstItem="MB2-nk-zF8" firstAttribute="leading" secondItem="PZT-wl-Zfv" secondAttribute="leading" id="xxf-PR-bTv"/>
                                         </constraints>
+                                        <size key="customSize" width="71" height="76"/>
                                         <connections>
                                             <outlet property="numberLabel" destination="pIy-VK-4sP" id="Z3a-06-IwI"/>
                                             <outlet property="todayBackground" destination="V0X-V6-vsD" id="lGc-fq-FL3"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="O4x-T7-yTs" customClass="EventCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
+                                        <rect key="frame" x="28.5" y="76" width="318" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="318" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-dm-Ksn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="318" height="60"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru7-vl-6G8">
+                                                            <rect key="frame" x="10" y="10" width="79.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Ru7-vl-6G8" firstAttribute="top" secondItem="nbB-dm-Ksn" secondAttribute="top" constant="10" id="ED0-U4-TOu"/>
+                                                        <constraint firstItem="Ru7-vl-6G8" firstAttribute="leading" secondItem="nbB-dm-Ksn" secondAttribute="leading" constant="10" id="ovk-ji-5eF"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="nbB-dm-Ksn" firstAttribute="top" secondItem="O4x-T7-yTs" secondAttribute="top" id="117-ub-sWV"/>
+                                            <constraint firstAttribute="trailing" secondItem="nbB-dm-Ksn" secondAttribute="trailing" id="BTP-Bj-WNk"/>
+                                            <constraint firstAttribute="bottom" secondItem="nbB-dm-Ksn" secondAttribute="bottom" id="Vc6-4a-hpK"/>
+                                            <constraint firstItem="nbB-dm-Ksn" firstAttribute="leading" secondItem="O4x-T7-yTs" secondAttribute="leading" id="n6G-g4-z6L"/>
+                                        </constraints>
+                                        <size key="customSize" width="318" height="60"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Ru7-vl-6G8" id="60v-Rq-rXm"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -196,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2Q-vN-2q3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1270" y="71"/>
+            <point key="canvasLocation" x="1269.5999999999999" y="70.614692653673174"/>
         </scene>
         <!--Comerços-->
         <scene sceneID="mk0-tb-dKh">

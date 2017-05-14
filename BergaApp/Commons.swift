@@ -17,6 +17,13 @@ class Commons {
         return dateStr
     }
     
+    static func getDateFromString(date: String, format: String) -> Date?{
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        let someDateTime = formatter.date(from: date)
+        return someDateTime
+    }
+    
 }
 
 extension Date {

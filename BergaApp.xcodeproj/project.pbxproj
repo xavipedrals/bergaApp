@@ -14,6 +14,7 @@
 		4705512C1EC717E70016E366 /* NewsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512B1EC717E70016E366 /* NewsStub.swift */; };
 		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
+		4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
 		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
 		479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479315DF1EC5FDED00845C6C /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */; };
 		47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9C8B21EC882E200CA173E /* RxDataSources.framework */; };
 		47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */; };
+		47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* CustomImage.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,7 @@
 		4705512B1EC717E70016E366 /* NewsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStub.swift; sourceTree = "<group>"; };
 		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsManager.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479315DD1EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModelType.swift; sourceTree = "<group>"; };
 		47A9C8B21EC882E200CA173E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDaysGenerator.swift; sourceTree = "<group>"; };
+		47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				470551231EC6F9690016E366 /* CalendarViewController.swift */,
+				4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */,
 				470551271EC704950016E366 /* CalendarViewModel.swift */,
 				47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */,
 				470551251EC704170016E366 /* CalendarEvent.swift */,
@@ -138,6 +143,7 @@
 				4705512D1EC74BDA0016E366 /* Day.swift */,
 				47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */,
 				47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */,
+				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				470551301EC751ED0016E366 /* Commons.swift in Sources */,
 				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
 				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
+				4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
@@ -414,6 +421,7 @@
 				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
+				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,

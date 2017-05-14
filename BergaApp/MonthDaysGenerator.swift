@@ -16,8 +16,8 @@ class MonthDaysGenerator {
     private var todayMonthNumber: Int
     private var todayYearNumber: Int
     
-    init(from: Date){
-        self.monthPointer = from
+    init(){
+        self.monthPointer = Date()
         self.days = []
         let today = Date()
         let calendar = Calendar.current
@@ -26,7 +26,8 @@ class MonthDaysGenerator {
         todayYearNumber = calendar.component(.year, from: today)
     }
     
-    func generate() -> [Day] {
+    func generate(from: Date) -> [Day] {
+        monthPointer = from
         days.removeAll()
         addDaysBeforeMonthFirstDay()
         loadMonthDays()
@@ -59,6 +60,17 @@ class MonthDaysGenerator {
             day.isToday = (i == todayDayNumber && monthNumber == todayMonthNumber && yearNumber == todayYearNumber)
             days.append(day)
         }
+    }
+    
+    func getDay(number: Int) -> Date? {
+        let calendar = Calendar.current
         
+        var dateComponents = DateComponents()
+        dateComponents.year = calendar.component(.year, from: monthPointer)
+        dateComponents.month = calendar.component(.month, from: monthPointer)
+        dateComponents.day = number
+        
+        let someDateTime = calendar.date(from: dateComponents)
+        return someDateTime
     }
 }
