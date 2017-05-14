@@ -312,9 +312,17 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dum-dv-AyT">
+                                                    <rect key="frame" x="330" y="100" width="50" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="R9S-zk-zac"/>
+                                                        <constraint firstAttribute="width" constant="50" id="gDU-Ka-iE5"/>
+                                                    </constraints>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mxr-zN-XRX" firstAttribute="height" secondItem="chP-LB-hqI" secondAttribute="height" id="5aM-bu-h36"/>
+                                                <constraint firstItem="Dum-dv-AyT" firstAttribute="centerY" secondItem="mxr-zN-XRX" secondAttribute="centerY" id="Bj2-ri-zpE"/>
                                                 <constraint firstItem="UnA-Xn-DHX" firstAttribute="top" secondItem="HOd-dG-VoG" secondAttribute="bottom" constant="10" id="C2u-vA-PzQ"/>
                                                 <constraint firstItem="Bgv-mR-wlW" firstAttribute="top" secondItem="I91-6z-ps6" secondAttribute="top" constant="10" id="MKo-HB-0GJ"/>
                                                 <constraint firstItem="HOd-dG-VoG" firstAttribute="top" secondItem="I91-6z-ps6" secondAttribute="top" constant="10" id="P88-NL-Ota"/>
@@ -325,6 +333,7 @@
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UnA-Xn-DHX" secondAttribute="bottom" constant="10" id="d30-gq-T3X"/>
                                                 <constraint firstAttribute="bottom" secondItem="mxr-zN-XRX" secondAttribute="bottom" constant="10" id="gbW-gz-8b3"/>
                                                 <constraint firstItem="Bgv-mR-wlW" firstAttribute="leading" secondItem="I91-6z-ps6" secondAttribute="leading" constant="10" id="he2-7b-R3N"/>
+                                                <constraint firstItem="Dum-dv-AyT" firstAttribute="centerX" secondItem="mxr-zN-XRX" secondAttribute="centerX" id="pcC-wu-OP8"/>
                                                 <constraint firstAttribute="trailing" secondItem="HOd-dG-VoG" secondAttribute="trailing" constant="10" id="y75-RK-J9O"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -332,6 +341,7 @@
                                             <outlet property="newsImageView" destination="Bgv-mR-wlW" id="4ve-WH-uOp"/>
                                             <outlet property="providerImageView" destination="chP-LB-hqI" id="kDP-i3-7DB"/>
                                             <outlet property="providerName" destination="kQl-pN-MZK" id="RhP-dK-9f0"/>
+                                            <outlet property="shareButton" destination="Dum-dv-AyT" id="mnI-xr-p7O"/>
                                             <outlet property="subtitleLabel" destination="j5a-vh-oL4" id="ry9-Zn-m7S"/>
                                             <outlet property="titleLabel" destination="Fn7-Vh-q2P" id="Rwm-4H-Jjp"/>
                                         </connections>

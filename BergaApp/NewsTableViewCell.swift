@@ -16,14 +16,17 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var providerImageView: UIImageView!
     @IBOutlet weak var providerName: UILabel!
+    @IBOutlet weak var shareButton: UIButton!
     
     
     func initCell(from: News) {
         titleLabel.text = from.title
         subtitleLabel.text = from.subtitle
-        newsImageView.kf.setImage(with: URL(string: from.imageUrl)!)
-        providerImageView.kf.setImage(with: URL(string: from.providerImgUrl)!)
-        providerName.text = from.provider
+        if let imageUrl = URL(string: from.imageUrl) {
+            newsImageView.kf.setImage(with: imageUrl)
+        }
+        providerImageView.image = UIImage(named: from.provider.imageName)
+        providerName.text = from.provider.name
     }
 
 }
