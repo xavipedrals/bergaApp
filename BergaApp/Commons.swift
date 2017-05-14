@@ -21,10 +21,22 @@ class Commons {
 
 extension Date {
     func startOfMonth() -> Date {
-        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+        let comp: DateComponents = Calendar.current.dateComponents([.day], from: self)
+        var comps2 = DateComponents()
+        comps2.day = -(comp.day! - 1)
+        let startOfMonth = Calendar.current.date(byAdding: comps2, to: self)!
+        return startOfMonth
     }
     
     func endOfMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+    
+    func nextMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1), to: self)!
+    }
+    
+    func previousMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: -1), to: self)!
     }
 }
