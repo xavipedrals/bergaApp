@@ -18,6 +18,8 @@ class CalendarViewModel {
     let today = Date()
     var todayDayNumber: Int
     var todayMonthNumber: Int
+    var todayYearNumber: Int
+
     var monthPointer: Variable<Date>
     let disposeBag = DisposeBag()
     
@@ -25,6 +27,7 @@ class CalendarViewModel {
         let calendar = Calendar.current
         todayDayNumber = calendar.component(.day, from: today)
         todayMonthNumber = calendar.component(.month, from: today)
+        todayYearNumber = calendar.component(.year, from: today)
     
         monthPointer = Variable<Date>(today.startOfMonth())
         
@@ -37,10 +40,17 @@ class CalendarViewModel {
             })
             .addDisposableTo(disposeBag)
         
+        monthPointer.asObservable()
+            .distinctUntilChanged()
+            .subscribe(onNext: { _ in
+                self.loadMonth()
+            })
+            .addDisposableTo(disposeBag)
+        
 //        addAMonth()
 //        substractAMonth()
         
-        loadMonth()
+//        loadMonth()
     }
     
     func loadMonth() {
@@ -68,10 +78,11 @@ class CalendarViewModel {
         let calendar = Calendar.current
         let endDayNumber  = calendar.component(.day, from: endDate)
         let monthNumber = calendar.component(.month, from: monthPointer.value)
+        let yearNumber = calendar.component(.year, from: monthPointer.value)
         
         for i in 1...endDayNumber {
             var day = Day(number: i)
-            day.isToday = (i == todayDayNumber && monthNumber == self.todayMonthNumber)
+            day.isToday = (i == todayDayNumber && monthNumber == todayMonthNumber && yearNumber == todayYearNumber)
             days.value.append(day)
         }
         

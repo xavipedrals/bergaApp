@@ -16,18 +16,17 @@ class DayCollectionViewCell: UICollectionViewCell {
     var isEmpty: Bool?
     
     func initFrom(day: Day) {
-        if day.number == 0 {
-            setEmpty()
-        }
+        configureEmpty(day.number)
         isToday = day.isToday
         numberLabel.textColor = isToday! ? UIColor.white : UIColor.darkGray
         todayBackground.backgroundColor = isToday! ? UIColor(r: 255, g: 52, b: 43) : UIColor.white
         numberLabel.text = String(day.number)
     }
     
-    func setEmpty() {
-        numberLabel.isHidden = true
-        todayBackground.isHidden = true
+    func configureEmpty(_ num: Int) {
+        isEmpty = num == 0
+        numberLabel.isHidden = isEmpty!
+        todayBackground.isHidden = isEmpty!
     }
     
     func setSelected() {

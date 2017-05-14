@@ -55,7 +55,44 @@ class CalendarViewController: UIViewController {
         calendarViewModel.yearStr.asObservable()
             .bind(to: yearLabel.rx.text)
             .addDisposableTo(disposeBag)
+        
+        
+        let swipeLeft = UISwipeGestureRecognizer()
+        swipeLeft.direction = .left
+        swipeLeft.rx.event
+            .subscribe(onNext: { _ in
+                self.calendarViewModel.addAMonth()
+            })
+            .addDisposableTo(disposeBag)
+        
+        let swipeRight = UISwipeGestureRecognizer()
+        swipeRight.direction = .right
+        swipeRight.rx.event
+            .subscribe(onNext: { _ in
+                self.calendarViewModel.substractAMonth()
+            })
+            .addDisposableTo(disposeBag)
+        
+        calendarCollectionView.addGestureRecognizer(swipeLeft)
+        calendarCollectionView.addGestureRecognizer(swipeRight)
+
+        
+//        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+//        self.addGestureRecognizer(swipeLeft)
+//        
+//        // Add Right Swipe Gesture
+//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft()))
+//        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+//        self.addGestureRecognizer(swipeRight)
     }
+    
+//    func swipeRight() {
+//        calendarViewModel.substractAMonth()
+//    }
+//    
+//    func swipeLeft() {
+//        calendarViewModel.addAMonth()
+//    }
     
     override func viewDidLayoutSubviews() {
         setCellWidth()
