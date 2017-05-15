@@ -24,7 +24,7 @@ class DayCollectionViewCell: UICollectionViewCell {
         numberLabel.textColor = isToday! ? UIColor.white : UIColor.darkGray
         todayBackground.backgroundColor = isToday! ? UIColor(r: 255, g: 52, b: 43) : UIColor.white
         numberLabel.text = String(day.number)
-        eventsMarkerView.isHidden = !day.hasEvents
+        eventsMarkerView.isHidden = (!day.hasEvents || day.isToday)
     }
     
     func configureEmpty(_ num: Int) {

@@ -11,8 +11,11 @@ import UIKit
 class EventCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var eventIcon: IconImage!
     
     func initCell(from: CalendarEvent) {
         nameLabel.text = from.name
+        eventIcon.image = UIImage(named: from.type.rawValue)
+        eventIcon.iconTint = UIColor.gray
     }
 }

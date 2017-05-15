@@ -88,9 +88,16 @@ class CalendarViewModel {
     
     func addAMonth() {
         monthPointer.value = monthPointer.value.nextMonth()
+        cleanEventsSection()
     }
     
     func substractAMonth() {
         monthPointer.value = monthPointer.value.previousMonth()
+        cleanEventsSection()
+    }
+    
+    func cleanEventsSection() {
+        let eventsSection = CalendarSection(original: sections.value[EVENTS_SECTION], items: [])
+        sections.value[EVENTS_SECTION] = eventsSection
     }
 }

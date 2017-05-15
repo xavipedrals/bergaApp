@@ -21,6 +21,7 @@ class CalendarViewController: UIViewController {
     let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
     let calendarViewModel = CalendarViewModel()
     let disposeBag = DisposeBag()
+    var selectedIndex: IndexPath?
     
     
     override func viewDidLoad() {
@@ -51,6 +52,11 @@ class CalendarViewController: UIViewController {
             case .day(let day):
                 let cell = cv.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
                 cell.initFrom(day: day)
+                if let selectedIndex = self.selectedIndex {
+                    if selectedIndex == indexPath {
+                        cell.setSelected()
+                    }
+                }
                 return cell
                 
             case .calendarEvent(let event):
@@ -63,8 +69,9 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
-                    let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
-                    cell.setSelected()
+//                    let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
+//                    cell.setSelected()
+                    self.selectedIndex = indexPath
                     self.calendarViewModel.updateEventsSection(dayAt: indexPath.row)
                 }
                 else {
@@ -75,8 +82,10 @@ class CalendarViewController: UIViewController {
         
         calendarCollectionView.rx.itemDeselected
             .subscribe(onNext: { indexPath in
-                let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
-                cell.setUnselected()
+                if indexPath.section == 0 {
+                    let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
+                    cell.setUnselected()
+                }
             })
             .addDisposableTo(disposeBag)
         
@@ -90,6 +99,7 @@ class CalendarViewController: UIViewController {
         swipeLeft.rx.event
             .subscribe(onNext: { _ in
                 self.calendarViewModel.addAMonth()
+                self.selectedIndex = nil
             })
             .addDisposableTo(disposeBag)
         
@@ -98,6 +108,7 @@ class CalendarViewController: UIViewController {
         swipeRight.rx.event
             .subscribe(onNext: { _ in
                 self.calendarViewModel.substractAMonth()
+                self.selectedIndex = nil
             })
             .addDisposableTo(disposeBag)
         

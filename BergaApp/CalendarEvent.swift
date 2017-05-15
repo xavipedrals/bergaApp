@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum CalendarEventType {
-    case sport
-    case townFest
-    case fair
+enum CalendarEventType: String {
+    case sport = "running"
+    case townFest = "majorFest"
+    case fair = "carousel"
 }
 
 struct CalendarEvent {

@@ -42,11 +42,15 @@ class NewsViewController: UIViewController {
         
     }
     
+    func initVisuals() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
+    }
+    
     func share(news: News) {
-        let message = "Mira quina notícia he trobat a BergaApp "
-        //Set the link to share.
-        if let link = NSURL(string: "http://www.bergapp.com/")
-        {
+        let message = "Mira quina notícia he trobat a BergaApp: "
+        if let link = NSURL(string: news.url){
+            
             let objectsToShare = [message,link] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             activityVC.excludedActivityTypes = [.airDrop, .addToReadingList, .assignToContact, .openInIBooks, .print, .saveToCameraRoll, UIActivityType(rawValue: "com.apple.reminders.RemindersEditorExtension"), UIActivityType(rawValue: "com.apple.mobilenotes.SharingExtension")]
@@ -54,11 +58,5 @@ class NewsViewController: UIViewController {
             self.present(activityVC, animated: true, completion: nil)
         }
     }
-    
-    func initVisuals() {
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 150
-    }
-
     
 }

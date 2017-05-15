@@ -79,11 +79,35 @@ class CalendarEventStub {
         )
         
         let event10 = CalendarEvent(
-            date: Commons.getDateFromString(date: "06-5-2017", format: "MM-dd-yyyy")!,
-            name: "San Hilari",
-            type: .townFest
+            date: Commons.getDateFromString(date: "06-24-2017", format: "MM-dd-yyyy")!,
+            name: "Cursa popular",
+            type: .sport
         )
         
-        return [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12]
+        let event13 = CalendarEvent(
+            date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
+            name: "Excursió amb bicicleta",
+            type: .sport
+        )
+        
+        let event14 = CalendarEvent(
+            date: Commons.getDateFromString(date: "05-31-2017", format: "MM-dd-yyyy")!,
+            name: "Caminada popular",
+            type: .sport
+        )
+        
+        let event15 = CalendarEvent(
+            date: Commons.getDateFromString(date: "06-5-2017", format: "MM-dd-yyyy")!,
+            name: "Torneig de bàsquet 3x3",
+            type: .sport
+        )
+        
+        let event16 = CalendarEvent(
+            date: Date(),
+            name: "Torneig de futbol sala",
+            type: .sport
+        )
+        
+        return [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12, event13, event14, event15, event16]
     }
 }

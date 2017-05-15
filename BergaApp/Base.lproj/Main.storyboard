@@ -196,17 +196,27 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-dm-Ksn">
                                                     <rect key="frame" x="0.0" y="0.0" width="318" height="60"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="majorFest" translatesAutoresizingMaskIntoConstraints="NO" id="yBe-Dl-3Co" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="10" width="24" height="24"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
+                                                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru7-vl-6G8">
-                                                            <rect key="frame" x="10" y="10" width="79.5" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <rect key="frame" x="40" y="12.5" width="84" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="Ru7-vl-6G8" firstAttribute="top" secondItem="nbB-dm-Ksn" secondAttribute="top" constant="10" id="ED0-U4-TOu"/>
-                                                        <constraint firstItem="Ru7-vl-6G8" firstAttribute="leading" secondItem="nbB-dm-Ksn" secondAttribute="leading" constant="10" id="ovk-ji-5eF"/>
+                                                        <constraint firstItem="Ru7-vl-6G8" firstAttribute="centerY" secondItem="yBe-Dl-3Co" secondAttribute="centerY" id="2No-YZ-qB2"/>
+                                                        <constraint firstItem="Ru7-vl-6G8" firstAttribute="leading" secondItem="yBe-Dl-3Co" secondAttribute="trailing" constant="8" id="Edj-5O-uj2"/>
+                                                        <constraint firstItem="yBe-Dl-3Co" firstAttribute="leading" secondItem="nbB-dm-Ksn" secondAttribute="leading" constant="8" id="JAx-Ym-Rg7"/>
+                                                        <constraint firstItem="yBe-Dl-3Co" firstAttribute="top" secondItem="nbB-dm-Ksn" secondAttribute="top" constant="10" id="n54-6u-1oW"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -219,6 +229,7 @@
                                         </constraints>
                                         <size key="customSize" width="318" height="60"/>
                                         <connections>
+                                            <outlet property="eventIcon" destination="yBe-Dl-3Co" id="E2g-K9-hST"/>
                                             <outlet property="nameLabel" destination="Ru7-vl-6G8" id="60v-Rq-rXm"/>
                                         </connections>
                                     </collectionViewCell>
@@ -457,6 +468,7 @@
     <resources>
         <image name="calendar" width="25" height="25"/>
         <image name="ic_share_white" width="24" height="24"/>
+        <image name="majorFest" width="24" height="24"/>
         <image name="newspaper-folded" width="25" height="25"/>
         <image name="shopping-bag" width="25" height="25"/>
     </resources>
