@@ -14,11 +14,26 @@ enum CalendarModelType {
     case calendarEvent(CalendarEvent)
 }
 
-//extension CalendarModelType: Equatable {
-//    static func ==(lhs: CalendarModelType, rhs: CalendarModelType) -> Bool {
-//        return false
-//    }
-//}
+extension CalendarModelType: Equatable {
+    static func ==(lhs: CalendarModelType, rhs: CalendarModelType) -> Bool {
+        var dayl: Day?
+        var dayr: Day?
+        var eventl: CalendarEvent?
+        var eventr: CalendarEvent?
+        
+        switch lhs {
+        case .day(let day):
+            
+            return false
+            
+        case .calendarEvent(let event):
+            
+            return false
+        }
+        
+        
+    }
+}
 //
 //extension CalendarModelType: IdentifiableType {
 //    typealias Identity = String

@@ -53,7 +53,7 @@ class CalendarViewModel {
     
     func setMonthDays() {
         days.removeAll()
-        let daysWithEvents = CalendarEventsManager().getMonthEvents(date: monthPointer.value)
+        let daysWithEvents = CalendarEventsManager().getDaysNumberWithEvents(from: monthPointer.value)
         days = daysGenerator.generate(from: monthPointer.value, markedDays: daysWithEvents)
         updateDaysSection()
     }

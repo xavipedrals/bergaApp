@@ -20,9 +20,9 @@ class CalendarEventsManager {
         calendarEvents = CalendarEventStub().getStub()
     }
     
-    func getMonthEvents(date: Date) -> [Int] {
+    func getDaysNumberWithEvents(from: Date) -> [Int] {
         let calendar = Calendar.current
-        let monthNumber = calendar.component(.month, from: date)
+        let monthNumber = calendar.component(.month, from: from)
         let filteredEvents = calendarEvents.filter({
             let eventMonthNumber = calendar.component(.month, from: $0.date)
             return monthNumber == eventMonthNumber
