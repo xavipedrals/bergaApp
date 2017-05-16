@@ -13,8 +13,7 @@ import RxCocoa
 class CalendarViewModel {
     
     var days = [Day]()
-    let monthStr = Variable<String>("")
-    let yearStr = Variable<String>("")
+    let monthYearStr = Variable<String>("")
     var monthPointer: Variable<Date>
     let daysGenerator: MonthDaysGenerator
     
@@ -33,12 +32,14 @@ class CalendarViewModel {
         daysGenerator = MonthDaysGenerator()
         
         monthPointer.asObservable()
-            .map({ Commons.getStringFromDate(date: $0, format: "MMMM yyyy") })
-            .subscribe(onNext: { monthYear in
-                let monthYearArr = monthYear.components(separatedBy: " ")
-                self.monthStr.value = monthYearArr[0].uppercased()
-                self.yearStr.value = monthYearArr[1]
+            .map({
+                var dateStr = Commons.getStringFromDate(date: $0, format: "MMMM yyyy")
+                dateStr = dateStr.replacingOccurrences(of: "de ", with: "")
+                dateStr = dateStr.replacingOccurrences(of: "d’", with: "")
+                dateStr = dateStr.replacingOccurrences(of: "d'", with: "")
+                return dateStr.uppercased()
             })
+            .bind(to: monthYearStr)
             .addDisposableTo(disposeBag)
         
         monthPointer.asObservable()

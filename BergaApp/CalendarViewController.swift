@@ -33,13 +33,30 @@ class CalendarViewController: UIViewController {
     }
     
     func initVisuals() {
-        calendarViewModel.monthStr.asObservable()
-            .bind(to: monthLabel.rx.text)
+//        UIBarButtonItem.appearance().tintColor = Colors.red
+        let titleLabel = UILabel()
+
+        calendarViewModel.monthYearStr.asObservable()
+            .map({ monthYear -> NSAttributedString in
+                self.getMonthYearAttributedString(monthYear)
+            })
+            .subscribe(onNext: { attributedTitle in
+                titleLabel.attributedText = attributedTitle
+                titleLabel.sizeToFit()
+                self.navigationItem.titleView = titleLabel
+            })
             .addDisposableTo(disposeBag)
+    }
+    
+    func getMonthYearAttributedString(_ monthYear: String) -> NSAttributedString {
+        let monthYearArr = monthYear.components(separatedBy: " ")
+        let attributedTitle = NSMutableAttributedString(string: monthYear)
+        let monthRange = NSMakeRange(0, monthYearArr[0].length)
+        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightSemibold), range: monthRange)
         
-        calendarViewModel.yearStr.asObservable()
-            .bind(to: yearLabel.rx.text)
-            .addDisposableTo(disposeBag)
+        let yearRange = NSMakeRange(monthYearArr[0].length + 1, monthYearArr[1].length)
+        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightLight), range: yearRange)
+        return attributedTitle
     }
     
     func configureCollectionView() {
@@ -76,6 +93,7 @@ class CalendarViewController: UIViewController {
                 }
                 else {
                     //Show a map?
+                    self.performSegue(withIdentifier: "goToEventDetail", sender: nil)
                 }
             })
             .addDisposableTo(disposeBag)
