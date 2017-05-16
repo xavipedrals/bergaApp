@@ -14,15 +14,13 @@ import RxDataSources
 class CalendarViewController: UIViewController {
 
     @IBOutlet weak var calendarCollectionView: UICollectionView!
-    @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
     
     var cellWidth: Double?
     let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
     let calendarViewModel = CalendarViewModel()
     let disposeBag = DisposeBag()
     var selectedIndex: IndexPath?
-    
+    var selectedEvent: CalendarEvent?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +31,6 @@ class CalendarViewController: UIViewController {
     }
     
     func initVisuals() {
-//        UIBarButtonItem.appearance().tintColor = Colors.red
         let titleLabel = UILabel()
 
         calendarViewModel.monthYearStr.asObservable()
@@ -86,14 +83,14 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
-//                    let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
-//                    cell.setSelected()
                     self.selectedIndex = indexPath
                     self.calendarViewModel.updateEventsSection(dayAt: indexPath.row)
                 }
                 else {
-                    //Show a map?
-                    self.performSegue(withIdentifier: "goToEventDetail", sender: nil)
+                    if let event = self.calendarViewModel.getEvent(at: indexPath) {
+                        self.selectedEvent = event
+                        self.performSegue(withIdentifier: "goToEventDetail", sender: nil)
+                    }
                 }
             })
             .addDisposableTo(disposeBag)
@@ -132,6 +129,13 @@ class CalendarViewController: UIViewController {
         
         calendarCollectionView.addGestureRecognizer(swipeLeft)
         calendarCollectionView.addGestureRecognizer(swipeRight)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEventDetail" {
+            let eventDetail = segue.destination as! EventDetailViewController
+            eventDetail.event = self.selectedEvent
+        }
     }
     
     override func viewDidLayoutSubviews() {

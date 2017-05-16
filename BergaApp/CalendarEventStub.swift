@@ -21,7 +21,9 @@ class CalendarEventStub {
         let event2 = CalendarEvent(
             date: Commons.getDateFromString(date: "05-31-2017", format: "MM-dd-yyyy")!,
             name: "Fira de Sant Isidre",
-            type: .fair
+            type: .fair,
+            lat: 42.10429,
+            long: 1.84628
         )
         
         let event3 = CalendarEvent(

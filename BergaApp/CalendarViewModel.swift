@@ -101,4 +101,16 @@ class CalendarViewModel {
         let eventsSection = CalendarSection(original: sections.value[EVENTS_SECTION], items: [])
         sections.value[EVENTS_SECTION] = eventsSection
     }
+    
+    func getEvent(at: IndexPath) -> CalendarEvent? {
+        let calendarModel = sections.value[EVENTS_SECTION].items[at.row]
+        switch calendarModel {
+        case .calendarEvent(let event):
+            return event
+            
+        default:
+            return nil
+        }
+    }
 }
+

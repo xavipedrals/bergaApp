@@ -14,16 +14,28 @@ enum CalendarEventType: String {
     case fair = "carousel"
 }
 
+struct Coordinates {
+    var lat: Double
+    var long: Double
+}
+
 struct CalendarEvent {
     
     var date: Date
     var name: String
     var type: CalendarEventType
-    var localization: String?
+    var localization: Coordinates?
     
     init(date: Date, name: String, type: CalendarEventType) {
         self.date = date
         self.name = name
         self.type = type
+    }
+    
+    init(date: Date, name: String, type: CalendarEventType, lat: Double, long: Double) {
+        self.date = date
+        self.name = name
+        self.type = type
+        self.localization = Coordinates(lat: lat, long: long)
     }
 }

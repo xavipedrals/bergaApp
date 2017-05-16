@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2Q-vN-2q3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="71"/>
+            <point key="canvasLocation" x="1794" y="71"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="Je8-1j-d7i">
@@ -249,12 +249,49 @@
                     <view key="view" contentMode="scaleToFill" id="J2y-wH-2mC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="majorFest" translatesAutoresizingMaskIntoConstraints="NO" id="ulq-Pm-484" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="79" width="24" height="24"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsI-Yx-xOM">
+                                <rect key="frame" x="44" y="79" width="321" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-pj-tGs">
+                                <rect key="frame" x="0.0" y="243" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WV3-pj-tGs" secondAttribute="height" id="zLt-sA-scB"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ulq-Pm-484" firstAttribute="top" secondItem="Ese-N7-l6a" secondAttribute="bottom" constant="15" id="Bjb-pm-hqe"/>
+                            <constraint firstItem="WV3-pj-tGs" firstAttribute="leading" secondItem="J2y-wH-2mC" secondAttribute="leading" id="EIa-WV-gqF"/>
+                            <constraint firstItem="a2J-EB-cfM" firstAttribute="top" secondItem="WV3-pj-tGs" secondAttribute="bottom" id="RXM-cc-T07"/>
+                            <constraint firstItem="RsI-Yx-xOM" firstAttribute="top" secondItem="Ese-N7-l6a" secondAttribute="bottom" constant="15" id="aeS-3x-2Ok"/>
+                            <constraint firstItem="ulq-Pm-484" firstAttribute="leading" secondItem="J2y-wH-2mC" secondAttribute="leading" constant="10" id="bNW-tk-lX9"/>
+                            <constraint firstAttribute="trailing" secondItem="RsI-Yx-xOM" secondAttribute="trailing" constant="10" id="cks-Bu-B8L"/>
+                            <constraint firstAttribute="trailing" secondItem="WV3-pj-tGs" secondAttribute="trailing" id="wcn-bj-Wy9"/>
+                            <constraint firstItem="RsI-Yx-xOM" firstAttribute="leading" secondItem="ulq-Pm-484" secondAttribute="trailing" constant="10" id="z04-p2-gl4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iconImageView" destination="ulq-Pm-484" id="h0S-53-FKv"/>
+                        <outlet property="mapView" destination="WV3-pj-tGs" id="J7c-7L-ZHc"/>
+                        <outlet property="titleLabel" destination="RsI-Yx-xOM" id="Iph-VA-iMi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRv-CT-nPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2572" y="71"/>
+            <point key="canvasLocation" x="2604" y="71"/>
         </scene>
         <!--Comerços-->
         <scene sceneID="mk0-tb-dKh">
@@ -285,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0B-cJ-gRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1270" y="729"/>
+            <point key="canvasLocation" x="998" y="813"/>
         </scene>
         <!--Notícies-->
         <scene sceneID="2dl-Gq-Qam">
