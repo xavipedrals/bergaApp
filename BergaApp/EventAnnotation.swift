@@ -29,7 +29,7 @@ class EventAnnotation: NSObject, MKAnnotation {
     
     init(from event: CalendarEvent) {
         self.title = event.name
-        self.locationName = "Berga, el millor poble de tots els pobles que es fan i es desfan"
+        self.locationName = "Berga, el millor poble"
         self.discipline = "sida"
         self.coordinate = CLLocationCoordinate2D(latitude: event.localization!.lat, longitude: event.localization!.long)
     }

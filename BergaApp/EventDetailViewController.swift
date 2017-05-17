@@ -19,11 +19,10 @@ class EventDetailViewController: UIViewController {
     var eventAnnotation: EventAnnotation?
     var initialLocation: CLLocation?
     let regionRadius: CLLocationDistance = 750
+    let defaultInitialLocation = CLLocation(latitude: 42.1012595, longitude: 1.8439221) //Berga
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.navigationController?.title = event?.name
         
         titleLabel.text = event?.name
         if let coordinates = event?.localization {
@@ -33,6 +32,11 @@ class EventDetailViewController: UIViewController {
             initialLocation = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
             centerMapOnLocation(location: initialLocation!)
         }
+        else {
+            centerMapOnLocation(location: defaultInitialLocation)
+        }
+        
+        mapView.delegate = self
         
     }
     
