@@ -75,6 +75,17 @@ extension EventDetailViewController: MKMapViewDelegate {
                 view.canShowCallout = true
 //                view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//                let imageView = UIImageView(image: UIImage(named: "majorFest"))
+//                imageView.image = imageView.image!.withRenderingMode(.alwaysTemplate)
+//                imageView.tintColor = UIColor.white
+//                imageView.backgroundColor = Colors.red
+                
+                let auxView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 200))
+                auxView.backgroundColor = Colors.red
+                let imageView = UIImageView(image: UIImage(named: "majorFest"))
+                auxView.addSubview(imageView)
+                
+                view.leftCalloutAccessoryView = auxView
             }
             return view
         }
