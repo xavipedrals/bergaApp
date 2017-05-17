@@ -25,6 +25,11 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         
         titleLabel.text = event?.name
+        iconImageView.image = UIImage(named: event!.type.rawValue)
+        iconImageView.iconTint = UIColor.gray
+        
+        mapView.delegate = self
+        
         if let coordinates = event?.localization {
             eventAnnotation = EventAnnotation(from: event!)
             mapView.addAnnotation(eventAnnotation!)
@@ -36,7 +41,7 @@ class EventDetailViewController: UIViewController {
             centerMapOnLocation(location: defaultInitialLocation)
         }
         
-        mapView.delegate = self
+        
         
     }
     
@@ -61,14 +66,14 @@ extension EventDetailViewController: MKMapViewDelegate {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
                 view.canShowCallout = true
-                view.calloutOffset = CGPoint(x: -5, y: 5)
+//                view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             } else {
                 // 3
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
-                view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) 
+//                view.calloutOffset = CGPoint(x: -5, y: 5)
+                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             }
             return view
         }
