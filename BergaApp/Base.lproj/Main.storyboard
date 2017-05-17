@@ -228,7 +228,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendari" image="calendar" id="8cX-HS-E5k"/>
-                    <navigationItem key="navigationItem" id="ucQ-5f-OzQ"/>
+                    <navigationItem key="navigationItem" id="ucQ-5f-OzQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ILM-p7-bAO">
+                            <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarCollectionView" destination="8mv-3N-a4Z" id="z2k-cy-QBd"/>
                         <segue destination="8Yj-LY-BeG" kind="show" identifier="goToEventDetail" id="2s7-6d-tE0"/>
@@ -254,7 +258,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oZw-03-oae">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="487.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="537.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcl-tb-DjL" userLabel="Title wrapper">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -306,8 +310,32 @@
                                                     <constraint firstItem="1dM-eP-Fmo" firstAttribute="leading" secondItem="Pp9-nq-fce" secondAttribute="leading" constant="10" id="ej0-Db-0cE"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxB-uU-DxS">
+                                                <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeB-QH-4IB">
+                                                        <rect key="frame" x="143.5" y="0.0" width="87.5" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVs-s5-04Q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="jeB-QH-4IB" firstAttribute="centerX" secondItem="xxB-uU-DxS" secondAttribute="centerX" id="Aew-2h-0PH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="jeB-QH-4IB" secondAttribute="bottom" constant="15" id="Pa9-Lm-Gka"/>
+                                                    <constraint firstItem="jeB-QH-4IB" firstAttribute="top" secondItem="xxB-uU-DxS" secondAttribute="top" id="aS3-n4-hNb"/>
+                                                    <constraint firstItem="aVs-s5-04Q" firstAttribute="top" secondItem="xxB-uU-DxS" secondAttribute="top" id="evy-g3-pqr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aVs-s5-04Q" secondAttribute="trailing" id="gUx-DK-Kgn"/>
+                                                    <constraint firstItem="aVs-s5-04Q" firstAttribute="leading" secondItem="xxB-uU-DxS" secondAttribute="leading" id="mH6-bc-rTa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aVs-s5-04Q" secondAttribute="bottom" id="qQp-cX-eDI"/>
+                                                </constraints>
+                                            </view>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-pj-tGs">
-                                                <rect key="frame" x="0.0" y="150" width="375" height="337.5"/>
+                                                <rect key="frame" x="0.0" y="200" width="375" height="337.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WV3-pj-tGs" secondAttribute="height" multiplier="10/9" id="zLt-sA-scB"/>
                                                 </constraints>

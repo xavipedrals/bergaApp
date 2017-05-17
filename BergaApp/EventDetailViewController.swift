@@ -33,6 +33,7 @@ class EventDetailViewController: UIViewController {
         if let coordinates = event?.localization {
             eventAnnotation = EventAnnotation(from: event!)
             mapView.addAnnotation(eventAnnotation!)
+            mapView.selectAnnotation(eventAnnotation!, animated: false)
             
             initialLocation = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
             centerMapOnLocation(location: initialLocation!)
