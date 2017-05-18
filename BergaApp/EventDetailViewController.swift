@@ -25,8 +25,8 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         
         titleLabel.text = event?.name
-        iconImageView.image = UIImage(named: event!.type.rawValue)
-        iconImageView.iconTint = UIColor.gray
+//        iconImageView.image = UIImage(named: event!.type.rawValue)
+//        iconImageView.iconTint = UIColor.gray
         
         mapView.delegate = self
         
@@ -67,22 +67,27 @@ extension EventDetailViewController: MKMapViewDelegate {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
                 view.canShowCallout = true
-//                view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            } else {
-                // 3
+            }
+            else {
+                
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
-//                view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//                let imageView = UIImageView(image: UIImage(named: "majorFest"))
-//                imageView.image = imageView.image!.withRenderingMode(.alwaysTemplate)
-//                imageView.tintColor = UIColor.white
-//                imageView.backgroundColor = Colors.red
-                
-                let auxView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 200))
+
+                let auxView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: view.frame.height + 12))
+
+//                let auxView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.height + 10, height: view.frame.height + 12))
                 auxView.backgroundColor = Colors.red
-                let imageView = UIImageView(image: UIImage(named: "majorFest"))
+                let imageView = UIImageView(image: UIImage(named: event!.type.rawValue))
+                imageView.image = imageView.image!.withRenderingMode(.alwaysTemplate)
+                imageView.tintColor = UIColor.white
+//                imageView.tintColor = Colors.red
+                
+                let size: CGSize = auxView.frame.size
+                imageView.center = CGPoint(x: size.width/2, y: size.height/2)
+
+                
                 auxView.addSubview(imageView)
                 
                 view.leftCalloutAccessoryView = auxView
