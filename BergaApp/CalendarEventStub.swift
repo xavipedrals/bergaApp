@@ -29,7 +29,9 @@ class CalendarEventStub {
         let event3 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-14-2017", format: "MM-dd-yyyy")!,
             name: "La Patum de Berga",
-            type: .townFest
+            type: .townFest,
+            lat: 42.10429,
+            long: 1.84628
         )
         
         let event4 = CalendarEvent(
@@ -77,19 +79,25 @@ class CalendarEventStub {
         let event9 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-24-2017", format: "MM-dd-yyyy")!,
             name: "Sant Joan",
-            type: .fair
+            type: .fair,
+            lat: 42.0344,
+            long: 1.8818
         )
         
         let event10 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-24-2017", format: "MM-dd-yyyy")!,
             name: "Cursa popular",
-            type: .sport
+            type: .sport,
+            lat: 42.0344,
+            long: 1.8818
         )
         
         let event13 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
             name: "Excursió amb bicicleta",
-            type: .sport
+            type: .sport,
+            lat: 42.0344,
+            long: 1.8818
         )
         
         let event14 = CalendarEvent(
