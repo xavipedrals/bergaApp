@@ -35,6 +35,11 @@
 		4793161A1EC605E000845C6C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479316191EC605E000845C6C /* News.swift */; };
 		4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */; };
 		479316201EC60B7400845C6C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4793161F1EC60B7400845C6C /* Media.xcassets */; };
+		479FFBA11ECE407300BA8106 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA01ECE407300BA8106 /* ShopListViewController.swift */; };
+		479FFBA31ECE40E100BA8106 /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA21ECE40E100BA8106 /* ShopListViewModel.swift */; };
+		479FFBA51ECE415000BA8106 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA41ECE415000BA8106 /* Shop.swift */; };
+		479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA61ECE425600BA8106 /* ShopStub.swift */; };
+		479FFBA91ECE443E00BA8106 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA81ECE443E00BA8106 /* ShopTableViewCell.swift */; };
 		47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */; };
 		47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */; };
 		47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9C8B21EC882E200CA173E /* RxDataSources.framework */; };
@@ -96,6 +101,11 @@
 		479316191EC605E000845C6C /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		4793161F1EC60B7400845C6C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		479FFBA01ECE407300BA8106 /* ShopListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
+		479FFBA21ECE40E100BA8106 /* ShopListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
+		479FFBA41ECE415000BA8106 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		479FFBA61ECE425600BA8106 /* ShopStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopStub.swift; sourceTree = "<group>"; };
+		479FFBA81ECE443E00BA8106 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 		47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventStub.swift; sourceTree = "<group>"; };
 		47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModelType.swift; sourceTree = "<group>"; };
 		47A9C8B21EC882E200CA173E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -201,6 +211,7 @@
 				479316161EC605AE00845C6C /* News */,
 				470551211EC6F9290016E366 /* Calendar */,
 				4352956F1ECB30D90017FB9E /* EventDetail */,
+				479FFB9F1ECE404A00BA8106 /* Shops */,
 				479315DC1EC5FDED00845C6C /* Main.storyboard */,
 				479315D81EC5FDED00845C6C /* AppDelegate.swift */,
 				479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */,
@@ -251,6 +262,18 @@
 				4705512B1EC717E70016E366 /* NewsStub.swift */,
 			);
 			name = News;
+			sourceTree = "<group>";
+		};
+		479FFB9F1ECE404A00BA8106 /* Shops */ = {
+			isa = PBXGroup;
+			children = (
+				479FFBA01ECE407300BA8106 /* ShopListViewController.swift */,
+				479FFBA21ECE40E100BA8106 /* ShopListViewModel.swift */,
+				479FFBA41ECE415000BA8106 /* Shop.swift */,
+				479FFBA61ECE425600BA8106 /* ShopStub.swift */,
+				479FFBA81ECE443E00BA8106 /* ShopTableViewCell.swift */,
+			);
+			name = Shops;
 			sourceTree = "<group>";
 		};
 		47C942281EC65B4F00B3F617 /* Utils */ = {
@@ -436,15 +459,20 @@
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
 				4352956E1ECB14710017FB9E /* Colors.swift in Sources */,
 				47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */,
+				479FFBA31ECE40E100BA8106 /* ShopListViewModel.swift in Sources */,
 				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
 				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,
+				479FFBA91ECE443E00BA8106 /* ShopTableViewCell.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				435295711ECB311C0017FB9E /* EventAnnotation.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
+				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
+				479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */,
 				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
+				479FFBA11ECE407300BA8106 /* ShopListViewController.swift in Sources */,
 				47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
