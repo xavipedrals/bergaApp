@@ -13,6 +13,7 @@ import RxCocoa
 class ShopListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let searchBar = UISearchBar()
     
     let shopListViewModel = ShopListViewModel()
     let disposeBag = DisposeBag()
@@ -27,7 +28,27 @@ class ShopListViewController: UIViewController {
             }
             .addDisposableTo(disposeBag)
         
+        createSearchBar()
+        
+        searchBar.rx.cancelButtonClicked
+            .subscribe(onNext: { _ in
+                self.searchBar.resignFirstResponder()
+            })
+            .addDisposableTo(disposeBag)
+        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+//        tapGesture.cancelsTouchesInView = true
+//        self.view.addGestureRecognizer(tapGesture)
     }
 
+    func createSearchBar() {
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Buscar"
+        self.navigationItem.titleView = searchBar
+    }
+    
+    func hideKeyboard() {
+        self.view.endEditing(true)
+    }
 
 }

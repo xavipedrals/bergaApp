@@ -3,3 +3,4 @@ github "SwiftyJSON/SwiftyJSON"
 github "ReactiveX/RxSwift" ~> 3.0
 github "RxSwiftCommunity/RxAlamofire" "master"
 github "RxSwiftCommunity/RxDataSources" ~> 1.0
+github "devxoul/RxKeyboard"
