@@ -24,10 +24,9 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = event?.name
-//        iconImageView.image = UIImage(named: event!.type.rawValue)
-//        iconImageView.iconTint = UIColor.gray
+        self.title = event?.name
         
+        titleLabel.text = event?.name
         mapView.delegate = self
         
         if let coordinates = event?.localization {

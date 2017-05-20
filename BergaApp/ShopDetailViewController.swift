@@ -16,6 +16,8 @@ class ShopDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Shop name"
 
         // Do any additional setup after loading the view.
     }

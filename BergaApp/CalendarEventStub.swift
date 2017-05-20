@@ -72,7 +72,7 @@ class CalendarEventStub {
         
         let event8 = CalendarEvent(
             date: Commons.getDateFromString(date: "05-23-2017", format: "MM-dd-yyyy")!,
-            name: "Event de prova",
+            name: "Event de prova amb un nom molt i molt llarg",
             type: .fair
         )
         
