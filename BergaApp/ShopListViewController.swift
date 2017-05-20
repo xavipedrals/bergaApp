@@ -28,6 +28,12 @@ class ShopListViewController: UIViewController {
             }
             .addDisposableTo(disposeBag)
         
+        tableView.rx.modelSelected(Shop.self)
+            .subscribe(onNext: { shop in
+                self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
+            })
+            .addDisposableTo(disposeBag)
+        
         createSearchBar()
         
         searchBar.rx.cancelButtonClicked
@@ -36,13 +42,10 @@ class ShopListViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
         
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-//        tapGesture.cancelsTouchesInView = true
-//        self.view.addGestureRecognizer(tapGesture)
     }
 
     func createSearchBar() {
-        searchBar.showsCancelButton = true
+//        searchBar.showsCancelButton = true
         searchBar.placeholder = "Buscar"
         self.navigationItem.titleView = searchBar
     }

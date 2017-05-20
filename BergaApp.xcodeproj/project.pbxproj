@@ -19,6 +19,7 @@
 		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
 		4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */; };
+		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
 		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
 		479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479315DF1EC5FDED00845C6C /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsManager.swift; sourceTree = "<group>"; };
+		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479315DD1EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +186,14 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		473EE0171ED0579F006AAC71 /* Shop detail */ = {
+			isa = PBXGroup;
+			children = (
+				473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */,
+			);
+			name = "Shop detail";
+			sourceTree = "<group>";
+		};
 		479315CC1EC5FDED00845C6C = {
 			isa = PBXGroup;
 			children = (
@@ -214,9 +224,10 @@
 				470551211EC6F9290016E366 /* Calendar */,
 				4352956F1ECB30D90017FB9E /* EventDetail */,
 				479FFB9F1ECE404A00BA8106 /* Shops */,
+				473EE0171ED0579F006AAC71 /* Shop detail */,
+				479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */,
 				479315DC1EC5FDED00845C6C /* Main.storyboard */,
 				479315D81EC5FDED00845C6C /* AppDelegate.swift */,
-				479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */,
 				479315E41EC5FDED00845C6C /* Info.plist */,
 			);
 			path = BergaApp;
@@ -460,6 +471,7 @@
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
+				473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */,
 				4352956E1ECB14710017FB9E /* Colors.swift in Sources */,
 				437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */,
 				47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */,
