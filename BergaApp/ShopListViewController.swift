@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ShopListViewController: UIViewController {
 
@@ -16,17 +17,36 @@ class ShopListViewController: UIViewController {
     let searchBar = UISearchBar()
     
     let shopListViewModel = ShopListViewModel()
+    let dataSource = RxTableViewSectionedReloadDataSource<ShopSection>()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        shopListViewModel.shops.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: "shopCell", cellType: ShopTableViewCell.self)) {
-                _, shop, cell in
-                cell.initCell(from: shop)
-            }
+//        shopListViewModel.shops.asObservable()
+//            .bind(to: tableView.rx.items(cellIdentifier: "shopCell", cellType: ShopTableViewCell.self)) {
+//                _, shop, cell in
+//                cell.initCell(from: shop)
+//            }
+//            .addDisposableTo(disposeBag)
+        
+        shopListViewModel.sections.asObservable()
+            .bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
+        
+        dataSource.configureCell = { ds, tv, indexPath, item in
+            if item.isPromoted {
+                let cell = tv.dequeueReusableCell(withIdentifier: "promotedShopCell", for: indexPath) as! PromotedShopTableViewCell
+                cell.initCell(from: item)
+                return cell
+            }
+            else {
+                let cell = tv.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath) as! ShopTableViewCell
+                cell.initCell(from: item)
+                return cell
+            }
+            
+        }
         
         tableView.rx.modelSelected(Shop.self)
             .subscribe(onNext: { shop in

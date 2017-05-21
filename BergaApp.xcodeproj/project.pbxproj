@@ -19,6 +19,7 @@
 		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
 		471DACDC1ED214C50090C6CD /* ShopDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471DACDB1ED214C50090C6CD /* ShopDetail.swift */; };
+		471DACDE1ED233250090C6CD /* PromotedShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471DACDD1ED233250090C6CD /* PromotedShopTableViewCell.swift */; };
 		4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */; };
 		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
@@ -82,6 +83,7 @@
 		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		471DACDB1ED214C50090C6CD /* ShopDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetail.swift; sourceTree = "<group>"; };
+		471DACDD1ED233250090C6CD /* PromotedShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotedShopTableViewCell.swift; sourceTree = "<group>"; };
 		4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsManager.swift; sourceTree = "<group>"; };
 		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,6 +290,7 @@
 				479FFBA41ECE415000BA8106 /* Shop.swift */,
 				479FFBA61ECE425600BA8106 /* ShopStub.swift */,
 				479FFBA81ECE443E00BA8106 /* ShopTableViewCell.swift */,
+				471DACDD1ED233250090C6CD /* PromotedShopTableViewCell.swift */,
 			);
 			name = Shops;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */,
 				47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */,
 				479FFBA31ECE40E100BA8106 /* ShopListViewModel.swift in Sources */,
+				471DACDE1ED233250090C6CD /* PromotedShopTableViewCell.swift in Sources */,
 				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
 				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,
 				479FFBA91ECE443E00BA8106 /* ShopTableViewCell.swift in Sources */,

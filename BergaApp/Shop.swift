@@ -7,6 +7,25 @@
 //
 
 import Foundation
+import RxDataSources
+
+struct ShopSection {
+    var header: String
+    var items: [Item]
+    
+    var identity: String {
+        return header
+    }
+}
+
+extension ShopSection: SectionModelType{
+    typealias Item = Shop
+    
+    init(original: ShopSection, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}
 
 class Shop {
     
@@ -18,5 +37,6 @@ class Shop {
         self.name = name
         self.isPromoted = isPromoted
     }
-
 }
+
+
