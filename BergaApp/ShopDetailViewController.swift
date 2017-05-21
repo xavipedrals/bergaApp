@@ -13,13 +13,15 @@ class ShopDetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    var shop: Shop?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Shop name"
+        self.title = shop?.name
+        self.navigationItem.backBarButtonItem?.title = ""
 
-        // Do any additional setup after loading the view.
+        
     }
 
 

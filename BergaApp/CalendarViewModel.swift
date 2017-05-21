@@ -12,25 +12,33 @@ import RxCocoa
 
 class CalendarViewModel {
     
-    var days = [Day]()
     let monthYearStr = Variable<String>("")
     var monthPointer: Variable<Date>
     let daysGenerator: MonthDaysGenerator
+    let calendarEventsManager: CalendarEventsManager
     
     let disposeBag = DisposeBag()
     
-    let CALENDAR_SECTION = 0
-    let EVENTS_SECTION = 1
+    private let CALENDAR_SECTION = 0
+    private let EVENTS_SECTION = 1
     
     let sections = Variable<[CalendarSection]>([
-        CalendarSection(header: "Calendar", items: []),
+        CalendarSection(header: "Days", items: []),
         CalendarSection(header: "Events", items: [])
     ])
 
     init() {
         monthPointer = Variable<Date>(Date().startOfMonth())
         daysGenerator = MonthDaysGenerator()
+        calendarEventsManager = CalendarEventsManager()
         
+        generateMonthYearStringWhenMonthChanges()
+        generateDaysWhenMonthChanges()
+        
+        updateEventsSection(day: Date())
+    }
+    
+    private func generateMonthYearStringWhenMonthChanges() {
         monthPointer.asObservable()
             .map({
                 var dateStr = Commons.getStringFromDate(date: $0, format: "MMMM yyyy")
@@ -41,42 +49,44 @@ class CalendarViewModel {
             })
             .bind(to: monthYearStr)
             .addDisposableTo(disposeBag)
-        
+    }
+    
+    private func generateDaysWhenMonthChanges() {
         monthPointer.asObservable()
             .distinctUntilChanged()
             .subscribe(onNext: { _ in
-                self.setMonthDays()
+                self.updateDaysSection()
+                self.cleanEventsSection()
             })
             .addDisposableTo(disposeBag)
-        
-        updateEventsSection(day: Date())
     }
     
-    func setMonthDays() {
-        days.removeAll()
-        let daysWithEvents = CalendarEventsManager().getDaysNumberWithEvents(from: monthPointer.value)
-        days = daysGenerator.generate(from: monthPointer.value, markedDays: daysWithEvents)
-        updateDaysSection()
+    private func updateDaysSection() {
+        let daysWithEvents = calendarEventsManager.getDaysNumberWithEvents(from: monthPointer.value)
+        let days = daysGenerator.generate(from: monthPointer.value, markedDays: daysWithEvents)
+        let calendarModels = generateCalendarModels(from: days)
+        let calendarSection = CalendarSection(original: sections.value[CALENDAR_SECTION], items: calendarModels)
+        sections.value[CALENDAR_SECTION] = calendarSection
     }
     
-    func updateDaysSection() {
+    private func generateCalendarModels(from days: [Day]) -> [CalendarModelType] {
         var items = [CalendarModelType]()
         for day in days {
             let calendarModel = CalendarModelType.day(day)
             items.append(calendarModel)
         }
-        let calendarSection = CalendarSection(original: sections.value[CALENDAR_SECTION], items: items)
-        sections.value[CALENDAR_SECTION] = calendarSection
+        return items
     }
     
-    func updateEventsSection(dayAt: Int) {
-        let dayNumber = days[dayAt].number
-        if let date = daysGenerator.getDay(number: dayNumber) {
-            updateEventsSection(day: date)
+    func updateEventsSection(dayAt: IndexPath) {
+        if let day = getDay(at: dayAt) {
+            if let date = daysGenerator.getDate(number: day.number) {
+                updateEventsSection(day: date)
+            }
         }
     }
     
-    func updateEventsSection(day: Date) {
+    private func updateEventsSection(day: Date) {
         let events = CalendarEventsManager().getEventsFor(day: day)
         var items = [CalendarModelType]()
         for event in events {
@@ -100,6 +110,17 @@ class CalendarViewModel {
     func cleanEventsSection() {
         let eventsSection = CalendarSection(original: sections.value[EVENTS_SECTION], items: [])
         sections.value[EVENTS_SECTION] = eventsSection
+    }
+    
+    func getDay(at: IndexPath) -> Day? {
+        let calendarModel = sections.value[CALENDAR_SECTION].items[at.row]
+        switch calendarModel {
+        case .day(let day):
+            return day
+            
+        default:
+            return nil
+        }
     }
     
     func getEvent(at: IndexPath) -> CalendarEvent? {

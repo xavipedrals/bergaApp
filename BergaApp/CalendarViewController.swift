@@ -84,7 +84,7 @@ class CalendarViewController: UIViewController {
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
                     self.selectedIndex = indexPath
-                    self.calendarViewModel.updateEventsSection(dayAt: indexPath.row)
+                    self.calendarViewModel.updateEventsSection(dayAt: indexPath)
                 }
                 else {
                     if let event = self.calendarViewModel.getEvent(at: indexPath) {

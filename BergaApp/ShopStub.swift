@@ -13,7 +13,8 @@ class ShopStub {
     func getStub() -> [Shop] {
         
         let shop1 = Shop(
-            name: "Cal Alberich"
+            name: "Cal Alberich",
+            isPromoted: true
         )
         
         let shop2 = Shop(
@@ -25,7 +26,8 @@ class ShopStub {
         )
         
         let shop4 = Shop(
-            name: "Bar Ski"
+            name: "Bar Ski",
+            isPromoted: true
         )
         
         let shop5 = Shop(
@@ -37,7 +39,8 @@ class ShopStub {
         )
         
         let shop7 = Shop(
-            name: "Xauxa"
+            name: "Xauxa",
+            isPromoted: true
         )
         
         let shop8 = Shop(

@@ -8,18 +8,15 @@
 
 import Foundation
 
-struct Shop {
+class Shop {
     
+    //add var id
     var name: String
-    var description: String?
-    var phone: Int?
-    var schedule: String?
-    var coordinates: Coordinates?
-    var url: String?
-    var photosUrls: [String]?
+    var isPromoted: Bool
     
-    init(name: String) {
+    init(name: String, isPromoted: Bool = false) {
         self.name = name
+        self.isPromoted = isPromoted
     }
 
 }

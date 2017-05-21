@@ -73,7 +73,7 @@ class MonthDaysGenerator {
         }
     }
     
-    func getDay(number: Int) -> Date? {
+    func getDate(number: Int) -> Date? {
         let calendar = Calendar.current
         
         var dateComponents = DateComponents()

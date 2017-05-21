@@ -12,7 +12,6 @@ import MapKit
 class EventDetailViewController: UIViewController {
 
     @IBOutlet weak var iconImageView: IconImage!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
     var event: CalendarEvent?
@@ -25,8 +24,7 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = event?.name
-        
-        titleLabel.text = event?.name
+        self.navigationItem.backBarButtonItem?.title = ""
         mapView.delegate = self
         
         if let coordinates = event?.localization {
@@ -40,8 +38,6 @@ class EventDetailViewController: UIViewController {
         else {
             centerMapOnLocation(location: defaultInitialLocation)
         }
-        
-        
         
     }
     
@@ -76,12 +72,10 @@ extension EventDetailViewController: MKMapViewDelegate {
 
                 let auxView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: view.frame.height + 12))
 
-//                let auxView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.height + 10, height: view.frame.height + 12))
                 auxView.backgroundColor = Colors.red
                 let imageView = UIImageView(image: UIImage(named: event!.type.rawValue))
                 imageView.image = imageView.image!.withRenderingMode(.alwaysTemplate)
                 imageView.tintColor = UIColor.white
-//                imageView.tintColor = Colors.red
                 
                 let size: CGSize = auxView.frame.size
                 imageView.center = CGPoint(x: size.width/2, y: size.height/2)
