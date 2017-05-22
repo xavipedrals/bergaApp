@@ -31,26 +31,34 @@ class ShopListViewModel {
             .filter({ $0.characters.count > 0 })
             .map({ $0.lowercased() })
             .subscribe(onNext: { search in
-                let promotedSection = self.fullSections[self.PROMOTED_SECTION]
-                let filteredPromotedSectionItems = promotedSection.items.filter({ $0.name.lowercased().contains(search) })
-                self.sections.value[self.PROMOTED_SECTION] = ShopSection(original: self.sections.value[self.PROMOTED_SECTION], items: filteredPromotedSectionItems)
+                let promotedShops = self.getFilteredShops(sectionIndex: self.PROMOTED_SECTION, search: search)
+                self.updateSection(index: self.PROMOTED_SECTION, shops: promotedShops)
                 
-                let nonPromotedSection = self.fullSections[self.NON_PROMOTED_SECTION]
-                let filteredNonPromotedSectionItems = nonPromotedSection.items.filter({ $0.name.lowercased().contains(search) })
-                self.sections.value[self.NON_PROMOTED_SECTION] = ShopSection(original: self.sections.value[self.NON_PROMOTED_SECTION], items: filteredNonPromotedSectionItems)
+                let nonPromotedShops = self.getFilteredShops(sectionIndex: self.NON_PROMOTED_SECTION, search: search)
+                self.updateSection(index: self.NON_PROMOTED_SECTION, shops: nonPromotedShops)
             })
             .addDisposableTo(disposeBag)
         
         searchString.asObservable()
             .filter({ $0.characters.count == 0 })
             .subscribe(onNext: { _ in
-                self.sections.value[self.PROMOTED_SECTION] = ShopSection(original: self.sections.value[self.PROMOTED_SECTION], items: self.fullSections[self.PROMOTED_SECTION].items)
-                
-                self.sections.value[self.NON_PROMOTED_SECTION] = ShopSection(original: self.sections.value[self.NON_PROMOTED_SECTION], items: self.fullSections[self.NON_PROMOTED_SECTION].items)
+                self.updateSection(index: self.PROMOTED_SECTION, shops: self.fullSections[self.PROMOTED_SECTION].items)
+                self.updateSection(index: self.NON_PROMOTED_SECTION, shops: self.fullSections[self.NON_PROMOTED_SECTION].items)
             })
             .addDisposableTo(disposeBag)
         
-        }
+    }
+    
+    private func getFilteredShops(sectionIndex: Int, search: String) -> [Shop] {
+        let fullSection = fullSections[sectionIndex]
+        let filteredSectionShops = fullSection.items.filter({ $0.name.lowercased().contains(search) })
+        return filteredSectionShops
+
+    }
+    
+    private func updateSection(index: Int, shops: [Shop]) {
+        sections.value[index] = ShopSection(original: sections.value[index], items: shops)
+    }
     
     func getShops() {
         let shops = ShopStub().getStub()
