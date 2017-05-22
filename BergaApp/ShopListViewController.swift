@@ -23,7 +23,16 @@ class ShopListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createCollectionCells()
+        createCollectionHeaders()
+        createSearchBar()
         
+        collectionView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
+        
+    }
+    
+    func createCollectionCells() {
         shopListViewModel.sections.asObservable()
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
@@ -41,20 +50,28 @@ class ShopListViewController: UIViewController {
             }
         }
         
+        collectionView.rx.modelSelected(Shop.self)
+            .subscribe(onNext: { shop in
+                if shop.isPromoted {
+                    self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func createCollectionHeaders() {
         dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
             let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "shopHeader", for: indexPath) as! SectionHeaderCollectionReusableView
             
             header.initHeader(title: ds[indexPath.section].header)
             return header
         }
-        
-        collectionView.rx.modelSelected(Shop.self)
-            .subscribe(onNext: { shop in
-                self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
-            })
-            .addDisposableTo(disposeBag)
-        
-        createSearchBar()
+    }
+
+    func createSearchBar() {
+//        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Buscar"
+        self.navigationItem.titleView = searchBar
         
         searchBar.rx.cancelButtonClicked
             .subscribe(onNext: { _ in
@@ -62,15 +79,28 @@ class ShopListViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
         
-        collectionView.rx.setDelegate(self)
+        searchBar.rx.text.orEmpty
+            .bind(to: self.shopListViewModel.searchString)
             .addDisposableTo(disposeBag)
         
-    }
+        searchBar.rx.searchButtonClicked
+            .subscribe(onNext: { _ in
+                self.searchBar.resignFirstResponder()
+            })
+            .addDisposableTo(disposeBag)
+        
+        searchBar.rx.textDidBeginEditing
+            .subscribe(onNext: {
+                self.searchBar.setShowsCancelButton(true, animated: true)
+            })
+            .addDisposableTo(disposeBag)
+        
+        searchBar.rx.textDidEndEditing
+            .subscribe(onNext: {
+                self.searchBar.setShowsCancelButton(false, animated: true)
+            })
+            .addDisposableTo(disposeBag)
 
-    func createSearchBar() {
-//        searchBar.showsCancelButton = true
-        searchBar.placeholder = "Buscar"
-        self.navigationItem.titleView = searchBar
     }
     
     func hideKeyboard() {
