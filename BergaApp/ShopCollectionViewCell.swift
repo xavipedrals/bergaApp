@@ -1,14 +1,14 @@
 //
-//  PromotedShopTableViewCell.swift
+//  ShopTableViewCell.swift
 //  BergaApp
 //
-//  Created by Xavier Pedrals on 21/05/2017.
+//  Created by Xavier Pedrals on 18/05/2017.
 //  Copyright © 2017 Xavier Pedrals. All rights reserved.
 //
 
 import UIKit
 
-class PromotedShopTableViewCell: UITableViewCell {
+class ShopCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     

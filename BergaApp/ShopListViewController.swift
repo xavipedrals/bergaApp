@@ -13,42 +13,42 @@ import RxDataSources
 
 class ShopListViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    let searchBar = UISearchBar()
+    @IBOutlet weak var collectionView: UICollectionView!
     
+    let searchBar = UISearchBar()
+    var cellWidth: Double?
     let shopListViewModel = ShopListViewModel()
-    let dataSource = RxTableViewSectionedReloadDataSource<ShopSection>()
+    let dataSource = RxCollectionViewSectionedReloadDataSource<ShopSection>()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        shopListViewModel.shops.asObservable()
-//            .bind(to: tableView.rx.items(cellIdentifier: "shopCell", cellType: ShopTableViewCell.self)) {
-//                _, shop, cell in
-//                cell.initCell(from: shop)
-//            }
-//            .addDisposableTo(disposeBag)
         
         shopListViewModel.sections.asObservable()
-            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .bind(to: collectionView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
         
-        dataSource.configureCell = { ds, tv, indexPath, item in
+        dataSource.configureCell = { ds, cv, indexPath, item in
             if item.isPromoted {
-                let cell = tv.dequeueReusableCell(withIdentifier: "promotedShopCell", for: indexPath) as! PromotedShopTableViewCell
+                let cell = cv.dequeueReusableCell(withReuseIdentifier: "promotedShopCell", for: indexPath) as! PromotedShopCollectionViewCell
                 cell.initCell(from: item)
                 return cell
             }
             else {
-                let cell = tv.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath) as! ShopTableViewCell
+                let cell = cv.dequeueReusableCell(withReuseIdentifier: "shopCell", for: indexPath) as! ShopCollectionViewCell
                 cell.initCell(from: item)
                 return cell
             }
-            
         }
         
-        tableView.rx.modelSelected(Shop.self)
+        dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
+            let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "shopHeader", for: indexPath) as! SectionHeaderCollectionReusableView
+            
+            header.initHeader(title: ds[indexPath.section].header)
+            return header
+        }
+        
+        collectionView.rx.modelSelected(Shop.self)
             .subscribe(onNext: { shop in
                 self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
             })
@@ -62,6 +62,9 @@ class ShopListViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
         
+        collectionView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
+        
     }
 
     func createSearchBar() {
@@ -73,5 +76,21 @@ class ShopListViewController: UIViewController {
     func hideKeyboard() {
         self.view.endEditing(true)
     }
+    
+    override func viewDidLayoutSubviews() {
+        setCellWidth()
+    }
 
+}
+
+extension ShopListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: cellWidth!, height: 42)
+    }
+    
+    func setCellWidth () {
+        let flow: UICollectionViewFlowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width = (collectionView.frame.size.width - (flow.sectionInset.right + flow.sectionInset.left) * 2)
+        cellWidth = Double(width)
+    }
 }
