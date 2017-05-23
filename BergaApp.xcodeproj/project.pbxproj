@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4351A3E01ED431B900B18D9B /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */; };
+		4351A3E21ED4326400B18D9B /* ShopDetailStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351A3E11ED4326400B18D9B /* ShopDetailStub.swift */; };
 		4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */; };
 		4352956E1ECB14710017FB9E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956D1ECB14710017FB9E /* Colors.swift */; };
 		435295711ECB311C0017FB9E /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435295701ECB311C0017FB9E /* EventAnnotation.swift */; };
@@ -72,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
+		4351A3E11ED4326400B18D9B /* ShopDetailStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailStub.swift; sourceTree = "<group>"; };
 		4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		4352956D1ECB14710017FB9E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		435295701ECB311C0017FB9E /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 			children = (
 				473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */,
 				471DACDB1ED214C50090C6CD /* ShopDetail.swift */,
+				4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */,
+				4351A3E11ED4326400B18D9B /* ShopDetailStub.swift */,
 			);
 			name = ShopDetail;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4351A3E01ED431B900B18D9B /* ShopDetailViewModel.swift in Sources */,
 				470551301EC751ED0016E366 /* Commons.swift in Sources */,
 				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
 				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
@@ -485,6 +492,7 @@
 				437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */,
 				47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */,
 				479FFBA31ECE40E100BA8106 /* ShopListViewModel.swift in Sources */,
+				4351A3E21ED4326400B18D9B /* ShopDetailStub.swift in Sources */,
 				471DACDE1ED233250090C6CD /* PromotedShopCollectionViewCell.swift in Sources */,
 				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
 				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,

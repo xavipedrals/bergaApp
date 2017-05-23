@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import RxSwift
+import RxCocoa
 
 class ShopDetailViewController: UIViewController {
 
