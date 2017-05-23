@@ -535,7 +535,7 @@
             </objects>
             <point key="canvasLocation" x="1792.8" y="803.74812593703155"/>
         </scene>
-        <!--Shop Detail View Controller-->
+        <!--Shop Name-->
         <scene sceneID="vFv-e6-3zI">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="zl9-OJ-Axz" customClass="ShopDetailViewController" customModule="BergaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -551,13 +551,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uvU-uY-xsD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="784"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="832"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HgC-4Y-0Wp">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XB9-eP-Itr">
+                                                        <rect key="frame" x="20" y="15" width="335" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="3WM-EI-JDr"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="Informació"/>
+                                                            <segment title="Notificacions"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="XB9-eP-Itr" firstAttribute="top" secondItem="HgC-4Y-0Wp" secondAttribute="top" constant="15" id="1LW-Dt-3A9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XB9-eP-Itr" secondAttribute="trailing" constant="20" id="QWV-23-dC2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="XB9-eP-Itr" secondAttribute="bottom" constant="5" id="y8R-Ca-GN6"/>
+                                                    <constraint firstItem="XB9-eP-Itr" firstAttribute="leading" secondItem="HgC-4Y-0Wp" secondAttribute="leading" constant="20" id="zOi-hd-kUH"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6b9-8P-jCp">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="48" width="375" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor tortor vitae urna pharetra ultricies vitae vel lacus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjF-HF-rdk">
-                                                        <rect key="frame" x="10" y="15" width="355" height="65"/>
+                                                        <rect key="frame" x="10" y="10" width="355" height="70"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -565,14 +588,14 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="ZjF-HF-rdk" firstAttribute="top" secondItem="6b9-8P-jCp" secondAttribute="top" constant="15" id="50R-Bl-bQ5"/>
+                                                    <constraint firstItem="ZjF-HF-rdk" firstAttribute="top" secondItem="6b9-8P-jCp" secondAttribute="top" constant="10" id="50R-Bl-bQ5"/>
                                                     <constraint firstAttribute="bottom" secondItem="ZjF-HF-rdk" secondAttribute="bottom" constant="10" id="9Mr-QJ-d0H"/>
                                                     <constraint firstAttribute="trailing" secondItem="ZjF-HF-rdk" secondAttribute="trailing" constant="10" id="Zv1-iI-yaC"/>
                                                     <constraint firstItem="ZjF-HF-rdk" firstAttribute="leading" secondItem="6b9-8P-jCp" secondAttribute="leading" constant="10" id="ykx-Wy-n5W"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMa-ba-yKm">
-                                                <rect key="frame" x="0.0" y="90" width="375" height="80"/>
+                                                <rect key="frame" x="0.0" y="138" width="375" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="93 822 40 60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heT-yr-Urf">
                                                         <rect key="frame" x="135.5" y="10" width="104" height="45"/>
@@ -609,7 +632,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pE7-4p-qBV">
-                                                <rect key="frame" x="0.0" y="170" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="218" width="375" height="50"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="n3W-AD-oW5" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="5.5" width="24" height="24"/>
@@ -637,7 +660,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sv-EG-KBB">
-                                                <rect key="frame" x="0.0" y="220" width="375" height="226"/>
+                                                <rect key="frame" x="0.0" y="268" width="375" height="226"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="stA-dr-n11">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
@@ -656,7 +679,7 @@
                                                 </constraints>
                                             </view>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KVB-Bx-S6n">
-                                                <rect key="frame" x="0.0" y="446" width="375" height="338"/>
+                                                <rect key="frame" x="0.0" y="494" width="375" height="338"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="KVB-Bx-S6n" secondAttribute="height" multiplier="10/9" id="Tcv-ZO-qlj"/>
                                                 </constraints>
@@ -681,6 +704,13 @@
                             <constraint firstAttribute="trailing" secondItem="VaD-Rl-kMp" secondAttribute="trailing" id="rND-NF-iNx"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Shop Name" id="FhJ-x3-lxt">
+                        <barButtonItem key="rightBarButtonItem" image="notifications-off" id="b4Y-2E-fFH">
+                            <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -872,6 +902,7 @@
         <image name="iconmonstr-phone" width="24" height="24"/>
         <image name="majorFest" width="24" height="24"/>
         <image name="newspaper-folded" width="25" height="25"/>
+        <image name="notifications-off" width="24" height="24"/>
         <image name="shopping-bag" width="25" height="25"/>
     </resources>
 </document>
