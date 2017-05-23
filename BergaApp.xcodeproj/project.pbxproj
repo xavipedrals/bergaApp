@@ -192,13 +192,13 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		473EE0171ED0579F006AAC71 /* Shop detail */ = {
+		473EE0171ED0579F006AAC71 /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
 				473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */,
 				471DACDB1ED214C50090C6CD /* ShopDetail.swift */,
 			);
-			name = "Shop detail";
+			name = ShopDetail;
 			sourceTree = "<group>";
 		};
 		479315CC1EC5FDED00845C6C = {
@@ -231,7 +231,7 @@
 				470551211EC6F9290016E366 /* Calendar */,
 				4352956F1ECB30D90017FB9E /* EventDetail */,
 				479FFB9F1ECE404A00BA8106 /* Shops */,
-				473EE0171ED0579F006AAC71 /* Shop detail */,
+				473EE0171ED0579F006AAC71 /* ShopDetail */,
 				479315E11EC5FDED00845C6C /* LaunchScreen.storyboard */,
 				479315DC1EC5FDED00845C6C /* Main.storyboard */,
 				479315D81EC5FDED00845C6C /* AppDelegate.swift */,

@@ -17,6 +17,7 @@ class ShopListViewController: UIViewController {
     
     let searchBar = UISearchBar()
     var cellWidth: Double?
+    var selectedShop: Shop?
     let shopListViewModel = ShopListViewModel()
     let dataSource = RxCollectionViewSectionedReloadDataSource<ShopSection>()
     let disposeBag = DisposeBag()
@@ -53,6 +54,7 @@ class ShopListViewController: UIViewController {
         collectionView.rx.modelSelected(Shop.self)
             .subscribe(onNext: { shop in
                 if shop.isPromoted {
+                    self.selectedShop = shop
                     self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
                 }
             })
@@ -109,6 +111,13 @@ class ShopListViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         setCellWidth()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToShopDetail" {
+            let vc = segue.destination as! ShopDetailViewController
+            vc.shop = selectedShop
+        }
     }
 
 }
