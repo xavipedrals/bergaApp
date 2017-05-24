@@ -16,6 +16,8 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var shop: Shop?
     var number = "938224060"
+    let notificationsActivated = Variable<Bool>(false)
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,14 @@ class ShopDetailViewController: UIViewController {
         self.title = shop?.name
         self.navigationItem.backBarButtonItem?.title = ""
 
-        
+        notificationsActivated.asObservable()
+            .map({
+                $0 ? "notifications" : "notification_none"
+            })
+            .subscribe(onNext: { imgName in
+                self.navigationItem.rightBarButtonItem?.image = UIImage(named: imgName)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     @IBAction func callPressed(_ sender: Any) {
@@ -38,5 +47,8 @@ class ShopDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func notificationsPressed(_ sender: Any) {
+        notificationsActivated.value = !notificationsActivated.value
+    }
 
 }

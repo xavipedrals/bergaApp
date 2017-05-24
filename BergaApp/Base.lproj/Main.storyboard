@@ -171,7 +171,7 @@
                                         <rect key="frame" x="28.5" y="76" width="318" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="318" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-dm-Ksn">
@@ -380,7 +380,7 @@
                                         <rect key="frame" x="31.5" y="40" width="312" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="42"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPU-Eh-9gH">
@@ -440,7 +440,7 @@
                                         <rect key="frame" x="31.5" y="82" width="312" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="42"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-nc-DrW">
@@ -557,7 +557,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XB9-eP-Itr">
-                                                        <rect key="frame" x="20" y="15" width="335" height="29"/>
+                                                        <rect key="frame" x="15" y="15" width="345" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="28" id="3WM-EI-JDr"/>
                                                         </constraints>
@@ -571,16 +571,16 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="XB9-eP-Itr" firstAttribute="top" secondItem="HgC-4Y-0Wp" secondAttribute="top" constant="15" id="1LW-Dt-3A9"/>
-                                                    <constraint firstAttribute="trailing" secondItem="XB9-eP-Itr" secondAttribute="trailing" constant="20" id="QWV-23-dC2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XB9-eP-Itr" secondAttribute="trailing" constant="15" id="QWV-23-dC2"/>
                                                     <constraint firstAttribute="bottom" secondItem="XB9-eP-Itr" secondAttribute="bottom" constant="5" id="y8R-Ca-GN6"/>
-                                                    <constraint firstItem="XB9-eP-Itr" firstAttribute="leading" secondItem="HgC-4Y-0Wp" secondAttribute="leading" constant="20" id="zOi-hd-kUH"/>
+                                                    <constraint firstItem="XB9-eP-Itr" firstAttribute="leading" secondItem="HgC-4Y-0Wp" secondAttribute="leading" constant="15" id="zOi-hd-kUH"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6b9-8P-jCp">
                                                 <rect key="frame" x="0.0" y="48" width="375" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor tortor vitae urna pharetra ultricies vitae vel lacus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjF-HF-rdk">
-                                                        <rect key="frame" x="10" y="10" width="355" height="70"/>
+                                                        <rect key="frame" x="15" y="10" width="345" height="70"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -590,8 +590,8 @@
                                                 <constraints>
                                                     <constraint firstItem="ZjF-HF-rdk" firstAttribute="top" secondItem="6b9-8P-jCp" secondAttribute="top" constant="10" id="50R-Bl-bQ5"/>
                                                     <constraint firstAttribute="bottom" secondItem="ZjF-HF-rdk" secondAttribute="bottom" constant="10" id="9Mr-QJ-d0H"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ZjF-HF-rdk" secondAttribute="trailing" constant="10" id="Zv1-iI-yaC"/>
-                                                    <constraint firstItem="ZjF-HF-rdk" firstAttribute="leading" secondItem="6b9-8P-jCp" secondAttribute="leading" constant="10" id="ykx-Wy-n5W"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ZjF-HF-rdk" secondAttribute="trailing" constant="15" id="Zv1-iI-yaC"/>
+                                                    <constraint firstItem="ZjF-HF-rdk" firstAttribute="leading" secondItem="6b9-8P-jCp" secondAttribute="leading" constant="15" id="ykx-Wy-n5W"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMa-ba-yKm">
@@ -635,7 +635,7 @@
                                                 <rect key="frame" x="0.0" y="218" width="375" height="50"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="n3W-AD-oW5" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="5.5" width="24" height="24"/>
+                                                        <rect key="frame" x="15" y="5.5" width="24" height="24"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
                                                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -643,7 +643,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Open from 9am to 5pm on weekdays" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-TB-Mas">
-                                                        <rect key="frame" x="44" y="0.0" width="321" height="35"/>
+                                                        <rect key="frame" x="49" y="0.0" width="311" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -654,9 +654,9 @@
                                                     <constraint firstItem="n3W-AD-oW5" firstAttribute="centerY" secondItem="w8j-TB-Mas" secondAttribute="centerY" id="358-z0-Vaq"/>
                                                     <constraint firstItem="w8j-TB-Mas" firstAttribute="leading" secondItem="n3W-AD-oW5" secondAttribute="trailing" constant="10" id="9Kf-cw-pNZ"/>
                                                     <constraint firstItem="w8j-TB-Mas" firstAttribute="top" secondItem="pE7-4p-qBV" secondAttribute="top" id="A7W-At-h48"/>
-                                                    <constraint firstAttribute="trailing" secondItem="w8j-TB-Mas" secondAttribute="trailing" constant="10" id="bGQ-Ht-El1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="w8j-TB-Mas" secondAttribute="trailing" constant="15" id="bGQ-Ht-El1"/>
                                                     <constraint firstAttribute="bottom" secondItem="w8j-TB-Mas" secondAttribute="bottom" constant="15" id="pqP-F5-203"/>
-                                                    <constraint firstItem="n3W-AD-oW5" firstAttribute="leading" secondItem="pE7-4p-qBV" secondAttribute="leading" constant="10" id="ubH-iM-UCX"/>
+                                                    <constraint firstItem="n3W-AD-oW5" firstAttribute="leading" secondItem="pE7-4p-qBV" secondAttribute="leading" constant="15" id="ubH-iM-UCX"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sv-EG-KBB">
@@ -706,8 +706,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Shop Name" id="FhJ-x3-lxt">
-                        <barButtonItem key="rightBarButtonItem" image="notifications-off" id="b4Y-2E-fFH">
+                        <barButtonItem key="rightBarButtonItem" image="bell" id="b4Y-2E-fFH">
                             <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="notificationsPressed:" destination="zl9-OJ-Axz" id="fDo-4f-nwt"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -896,13 +899,13 @@
     </scenes>
     <resources>
         <image name="arrow" width="24" height="24"/>
+        <image name="bell" width="24" height="24"/>
         <image name="calendar" width="25" height="25"/>
         <image name="clock" width="24" height="24"/>
         <image name="ic_share_white" width="24" height="24"/>
         <image name="iconmonstr-phone" width="24" height="24"/>
         <image name="majorFest" width="24" height="24"/>
         <image name="newspaper-folded" width="25" height="25"/>
-        <image name="notifications-off" width="24" height="24"/>
         <image name="shopping-bag" width="25" height="25"/>
     </resources>
 </document>
