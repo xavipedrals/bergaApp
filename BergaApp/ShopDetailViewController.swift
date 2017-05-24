@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import MapKit
 import RxSwift
 import RxCocoa
 
 class ShopDetailViewController: UIViewController {
 
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var infoContainerView: UIView!
+    @IBOutlet weak var notificationsContainerView: UIView!
+    
     var shop: Shop?
-    var number = "938224060"
     let notificationsActivated = Variable<Bool>(false)
     let disposeBag = DisposeBag()
     
@@ -35,18 +35,25 @@ class ShopDetailViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
-    @IBAction func callPressed(_ sender: Any) {
-        callNumber(number)
+    @IBAction func segmentChanged(_ sender: Any) {
+        changeSegment()
     }
     
-    private func callNumber(_ phoneNumber: String) {
-        if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
-            if UIApplication.shared.canOpenURL(phoneCallURL) {
-                UIApplication.shared.openURL(phoneCallURL)
-            }
-        }
+    func changeSegment() {
+        notificationsContainerView.isHidden = !notificationsContainerView.isHidden
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shopInfoSegue" {
+            let shopInfoVC = segue.destination as! ShopInfoViewController
+            shopInfoVC.shop = self.shop
+        }
+        else if segue.identifier == "shopNotificationsSegue" {
+            let shopNotificationsVC = segue.destination as! ShopNotificationsViewController
+            shopNotificationsVC.shop = self.shop
+        }
+    }
+    
     @IBAction func notificationsPressed(_ sender: Any) {
         notificationsActivated.value = !notificationsActivated.value
     }
