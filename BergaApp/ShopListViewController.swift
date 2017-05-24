@@ -71,7 +71,7 @@ class ShopListViewController: UIViewController {
     }
 
     func createSearchBar() {
-//        searchBar.showsCancelButton = true
+        searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "Buscar"
         self.navigationItem.titleView = searchBar
         
