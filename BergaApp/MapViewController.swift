@@ -22,10 +22,10 @@ class MapViewController: UIViewController {
                 let placemark = MKPlacemark(placemark: firstPlacemark)
                 self.centerMapOnRegion(coordinates: placemark.coordinate)
                 
-                let eventAnnotation = EventAnnotation(from: placemark)
+                let customAnnotation = CustomAnnotation(from: placemark)
                 
-                self.mapView.addAnnotation(eventAnnotation)
-                self.mapView.selectAnnotation(eventAnnotation, animated: true)
+                self.mapView.addAnnotation(customAnnotation)
+                self.mapView.selectAnnotation(customAnnotation, animated: true)
             }
         })
     }
@@ -40,7 +40,7 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? EventAnnotation {
+        if let annotation = annotation as? CustomAnnotation {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
@@ -102,7 +102,7 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let location = view.annotation as! EventAnnotation
+        let location = view.annotation as! CustomAnnotation
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMaps(launchOptions: launchOptions)
     }

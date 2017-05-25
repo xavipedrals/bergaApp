@@ -26,7 +26,6 @@ class EventDetailViewController: MapViewController {
         if let address = event?.address {
             addAddressPin(address)
         }
-        
     }
 
 }
@@ -35,7 +34,7 @@ class EventDetailViewController: MapViewController {
 extension EventDetailViewController {
     
     override func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? EventAnnotation {
+        if let annotation = annotation as? CustomAnnotation {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)

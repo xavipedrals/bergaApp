@@ -11,7 +11,7 @@
 		4351A3E21ED4326400B18D9B /* ShopDetailStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351A3E11ED4326400B18D9B /* ShopDetailStub.swift */; };
 		4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */; };
 		4352956E1ECB14710017FB9E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956D1ECB14710017FB9E /* Colors.swift */; };
-		435295711ECB311C0017FB9E /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435295701ECB311C0017FB9E /* EventAnnotation.swift */; };
+		435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435295701ECB311C0017FB9E /* CustomAnnotation.swift */; };
 		437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */; };
 		439DF4E11ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DF4E01ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift */; };
 		470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551231EC6F9690016E366 /* CalendarViewController.swift */; };
@@ -86,7 +86,7 @@
 		4351A3E11ED4326400B18D9B /* ShopDetailStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailStub.swift; sourceTree = "<group>"; };
 		4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		4352956D1ECB14710017FB9E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		435295701ECB311C0017FB9E /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		435295701ECB311C0017FB9E /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		439DF4E01ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		470551231EC6F9690016E366 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */,
-				435295701ECB311C0017FB9E /* EventAnnotation.swift */,
+				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -544,7 +544,7 @@
 				479FFBA91ECE443E00BA8106 /* ShopCollectionViewCell.swift in Sources */,
 				47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
-				435295711ECB311C0017FB9E /* EventAnnotation.swift in Sources */,
+				435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
 				47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,

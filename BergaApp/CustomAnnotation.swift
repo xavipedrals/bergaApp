@@ -1,5 +1,5 @@
 //
-//  EventAnnotation.swift
+//  CustomAnnotation.swift
 //  BergaApp
 //
 //  Created by Xavier Pedrals on 16/05/2017.
@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 import AddressBook
 
-class EventAnnotation: NSObject, MKAnnotation {
+class CustomAnnotation: NSObject, MKAnnotation {
     
     var title: String?
     var subtitle: String?
