@@ -14,6 +14,7 @@ class NotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var bodyLabel: UILabel!
     
     func initCell(from notification: ShopNotification) {
+        self.selectionStyle = .none
         titleLabel.text = notification.title
         bodyLabel.text = notification.body
     }

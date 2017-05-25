@@ -17,11 +17,14 @@ class ShopInfoViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
+    @IBOutlet weak var photosCollectionView: UICollectionView!
     
+    var cellWidth: Double?
     var shopDetailViewModel: ShopDetailViewModel?
     var shop: Shop?
     var number = "938224060"
     let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,12 @@ class ShopInfoViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
         
+        shopDetailViewModel!.photosUrl.asObservable()
+            .bind(to: photosCollectionView.rx.items(cellIdentifier: "shopPhotoCell", cellType: ShopPhotoCollectionViewCell.self)) {
+                _, url, cell in
+                cell.initCell(url: url)
+            }
+            .addDisposableTo(disposeBag)
     }
     
     func initVisuals(shopDetail: ShopDetail) {
@@ -44,13 +53,7 @@ class ShopInfoViewController: UIViewController {
             
         }
         if let phone = shopDetail.phone {
-            var phoneString = String(phone)
-//            phoneString.insert(" ", at: phoneString.index(phoneString.start, offsetBy: <#T##String.IndexDistance#>))
-            
-            phoneLabel.text = String(phone)
-        }
-        if let photos = shopDetail.photosUrls {
-            
+            phoneLabel.text = getPhoneString(phone)
         }
         if let schedule = shopDetail.schedule {
             scheduleLabel.text = schedule
@@ -58,6 +61,17 @@ class ShopInfoViewController: UIViewController {
         if let url = shopDetail.url {
 //            urlLabel.text = url
         }
+    }
+    
+    func getPhoneString(_ number: Int) -> String {
+        var phoneStr = String(number)
+        if phoneStr.length >= 9 {
+            phoneStr.insert(" ", at: phoneStr.index(phoneStr.startIndex, offsetBy: 2))
+            phoneStr.insert(" ", at: phoneStr.index(phoneStr.startIndex, offsetBy: 6))
+            phoneStr.insert(" ", at: phoneStr.index(phoneStr.startIndex, offsetBy: 9))
+        }
+        return phoneStr
+        
     }
 
     @IBAction func callPressed(_ sender: Any) {
@@ -71,5 +85,21 @@ class ShopInfoViewController: UIViewController {
             }
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        setCellWidth()
+    }
 
+}
+
+extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: cellWidth!, height: cellWidth! * 16 / 9)
+    }
+    
+    func setCellWidth () {
+        let flow: UICollectionViewFlowLayout = photosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width = (photosCollectionView.frame.size.width - (flow.sectionInset.right + flow.sectionInset.left) * 2)
+        cellWidth = Double(width)
+    }
 }
