@@ -18,6 +18,7 @@ class ShopInfoViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
+    @IBOutlet weak var urlLabel: UILabel!
     
     var cellWidth: Double?
     var shopDetailViewModel: ShopDetailViewModel?
@@ -62,7 +63,7 @@ class ShopInfoViewController: UIViewController {
             scheduleLabel.text = schedule
         }
         if let url = shopDetail.url {
-//            urlLabel.text = url
+            urlLabel.text = url
         }
     }
     
@@ -89,6 +90,14 @@ class ShopInfoViewController: UIViewController {
         }
     }
     
+    @IBAction func linkPressed(_ sender: Any) {
+        if let url = shopDetailViewModel!.shopDetail.value.url {
+            if let urlFormated = URL(string: url) {
+                UIApplication.shared.openURL(urlFormated)
+            }
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         setCellWidth()
     }
@@ -97,7 +106,7 @@ class ShopInfoViewController: UIViewController {
 
 extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth!, height: cellWidth! * 9 / 16)
+        return CGSize(width: cellWidth!, height: cellWidth! * 3 / 4)
     }
     
     func setCellWidth () {
