@@ -15,10 +15,8 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var event: CalendarEvent?
-    var eventAnnotation: EventAnnotation?
-    var initialLocation: CLLocation?
-    let regionRadius: CLLocationDistance = 750
-    let defaultInitialLocation = CLLocation(latitude: 42.1012595, longitude: 1.8439221) //Berga
+//    var eventAnnotation: EventAnnotation?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,27 +25,39 @@ class EventDetailViewController: UIViewController {
         self.navigationItem.backBarButtonItem?.title = ""
         mapView.delegate = self
         
-        if let coordinates = event?.localization {
-            eventAnnotation = EventAnnotation(from: event!)
-            mapView.addAnnotation(eventAnnotation!)
-            mapView.selectAnnotation(eventAnnotation!, animated: false)
-            
-            initialLocation = CLLocation(latitude: coordinates.lat, longitude: coordinates.long)
-            centerMapOnLocation(location: initialLocation!)
-        }
-        else {
-            centerMapOnLocation(location: defaultInitialLocation)
+        if let address = event?.address {
+            addAddressPin(address)
         }
         
     }
     
-    
-    
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
-        mapView.setRegion(coordinateRegion, animated: true)
+    func addAddressPin(_ address: String) {
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(address, completionHandler: { (placemarks: [CLPlacemark]?, error: Error?) -> Void in
+            if let firstPlacemark = placemarks?.first {
+                
+                let placemark = MKPlacemark(placemark: firstPlacemark)
+                self.centerMapOnRegion(coordinates: placemark.coordinate)
+                
+                let eventAnnotation = EventAnnotation(from: placemark)
+                
+                self.mapView.addAnnotation(eventAnnotation)
+                
+                
+                
+                self.mapView.selectAnnotation(eventAnnotation, animated: true)
+            }
+        })
     }
+    
+    func centerMapOnRegion(coordinates: CLLocationCoordinate2D) {
+        let regionRadius: CLLocationDistance = 2000
+        let region = MKCoordinateRegionMakeWithDistance(coordinates, regionRadius, regionRadius)
+        
+        self.mapView.setRegion(region, animated: true)
+    }
+
 }
 
 extension EventDetailViewController: MKMapViewDelegate {

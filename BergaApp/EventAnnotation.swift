@@ -13,29 +13,28 @@ import AddressBook
 class EventAnnotation: NSObject, MKAnnotation {
     
     var title: String?
-//    var subtitle: String?
-    var locationName: String
-    var discipline: String
+    var subtitle: String?
     var coordinate: CLLocationCoordinate2D
     
-    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
-        self.locationName = locationName
-        self.discipline = discipline
         self.coordinate = coordinate
         
         super.init()
     }
     
-    init(from event: CalendarEvent) {
-        self.title = event.name
-        self.locationName = "Berga, el millor poble"
-        self.discipline = "sida"
-        self.coordinate = CLLocationCoordinate2D(latitude: event.localization!.lat, longitude: event.localization!.long)
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
+        self.title = title
+        self.subtitle = subtitle
+        self.coordinate = coordinate
+        
+        super.init()
     }
     
-    var subtitle: String? {
-        return locationName
+    init(from placemark: MKPlacemark) {
+        self.title = placemark.title
+//        self.subtitle = placemark.subtitle
+        self.coordinate = placemark.coordinate
     }
     
     func mapItem() -> MKMapItem {

@@ -24,18 +24,19 @@ struct CalendarEvent {
     var date: Date
     var name: String
     var type: CalendarEventType
-    var localization: Coordinates?
+    var address: String
+//    var localization: Coordinates?
     
-    init(date: Date, name: String, type: CalendarEventType) {
+//    init(date: Date, name: String, type: CalendarEventType) {
+//        self.date = date
+//        self.name = name
+//        self.type = type
+//    }
+    
+    init(date: Date, name: String, type: CalendarEventType, address: String) {
         self.date = date
         self.name = name
         self.type = type
-    }
-    
-    init(date: Date, name: String, type: CalendarEventType, lat: Double, long: Double) {
-        self.date = date
-        self.name = name
-        self.type = type
-        self.localization = Coordinates(lat: lat, long: long)
+        self.address = address
     }
 }
