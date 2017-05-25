@@ -12,7 +12,6 @@ import MapKit
 class EventDetailViewController: MapViewController {
 
     @IBOutlet weak var iconImageView: IconImage!
-    @IBOutlet weak var mapView: MKMapView!
     
     var event: CalendarEvent?
     
@@ -28,29 +27,6 @@ class EventDetailViewController: MapViewController {
             addAddressPin(address)
         }
         
-    }
-    
-    func addAddressPin(_ address: String) {
-        let geocoder = CLGeocoder()
-        
-        geocoder.geocodeAddressString(address, completionHandler: { (placemarks: [CLPlacemark]?, error: Error?) -> Void in
-            if let firstPlacemark = placemarks?.first {
-                
-                let placemark = MKPlacemark(placemark: firstPlacemark)
-                self.centerMapOnRegion(coordinates: placemark.coordinate)
-                
-                let eventAnnotation = EventAnnotation(from: placemark)
-                
-                self.mapView.addAnnotation(eventAnnotation)
-                self.mapView.selectAnnotation(eventAnnotation, animated: true)
-            }
-        })
-    }
-    
-    func centerMapOnRegion(coordinates: CLLocationCoordinate2D) {
-        let regionRadius: CLLocationDistance = 2000
-        let region = MKCoordinateRegionMakeWithDistance(coordinates, regionRadius, regionRadius)
-        self.mapView.setRegion(region, animated: true)
     }
 
 }

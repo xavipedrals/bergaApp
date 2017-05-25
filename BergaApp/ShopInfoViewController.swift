@@ -13,7 +13,6 @@ import RxCocoa
 
 class ShopInfoViewController: MapViewController {
 
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
@@ -83,47 +82,6 @@ class ShopInfoViewController: MapViewController {
         }
         return phoneStr
         
-    }
-    
-//    func addAddressPin(_ address: String) {
-//        let location = address
-//        let geocoder:CLGeocoder = CLGeocoder()
-//        
-//        geocoder.geocodeAddressString(location, completionHandler: { (placemarks: [CLPlacemark]?, error: Error?) -> Void in
-//            if let firstPlacemark = placemarks?.first {
-//                
-//                let placemark: MKPlacemark = MKPlacemark(placemark: firstPlacemark)
-//                let regionRadius: CLLocationDistance = 2000
-//                let region = MKCoordinateRegionMakeWithDistance(placemark.coordinate, regionRadius, regionRadius)
-//                
-//                self.mapView.setRegion(region, animated: true);
-//                self.mapView.addAnnotation(placemark);
-//                
-//            }
-//        })
-//    }
-    
-    func addAddressPin(_ address: String) {
-        let geocoder = CLGeocoder()
-        
-        geocoder.geocodeAddressString(address, completionHandler: { (placemarks: [CLPlacemark]?, error: Error?) -> Void in
-            if let firstPlacemark = placemarks?.first {
-                
-                let placemark = MKPlacemark(placemark: firstPlacemark)
-                self.centerMapOnRegion(coordinates: placemark.coordinate)
-                
-                let eventAnnotation = EventAnnotation(from: placemark)
-                
-                self.mapView.addAnnotation(eventAnnotation)
-                self.mapView.selectAnnotation(eventAnnotation, animated: true)
-            }
-        })
-    }
-    
-    func centerMapOnRegion(coordinates: CLLocationCoordinate2D) {
-        let regionRadius: CLLocationDistance = 2000
-        let region = MKCoordinateRegionMakeWithDistance(coordinates, regionRadius, regionRadius)
-        self.mapView.setRegion(region, animated: true)
     }
 
     @IBAction func callPressed(_ sender: Any) {
