@@ -34,7 +34,6 @@ class CalendarViewModel {
         
         generateMonthYearStringWhenMonthChanges()
         generateDaysWhenMonthChanges()
-        
         updateEventsSection(day: Date())
     }
     

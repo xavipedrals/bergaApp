@@ -25,13 +25,6 @@ struct CalendarEvent {
     var name: String
     var type: CalendarEventType
     var address: String
-//    var localization: Coordinates?
-    
-//    init(date: Date, name: String, type: CalendarEventType) {
-//        self.date = date
-//        self.name = name
-//        self.type = type
-//    }
     
     init(date: Date, name: String, type: CalendarEventType, address: String) {
         self.date = date

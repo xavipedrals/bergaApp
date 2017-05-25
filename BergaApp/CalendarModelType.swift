@@ -16,30 +16,32 @@ enum CalendarModelType {
 
 extension CalendarModelType: Equatable {
     static func ==(lhs: CalendarModelType, rhs: CalendarModelType) -> Bool {
-        var dayl: Day?
-        var dayr: Day?
-        var eventl: CalendarEvent?
-        var eventr: CalendarEvent?
-        
-        switch lhs {
-        case .day(let day):
+        switch (lhs, rhs) {
+        case (let .day(dl), let .day(dr)):
+            return dl.number == dr.number && dl.hasEvents == dr.hasEvents && dl.isToday == dr.isToday
             
-            return false
+        case (let .calendarEvent(el), let .calendarEvent(er)):
+            return el.date == er.date && el.name == er.name && el.type == er.type && el.address == er.address
             
-        case .calendarEvent(let event):
-            
+        default:
             return false
         }
-        
-        
     }
 }
-//
-//extension CalendarModelType: IdentifiableType {
-//    typealias Identity = String
-//    
-//    public var identity: Identity { return self.identity }
-//}
+
+extension CalendarModelType: IdentifiableType {
+    typealias Identity = String
+    
+    public var identity: Identity {
+        switch self {
+        case .day(let day):
+            return String(day.number)
+            
+        case .calendarEvent(let event):
+            return event.name
+        }
+    }
+}
 
 struct CalendarSection {
     var header: String
@@ -50,7 +52,7 @@ struct CalendarSection {
     }
 }
 
-extension CalendarSection: SectionModelType{
+extension CalendarSection: AnimatableSectionModelType {
     typealias Item = CalendarModelType
     
     init(original: CalendarSection, items: [Item]) {

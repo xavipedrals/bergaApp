@@ -16,7 +16,9 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     
     var cellWidth: Double?
-    let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
+//    let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
+    let dataSource = RxCollectionViewSectionedAnimatedDataSource<CalendarSection>()
+
     let calendarViewModel = CalendarViewModel()
     let disposeBag = DisposeBag()
     var selectedIndex: IndexPath?
@@ -25,12 +27,12 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initVisuals()
+        setNavigationTitle()
         configureCollectionView()
         configureSwipe()
     }
     
-    func initVisuals() {
+    func setNavigationTitle() {
         let titleLabel = UILabel()
 
         calendarViewModel.monthYearStr.asObservable()
@@ -154,8 +156,16 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: cellWidth!, height: cellWidth!)
+            return getDayCellSize()
         }
+        return getEventCellSize()
+    }
+    
+    func getDayCellSize() -> CGSize {
+        return CGSize(width: cellWidth!, height: cellWidth!)
+    }
+    
+    func getEventCellSize() -> CGSize {
         let width = UIScreen.main.bounds.width - 20
         return CGSize(width: width, height: 50)
     }
