@@ -23,7 +23,6 @@ class ShopInfoViewController: UIViewController {
     var cellWidth: Double?
     var shopDetailViewModel: ShopDetailViewModel?
     var shop: Shop?
-    var number = "938224060"
     let disposeBag = DisposeBag()
     
     
@@ -47,6 +46,7 @@ class ShopInfoViewController: UIViewController {
         
         photosCollectionView.rx.setDelegate(self)
         .addDisposableTo(disposeBag)
+        
     }
     
     func initVisuals(shopDetail: ShopDetail) {
@@ -65,6 +65,9 @@ class ShopInfoViewController: UIViewController {
         if let url = shopDetail.url {
             urlLabel.text = url
         }
+        if let address = shopDetail.address {
+            addAddressPin(address)
+        }
     }
     
     func getPhoneString(_ number: Int) -> String {
@@ -77,9 +80,29 @@ class ShopInfoViewController: UIViewController {
         return phoneStr
         
     }
+    
+    func addAddressPin(_ address: String) {
+        let location = address
+        let geocoder:CLGeocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(location, completionHandler: { (placemarks: [CLPlacemark]?, error: Error?) -> Void in
+            if let firstPlacemark = placemarks?.first {
+                
+                let placemark: MKPlacemark = MKPlacemark(placemark: firstPlacemark)
+                let regionRadius: CLLocationDistance = 2000
+                let region = MKCoordinateRegionMakeWithDistance(placemark.coordinate, regionRadius, regionRadius)
+                
+                self.mapView.setRegion(region, animated: true);
+                self.mapView.addAnnotation(placemark);
+                
+            }
+        })
+    }
 
     @IBAction func callPressed(_ sender: Any) {
-        callNumber(number)
+        if let number = shopDetailViewModel!.shopDetail.value.phone {
+            callNumber(String(number))
+        }
     }
     
     private func callNumber(_ phoneNumber: String) {

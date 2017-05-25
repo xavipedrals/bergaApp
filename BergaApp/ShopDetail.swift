@@ -16,6 +16,7 @@ class ShopDetail: Shop {
     var coordinates: Coordinates?
     var url: String?
     var photosUrls: [String]?
+    var address: String?
     
     override init(name: String, isPromoted: Bool = false) {
         super.init(name: name, isPromoted: isPromoted)
