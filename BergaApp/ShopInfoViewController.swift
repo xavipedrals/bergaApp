@@ -43,6 +43,9 @@ class ShopInfoViewController: UIViewController {
                 cell.initCell(url: url)
             }
             .addDisposableTo(disposeBag)
+        
+        photosCollectionView.rx.setDelegate(self)
+        .addDisposableTo(disposeBag)
     }
     
     func initVisuals(shopDetail: ShopDetail) {
@@ -94,7 +97,7 @@ class ShopInfoViewController: UIViewController {
 
 extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth!, height: cellWidth! * 16 / 9)
+        return CGSize(width: cellWidth!, height: cellWidth! * 9 / 16)
     }
     
     func setCellWidth () {
