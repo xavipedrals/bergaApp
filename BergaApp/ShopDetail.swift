@@ -13,7 +13,6 @@ class ShopDetail: Shop {
     var description: String?
     var phone: Int?
     var schedule: String?
-    var coordinates: Coordinates?
     var url: String?
     var photosUrls: [String]?
     var address: String?

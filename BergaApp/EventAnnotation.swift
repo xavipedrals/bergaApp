@@ -33,7 +33,7 @@ class EventAnnotation: NSObject, MKAnnotation {
     
     init(from placemark: MKPlacemark) {
         let titleArr = placemark.title?.components(separatedBy: ",")
-        self.title = titleArr![0]
+        self.title = titleArr![0].replacingOccurrences(of: "Carrer", with: "C/")
         if let subtitle = titleArr?[1] {
             self.subtitle = subtitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
