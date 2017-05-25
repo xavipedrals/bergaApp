@@ -15,7 +15,6 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var event: CalendarEvent?
-//    var eventAnnotation: EventAnnotation?
     
     
     override func viewDidLoad() {
@@ -43,9 +42,6 @@ class EventDetailViewController: UIViewController {
                 let eventAnnotation = EventAnnotation(from: placemark)
                 
                 self.mapView.addAnnotation(eventAnnotation)
-                
-                
-                
                 self.mapView.selectAnnotation(eventAnnotation, animated: true)
             }
         })
@@ -54,7 +50,6 @@ class EventDetailViewController: UIViewController {
     func centerMapOnRegion(coordinates: CLLocationCoordinate2D) {
         let regionRadius: CLLocationDistance = 2000
         let region = MKCoordinateRegionMakeWithDistance(coordinates, regionRadius, regionRadius)
-        
         self.mapView.setRegion(region, animated: true)
     }
 
@@ -68,39 +63,60 @@ extension EventDetailViewController: MKMapViewDelegate {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-                as? MKPinAnnotationView { // 2
+                as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
                 view.canShowCallout = true
-                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+                view.rightCalloutAccessoryView = getDisclosureButton()
             }
             else {
-                
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                view.canShowCallout = true
-                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-
-                let auxView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: view.frame.height + 12))
-
-                auxView.backgroundColor = Colors.red
-                let imageView = UIImageView(image: UIImage(named: event!.type.rawValue))
-                imageView.image = imageView.image!.withRenderingMode(.alwaysTemplate)
-                imageView.tintColor = UIColor.white
-                
-                let size: CGSize = auxView.frame.size
-                imageView.center = CGPoint(x: size.width/2, y: size.height/2)
-
-                
-                auxView.addSubview(imageView)
-                
-                view.leftCalloutAccessoryView = auxView
+                view = getMKAnnotationView(annotation: annotation, identifier: identifier)
             }
             return view
         }
         return nil
     }
     
-    func  mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    private func getMKAnnotationView(annotation: MKAnnotation, identifier: String) -> MKPinAnnotationView {
+        var view: MKPinAnnotationView
+        view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        view.canShowCallout = true
+        view.rightCalloutAccessoryView = getDisclosureButton()
+        view.leftCalloutAccessoryView = getLeftCalloutAccessoryView(height: view.frame.height)
+        return view
+    }
+    
+    private func getDisclosureButton() -> UIButton {
+        let button = UIButton(type: .detailDisclosure)
+        button.tintColor = Colors.red
+        return button
+    }
+    
+    private func getLeftCalloutAccessoryView(height: CGFloat) -> UIView {
+        let leftView = getLeftCalloutView(height: height)
+        let imageView = getIconImageView()
+        
+        let size = leftView.frame.size
+        imageView.center = CGPoint(x: size.width/2, y: size.height/2)
+        leftView.addSubview(imageView)
+        
+        return leftView
+    }
+    
+    private func getLeftCalloutView(height: CGFloat) -> UIView {
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: height + 12))
+        leftView.backgroundColor = Colors.red
+        return leftView
+    }
+    
+    private func getIconImageView() -> UIImageView {
+        let imageView = UIImageView(image: UIImage(named: event!.type.rawValue))
+        imageView.image = imageView.image!.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = UIColor.white
+        return imageView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let location = view.annotation as! EventAnnotation
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMaps(launchOptions: launchOptions)

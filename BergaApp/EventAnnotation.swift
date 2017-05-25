@@ -32,8 +32,11 @@ class EventAnnotation: NSObject, MKAnnotation {
     }
     
     init(from placemark: MKPlacemark) {
-        self.title = placemark.title
-//        self.subtitle = placemark.subtitle
+        let titleArr = placemark.title?.components(separatedBy: ",")
+        self.title = titleArr![0]
+        if let subtitle = titleArr?[1] {
+            self.subtitle = subtitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
         self.coordinate = placemark.coordinate
     }
     
