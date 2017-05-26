@@ -85,7 +85,9 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
-                    self.selectedIndex = indexPath
+                    let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
+                    cell.setSelected()
+//                    self.selectedIndex = indexPath
                     self.calendarViewModel.updateEventsSection(dayAt: indexPath)
                 }
                 else {

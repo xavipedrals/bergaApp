@@ -11,11 +11,13 @@ import Foundation
 struct Day {
     
     var number: Int
+    var month: Int
     var hasEvents: Bool
     var isToday: Bool
     
-    init(number: Int) {
+    init(number: Int, month: Int) {
         self.number = number
+        self.month = month
         self.hasEvents = false
         self.isToday = false
     }

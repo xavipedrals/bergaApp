@@ -49,9 +49,9 @@ class MonthDaysGenerator {
         if europeanWeekday == 0 {
             europeanWeekday = 7
         }
-        
+        let monthNumber = Calendar.current.component(.month, from: monthPointer)
         for _ in 1..<europeanWeekday {
-            let day = Day(number: 0)
+            let day = Day(number: 0, month: monthNumber)
             days.append(day)
         }
     }
@@ -64,7 +64,7 @@ class MonthDaysGenerator {
         let yearNumber = calendar.component(.year, from: monthPointer)
         
         for i in 1...endDayNumber {
-            var day = Day(number: i)
+            var day = Day(number: i, month: monthNumber)
             if markedDays.contains(i) {
                 day.hasEvents = true
             }

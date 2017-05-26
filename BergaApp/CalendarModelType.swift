@@ -18,7 +18,10 @@ extension CalendarModelType: Equatable {
     static func ==(lhs: CalendarModelType, rhs: CalendarModelType) -> Bool {
         switch (lhs, rhs) {
         case (let .day(dl), let .day(dr)):
-            return dl.number == dr.number && dl.hasEvents == dr.hasEvents && dl.isToday == dr.isToday
+            if dl.number == 0 && dr.number == 0 {
+                return false
+            }
+            return dl.number == dr.number && dl.month == dr.month && dl.hasEvents == dr.hasEvents && dl.isToday == dr.isToday
             
         case (let .calendarEvent(el), let .calendarEvent(er)):
             return el.date == er.date && el.name == er.name && el.type == er.type && el.address == er.address
