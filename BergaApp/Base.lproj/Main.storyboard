@@ -259,7 +259,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oZw-03-oae">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="488"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="538"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-nq-fce">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -279,8 +279,36 @@
                                                     <constraint firstItem="1dM-eP-Fmo" firstAttribute="leading" secondItem="Pp9-nq-fce" secondAttribute="leading" constant="10" id="ej0-Db-0cE"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxB-uU-DxS">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2g-7I-pc7">
                                                 <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="nTh-rH-NPy" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="3" width="24" height="24"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
+                                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12 october 12:00pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdQ-aq-Tsi">
+                                                        <rect key="frame" x="49" y="0.0" width="311" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="nTh-rH-NPy" firstAttribute="leading" secondItem="N2g-7I-pc7" secondAttribute="leading" constant="15" id="1S5-Cz-qiS"/>
+                                                    <constraint firstItem="xdQ-aq-Tsi" firstAttribute="top" secondItem="N2g-7I-pc7" secondAttribute="top" id="JmI-Kf-Ec6"/>
+                                                    <constraint firstItem="xdQ-aq-Tsi" firstAttribute="leading" secondItem="nTh-rH-NPy" secondAttribute="trailing" constant="10" id="VLj-tI-lJS"/>
+                                                    <constraint firstItem="nTh-rH-NPy" firstAttribute="top" secondItem="xdQ-aq-Tsi" secondAttribute="top" constant="3" id="YMF-wg-bC5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xdQ-aq-Tsi" secondAttribute="trailing" constant="15" id="cf4-Ry-r2k"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xdQ-aq-Tsi" secondAttribute="bottom" constant="15" id="n0v-OV-FW5"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxB-uU-DxS">
+                                                <rect key="frame" x="0.0" y="150" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeB-QH-4IB">
                                                         <rect key="frame" x="143.5" y="0.0" width="87.5" height="35"/>
@@ -304,7 +332,7 @@
                                                 </constraints>
                                             </view>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-pj-tGs">
-                                                <rect key="frame" x="0.0" y="150" width="375" height="338"/>
+                                                <rect key="frame" x="0.0" y="200" width="375" height="338"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WV3-pj-tGs" secondAttribute="height" multiplier="10/9" id="zLt-sA-scB"/>
                                                 </constraints>
