@@ -531,6 +531,25 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
+                                                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wr1-6h-elR" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                            <rect key="frame" x="251.5" y="9" width="24" height="24"/>
+                                                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="24" id="qTG-bG-4aX"/>
+                                                                <constraint firstAttribute="width" secondItem="Wr1-6h-elR" secondAttribute="height" id="qfB-Ap-WFk"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="12"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os2-lx-kp6">
+                                                            <rect key="frame" x="259.5" y="12" width="9" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCo-SW-cWo">
                                                             <rect key="frame" x="0.0" y="41" width="312" height="1"/>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -541,9 +560,13 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="Os2-lx-kp6" firstAttribute="centerY" secondItem="Wr1-6h-elR" secondAttribute="centerY" id="4li-aC-2Ei"/>
                                                         <constraint firstAttribute="bottom" secondItem="GCo-SW-cWo" secondAttribute="bottom" id="6gc-hg-VWx"/>
+                                                        <constraint firstItem="UcV-9J-nso" firstAttribute="leading" secondItem="Wr1-6h-elR" secondAttribute="trailing" constant="9.5" id="9pz-1P-3TG"/>
                                                         <constraint firstItem="GCo-SW-cWo" firstAttribute="leading" secondItem="XPU-Eh-9gH" secondAttribute="leading" id="HCy-OG-1lU"/>
                                                         <constraint firstAttribute="trailing" secondItem="GCo-SW-cWo" secondAttribute="trailing" id="Jy1-Rb-k2q"/>
+                                                        <constraint firstItem="Os2-lx-kp6" firstAttribute="centerX" secondItem="Wr1-6h-elR" secondAttribute="centerX" id="Roo-fN-cvg"/>
+                                                        <constraint firstItem="Wr1-6h-elR" firstAttribute="centerY" secondItem="UcV-9J-nso" secondAttribute="centerY" id="dfF-ea-e4d"/>
                                                         <constraint firstItem="UcV-9J-nso" firstAttribute="centerY" secondItem="XPU-Eh-9gH" secondAttribute="centerY" id="gTl-37-Gd4"/>
                                                         <constraint firstItem="oBu-FV-A7D" firstAttribute="leading" secondItem="XPU-Eh-9gH" secondAttribute="leading" constant="15" id="s4u-Ne-vfw"/>
                                                         <constraint firstAttribute="trailing" secondItem="UcV-9J-nso" secondAttribute="trailing" constant="10" id="wca-o4-tbU"/>
