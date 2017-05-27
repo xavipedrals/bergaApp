@@ -14,11 +14,6 @@ enum CalendarEventType: String {
     case fair = "carousel"
 }
 
-struct Coordinates {
-    var lat: Double
-    var long: Double
-}
-
 struct CalendarEvent {
     
     var date: Date

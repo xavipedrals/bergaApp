@@ -35,13 +35,16 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     func setSelected() {
         if (!isToday!) {
-            todayBackground.backgroundColor = UIColor.groupTableViewBackground
+//            todayBackground.backgroundColor = UIColor.groupTableViewBackground
+            todayBackground.backgroundColor = Colors.lightRed
+            numberLabel.textColor = UIColor.white
         }
     }
     
     func setUnselected() {
         if (!isToday!) {
             todayBackground.backgroundColor = UIColor.white
+            numberLabel.textColor = UIColor.darkGray
         }
     }
 }

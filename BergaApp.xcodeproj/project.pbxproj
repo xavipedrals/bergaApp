@@ -25,6 +25,7 @@
 		471DACDE1ED233250090C6CD /* PromotedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */; };
 		4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */; };
 		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
+		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
 		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
@@ -100,6 +101,7 @@
 		471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotedShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsManager.swift; sourceTree = "<group>"; };
 		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
+		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,8 +182,8 @@
 		4352956F1ECB30D90017FB9E /* EventDetail */ = {
 			isa = PBXGroup;
 			children = (
+				470551251EC704170016E366 /* CalendarEvent.swift */,
 				4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */,
-				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -215,7 +217,6 @@
 				4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */,
 				470551271EC704950016E366 /* CalendarViewModel.swift */,
 				47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */,
-				470551251EC704170016E366 /* CalendarEvent.swift */,
 				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
 				4705512D1EC74BDA0016E366 /* Day.swift */,
 				47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */,
@@ -351,7 +352,9 @@
 				4705512F1EC751ED0016E366 /* Commons.swift */,
 				4352956D1ECB14710017FB9E /* Colors.swift */,
 				437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */,
+				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
 				47416A0F1ED74AE100497A09 /* MapViewController.swift */,
+				473F51491ED9991F00008FAC /* Address.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,
 				439DF4E11ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift in Sources */,
 				479FFBA91ECE443E00BA8106 /* ShopCollectionViewCell.swift in Sources */,
+				473F514A1ED9991F00008FAC /* Address.swift in Sources */,
 				47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */,

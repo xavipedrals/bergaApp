@@ -16,8 +16,8 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     
     var cellWidth: Double?
-//    let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
-    let dataSource = RxCollectionViewSectionedAnimatedDataSource<CalendarSection>()
+    let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
+//    let dataSource = RxCollectionViewSectionedAnimatedDataSource<CalendarSection>()
 
     let calendarViewModel = CalendarViewModel()
     let disposeBag = DisposeBag()
@@ -82,12 +82,23 @@ class CalendarViewController: UIViewController {
             }
         }
         
+        dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
+            if kind == UICollectionElementKindSectionFooter {
+                let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath)
+                return header
+            }
+            else {
+                let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "separatorHeader", for: indexPath)
+                return header
+            }
+        }
+        
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
                     let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
                     cell.setSelected()
-//                    self.selectedIndex = indexPath
+                    self.selectedIndex = indexPath
                     self.calendarViewModel.updateEventsSection(dayAt: indexPath)
                 }
                 else {
@@ -169,6 +180,22 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func getEventCellSize() -> CGSize {
         let width = UIScreen.main.bounds.width - 20
-        return CGSize(width: width, height: 50)
+        return CGSize(width: width, height: 55)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == self.calendarViewModel.EVENTS_SECTION {
+            let width = UIScreen.main.bounds.width
+            return CGSize(width: width, height: 5)
+        }
+        return CGSize(width: 0, height: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if section == self.calendarViewModel.CALENDAR_SECTION && self.calendarViewModel.sections.value[self.calendarViewModel.EVENTS_SECTION].items.count == 0 {
+            let width = UIScreen.main.bounds.width
+            return CGSize(width: width, height: 165)
+        }
+        return CGSize(width: 0, height: 0)
     }
 }

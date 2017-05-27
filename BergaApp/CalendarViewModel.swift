@@ -19,8 +19,8 @@ class CalendarViewModel {
     
     let disposeBag = DisposeBag()
     
-    private let CALENDAR_SECTION = 0
-    private let EVENTS_SECTION = 1
+    let CALENDAR_SECTION = 0
+    let EVENTS_SECTION = 1
     
     let sections = Variable<[CalendarSection]>([
         CalendarSection(header: "Days", items: []),
