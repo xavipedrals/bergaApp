@@ -8,7 +8,17 @@
 
 import Foundation
 
-struct Address {
+class Address {
     var town: String
     var street: String?
+    
+    init(town: String) {
+        self.town = town
+    }
+}
+
+extension Address: Equatable {
+    static func ==(lhs: Address, rhs: Address) -> Bool {
+        return lhs.town == rhs.town && lhs.street == rhs.street
+    }
 }

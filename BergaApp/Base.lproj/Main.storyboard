@@ -223,6 +223,7 @@
                                         <connections>
                                             <outlet property="eventIcon" destination="yBe-Dl-3Co" id="E2g-K9-hST"/>
                                             <outlet property="nameLabel" destination="Ru7-vl-6G8" id="60v-Rq-rXm"/>
+                                            <outlet property="placeLabel" destination="vC7-Oj-juo" id="WiU-mC-0m0"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -354,7 +355,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dM-eP-Fmo">
-                                                        <rect key="frame" x="10" y="15" width="355" height="80"/>
+                                                        <rect key="frame" x="15" y="15" width="345" height="80"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor tortor vitae urna pharetra ultricies vitae vel lacus. ">
                                                                 <attributes>
@@ -370,18 +371,17 @@
                                                 <constraints>
                                                     <constraint firstItem="1dM-eP-Fmo" firstAttribute="top" secondItem="Pp9-nq-fce" secondAttribute="top" constant="15" id="14H-m9-29l"/>
                                                     <constraint firstAttribute="bottom" secondItem="1dM-eP-Fmo" secondAttribute="bottom" constant="20" id="IQ0-uE-bbV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="1dM-eP-Fmo" secondAttribute="trailing" constant="10" id="Ogp-Wr-k1v"/>
-                                                    <constraint firstItem="1dM-eP-Fmo" firstAttribute="leading" secondItem="Pp9-nq-fce" secondAttribute="leading" constant="10" id="ej0-Db-0cE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1dM-eP-Fmo" secondAttribute="trailing" constant="15" id="Ogp-Wr-k1v"/>
+                                                    <constraint firstItem="1dM-eP-Fmo" firstAttribute="leading" secondItem="Pp9-nq-fce" secondAttribute="leading" constant="15" id="ej0-Db-0cE"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2g-7I-pc7">
                                                 <rect key="frame" x="0.0" y="115" width="375" height="50"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="nTh-rH-NPy" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                        <rect key="frame" x="15" y="15" width="20" height="20"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="calendar-icon" translatesAutoresizingMaskIntoConstraints="NO" id="nTh-rH-NPy" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="13" width="24" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="nTh-rH-NPy" secondAttribute="height" multiplier="1:1" id="jmy-eV-7j9"/>
-                                                            <constraint firstAttribute="height" constant="20" id="obF-Co-DJy"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
@@ -390,7 +390,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12 october 12:00pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdQ-aq-Tsi">
-                                                        <rect key="frame" x="45" y="5" width="315" height="40"/>
+                                                        <rect key="frame" x="49" y="5" width="311" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -457,6 +457,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="xdQ-aq-Tsi" id="afy-Tm-Ggj"/>
                         <outlet property="mapView" destination="WV3-pj-tGs" id="W8m-wb-kAc"/>
                     </connections>
                 </viewController>
@@ -1278,6 +1279,7 @@
         <image name="arrow" width="24" height="24"/>
         <image name="bell" width="24" height="24"/>
         <image name="calendar" width="25" height="25"/>
+        <image name="calendar-icon" width="24" height="24"/>
         <image name="clock" width="24" height="24"/>
         <image name="ic_share_white" width="24" height="24"/>
         <image name="iconmonstr-phone" width="24" height="24"/>

@@ -180,7 +180,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func getEventCellSize() -> CGSize {
         let width = UIScreen.main.bounds.width - 20
-        return CGSize(width: width, height: 55)
+        return CGSize(width: width, height: 60)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

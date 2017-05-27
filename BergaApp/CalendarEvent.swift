@@ -19,12 +19,12 @@ struct CalendarEvent {
     var date: Date
     var name: String
     var type: CalendarEventType
-    var address: String
+    var address: Address
     
-    init(date: Date, name: String, type: CalendarEventType, address: String) {
+    init(date: Date, name: String, type: CalendarEventType, townAddress: String) {
         self.date = date
         self.name = name
         self.type = type
-        self.address = address
+        self.address = Address(town: townAddress)
     }
 }

@@ -11,7 +11,8 @@ import MapKit
 
 class EventDetailViewController: MapViewController {
 
-    @IBOutlet weak var iconImageView: IconImage!
+//    @IBOutlet weak var iconImageView: IconImage!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var event: CalendarEvent?
     
@@ -24,8 +25,10 @@ class EventDetailViewController: MapViewController {
         mapView.delegate = self
         
         if let address = event?.address {
-            addAddressPin(address)
+            addAddressPin(address.town)
         }
+        
+        dateLabel.text = Commons.getStringFromDate(date: event!.date, format: "dd MMMM YYYY")
     }
 
 }

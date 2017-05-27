@@ -12,10 +12,12 @@ class EventCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var eventIcon: IconImage!
+    @IBOutlet weak var placeLabel: UILabel!
     
-    func initCell(from: CalendarEvent) {
-        nameLabel.text = from.name
-        eventIcon.image = UIImage(named: from.type.rawValue)
+    func initCell(from event: CalendarEvent) {
+        nameLabel.text = event.name
+        eventIcon.image = UIImage(named: event.type.rawValue)
         eventIcon.iconTint = UIColor.gray
+        placeLabel.text = event.address.town
     }
 }
