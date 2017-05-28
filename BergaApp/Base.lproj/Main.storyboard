@@ -336,7 +336,7 @@
         <!--Event Detail View Controller-->
         <scene sceneID="Je8-1j-d7i">
             <objects>
-                <viewController id="8Yj-LY-BeG" customClass="EventDetailViewController" customModule="BergaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="8Yj-LY-BeG" customClass="EventDetailViewController" customModule="BergaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ese-N7-l6a"/>
                         <viewControllerLayoutGuide type="bottom" id="a2J-EB-cfM"/>
@@ -726,6 +726,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zuA-Jf-M9b" secondAttribute="trailing" id="5UC-US-9JC"/>
+                            <constraint firstItem="zuA-Jf-M9b" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6a5-ju-MEJ" secondAttribute="bottom" id="6hF-wo-Hfo"/>
                             <constraint firstAttribute="bottomMargin" secondItem="dNc-tM-nTI" secondAttribute="bottom" id="7wl-Bl-X0X"/>
                             <constraint firstItem="zuA-Jf-M9b" firstAttribute="top" secondItem="HgC-4Y-0Wp" secondAttribute="bottom" id="8CH-aZ-AGM"/>
                             <constraint firstItem="dNc-tM-nTI" firstAttribute="leading" secondItem="CYK-Fz-g7K" secondAttribute="leading" id="8YB-dF-EZi"/>
@@ -755,6 +756,7 @@
                         <outlet property="notificationsContainerView" destination="dNc-tM-nTI" id="8cd-ZV-i2q"/>
                         <outlet property="segmentControl" destination="XB9-eP-Itr" id="AFJ-vi-XIq"/>
                         <outlet property="segmentWrapper" destination="HgC-4Y-0Wp" id="fV2-Wh-Odg"/>
+                        <outlet property="topContraint" destination="6hF-wo-Hfo" id="X4f-ha-b3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbr-0m-OfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -770,14 +772,14 @@
                         <viewControllerLayoutGuide type="bottom" id="COH-Gn-CBb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jzf-2t-0NP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwK-KC-KFj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aYS-Am-LtD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="919"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="999"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iuv-tW-1qT">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -964,12 +966,65 @@
                                                     <constraint firstItem="R47-0w-f6z" firstAttribute="centerX" secondItem="nXE-he-E7C" secondAttribute="centerX" id="w92-6i-Dsa"/>
                                                 </constraints>
                                             </view>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5Ym-sM-ya0">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KT-Yn-kKu">
                                                 <rect key="frame" x="0.0" y="581.5" width="375" height="337.5"/>
+                                                <subviews>
+                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5Ym-sM-ya0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="337.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="5Ym-sM-ya0" secondAttribute="height" multiplier="10/9" id="m6Z-zT-pbV"/>
+                                                        </constraints>
+                                                    </mapView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="5Ym-sM-ya0" secondAttribute="height" multiplier="10/9" id="m6Z-zT-pbV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5Ym-sM-ya0" secondAttribute="bottom" id="QW9-dt-BNB"/>
+                                                    <constraint firstItem="5Ym-sM-ya0" firstAttribute="leading" secondItem="6KT-Yn-kKu" secondAttribute="leading" id="WNQ-ir-5Ti"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5Ym-sM-ya0" secondAttribute="trailing" id="dmA-dR-v46"/>
+                                                    <constraint firstItem="5Ym-sM-ya0" firstAttribute="top" secondItem="6KT-Yn-kKu" secondAttribute="top" id="g7O-3l-yQy"/>
                                                 </constraints>
-                                            </mapView>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnM-87-XoH">
+                                                <rect key="frame" x="0.0" y="919" width="375" height="80"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zw4-Ra-ko9" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="10" width="345" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VULL PROMOCIONAR AQUEST COMERÇ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmE-ZM-OvR">
+                                                                <rect key="frame" x="10" y="10" width="325" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="TmE-ZM-OvR" firstAttribute="top" secondItem="zw4-Ra-ko9" secondAttribute="top" constant="10" id="DzQ-v1-3qt"/>
+                                                            <constraint firstAttribute="trailing" secondItem="TmE-ZM-OvR" secondAttribute="trailing" constant="10" id="Nlh-AR-hSG"/>
+                                                            <constraint firstItem="TmE-ZM-OvR" firstAttribute="leading" secondItem="zw4-Ra-ko9" secondAttribute="leading" constant="10" id="X9U-dn-CgK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="TmE-ZM-OvR" secondAttribute="bottom" constant="10" id="rKL-5r-FAV"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="zw4-Ra-ko9" secondAttribute="trailing" constant="15" id="B6D-th-lFH"/>
+                                                    <constraint firstItem="zw4-Ra-ko9" firstAttribute="leading" secondItem="PnM-87-XoH" secondAttribute="leading" constant="15" id="TD2-Ll-gSl"/>
+                                                    <constraint firstItem="zw4-Ra-ko9" firstAttribute="top" secondItem="PnM-87-XoH" secondAttribute="top" constant="10" id="hsP-24-JDp"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zw4-Ra-ko9" secondAttribute="bottom" constant="10" id="zby-SN-uvD"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -991,16 +1046,18 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="Kdd-L4-jns" id="3Uk-Cp-Rr3"/>
                         <outlet property="descriptionWrapper" destination="Iuv-tW-1qT" id="mfK-cT-nQ8"/>
                         <outlet property="imageCarruselWrapper" destination="wTV-Aj-4wH" id="WUS-jt-3i9"/>
                         <outlet property="linkWrapper" destination="nXE-he-E7C" id="ITz-ts-fX3"/>
                         <outlet property="mapView" destination="5Ym-sM-ya0" id="TKv-9u-vGn"/>
+                        <outlet property="mapWrapper" destination="6KT-Yn-kKu" id="ykT-Ng-GMV"/>
                         <outlet property="phoneLabel" destination="kgc-KQ-xXD" id="mDM-p8-cdE"/>
                         <outlet property="phoneWrapper" destination="IIz-v8-j2R" id="s5r-rT-exO"/>
                         <outlet property="photosCollectionView" destination="M4w-ul-eKa" id="iMr-DK-MFa"/>
+                        <outlet property="promoteShopWrapper" destination="PnM-87-XoH" id="twP-i2-GN6"/>
                         <outlet property="scheduleLabel" destination="OGR-ci-9FO" id="z9I-Zy-Q3f"/>
                         <outlet property="scheduleWrapper" destination="pX6-fp-1ct" id="Hj8-Y9-ZZh"/>
                         <outlet property="urlLabel" destination="R47-0w-f6z" id="t6j-b7-qZQ"/>
@@ -1008,7 +1065,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGZ-9C-edr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3416.8000000000002" y="863.56821589205401"/>
+            <point key="canvasLocation" x="3385" y="1043"/>
         </scene>
         <!--Shop Notifications View Controller-->
         <scene sceneID="8jP-FW-NMc">

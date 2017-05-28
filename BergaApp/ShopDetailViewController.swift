@@ -16,6 +16,7 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var notificationsContainerView: UIView!
     @IBOutlet weak var segmentWrapper: UIView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var topContraint: NSLayoutConstraint!
     
     var shop: Shop?
     let notificationsActivated = Variable<Bool>(false)
@@ -26,9 +27,15 @@ class ShopDetailViewController: UIViewController {
         
         self.title = shop?.name
         self.navigationItem.backBarButtonItem?.title = ""
-        self.navigationItem.rightBarButtonItem?.isEnabled = shop!.isPromoted
+        if !shop!.isPromoted {
+            self.navigationItem.rightBarButtonItem = nil
+            segmentWrapper.removeFromSuperview()
+            self.view.needsUpdateConstraints()
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
 //        self.segmentWrapper. = !shop!.isPromoted
-        segmentControl.isEnabled = shop!.isPromoted
+//        segmentControl.isEnabled = shop!.isPromoted
         
         notificationsActivated.asObservable()
             .map({

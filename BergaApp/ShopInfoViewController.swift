@@ -24,6 +24,8 @@ class ShopInfoViewController: MapViewController {
     @IBOutlet weak var scheduleWrapper: UIView!
     @IBOutlet weak var imageCarruselWrapper: UIView!
     @IBOutlet weak var linkWrapper: UIView!
+    @IBOutlet weak var mapWrapper: UIView!
+    @IBOutlet weak var promoteShopWrapper: UIView!
     
     
     var cellWidth: Double?
@@ -58,6 +60,7 @@ class ShopInfoViewController: MapViewController {
         set(schedule: shop.schedule)
         set(url: shop.url)
         set(address: shop.address)
+        set(isPromoted: shop.isPromoted)
     }
     
     func set(description: String) {
@@ -96,12 +99,13 @@ class ShopInfoViewController: MapViewController {
             addAddressPin(address)
         }
         else {
-            mapView.isHidden = true
+            mapWrapper.isHidden = true
         }
     }
     
-    func set(promoted: Bool) {
-        
+    func set(isPromoted: Bool) {
+        imageCarruselWrapper.isHidden = !isPromoted
+        promoteShopWrapper.isHidden = isPromoted
     }
     
     func configurePhotoCollection() {

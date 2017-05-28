@@ -25,6 +25,7 @@
 		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
+		475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475CD2BF1EDB035C006EAA4B /* CustomButton.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
 		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
 		479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479315DF1EC5FDED00845C6C /* Assets.xcassets */; };
@@ -54,7 +55,7 @@
 		47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */; };
 		47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
-		47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* CustomImage.swift */; };
+		47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* IconImage.swift */; };
 		47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */; };
 		47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */; };
 		47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */; };
@@ -99,6 +100,7 @@
 		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		475CD2BF1EDB035C006EAA4B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479315DD1EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,7 +136,7 @@
 		47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDaysGenerator.swift; sourceTree = "<group>"; };
 		47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
-		47C9422B1EC65B9800B3F617 /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		47C9422B1EC65B9800B3F617 /* IconImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoViewController.swift; sourceTree = "<group>"; };
 		47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewController.swift; sourceTree = "<group>"; };
 		47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -241,6 +243,16 @@
 			name = ShopDetail;
 			sourceTree = "<group>";
 		};
+		475CD2BE1EDB031E006EAA4B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				47C942291EC65B8400B3F617 /* CustomView.swift */,
+				47C9422B1EC65B9800B3F617 /* IconImage.swift */,
+				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
 		479315CC1EC5FDED00845C6C = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +353,7 @@
 		47C942281EC65B4F00B3F617 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				47C942291EC65B8400B3F617 /* CustomView.swift */,
-				47C9422B1EC65B9800B3F617 /* CustomImage.swift */,
+				475CD2BE1EDB031E006EAA4B /* CustomViews */,
 				4705512F1EC751ED0016E366 /* Commons.swift */,
 				4352956D1ECB14710017FB9E /* Colors.swift */,
 				437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */,
@@ -521,7 +532,7 @@
 				47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */,
-				47C9422C1EC65B9800B3F617 /* CustomImage.swift in Sources */,
+				47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */,
 				4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */,
 				47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
@@ -545,6 +556,7 @@
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
 				47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
+				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
 				479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */,
 				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */,
