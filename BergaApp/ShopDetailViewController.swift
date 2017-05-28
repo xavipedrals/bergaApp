@@ -25,7 +25,6 @@ class ShopDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = shop?.name
         self.navigationItem.backBarButtonItem?.title = ""
         if !shop!.isPromoted {
             self.navigationItem.rightBarButtonItem = nil
@@ -34,8 +33,6 @@ class ShopDetailViewController: UIViewController {
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }
-//        self.segmentWrapper. = !shop!.isPromoted
-//        segmentControl.isEnabled = shop!.isPromoted
         
         notificationsActivated.asObservable()
             .map({

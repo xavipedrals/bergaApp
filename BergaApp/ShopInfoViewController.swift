@@ -18,6 +18,8 @@ class ShopInfoViewController: MapViewController {
     @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
     @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var shopNameLabel: UILabel!
+    @IBOutlet weak var tagsLabel: UILabel!
     
     @IBOutlet weak var descriptionWrapper: UIView!
     @IBOutlet weak var phoneWrapper: UIView!
@@ -55,12 +57,17 @@ class ShopInfoViewController: MapViewController {
     }
     
     private func initVisuals(shop: Shop) {
+        set(name: shop.name)
         set(description: shop.description)
         set(phone: shop.phone)
         set(schedule: shop.schedule)
         set(url: shop.url)
         set(address: shop.address)
         set(isPromoted: shop.isPromoted)
+    }
+    
+    func set(name: String) {
+        shopNameLabel.attributedText = Commons.getAttributedCharSpacedText(name.uppercased(), charSpacing: 1.15)
     }
     
     func set(description: String) {
@@ -158,7 +165,7 @@ class ShopInfoViewController: MapViewController {
 
 extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth!, height: cellWidth! * 3 / 4)
+        return CGSize(width: cellWidth!, height: cellWidth! / 1.75)
     }
     
     func setCellWidth () {
