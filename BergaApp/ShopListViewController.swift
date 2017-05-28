@@ -53,10 +53,10 @@ class ShopListViewController: UIViewController {
         
         collectionView.rx.modelSelected(Shop.self)
             .subscribe(onNext: { shop in
-                if shop.isPromoted {
+//                if shop.isPromoted {
                     self.selectedShop = shop
                     self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
-                }
+//                }
             })
             .addDisposableTo(disposeBag)
     }

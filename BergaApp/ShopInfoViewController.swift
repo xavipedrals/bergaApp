@@ -19,6 +19,13 @@ class ShopInfoViewController: MapViewController {
     @IBOutlet weak var photosCollectionView: UICollectionView!
     @IBOutlet weak var urlLabel: UILabel!
     
+    @IBOutlet weak var descriptionWrapper: UIView!
+    @IBOutlet weak var phoneWrapper: UIView!
+    @IBOutlet weak var scheduleWrapper: UIView!
+    @IBOutlet weak var imageCarruselWrapper: UIView!
+    @IBOutlet weak var linkWrapper: UIView!
+    
+    
     var cellWidth: Double?
     var shopDetailViewModel: ShopDetailViewModel?
     var shop: Shop?
@@ -35,33 +42,66 @@ class ShopInfoViewController: MapViewController {
         
         photosCollectionView.rx.setDelegate(self)
         .addDisposableTo(disposeBag)
-        
     }
     
     private func displayInfo() {
-        shopDetailViewModel!.shopDetail.asObservable()
-            .subscribe(onNext: { shopDetail in
-                self.initVisuals(shopDetail: shopDetail)
+        shopDetailViewModel!.shop.asObservable()
+            .subscribe(onNext: { shop in
+                self.initVisuals(shop: shop)
             })
             .addDisposableTo(disposeBag)
     }
     
-    private func initVisuals(shopDetail: ShopDetail) {
-        if let description = shopDetail.description {
-            self.descriptionLabel.text = description
-        }
-        if let phone = shopDetail.phone {
+    private func initVisuals(shop: Shop) {
+        set(description: shop.description)
+        set(phone: shop.phone)
+        set(schedule: shop.schedule)
+        set(url: shop.url)
+        set(address: shop.address)
+    }
+    
+    func set(description: String) {
+        self.descriptionLabel.attributedText = Commons.getAttributedLineSpaceText(description, lineSpacing: 5)
+    }
+    
+    func set(phone: Int?) {
+        if let phone = phone {
             phoneLabel.text = getPhoneString(phone)
         }
-        if let schedule = shopDetail.schedule {
-            scheduleLabel.text = schedule
+        else {
+            phoneWrapper.isHidden = true
         }
-        if let url = shopDetail.url {
+    }
+    
+    func set(schedule: String?) {
+        if let schedule = schedule {
+            self.scheduleLabel.attributedText = Commons.getAttributedLineSpaceText(schedule, lineSpacing: 5)
+        }
+        else {
+            scheduleWrapper.isHidden = true
+        }
+    }
+    
+    func set(url: String?) {
+        if let url = url {
             urlLabel.text = url
         }
-        if let address = shopDetail.address {
+        else {
+            linkWrapper.isHidden = true
+        }
+    }
+    
+    func set(address: String?) {
+        if let address = address {
             addAddressPin(address)
         }
+        else {
+            mapView.isHidden = true
+        }
+    }
+    
+    func set(promoted: Bool) {
+        
     }
     
     func configurePhotoCollection() {
@@ -85,7 +125,7 @@ class ShopInfoViewController: MapViewController {
     }
 
     @IBAction func callPressed(_ sender: Any) {
-        if let number = shopDetailViewModel!.shopDetail.value.phone {
+        if let number = shopDetailViewModel!.shop.value.phone {
             callNumber(String(number))
         }
     }
@@ -99,7 +139,7 @@ class ShopInfoViewController: MapViewController {
     }
     
     @IBAction func linkPressed(_ sender: Any) {
-        if let url = shopDetailViewModel!.shopDetail.value.url {
+        if let url = shopDetailViewModel!.shop.value.url {
             if let urlFormated = URL(string: url) {
                 UIApplication.shared.openURL(urlFormated)
             }

@@ -11,13 +11,13 @@ import RxSwift
 
 class ShopDetailViewModel {
     
-    let shopDetail: Variable<ShopDetail>
+    let shop: Variable<Shop>
     let photosUrl = Variable<[String]>([])
     
     init(shop: Shop) {
-        shopDetail = Variable(ShopDetailStub.getStub(shop: shop))
+        self.shop = Variable(shop)
         
-        if let photos = shopDetail.value.photosUrls {
+        if let photos = self.shop.value.photosUrls {
             photosUrl.value = photos
         }
     }

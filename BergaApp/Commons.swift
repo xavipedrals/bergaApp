@@ -24,6 +24,14 @@ class Commons {
         return someDateTime
     }
     
+    static func getAttributedLineSpaceText(_ text: String, lineSpacing: Double) -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = CGFloat(lineSpacing)
+        let attrString = NSMutableAttributedString(string: text)
+        attrString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        return attrString
+    }
+    
 }
 
 extension Date {

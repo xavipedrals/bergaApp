@@ -32,9 +32,17 @@ class Shop {
     //add var id
     var name: String
     var isPromoted: Bool
+    var description: String
+    var phone: Int?
+    var schedule: String?
+    var url: String?
+    var photosUrls: [String]?
+    var address: String?
+    var tags: [String]?
     
-    init(name: String, isPromoted: Bool = false) {
+    init(name: String, description: String, isPromoted: Bool = false) {
         self.name = name
+        self.description = description
         self.isPromoted = isPromoted
     }
 }
