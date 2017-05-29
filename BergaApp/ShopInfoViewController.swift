@@ -20,6 +20,8 @@ class ShopInfoViewController: MapViewController {
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var tagsLabel: UILabel!
+    @IBOutlet weak var streetAddressLabel: UILabel!
+    @IBOutlet weak var townAddressLabel: UILabel!
     
     @IBOutlet weak var descriptionWrapper: UIView!
     @IBOutlet weak var phoneWrapper: UIView!
@@ -104,6 +106,7 @@ class ShopInfoViewController: MapViewController {
     func set(address: String?) {
         if let address = address {
             addAddressPin(address)
+            streetAddressLabel.text = address
         }
         else {
             mapWrapper.isHidden = true
