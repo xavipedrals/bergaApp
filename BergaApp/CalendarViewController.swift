@@ -14,6 +14,7 @@ import RxDataSources
 class CalendarViewController: UIViewController {
 
     @IBOutlet weak var calendarCollectionView: UICollectionView!
+    @IBOutlet weak var monthYearLabel: UILabel!
     
     var cellWidth: Double?
     let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
@@ -33,16 +34,16 @@ class CalendarViewController: UIViewController {
     }
     
     func setNavigationTitle() {
-        let titleLabel = UILabel()
+//        let titleLabel = UILabel()
 
         calendarViewModel.monthYearStr.asObservable()
             .map({ monthYear -> NSAttributedString in
                 self.getMonthYearAttributedString(monthYear)
             })
             .subscribe(onNext: { attributedTitle in
-                titleLabel.attributedText = attributedTitle
-                titleLabel.sizeToFit()
-                self.navigationItem.titleView = titleLabel
+                self.monthYearLabel.attributedText = attributedTitle
+//                titleLabel.sizeToFit()
+//                self.navigationItem.titleView = titleLabel
             })
             .addDisposableTo(disposeBag)
     }
@@ -180,7 +181,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func getEventCellSize() -> CGSize {
         let width = UIScreen.main.bounds.width - 20
-        return CGSize(width: width, height: 60)
+        return CGSize(width: width, height: 70)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

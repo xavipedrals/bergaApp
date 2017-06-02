@@ -11,8 +11,8 @@ import MapKit
 
 class EventDetailViewController: MapViewController {
 
-//    @IBOutlet weak var iconImageView: IconImage!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var event: CalendarEvent?
     
@@ -20,8 +20,7 @@ class EventDetailViewController: MapViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = event?.name
-        self.navigationItem.backBarButtonItem?.title = ""
+        self.titleLabel.text = event?.name
         mapView.delegate = self
         
         if let address = event?.address {
@@ -29,6 +28,10 @@ class EventDetailViewController: MapViewController {
         }
         
         dateLabel.text = Commons.getStringFromDate(date: event!.date, format: "dd MMMM YYYY")
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 
 }
