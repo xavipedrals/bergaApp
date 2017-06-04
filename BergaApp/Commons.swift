@@ -32,6 +32,12 @@ class Commons {
         return attrString
     }
     
+    static func getAttributedCharSpacedText(_ text: String, charSpacing: Double) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(NSKernAttributeName, value: CGFloat(charSpacing), range: NSRange(location: 0, length: attributedString.length))
+        return attributedString
+    }
+    
 }
 
 extension Date {

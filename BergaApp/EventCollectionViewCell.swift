@@ -17,7 +17,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     func initCell(from event: CalendarEvent) {
         nameLabel.text = event.name
         eventIcon.image = UIImage(named: event.type.rawValue)
-        eventIcon.iconTint = UIColor.gray
+        eventIcon.iconTint = UIColor.darkGray
         placeLabel.text = event.address.town
     }
 }

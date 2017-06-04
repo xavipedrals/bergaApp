@@ -14,8 +14,8 @@ class ShopDetailViewController: UIViewController {
 
     @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var notificationsContainerView: UIView!
-    @IBOutlet weak var segmentWrapper: UIView!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
+//    @IBOutlet weak var segmentWrapper: UIView!
+//    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var topContraint: NSLayoutConstraint!
     
     var shop: Shop?
@@ -25,17 +25,20 @@ class ShopDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = shop?.name
         self.navigationItem.backBarButtonItem?.title = ""
         if !shop!.isPromoted {
             self.navigationItem.rightBarButtonItem = nil
-            segmentWrapper.removeFromSuperview()
+//            segmentWrapper.removeFromSuperview()
             self.view.needsUpdateConstraints()
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }
-//        self.segmentWrapper. = !shop!.isPromoted
-//        segmentControl.isEnabled = shop!.isPromoted
+        
+        let segment: UISegmentedControl = UISegmentedControl(items: ["Informació", "Notificacions"])
+        segment.sizeToFit()
+        segment.tintColor = UIColor(red:0.99, green:0.00, blue:0.25, alpha:1.00)
+        segment.selectedSegmentIndex = 0;
+        self.navigationItem.titleView = segment
         
         notificationsActivated.asObservable()
             .map({

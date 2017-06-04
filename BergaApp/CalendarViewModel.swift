@@ -44,7 +44,7 @@ class CalendarViewModel {
                 dateStr = dateStr.replacingOccurrences(of: "de ", with: "")
                 dateStr = dateStr.replacingOccurrences(of: "d’", with: "")
                 dateStr = dateStr.replacingOccurrences(of: "d'", with: "")
-                return dateStr.uppercased()
+                return dateStr.capitalized
             })
             .bind(to: monthYearStr)
             .addDisposableTo(disposeBag)
