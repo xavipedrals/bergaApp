@@ -16,7 +16,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     @IBOutlet weak var monthYearLabel: UILabel!
     
-    var cellWidth: Double?
+    var dayCellWidth: Double?
     let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
 //    let dataSource = RxCollectionViewSectionedAnimatedDataSource<CalendarSection>()
 
@@ -159,9 +159,18 @@ class CalendarViewController: UIViewController {
     }
     
     func setCellWidth() {
-        let flow: UICollectionViewFlowLayout = calendarCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let width = (calendarCollectionView.frame.size.width - (flow.sectionInset.right + flow.sectionInset.left) * 2) / 7
-        cellWidth = Double(width)
+        let width = (calendarCollectionView.frame.size.width - (10 + 10) * 2) / 7
+        dayCellWidth = Double(width)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
 
 }
@@ -176,18 +185,19 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func getDayCellSize() -> CGSize {
-        return CGSize(width: cellWidth!, height: cellWidth!)
+        return CGSize(width: dayCellWidth!, height: dayCellWidth!)
     }
     
     func getEventCellSize() -> CGSize {
-        let width = UIScreen.main.bounds.width - 20
-        return CGSize(width: width, height: 70)
+//        let width = UIScreen.main.bounds.width - 20
+        let width = UIScreen.main.bounds.width
+        return CGSize(width: width, height: 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == self.calendarViewModel.EVENTS_SECTION {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 5)
+            return CGSize(width: width, height: 10)
         }
         return CGSize(width: 0, height: 0)
     }
@@ -198,5 +208,14 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: 165)
         }
         return CGSize(width: 0, height: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == calendarViewModel.CALENDAR_SECTION {
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        }
+//        else if section == calendarViewModel.EVENTS_SECTION {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        }
     }
 }
