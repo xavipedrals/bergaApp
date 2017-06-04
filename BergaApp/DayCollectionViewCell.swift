@@ -21,7 +21,6 @@ class DayCollectionViewCell: UICollectionViewCell {
     func initFrom(day: Day) {
         configureEmpty(day.number)
         isToday = day.isToday
-//        numberLabel.textColor = isToday! ? UIColor.white : UIColor.darkGray
         todayBackground.backgroundColor = isToday! ? UIColor(r: 255, g: 52, b: 43) : UIColor.clear
         numberLabel.text = String(day.number)
         eventsMarkerView.isHidden = (!day.hasEvents || day.isToday)
@@ -35,16 +34,13 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     func setSelected() {
         if (!isToday!) {
-//            todayBackground.backgroundColor = UIColor.groupTableViewBackground
-            todayBackground.backgroundColor = Colors.lightRed
-//            numberLabel.textColor = UIColor.white
+            todayBackground.backgroundColor = Colors.red
         }
     }
     
     func setUnselected() {
         if (!isToday!) {
             todayBackground.backgroundColor = UIColor.clear
-//            numberLabel.textColor = UIColor.darkGray
         }
     }
 }

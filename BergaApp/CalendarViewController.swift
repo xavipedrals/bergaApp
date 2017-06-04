@@ -34,7 +34,6 @@ class CalendarViewController: UIViewController {
     }
     
     func setNavigationTitle() {
-//        let titleLabel = UILabel()
 
         calendarViewModel.monthYearStr.asObservable()
             .map({ monthYear -> NSAttributedString in
@@ -42,8 +41,6 @@ class CalendarViewController: UIViewController {
             })
             .subscribe(onNext: { attributedTitle in
                 self.monthYearLabel.attributedText = attributedTitle
-//                titleLabel.sizeToFit()
-//                self.navigationItem.titleView = titleLabel
             })
             .addDisposableTo(disposeBag)
     }
@@ -60,10 +57,22 @@ class CalendarViewController: UIViewController {
     }
     
     func configureCollectionView() {
+        bindDataSource()
+        configureCells()
+        configureHeaderAndFooter()
+        configureItemSelection()
+
+        calendarCollectionView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
+    }
+    
+    func bindDataSource() {
         calendarViewModel.sections.asObservable()
             .bind(to: calendarCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
+    }
+    
+    func configureCells() {
         dataSource.configureCell = { (ds, cv, indexPath, item) in
             switch item {
             case .day(let day):
@@ -82,18 +91,22 @@ class CalendarViewController: UIViewController {
                 return cell
             }
         }
-        
+    }
+    
+    func configureHeaderAndFooter() {
         dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
             if kind == UICollectionElementKindSectionFooter {
-                let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath)
-                return header
+                let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath)
+                return footer
             }
             else {
                 let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "separatorHeader", for: indexPath)
                 return header
             }
         }
-        
+    }
+    
+    func configureItemSelection() {
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
@@ -110,7 +123,9 @@ class CalendarViewController: UIViewController {
                 }
             })
             .addDisposableTo(disposeBag)
-        
+    }
+    
+    func configureItemDeselection() {
         calendarCollectionView.rx.itemDeselected
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
@@ -118,9 +133,6 @@ class CalendarViewController: UIViewController {
                     cell.setUnselected()
                 }
             })
-            .addDisposableTo(disposeBag)
-        
-        calendarCollectionView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
     }
     
@@ -189,7 +201,6 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func getEventCellSize() -> CGSize {
-//        let width = UIScreen.main.bounds.width - 20
         let width = UIScreen.main.bounds.width
         return CGSize(width: width, height: 90)
     }
@@ -205,7 +216,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         if section == self.calendarViewModel.CALENDAR_SECTION && self.calendarViewModel.sections.value[self.calendarViewModel.EVENTS_SECTION].items.count == 0 {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 165)
+            return CGSize(width: width, height: 190)
         }
         return CGSize(width: 0, height: 0)
     }
@@ -214,8 +225,6 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         if section == calendarViewModel.CALENDAR_SECTION {
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         }
-//        else if section == calendarViewModel.EVENTS_SECTION {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        }
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }

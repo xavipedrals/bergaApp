@@ -212,7 +212,7 @@
                                                             <rect key="frame" x="14" y="7" width="308" height="75"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="majorFest" translatesAutoresizingMaskIntoConstraints="NO" id="yBe-Dl-3Co" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="15" y="10" width="24" height="24"/>
+                                                                    <rect key="frame" x="15" y="15" width="24" height="24"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
                                                                             <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,12 +220,12 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru7-vl-6G8">
-                                                                    <rect key="frame" x="47" y="10.5" width="251" height="19.5"/>
+                                                                    <rect key="frame" x="47" y="15.5" width="251" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vC7-Oj-juo">
-                                                                    <rect key="frame" x="47" y="33" width="251" height="18"/>
+                                                                    <rect key="frame" x="47" y="38" width="251" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -240,7 +240,7 @@
                                                                 <constraint firstAttribute="trailing" secondItem="Ru7-vl-6G8" secondAttribute="trailing" constant="10" id="aOg-qg-DbA"/>
                                                                 <constraint firstItem="vC7-Oj-juo" firstAttribute="leading" secondItem="yBe-Dl-3Co" secondAttribute="trailing" constant="8" id="cnR-Ik-eSU"/>
                                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vC7-Oj-juo" secondAttribute="bottom" constant="8" id="eRA-fR-VTo"/>
-                                                                <constraint firstItem="yBe-Dl-3Co" firstAttribute="top" secondItem="nbB-dm-Ksn" secondAttribute="top" constant="10" id="n54-6u-1oW"/>
+                                                                <constraint firstItem="yBe-Dl-3Co" firstAttribute="top" secondItem="nbB-dm-Ksn" secondAttribute="top" constant="15" id="n54-6u-1oW"/>
                                                                 <constraint firstAttribute="trailing" secondItem="vC7-Oj-juo" secondAttribute="trailing" constant="10" id="uFr-Qz-6dy"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
@@ -329,7 +329,7 @@
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="3"/>
