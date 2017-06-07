@@ -1584,7 +1584,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMp-yZ-99Z" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMp-yZ-99Z" customClass="ShadowView" customModule="BergaApp" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="2" width="365" height="137"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-mR-wlW">
@@ -1654,21 +1654,6 @@
                                                         <constraint firstAttribute="bottom" secondItem="UnA-Xn-DHX" secondAttribute="bottom" constant="10" id="goI-d2-qlX"/>
                                                         <constraint firstItem="UnA-Xn-DHX" firstAttribute="top" secondItem="HOd-dG-VoG" secondAttribute="bottom" constant="10" id="wzN-X3-rGM"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoE-N1-1LW" userLabel="Shadow">
-                                                    <rect key="frame" x="6" y="139" width="363" height="1"/>
-                                                    <color key="backgroundColor" red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="UUH-To-ctA"/>
-                                                    </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dum-dv-AyT">
                                                     <rect key="frame" x="323" y="92.5" width="50" height="45"/>
@@ -1681,13 +1666,10 @@
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="Dum-dv-AyT" firstAttribute="centerY" secondItem="mxr-zN-XRX" secondAttribute="centerY" id="3Bu-0L-c84"/>
-                                                <constraint firstItem="zoE-N1-1LW" firstAttribute="leading" secondItem="wMp-yZ-99Z" secondAttribute="leading" constant="1" id="7IK-Fp-Rve"/>
                                                 <constraint firstAttribute="bottom" secondItem="wMp-yZ-99Z" secondAttribute="bottom" constant="4" id="9x5-Z7-aoj"/>
                                                 <constraint firstAttribute="trailing" secondItem="wMp-yZ-99Z" secondAttribute="trailing" constant="5" id="BkH-CE-8b5"/>
                                                 <constraint firstItem="wMp-yZ-99Z" firstAttribute="top" secondItem="I91-6z-ps6" secondAttribute="top" constant="2" id="Fkx-tk-FaX"/>
                                                 <constraint firstItem="wMp-yZ-99Z" firstAttribute="leading" secondItem="I91-6z-ps6" secondAttribute="leading" constant="5" id="I5c-6N-7L2"/>
-                                                <constraint firstItem="zoE-N1-1LW" firstAttribute="top" secondItem="wMp-yZ-99Z" secondAttribute="bottom" id="JzA-eV-OSd"/>
-                                                <constraint firstItem="zoE-N1-1LW" firstAttribute="trailing" secondItem="wMp-yZ-99Z" secondAttribute="trailing" constant="-1" id="K0s-PV-hcw"/>
                                                 <constraint firstItem="Dum-dv-AyT" firstAttribute="centerX" secondItem="mxr-zN-XRX" secondAttribute="centerX" id="unW-7W-t7u"/>
                                             </constraints>
                                         </tableViewCellContentView>

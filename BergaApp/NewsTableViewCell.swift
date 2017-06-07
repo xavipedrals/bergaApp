@@ -17,6 +17,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var providerImageView: UIImageView!
     @IBOutlet weak var providerName: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+//    @IBOutlet weak var wrapper: CustomView!
     
     
     func initCell(from: News) {
@@ -27,6 +28,7 @@ class NewsTableViewCell: UITableViewCell {
         }
         providerImageView.image = UIImage(named: from.provider.imageName)
         providerName.text = from.provider.name
+//        wrapper.dropShadow()
     }
 
 }

@@ -22,6 +22,7 @@
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
 		471DACDE1ED233250090C6CD /* PromotedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */; };
 		4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */; };
+		4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */; };
 		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
@@ -97,6 +98,7 @@
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotedShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsManager.swift; sourceTree = "<group>"; };
+		4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				47C942291EC65B8400B3F617 /* CustomView.swift */,
 				47C9422B1EC65B9800B3F617 /* IconImage.swift */,
 				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
+				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */,
 				47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
+				4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */,
 				47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */,
 				47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */,
 				4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */,
