@@ -27,6 +27,7 @@
 		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
 		475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475CD2BF1EDB035C006EAA4B /* CustomButton.swift */; };
+		478846691EED5A7E0027E12E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478846681EED5A7E0027E12E /* CardView.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
 		479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479315DC1EC5FDED00845C6C /* Main.storyboard */; };
 		479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479315DF1EC5FDED00845C6C /* Assets.xcassets */; };
@@ -103,6 +104,7 @@
 		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		475CD2BF1EDB035C006EAA4B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		478846681EED5A7E0027E12E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479315D81EC5FDED00845C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479315DD1EC5FDED00845C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				47C9422B1EC65B9800B3F617 /* IconImage.swift */,
 				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
+				478846681EED5A7E0027E12E /* CardView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				47A4A41F1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
 				479FFBA11ECE407300BA8106 /* ShopListViewController.swift in Sources */,
+				478846691EED5A7E0027E12E /* CardView.swift in Sources */,
 				47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
