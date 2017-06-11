@@ -20,6 +20,10 @@
 		4705512C1EC717E70016E366 /* NewsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512B1EC717E70016E366 /* NewsStub.swift */; };
 		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
+		471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 471D89E91EED76200003D1E5 /* WeatherView.xib */; };
+		471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D89EB1EED768F0003D1E5 /* WeatherView.swift */; };
+		471D89EE1EED76AE0003D1E5 /* WeatherColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D89ED1EED76AE0003D1E5 /* WeatherColors.swift */; };
+		471D89F01EED7ACA0003D1E5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D89EF1EED7ACA0003D1E5 /* Weather.swift */; };
 		471DACDE1ED233250090C6CD /* PromotedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */; };
 		4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */; };
 		4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */; };
@@ -97,6 +101,10 @@
 		4705512B1EC717E70016E366 /* NewsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStub.swift; sourceTree = "<group>"; };
 		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		471D89E91EED76200003D1E5 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		471D89EB1EED768F0003D1E5 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		471D89ED1EED76AE0003D1E5 /* WeatherColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherColors.swift; sourceTree = "<group>"; };
+		471D89EF1EED7ACA0003D1E5 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotedShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsManager.swift; sourceTree = "<group>"; };
 		4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -236,6 +244,17 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		471D89E81EED76050003D1E5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				471D89E91EED76200003D1E5 /* WeatherView.xib */,
+				471D89EB1EED768F0003D1E5 /* WeatherView.swift */,
+				471D89ED1EED76AE0003D1E5 /* WeatherColors.swift */,
+				471D89EF1EED7ACA0003D1E5 /* Weather.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 		473EE0171ED0579F006AAC71 /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +352,7 @@
 		479316161EC605AE00845C6C /* News */ = {
 			isa = PBXGroup;
 			children = (
+				471D89E81EED76050003D1E5 /* Weather */,
 				479316061EC5FE2800845C6C /* NewsViewController.swift */,
 				479316171EC605C400845C6C /* NewsViewModel.swift */,
 				479316191EC605E000845C6C /* News.swift */,
@@ -479,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */,
 				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
@@ -545,6 +566,7 @@
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				47416A101ED74AE100497A09 /* MapViewController.swift in Sources */,
+				471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
 				473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */,
 				4352956E1ECB14710017FB9E /* Colors.swift in Sources */,
@@ -557,6 +579,7 @@
 				439DF4E11ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift in Sources */,
 				479FFBA91ECE443E00BA8106 /* ShopCollectionViewCell.swift in Sources */,
 				473F514A1ED9991F00008FAC /* Address.swift in Sources */,
+				471D89EE1EED76AE0003D1E5 /* WeatherColors.swift in Sources */,
 				47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */,
@@ -565,6 +588,7 @@
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
 				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
 				479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */,
+				471D89F01EED7ACA0003D1E5 /* Weather.swift in Sources */,
 				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */,
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,

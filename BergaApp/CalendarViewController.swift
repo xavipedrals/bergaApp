@@ -159,6 +159,16 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.addGestureRecognizer(swipeRight)
     }
     
+    @IBAction func goPreviousMonth(_ sender: Any) {
+        self.calendarViewModel.substractAMonth()
+        self.selectedIndex = nil
+    }
+    
+    @IBAction func goNextMonth(_ sender: Any) {
+        self.calendarViewModel.addAMonth()
+        self.selectedIndex = nil
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToEventDetail" {
             let eventDetail = segue.destination as! EventDetailViewController
@@ -208,7 +218,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == self.calendarViewModel.EVENTS_SECTION {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 10)
+            return CGSize(width: width, height: 15)
         }
         return CGSize(width: 0, height: 0)
     }
@@ -216,7 +226,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         if section == self.calendarViewModel.CALENDAR_SECTION && self.calendarViewModel.sections.value[self.calendarViewModel.EVENTS_SECTION].items.count == 0 {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 190)
+            return CGSize(width: width, height: 200)
         }
         return CGSize(width: 0, height: 0)
     }

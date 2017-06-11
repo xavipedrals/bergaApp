@@ -19,6 +19,14 @@ class IconImage: UIImageView {
             }
         }
     }
+    
+    @IBInspectable var mirror: Bool = false {
+        didSet {
+            if mirror {
+                self.transform = CGAffineTransform(scaleX: -1, y: 1)
+            }
+        }
+    }
 
     
 }

@@ -13,6 +13,7 @@ import RxCocoa
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var weatherView: WeatherView!
     
     let newsViewModel = NewsViewModel()
     let disposeBag = DisposeBag()
@@ -21,6 +22,9 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         
         initVisuals()
+        let weather = Weather(celciusGrades: 24, type: .sunny)
+        
+        weatherView.set(weather: weather)
         
         newsViewModel.data.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "newsCell", cellType: NewsTableViewCell.self)){

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherView" customModule="BergaApp" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="dx7-JV-gmk" id="Pe8-LY-SNw"/>
+                <outlet property="placeLabel" destination="WsF-xd-XrK" id="TNb-2l-Sik"/>
+                <outlet property="tempreatureLabel" destination="LnU-Hv-1Wo" id="gBw-xj-tSz"/>
+                <outlet property="weatherImg" destination="CyT-Nr-pjJ" id="H4M-8C-4yr"/>
+                <outlet property="weatherLabel" destination="4Vm-yB-Lot" id="mUG-kB-7gr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-JV-gmk" customClass="ShadowView" customModule="BergaApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24º" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnU-Hv-1Wo">
+                            <rect key="frame" x="20" y="67" width="82" height="63.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHL-eI-YSE">
+                            <rect key="frame" x="102" y="90" width="21" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assolellat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vm-yB-Lot">
+                            <rect key="frame" x="26.5" y="135.5" width="69.5" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="CyT-Nr-pjJ">
+                            <rect key="frame" x="236" y="37" width="119" height="118"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsF-xd-XrK">
+                            <rect key="frame" x="164" y="30" width="47" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="wAE-MM-ZIE">
+                            <rect key="frame" x="137" y="26.5" width="22" height="27"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1529411765" green="0.87058823529999996" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="4Vm-yB-Lot" firstAttribute="centerX" secondItem="LnU-Hv-1Wo" secondAttribute="centerX" id="3qi-Us-8af"/>
+                        <constraint firstItem="MHL-eI-YSE" firstAttribute="leading" secondItem="LnU-Hv-1Wo" secondAttribute="trailing" id="5I8-GQ-j8u"/>
+                        <constraint firstItem="wAE-MM-ZIE" firstAttribute="centerY" secondItem="WsF-xd-XrK" secondAttribute="centerY" id="C1x-qq-DNF"/>
+                        <constraint firstItem="WsF-xd-XrK" firstAttribute="leading" secondItem="wAE-MM-ZIE" secondAttribute="trailing" constant="5" id="IQG-zB-ZCy"/>
+                        <constraint firstItem="WsF-xd-XrK" firstAttribute="centerX" secondItem="dx7-JV-gmk" secondAttribute="centerX" id="RV2-9P-ccI"/>
+                        <constraint firstItem="LnU-Hv-1Wo" firstAttribute="leading" secondItem="dx7-JV-gmk" secondAttribute="leading" constant="20" id="TGu-Yp-N6S"/>
+                        <constraint firstItem="4Vm-yB-Lot" firstAttribute="top" secondItem="LnU-Hv-1Wo" secondAttribute="bottom" constant="5" id="cmr-8t-kss"/>
+                        <constraint firstAttribute="trailing" secondItem="CyT-Nr-pjJ" secondAttribute="trailing" constant="20" id="lwW-Hl-QUl"/>
+                        <constraint firstAttribute="bottom" secondItem="4Vm-yB-Lot" secondAttribute="bottom" constant="20" id="n5L-Vw-9fE"/>
+                        <constraint firstItem="MHL-eI-YSE" firstAttribute="baseline" secondItem="LnU-Hv-1Wo" secondAttribute="baseline" id="ow3-CW-m3h"/>
+                        <constraint firstItem="WsF-xd-XrK" firstAttribute="top" secondItem="dx7-JV-gmk" secondAttribute="top" constant="30" id="wmq-SL-MdH"/>
+                        <constraint firstAttribute="bottom" secondItem="CyT-Nr-pjJ" secondAttribute="bottom" constant="20" id="yk3-RN-t1Y"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dx7-JV-gmk" secondAttribute="bottom" id="aYc-MZ-bFG"/>
+                <constraint firstItem="dx7-JV-gmk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="n0m-v8-GWq"/>
+                <constraint firstAttribute="trailing" secondItem="dx7-JV-gmk" secondAttribute="trailing" id="pzo-4S-Qf4"/>
+                <constraint firstItem="dx7-JV-gmk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xlE-fL-hrc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="place" width="22" height="27"/>
+        <image name="sun" width="119" height="118"/>
+    </resources>
+</document>

@@ -46,6 +46,47 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wun-L3-2My">
                                         <rect key="frame" x="0.0" y="20" width="375" height="46"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="nLx-Da-ERI" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="15.5" width="15" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="nLx-Da-ERI" secondAttribute="height" multiplier="1:1" id="2ea-kn-EMg"/>
+                                                    <constraint firstAttribute="height" constant="15" id="SsU-v1-Gp4"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rotate" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="mirror" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU2-qU-CEn">
+                                                <rect key="frame" x="4.5" y="-2" width="46" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="gt0-Ih-7lp"/>
+                                                    <constraint firstAttribute="width" constant="46" id="hhv-Wg-JxY"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="goPreviousMonth:" destination="hl4-iZ-yoD" eventType="touchUpInside" id="g3N-2u-czk"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="pvZ-7q-JP5" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                                                <rect key="frame" x="340" y="15.5" width="15" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pvZ-7q-JP5" secondAttribute="height" multiplier="1:1" id="2h7-0P-m2k"/>
+                                                    <constraint firstAttribute="height" constant="15" id="v5A-Zv-enu"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rotate" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-Bm-hU7">
+                                                <rect key="frame" x="324.5" y="-2" width="46" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="iod-T6-uST"/>
+                                                    <constraint firstAttribute="width" constant="46" id="ztB-NJ-wAX"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="goNextMonth:" destination="hl4-iZ-yoD" eventType="touchUpInside" id="t91-9U-Gcz"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-iS-5Yf">
                                                 <rect key="frame" x="133.5" y="11" width="107.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -55,9 +96,17 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pvZ-7q-JP5" secondAttribute="trailing" constant="20" id="8wo-7u-3bE"/>
+                                            <constraint firstItem="nLx-Da-ERI" firstAttribute="leading" secondItem="wun-L3-2My" secondAttribute="leading" constant="20" id="BNv-Ib-WAS"/>
                                             <constraint firstItem="eGv-iS-5Yf" firstAttribute="centerY" secondItem="wun-L3-2My" secondAttribute="centerY" id="JpQ-4i-H42"/>
+                                            <constraint firstItem="bU2-qU-CEn" firstAttribute="centerX" secondItem="nLx-Da-ERI" secondAttribute="centerX" id="Leh-fc-zDd"/>
                                             <constraint firstAttribute="height" constant="46" id="TCp-ES-Ihg"/>
+                                            <constraint firstItem="bU2-qU-CEn" firstAttribute="centerY" secondItem="nLx-Da-ERI" secondAttribute="centerY" id="US5-qD-GqQ"/>
+                                            <constraint firstItem="nLx-Da-ERI" firstAttribute="centerY" secondItem="wun-L3-2My" secondAttribute="centerY" id="Yb4-Xj-rpz"/>
+                                            <constraint firstItem="pvZ-7q-JP5" firstAttribute="centerY" secondItem="wun-L3-2My" secondAttribute="centerY" id="cqu-dh-BH7"/>
+                                            <constraint firstItem="FIn-Bm-hU7" firstAttribute="centerX" secondItem="pvZ-7q-JP5" secondAttribute="centerX" id="eWN-S9-ic0"/>
                                             <constraint firstItem="eGv-iS-5Yf" firstAttribute="centerX" secondItem="wun-L3-2My" secondAttribute="centerX" id="o7O-90-wQq"/>
+                                            <constraint firstItem="FIn-Bm-hU7" firstAttribute="centerY" secondItem="pvZ-7q-JP5" secondAttribute="centerY" id="v2k-p7-EMH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -125,13 +174,13 @@
                                 <color key="backgroundColor" red="0.30196078431372547" green="0.43529411764705883" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="17y-ij-2gh">
                                     <size key="itemSize" width="73" height="76"/>
-                                    <size key="headerReferenceSize" width="50" height="1"/>
-                                    <size key="footerReferenceSize" width="50" height="198"/>
+                                    <size key="headerReferenceSize" width="50" height="15"/>
+                                    <size key="footerReferenceSize" width="50" height="205"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="PZT-wl-Zfv" customClass="DayCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="152" y="1" width="71" height="76"/>
+                                        <rect key="frame" x="152" y="15" width="71" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="71" height="76"/>
@@ -199,17 +248,17 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="O4x-T7-yTs" customClass="EventCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="19.5" y="77" width="336" height="89"/>
+                                        <rect key="frame" x="19.5" y="91" width="336" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHU-jX-a8q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="336" height="89"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="336" height="80"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-dm-Ksn" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
-                                                            <rect key="frame" x="14" y="7" width="308" height="75"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-dm-Ksn" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
+                                                            <rect key="frame" x="14" y="5" width="308" height="70"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="majorFest" translatesAutoresizingMaskIntoConstraints="NO" id="yBe-Dl-3Co" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
                                                                     <rect key="frame" x="15" y="15" width="24" height="24"/>
@@ -220,7 +269,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru7-vl-6G8">
-                                                                    <rect key="frame" x="47" y="15.5" width="251" height="19.5"/>
+                                                                    <rect key="frame" x="47" y="15.5" width="228" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -230,6 +279,18 @@
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="tz9-nx-jcH" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                                                                    <rect key="frame" x="278" y="27.5" width="15" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="15" id="lTs-R9-SVD"/>
+                                                                        <constraint firstAttribute="width" secondItem="tz9-nx-jcH" secondAttribute="height" multiplier="1:1" id="ltX-zi-gS2"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
+                                                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -237,31 +298,22 @@
                                                                 <constraint firstItem="Ru7-vl-6G8" firstAttribute="leading" secondItem="yBe-Dl-3Co" secondAttribute="trailing" constant="8" id="Edj-5O-uj2"/>
                                                                 <constraint firstItem="yBe-Dl-3Co" firstAttribute="leading" secondItem="nbB-dm-Ksn" secondAttribute="leading" constant="15" id="JAx-Ym-Rg7"/>
                                                                 <constraint firstItem="vC7-Oj-juo" firstAttribute="top" secondItem="Ru7-vl-6G8" secondAttribute="bottom" constant="3" id="PZX-b4-Wtd"/>
-                                                                <constraint firstAttribute="trailing" secondItem="Ru7-vl-6G8" secondAttribute="trailing" constant="10" id="aOg-qg-DbA"/>
+                                                                <constraint firstItem="tz9-nx-jcH" firstAttribute="leading" secondItem="Ru7-vl-6G8" secondAttribute="trailing" constant="3" id="c56-MQ-OJL"/>
                                                                 <constraint firstItem="vC7-Oj-juo" firstAttribute="leading" secondItem="yBe-Dl-3Co" secondAttribute="trailing" constant="8" id="cnR-Ik-eSU"/>
-                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vC7-Oj-juo" secondAttribute="bottom" constant="8" id="eRA-fR-VTo"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vC7-Oj-juo" secondAttribute="bottom" constant="10" id="eRA-fR-VTo"/>
+                                                                <constraint firstItem="tz9-nx-jcH" firstAttribute="centerY" secondItem="nbB-dm-Ksn" secondAttribute="centerY" id="lwq-Rp-ptW"/>
+                                                                <constraint firstAttribute="trailing" secondItem="tz9-nx-jcH" secondAttribute="trailing" constant="15" id="n1L-62-Zhh"/>
                                                                 <constraint firstItem="yBe-Dl-3Co" firstAttribute="top" secondItem="nbB-dm-Ksn" secondAttribute="top" constant="15" id="n54-6u-1oW"/>
                                                                 <constraint firstAttribute="trailing" secondItem="vC7-Oj-juo" secondAttribute="trailing" constant="10" id="uFr-Qz-6dy"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="nbB-dm-Ksn" firstAttribute="top" secondItem="VHU-jX-a8q" secondAttribute="top" constant="7" id="3Ty-bF-DfV"/>
+                                                        <constraint firstItem="nbB-dm-Ksn" firstAttribute="top" secondItem="VHU-jX-a8q" secondAttribute="top" constant="5" id="3Ty-bF-DfV"/>
                                                         <constraint firstAttribute="trailing" secondItem="nbB-dm-Ksn" secondAttribute="trailing" constant="14" id="SPe-iO-85i"/>
                                                         <constraint firstItem="nbB-dm-Ksn" firstAttribute="leading" secondItem="VHU-jX-a8q" secondAttribute="leading" constant="14" id="TXp-NX-qSN"/>
-                                                        <constraint firstAttribute="bottom" secondItem="nbB-dm-Ksn" secondAttribute="bottom" constant="7" id="hA4-Jc-W2h"/>
+                                                        <constraint firstAttribute="bottom" secondItem="nbB-dm-Ksn" secondAttribute="bottom" constant="5" id="hA4-Jc-W2h"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -272,7 +324,7 @@
                                             <constraint firstItem="VHU-jX-a8q" firstAttribute="leading" secondItem="O4x-T7-yTs" secondAttribute="leading" id="gJ2-J1-HFW"/>
                                             <constraint firstAttribute="trailing" secondItem="VHU-jX-a8q" secondAttribute="trailing" id="w24-5G-Bb2"/>
                                         </constraints>
-                                        <size key="customSize" width="336" height="89"/>
+                                        <size key="customSize" width="336" height="80"/>
                                         <connections>
                                             <outlet property="eventIcon" destination="yBe-Dl-3Co" id="E2g-K9-hST"/>
                                             <outlet property="nameLabel" destination="Ru7-vl-6G8" id="60v-Rq-rXm"/>
@@ -281,12 +333,26 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="separatorHeader" id="qNO-R8-O4W">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="15"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwV-hn-KuE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="15"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBn-0F-hVW" customClass="ShadowView" customModule="BergaApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="5"/>
+                                                    <color key="backgroundColor" red="0.30196078431372547" green="0.43529411764705883" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="F5J-2f-n5U"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="bBn-0F-hVW" firstAttribute="top" secondItem="BwV-hn-KuE" secondAttribute="top" id="238-pI-Ety"/>
+                                                <constraint firstItem="bBn-0F-hVW" firstAttribute="leading" secondItem="BwV-hn-KuE" secondAttribute="leading" id="D8m-XN-T7y"/>
+                                                <constraint firstAttribute="trailing" secondItem="bBn-0F-hVW" secondAttribute="trailing" id="NbQ-Ue-nnz"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -297,20 +363,27 @@
                                     </constraints>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarFooter" id="a4u-sr-SS9">
-                                    <rect key="frame" x="0.0" y="176" width="375" height="198"/>
+                                    <rect key="frame" x="0.0" y="181" width="375" height="205"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-9w-H9A">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YV-Xr-aZC" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
-                                                    <rect key="frame" x="14" y="10" width="347" height="174"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-iS-ljH" customClass="ShadowView" customModule="BergaApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="5"/>
+                                                    <color key="backgroundColor" red="0.30196078431372547" green="0.43529411764705883" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="5" id="QFs-3v-joF"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YV-Xr-aZC" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
+                                                    <rect key="frame" x="14" y="10" width="347" height="175.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="park" translatesAutoresizingMaskIntoConstraints="NO" id="l6U-r4-qej" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                            <rect key="frame" x="137.5" y="15" width="72" height="72"/>
+                                                            <rect key="frame" x="137.5" y="20" width="72" height="72"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hi ha esdeveniments programats per aquest dia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcP-gn-yW4">
-                                                            <rect key="frame" x="30" y="107" width="287" height="38.5"/>
+                                                            <rect key="frame" x="30" y="112" width="287" height="38.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -319,30 +392,23 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="OcP-gn-yW4" secondAttribute="trailing" constant="30" id="AAZ-86-kf2"/>
-                                                        <constraint firstItem="l6U-r4-qej" firstAttribute="top" secondItem="5YV-Xr-aZC" secondAttribute="top" constant="15" id="Iyd-en-hss"/>
+                                                        <constraint firstItem="l6U-r4-qej" firstAttribute="top" secondItem="5YV-Xr-aZC" secondAttribute="top" constant="20" id="Iyd-en-hss"/>
                                                         <constraint firstItem="l6U-r4-qej" firstAttribute="centerX" secondItem="5YV-Xr-aZC" secondAttribute="centerX" id="Jq0-2M-zW7"/>
                                                         <constraint firstItem="OcP-gn-yW4" firstAttribute="top" secondItem="l6U-r4-qej" secondAttribute="bottom" constant="20" id="Z8H-1x-vZL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="OcP-gn-yW4" secondAttribute="bottom" constant="25" id="ZAT-iW-r1r"/>
                                                         <constraint firstItem="OcP-gn-yW4" firstAttribute="leading" secondItem="5YV-Xr-aZC" secondAttribute="leading" constant="30" id="dI2-99-QxG"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="3"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="5YV-Xr-aZC" secondAttribute="trailing" constant="14" id="12Y-Gd-alz"/>
                                                 <constraint firstItem="5YV-Xr-aZC" firstAttribute="top" secondItem="6bS-9w-H9A" secondAttribute="top" constant="10" id="1pV-Nb-ZFx"/>
-                                                <constraint firstAttribute="bottom" secondItem="5YV-Xr-aZC" secondAttribute="bottom" constant="14" id="PVJ-HC-VaH"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5YV-Xr-aZC" secondAttribute="bottom" constant="14" id="PVJ-HC-VaH"/>
+                                                <constraint firstItem="QL3-iS-ljH" firstAttribute="leading" secondItem="6bS-9w-H9A" secondAttribute="leading" id="Pgm-BX-wqA"/>
+                                                <constraint firstItem="QL3-iS-ljH" firstAttribute="top" secondItem="6bS-9w-H9A" secondAttribute="top" id="wEC-Pc-kc1"/>
                                                 <constraint firstItem="5YV-Xr-aZC" firstAttribute="leading" secondItem="6bS-9w-H9A" secondAttribute="leading" constant="14" id="y5X-Ex-HE1"/>
+                                                <constraint firstAttribute="trailing" secondItem="QL3-iS-ljH" secondAttribute="trailing" id="zBe-I4-2Ea"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -1575,63 +1641,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDw-nB-iOe" customClass="ShadowView" customModule="BergaApp" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jle-uC-8Dw" customClass="WeatherView" customModule="BergaApp" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24º" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg7-kF-4nt">
-                                                    <rect key="frame" x="20" y="67" width="82" height="63.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="53"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4Z-8e-NuM">
-                                                    <rect key="frame" x="102" y="90" width="21" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assolellat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-Yy-ecO">
-                                                    <rect key="frame" x="26.5" y="135.5" width="69.5" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="OVJ-N7-Lsm">
-                                                    <rect key="frame" x="236" y="37" width="119" height="118"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDb-pB-6HN">
-                                                    <rect key="frame" x="164" y="30" width="47" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-WM-hkq">
-                                                    <rect key="frame" x="137" y="26.5" width="22" height="27"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.15294117647058825" green="0.87058823529411766" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstItem="U4Z-8e-NuM" firstAttribute="leading" secondItem="Tg7-kF-4nt" secondAttribute="trailing" id="2vm-7j-LzL"/>
-                                                <constraint firstItem="Tg7-kF-4nt" firstAttribute="leading" secondItem="XDw-nB-iOe" secondAttribute="leading" constant="20" id="4XG-Hm-CTg"/>
-                                                <constraint firstItem="iDb-pB-6HN" firstAttribute="leading" secondItem="kOS-WM-hkq" secondAttribute="trailing" constant="5" id="5QY-Ri-8Bk"/>
-                                                <constraint firstAttribute="trailing" secondItem="OVJ-N7-Lsm" secondAttribute="trailing" constant="20" id="AyV-Vu-wjX"/>
-                                                <constraint firstItem="OvQ-Yy-ecO" firstAttribute="top" secondItem="Tg7-kF-4nt" secondAttribute="bottom" constant="5" id="F2R-5U-AgT"/>
-                                                <constraint firstItem="OvQ-Yy-ecO" firstAttribute="centerX" secondItem="Tg7-kF-4nt" secondAttribute="centerX" id="PZs-A0-AL4"/>
-                                                <constraint firstItem="U4Z-8e-NuM" firstAttribute="baseline" secondItem="Tg7-kF-4nt" secondAttribute="baseline" id="Y2w-2m-PSb"/>
-                                                <constraint firstAttribute="bottom" secondItem="OVJ-N7-Lsm" secondAttribute="bottom" constant="20" id="a4J-hp-5nJ"/>
-                                                <constraint firstItem="kOS-WM-hkq" firstAttribute="centerY" secondItem="iDb-pB-6HN" secondAttribute="centerY" id="kVu-xg-5fI"/>
-                                                <constraint firstAttribute="bottom" secondItem="OvQ-Yy-ecO" secondAttribute="bottom" constant="20" id="lpf-DG-XBL"/>
-                                            </constraints>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="XDw-nB-iOe" secondAttribute="trailing" id="CsB-hN-Ero"/>
-                                        <constraint firstItem="iDb-pB-6HN" firstAttribute="top" secondItem="sNS-9U-C8z" secondAttribute="top" constant="30" id="IdU-8Q-mHw"/>
-                                        <constraint firstItem="iDb-pB-6HN" firstAttribute="centerX" secondItem="sNS-9U-C8z" secondAttribute="centerX" id="Tm9-6L-ufr"/>
-                                        <constraint firstItem="XDw-nB-iOe" firstAttribute="leading" secondItem="sNS-9U-C8z" secondAttribute="leading" id="apQ-Ut-b0L"/>
-                                        <constraint firstItem="XDw-nB-iOe" firstAttribute="top" secondItem="sNS-9U-C8z" secondAttribute="top" id="eJr-Gh-saP"/>
-                                        <constraint firstAttribute="bottom" secondItem="XDw-nB-iOe" secondAttribute="bottom" constant="10" id="gLb-yx-oec"/>
+                                        <constraint firstItem="Jle-uC-8Dw" firstAttribute="top" secondItem="sNS-9U-C8z" secondAttribute="top" id="8bP-ms-Goq"/>
+                                        <constraint firstAttribute="bottom" secondItem="Jle-uC-8Dw" secondAttribute="bottom" constant="10" id="9mB-Hm-LSp"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jle-uC-8Dw" secondAttribute="trailing" id="Dcb-VA-0cK"/>
+                                        <constraint firstItem="Jle-uC-8Dw" firstAttribute="leading" secondItem="sNS-9U-C8z" secondAttribute="leading" id="k5H-sb-yjc"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -1754,6 +1774,7 @@
                     <tabBarItem key="tabBarItem" title="Notícies" image="newspaper-folded" selectedImage="newspaper-folded" id="2Ly-ji-TcP"/>
                     <connections>
                         <outlet property="tableView" destination="Csm-7L-kga" id="Q3n-yP-ujY"/>
+                        <outlet property="weatherView" destination="Jle-uC-8Dw" id="eez-xi-ksm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ia-Hq-S23" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1767,11 +1788,11 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Da1-9m-Wkb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.30588235289999999" green="0.87058823529999996" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.12156862745098039" green="0.67450980392156867" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.30858913064002991" green="0.87221497297286987" blue="0.57531523704528809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.12156862745098039" green="0.67450980392156867" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -1799,8 +1820,6 @@
         <image name="map-pin" width="24" height="24"/>
         <image name="newspaper-folded" width="25" height="25"/>
         <image name="park" width="72" height="72"/>
-        <image name="place" width="22" height="27"/>
         <image name="shopping-bag" width="25" height="25"/>
-        <image name="sun" width="119" height="118"/>
     </resources>
 </document>
