@@ -11,8 +11,11 @@ import UIKit
 class SectionHeaderCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var sectionIcon: UIImageView!
     
     func initHeader(title: String) {
-        self.titleLabel.text = title
+        titleLabel.text = title
+        let imageName = title == "Patrocinadors" ? "favorite" : "favorite-outline"
+        sectionIcon.image = UIImage(named: imageName)
     }
 }
