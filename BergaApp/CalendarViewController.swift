@@ -212,11 +212,11 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func getEventCellSize() -> CGSize {
         let width = UIScreen.main.bounds.width
-        return CGSize(width: width, height: 90)
+        return CGSize(width: width, height: 85)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == self.calendarViewModel.EVENTS_SECTION {
+        if section == self.calendarViewModel.EVENTS_SECTION && self.calendarViewModel.eventsCount > 0 {
             let width = UIScreen.main.bounds.width
             return CGSize(width: width, height: 15)
         }
@@ -224,11 +224,24 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if section == self.calendarViewModel.CALENDAR_SECTION && self.calendarViewModel.sections.value[self.calendarViewModel.EVENTS_SECTION].items.count == 0 {
+        if section == self.calendarViewModel.CALENDAR_SECTION && self.calendarViewModel.eventsCount == 0 {
             let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 200)
+//            return CGSize(width: width, height: 210)
+            return CGSize(width: width, height: getFooterHeight())
         }
         return CGSize(width: 0, height: 0)
+    }
+    
+    func getFooterHeight() -> CGFloat {
+        var eventRows = Double(self.calendarViewModel.daysCount) / 7.0
+        eventRows.round(.up)
+        let rowsHeight = eventRows * dayCellWidth!
+        let headerHeight = 66.0
+        let weekHeader = 40.0
+        let tabBarHeight = 49.0
+        let screenHeight = UIScreen.main.bounds.height
+        let footerHeight = screenHeight - CGFloat(headerHeight + weekHeader + rowsHeight + tabBarHeight)
+        return footerHeight
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

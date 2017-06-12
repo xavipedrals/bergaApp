@@ -26,6 +26,17 @@ class CalendarViewModel {
         CalendarSection(header: "Days", items: []),
         CalendarSection(header: "Events", items: [])
     ])
+    
+    var eventsCount: Int {
+        get {
+            return sections.value[EVENTS_SECTION].items.count
+        }
+    }
+    var daysCount: Int {
+        get {
+            return sections.value[CALENDAR_SECTION].items.count
+        }
+    }
 
     init() {
         monthPointer = Variable<Date>(Date().startOfMonth())
