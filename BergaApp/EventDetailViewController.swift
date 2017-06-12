@@ -13,6 +13,7 @@ class EventDetailViewController: MapViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     
     var event: CalendarEvent?
     
@@ -20,7 +21,8 @@ class EventDetailViewController: MapViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.titleLabel.text = event?.name
+        titleLabel.attributedText = Commons.getAttributedCharSpacedText(event!.name.uppercased(), charSpacing: 1.5)
+        typeLabel.attributedText = Commons.getAttributedCharSpacedText(event!.type.rawValue.capitalized, charSpacing: 1.4)
         mapView.delegate = self
         
         if let address = event?.address {

@@ -67,7 +67,7 @@ extension MapViewController: MKMapViewDelegate {
     func getMKAnnotationView(annotation: MKAnnotation, identifier: String) -> MKPinAnnotationView {
         let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         view.canShowCallout = true
-        view.rightCalloutAccessoryView = getDisclosureButton()
+//        view.rightCalloutAccessoryView = getDisclosureButton()
         return view
     }
     
@@ -90,7 +90,7 @@ extension MapViewController: MKMapViewDelegate {
     
     private func getLeftCalloutView(height: CGFloat) -> UIView {
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: height + 12))
-        leftView.backgroundColor = Colors.red
+        leftView.backgroundColor = Colors.dimGreen
         return leftView
     }
     
@@ -101,9 +101,9 @@ extension MapViewController: MKMapViewDelegate {
         return imageView
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let location = view.annotation as! CustomAnnotation
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        location.mapItem().openInMaps(launchOptions: launchOptions)
-    }
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        let location = view.annotation as! CustomAnnotation
+//        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+//        location.mapItem().openInMaps(launchOptions: launchOptions)
+//    }
 }
