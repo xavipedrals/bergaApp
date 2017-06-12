@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430026571EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */; };
 		4351A3E01ED431B900B18D9B /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */; };
 		4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */; };
 		4352956E1ECB14710017FB9E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956D1ECB14710017FB9E /* Colors.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarFooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
 		4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		4352956D1ECB14710017FB9E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */,
 				47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */,
 				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
+				430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */,
+				430026571EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift in Sources */,
 				47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */,
 				47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */,
 				4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */,

@@ -96,8 +96,16 @@ class CalendarViewController: UIViewController {
     func configureHeaderAndFooter() {
         dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
             if kind == UICollectionElementKindSectionFooter {
-                let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath)
-                return footer
+                if indexPath.section == 0 {
+                    let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
+                    footer.setNormal()
+                    return footer
+                }
+                else {
+                    let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
+                    footer.setFiller()
+                    return footer
+                }
             }
             else {
                 let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "separatorHeader", for: indexPath)
@@ -224,18 +232,31 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        let width = UIScreen.main.bounds.width
         if section == self.calendarViewModel.CALENDAR_SECTION && self.calendarViewModel.eventsCount == 0 {
-            let width = UIScreen.main.bounds.width
-//            return CGSize(width: width, height: 210)
-            return CGSize(width: width, height: getFooterHeight())
+            let height = getFooterHeightWithEvents()
+            return CGSize(width: width, height: height < 215 ? 215 : height)
+        }
+        else if section == self.calendarViewModel.EVENTS_SECTION && self.calendarViewModel.eventsCount > 0 {
+            // < screenHeight
+            let height = getFooterHeightWithEvents()
+            return CGSize(width: width, height: height < 5 ? 5 : height)
         }
         return CGSize(width: 0, height: 0)
     }
     
+    func getFooterHeightWithEvents() -> CGFloat {
+        let footerHeight = getFooterHeight()
+        let eventsHeaderHeight = 15
+        let eventsHeight = self.calendarViewModel.eventsCount * 85
+        let newHeight = footerHeight - CGFloat(eventsHeight + eventsHeaderHeight)
+        return newHeight
+    }
+    
     func getFooterHeight() -> CGFloat {
-        var eventRows = Double(self.calendarViewModel.daysCount) / 7.0
-        eventRows.round(.up)
-        let rowsHeight = eventRows * dayCellWidth!
+        var dayRows = Double(self.calendarViewModel.daysCount) / 7.0
+        dayRows.round(.up)
+        let rowsHeight = dayRows * dayCellWidth!
         let headerHeight = 66.0
         let weekHeader = 40.0
         let tabBarHeight = 49.0
