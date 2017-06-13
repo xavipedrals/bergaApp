@@ -21,7 +21,7 @@ struct EventOrganizer {
         self.name = name
     }
     
-    init(name: String, twitter: String?, facebook: String?, instagram: String?, web: String?, image: String?) {
+    init(name: String, twitter: String? = nil, facebook: String? = nil, instagram: String? = nil, web: String? = nil, image: String? = nil) {
         self.name = name
         self.twitterUrl = twitter
         self.facebookUrl = facebook

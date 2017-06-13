@@ -18,6 +18,10 @@ struct CalendarEvent {
     
     var date: Date
     var name: String
+    var description: String
+    var price: String?
+    var imgUrl: String?
+    var organizer: EventOrganizer
     var type: CalendarEventType
     var typeName: String {
         get {
@@ -38,5 +42,8 @@ struct CalendarEvent {
         self.name = name
         self.type = type
         self.address = Address(town: townAddress)
+        self.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor tortor vitae urna"
+        self.imgUrl = "https://scontent.fmad3-3.fna.fbcdn.net/v/t1.0-9/13394139_1134146096646399_918156780983641389_n.jpg?oh=16e6052a81459c5f216305470d002d0a&oe=59DFCA3D"
+        self.organizer = EventOrganizer(name: "Ajuntament de Berga", twitter: "", facebook: "")
     }
 }

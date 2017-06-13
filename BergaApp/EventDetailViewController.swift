@@ -23,6 +23,8 @@ class EventDetailViewController: MapViewController {
     @IBOutlet weak var facebookBackground: CustomView!
     @IBOutlet weak var instagramBackground: CustomView!
     @IBOutlet weak var webBackground: CustomView!
+    @IBOutlet weak var imageSection: UIView!
+    @IBOutlet weak var posterImageView: UIImageView!
     
     var event: CalendarEvent?
     
@@ -31,17 +33,27 @@ class EventDetailViewController: MapViewController {
         super.viewDidLoad()
 
         mapView.delegate = self
+        initVisuals()
         
         if let address = event?.address {
             addAddressPin(address.town)
         }
         
-        dateLabel.text = Commons.getStringFromDate(date: event!.date, format: "dd MMMM YYYY")
+        
     }
     
     func initVisuals() {
+        set(date: event!.date)
         set(title: event!.name.uppercased())
         set(type: event!.typeName)
+        set(imgUrl: event!.imgUrl)
+        set(price: event!.price)
+        set(organizer: event!.organizer)
+        descriptionLabel.text = event!.description
+    }
+    
+    func set(date: Date) {
+        dateLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY")
     }
     
     func set(title: String) {
@@ -56,16 +68,12 @@ class EventDetailViewController: MapViewController {
         if let imgUrl = imgUrl {
             let url = URL(string: imgUrl)
             if let url = url {
-                organizerImage.kf.setImage(with: url)
+                posterImageView.kf.setImage(with: url)
             }
         }
         else {
-            //hide
+            imageSection.isHidden = true
         }
-    }
-    
-    func set(description: String) {
-        descriptionLabel.text = description
     }
     
     func set(price: String?) {
@@ -78,7 +86,11 @@ class EventDetailViewController: MapViewController {
     }
     
     func set(organizer: EventOrganizer) {
-        
+        organizerLabel.text = organizer.name
+        set(twitter: organizer.twitterUrl)
+        set(facebook: organizer.facebookUrl)
+        set(instagram: organizer.instagramUrl)
+        set(web: organizer.webUrl)
     }
     
     func set(twitter: String?) {
@@ -91,15 +103,30 @@ class EventDetailViewController: MapViewController {
     }
     
     func set(facebook: String?) {
-        
+        if let twitterUrl = facebook {
+            facebookBackground.backgroundColor = Colors.dimGreen
+        }
+        else {
+            facebookBackground.backgroundColor = UIColor.lightGray
+        }
     }
     
     func set(instagram: String?) {
-        
+        if let twitterUrl = instagram {
+            instagramBackground.backgroundColor = Colors.dimGreen
+        }
+        else {
+            instagramBackground.backgroundColor = UIColor.lightGray
+        }
     }
     
     func set(web: String?) {
-        
+        if let twitterUrl = web {
+            webBackground.backgroundColor = Colors.dimGreen
+        }
+        else {
+            webBackground.backgroundColor = UIColor.lightGray
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {
