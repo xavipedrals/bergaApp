@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -251,7 +251,7 @@
                                         <rect key="frame" x="19.5" y="91" width="336" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="337" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHU-jX-a8q">
@@ -932,9 +932,17 @@ Entrada  + extra 15€</string>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="dateLabel" destination="mPc-Mw-PeU" id="gRa-Bc-dOe"/>
+                        <outlet property="descriptionLabel" destination="1dM-eP-Fmo" id="ucn-I3-ATa"/>
+                        <outlet property="facebookBackground" destination="qT7-1M-PsV" id="hP9-RF-RyW"/>
+                        <outlet property="instagramBackground" destination="l2z-p1-yy1" id="ekK-aX-Oox"/>
                         <outlet property="mapView" destination="WV3-pj-tGs" id="W8m-wb-kAc"/>
+                        <outlet property="organizerImage" destination="NHd-UT-5sk" id="2xa-aL-gUP"/>
+                        <outlet property="organizerLabel" destination="Gnf-fp-LQX" id="paY-n6-jCW"/>
+                        <outlet property="priceLabel" destination="tIr-nb-5RW" id="RoS-OU-Kdi"/>
                         <outlet property="titleLabel" destination="DfB-on-FxH" id="q8t-lt-W0g"/>
+                        <outlet property="twitterBackground" destination="rVX-dt-QZF" id="pih-bP-0Jm"/>
                         <outlet property="typeLabel" destination="JkB-W6-NJM" id="fQB-ya-Ve2"/>
+                        <outlet property="webBackground" destination="wrz-Qo-4lq" id="PQG-pU-NLG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRv-CT-nPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -984,7 +992,7 @@ Entrada  + extra 15€</string>
                                         <rect key="frame" x="31.5" y="42" width="312" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPU-Eh-9gH">
@@ -1053,20 +1061,20 @@ Entrada  + extra 15€</string>
                                         <rect key="frame" x="31.5" y="82" width="312" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-nc-DrW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="41"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqd-pK-ZUG">
-                                                            <rect key="frame" x="15" y="10.5" width="84" height="19.5"/>
+                                                            <rect key="frame" x="15" y="10" width="84" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-gY-AMX">
-                                                            <rect key="frame" x="0.0" y="40" width="312" height="1"/>
+                                                            <rect key="frame" x="0.0" y="39" width="312" height="1"/>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="lTd-2q-HEg"/>

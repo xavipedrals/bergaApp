@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		430026571EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */; };
+		432C1AF91EEFCC850043FA36 /* EventOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C1AF81EEFCC850043FA36 /* EventOrganizer.swift */; };
 		4351A3E01ED431B900B18D9B /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */; };
 		4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */; };
 		4352956E1ECB14710017FB9E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956D1ECB14710017FB9E /* Colors.swift */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarFooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		432C1AF81EEFCC850043FA36 /* EventOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventOrganizer.swift; sourceTree = "<group>"; };
 		4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
 		4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		4352956D1ECB14710017FB9E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				470551251EC704170016E366 /* CalendarEvent.swift */,
 				4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */,
+				432C1AF81EEFCC850043FA36 /* EventOrganizer.swift */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */,
 				47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
+				432C1AF91EEFCC850043FA36 /* EventOrganizer.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				47416A101ED74AE100497A09 /* MapViewController.swift in Sources */,
 				471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */,

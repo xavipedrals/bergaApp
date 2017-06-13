@@ -19,6 +19,18 @@ struct CalendarEvent {
     var date: Date
     var name: String
     var type: CalendarEventType
+    var typeName: String {
+        get {
+            switch type {
+            case .sport:
+                return "Esport"
+            case .townFest:
+                return "Festa Major"
+            case .fair:
+                return "Fira"
+            }
+        }
+    }
     var address: Address
     
     init(date: Date, name: String, type: CalendarEventType, townAddress: String) {
