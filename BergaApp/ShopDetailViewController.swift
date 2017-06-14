@@ -14,9 +14,10 @@ class ShopDetailViewController: UIViewController {
 
     @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var notificationsContainerView: UIView!
-//    @IBOutlet weak var segmentWrapper: UIView!
-//    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var topContraint: NSLayoutConstraint!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var notificationsLabel: UILabel!
+    
     
     var shop: Shop?
     let notificationsActivated = Variable<Bool>(false)
@@ -28,17 +29,10 @@ class ShopDetailViewController: UIViewController {
         self.navigationItem.backBarButtonItem?.title = ""
         if !shop!.isPromoted {
             self.navigationItem.rightBarButtonItem = nil
-//            segmentWrapper.removeFromSuperview()
             self.view.needsUpdateConstraints()
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }
-        
-        let segment: UISegmentedControl = UISegmentedControl(items: ["Informació", "Notificacions"])
-        segment.sizeToFit()
-        segment.tintColor = UIColor(red:0.99, green:0.00, blue:0.25, alpha:1.00)
-        segment.selectedSegmentIndex = 0;
-        self.navigationItem.titleView = segment
         
         notificationsActivated.asObservable()
             .map({
@@ -48,14 +42,6 @@ class ShopDetailViewController: UIViewController {
                 self.navigationItem.rightBarButtonItem?.image = UIImage(named: imgName)
             })
             .addDisposableTo(disposeBag)
-    }
-    
-    @IBAction func segmentChanged(_ sender: Any) {
-        changeSegment()
-    }
-    
-    func changeSegment() {
-        notificationsContainerView.isHidden = !notificationsContainerView.isHidden
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,8 +55,22 @@ class ShopDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func notificationsPressed(_ sender: Any) {
-        notificationsActivated.value = !notificationsActivated.value
+    @IBAction func informationPressed(_ sender: Any) {
+        notificationsContainerView.isHidden = true
+        infoContainerView.isHidden = false
+        infoLabel.textColor = Colors.dimGreen
+        notificationsLabel.textColor = Colors.lightGray
     }
 
+    @IBAction func notificationsPressed(_ sender: Any) {
+        notificationsContainerView.isHidden = false
+        infoContainerView.isHidden = true
+        infoLabel.textColor = Colors.lightGray
+        notificationsLabel.textColor = Colors.dimGreen
+    }
+
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

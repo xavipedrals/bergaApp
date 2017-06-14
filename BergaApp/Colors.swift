@@ -15,5 +15,7 @@ class Colors {
     static var green = UIColor(r: 78, g: 222, b: 146)
     static var shadow = UIColor(r: 182, g: 182, b: 182, a: 57)
     static var dimGreen = UIColor(r: 108, g: 212, b: 164)
+    static var lightGray = UIColor(r: 112, g: 112, b: 112)
+
     
 }
