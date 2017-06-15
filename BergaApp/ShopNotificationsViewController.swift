@@ -39,7 +39,21 @@ class ShopNotificationsViewController: UIViewController {
 extension ShopNotificationsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth!, height: 200)
+        
+        let topConstraint = CGFloat(20)
+        let bottomConstraint = CGFloat(10 + 24 + 10 + 10)
+        let midStackConstraint = CGFloat(3)
+        let bottomStackContraint = CGFloat(21)
+        let title = shopNotificationsViewModel.notifications.value[indexPath.row].title
+        let body = shopNotificationsViewModel.notifications.value[indexPath.row].body
+        let titleHeight = Commons.heightForLabelWithFont(text: title, font: UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium), width: CGFloat(cellWidth! - 50))
+        let bodyHeight = Commons.heightForLabelWithFont(text: body, font: UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight), width: CGFloat(cellWidth! - 50))
+        var height = topConstraint + bottomConstraint
+        height = height + midStackConstraint
+        height = height + bottomStackContraint
+        height = height + titleHeight
+        height = height + bodyHeight
+        return CGSize(width: cellWidth!, height: Double(height))
     }
     
     override func viewDidLayoutSubviews() {
