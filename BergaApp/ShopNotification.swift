@@ -7,6 +7,26 @@
 //
 
 import Foundation
+import RxDataSources
+
+struct NotificationSection {
+    var isNewest: Bool
+    var items: [NotificationModel]
+}
+
+extension NotificationSection: SectionModelType {
+    typealias Item = NotificationModel
+    
+    init(original: NotificationSection, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}
+
+enum NotificationModel {
+    case shopNotification(ShopNotification)
+    case header(Bool)
+}
 
 struct ShopNotification {
     

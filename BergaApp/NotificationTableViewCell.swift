@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationCollectionViewCell: UICollectionViewCell {
+class NotificationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
