@@ -2072,7 +2072,7 @@ Entrada  + extra 15€</string>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="sNS-9U-C8z">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jle-uC-8Dw" customClass="WeatherView" customModule="BergaApp" customModuleProvider="target">
@@ -2083,21 +2083,21 @@ Entrada  + extra 15€</string>
                                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="Jle-uC-8Dw" firstAttribute="top" secondItem="sNS-9U-C8z" secondAttribute="top" id="8bP-ms-Goq"/>
-                                        <constraint firstAttribute="bottom" secondItem="Jle-uC-8Dw" secondAttribute="bottom" constant="10" id="9mB-Hm-LSp"/>
+                                        <constraint firstAttribute="bottom" secondItem="Jle-uC-8Dw" secondAttribute="bottom" constant="15" id="9mB-Hm-LSp"/>
                                         <constraint firstAttribute="trailing" secondItem="Jle-uC-8Dw" secondAttribute="trailing" id="Dcb-VA-0cK"/>
                                         <constraint firstItem="Jle-uC-8Dw" firstAttribute="leading" secondItem="sNS-9U-C8z" secondAttribute="leading" id="k5H-sb-yjc"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="150" id="Pll-VG-d4H" customClass="NewsTableViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="215" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pll-VG-d4H" id="I91-6z-ps6">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMp-yZ-99Z" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="5" width="355" height="140"/>
+                                                    <rect key="frame" x="10" y="0.0" width="355" height="140"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-mR-wlW">
                                                             <rect key="frame" x="10" y="15" width="60" height="60"/>
@@ -2168,7 +2168,7 @@ Entrada  + extra 15€</string>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dum-dv-AyT">
-                                                    <rect key="frame" x="318" y="94.5" width="50" height="45"/>
+                                                    <rect key="frame" x="318" y="89.5" width="50" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="R9S-zk-zac"/>
                                                         <constraint firstAttribute="width" constant="50" id="gDU-Ka-iE5"/>
@@ -2178,9 +2178,9 @@ Entrada  + extra 15€</string>
                                             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Dum-dv-AyT" firstAttribute="centerY" secondItem="mxr-zN-XRX" secondAttribute="centerY" id="3Bu-0L-c84"/>
-                                                <constraint firstAttribute="bottom" secondItem="wMp-yZ-99Z" secondAttribute="bottom" constant="5" id="9x5-Z7-aoj"/>
+                                                <constraint firstAttribute="bottom" secondItem="wMp-yZ-99Z" secondAttribute="bottom" constant="10" id="9x5-Z7-aoj"/>
                                                 <constraint firstAttribute="trailing" secondItem="wMp-yZ-99Z" secondAttribute="trailing" constant="10" id="BkH-CE-8b5"/>
-                                                <constraint firstItem="wMp-yZ-99Z" firstAttribute="top" secondItem="I91-6z-ps6" secondAttribute="top" constant="5" id="Fkx-tk-FaX"/>
+                                                <constraint firstItem="wMp-yZ-99Z" firstAttribute="top" secondItem="I91-6z-ps6" secondAttribute="top" id="Fkx-tk-FaX"/>
                                                 <constraint firstItem="wMp-yZ-99Z" firstAttribute="leading" secondItem="I91-6z-ps6" secondAttribute="leading" constant="10" id="I5c-6N-7L2"/>
                                                 <constraint firstItem="Dum-dv-AyT" firstAttribute="centerX" secondItem="mxr-zN-XRX" secondAttribute="centerX" id="unW-7W-t7u"/>
                                             </constraints>

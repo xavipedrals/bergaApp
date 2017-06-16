@@ -28,13 +28,12 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigationTitle()
+        setCalendarTitle()
         configureCollectionView()
         configureSwipe()
     }
     
-    func setNavigationTitle() {
-
+    func setCalendarTitle() {
         calendarViewModel.monthYearStr.asObservable()
             .map({ monthYear -> NSAttributedString in
                 self.getMonthYearAttributedString(monthYear)

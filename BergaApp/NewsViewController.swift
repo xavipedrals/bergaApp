@@ -22,10 +22,26 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         
         initVisuals()
+        configureTableView()
+    }
+    
+    func initVisuals() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
+    }
+    
+    func configureTableView() {
+        configureWeather()
+        configureNews()
+        configureShareNews()
+    }
+    
+    func configureWeather() {
         let weather = Weather(celciusGrades: 24, type: .sunny)
-        
         weatherView.set(weather: weather)
-        
+    }
+    
+    func configureNews() {
         newsViewModel.data.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "newsCell", cellType: NewsTableViewCell.self)){
                 _, news, cell in
@@ -37,18 +53,14 @@ class NewsViewController: UIViewController {
                     .addDisposableTo(self.disposeBag)
             }
             .addDisposableTo(disposeBag)
-        
+    }
+    
+    func configureShareNews() {
         tableView.rx.modelSelected(News.self)
             .subscribe(onNext: { news in
                 UIApplication.shared.openURL(URL(string: news.url)!)
             })
             .addDisposableTo(disposeBag)
-        
-    }
-    
-    func initVisuals() {
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 150
     }
     
     func share(news: News) {
@@ -66,11 +78,12 @@ class NewsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
+        configureWeather()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+//    }
     
 }
