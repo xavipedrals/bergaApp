@@ -58,6 +58,25 @@ struct Weather {
     init(celciusGrades: Int, type: WeatherType) {
         self.celciusGrades = celciusGrades
         self.type = type
+        if isRise() { self.type = .rise }
+        else if isFall() { self.type = .fall }
+        else if isNight() { self.type = .night }
     }
     
+    
+    func isRise() -> Bool {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour >= 6 && hour <= 9
+    }
+    
+    func isFall() -> Bool {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour >= 20 && hour <= 21
+    }
+    
+    func isNight() -> Bool {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour >= 22 && hour <= 5
+    }
+
 }
