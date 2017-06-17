@@ -30,7 +30,7 @@ class CalendarViewController: UIViewController {
         
         setCalendarTitle()
         configureCollectionView()
-        configureSwipe()
+        configureSwipes()
     }
     
     func setCalendarTitle() {
@@ -143,27 +143,24 @@ class CalendarViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
-    func configureSwipe() {
-        let swipeLeft = UISwipeGestureRecognizer()
-        swipeLeft.direction = .left
-        swipeLeft.rx.event
+    func configureSwipes() {
+        configureSwipe(right: true)
+        configureSwipe(right: false)
+    }
+    
+    func configureSwipe(right: Bool) {
+        let swipeGesture = UISwipeGestureRecognizer()
+        swipeGesture.direction = right ? .right : .left
+        swipeGesture.rx.event
             .subscribe(onNext: { _ in
-                self.calendarViewModel.addAMonth()
+                right
+                    ? self.calendarViewModel.substractAMonth()
+                    : self.calendarViewModel.addAMonth()
                 self.selectedIndex = nil
             })
             .addDisposableTo(disposeBag)
         
-        let swipeRight = UISwipeGestureRecognizer()
-        swipeRight.direction = .right
-        swipeRight.rx.event
-            .subscribe(onNext: { _ in
-                self.calendarViewModel.substractAMonth()
-                self.selectedIndex = nil
-            })
-            .addDisposableTo(disposeBag)
-        
-        calendarCollectionView.addGestureRecognizer(swipeLeft)
-        calendarCollectionView.addGestureRecognizer(swipeRight)
+        calendarCollectionView.addGestureRecognizer(swipeGesture)
     }
     
     @IBAction func goPreviousMonth(_ sender: Any) {
@@ -182,6 +179,15 @@ class CalendarViewController: UIViewController {
             eventDetail.event = self.selectedEvent
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+
+}
+
+extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     override func viewDidLayoutSubviews() {
         setCellWidth()
@@ -191,15 +197,6 @@ class CalendarViewController: UIViewController {
         let width = (calendarCollectionView.frame.size.width - (10 + 10) * 2) / 7
         dayCellWidth = Double(width)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
-    }
-
-}
-
-extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
