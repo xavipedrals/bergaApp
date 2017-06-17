@@ -81,9 +81,4 @@ class NewsViewController: UIViewController {
         configureWeather()
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-//    }
-    
 }

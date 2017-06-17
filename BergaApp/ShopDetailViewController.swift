@@ -18,30 +18,19 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var notificationsLabel: UILabel!
     
-    
     var shop: Shop?
-    let notificationsActivated = Variable<Bool>(false)
     let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.backBarButtonItem?.title = ""
         if !shop!.isPromoted {
-            self.navigationItem.rightBarButtonItem = nil
             self.view.needsUpdateConstraints()
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }
-        
-        notificationsActivated.asObservable()
-            .map({
-                $0 ? "notifications" : "notification_none"
-            })
-            .subscribe(onNext: { imgName in
-                self.navigationItem.rightBarButtonItem?.image = UIImage(named: imgName)
-            })
-            .addDisposableTo(disposeBag)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,6 +56,11 @@ class ShopDetailViewController: UIViewController {
         infoContainerView.isHidden = true
         infoLabel.textColor = Colors.lightGray
         notificationsLabel.textColor = Colors.dimGreen
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
 
     @IBAction func backPressed(_ sender: Any) {

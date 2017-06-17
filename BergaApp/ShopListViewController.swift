@@ -109,20 +109,26 @@ class ShopListViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    override func viewDidLayoutSubviews() {
-        setCellWidth()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToShopDetail" {
             let vc = segue.destination as! ShopDetailViewController
             vc.shop = selectedShop
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
 
 }
 
 extension ShopListViewController: UICollectionViewDelegateFlowLayout {
+    
+    override func viewDidLayoutSubviews() {
+        setCellWidth()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellWidth!, height: 42)
     }

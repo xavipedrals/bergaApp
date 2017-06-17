@@ -159,14 +159,15 @@ class ShopInfoViewController: MapViewController {
             }
         }
     }
-    
-    override func viewDidLayoutSubviews() {
-        setCellWidth()
-    }
 
 }
 
 extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
+    
+    override func viewDidLayoutSubviews() {
+        setCellWidth()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellWidth!, height: cellWidth! / 1.75)
     }

@@ -132,6 +132,11 @@ class EventDetailViewController: MapViewController {
     @IBAction func backPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
 
 }
 
