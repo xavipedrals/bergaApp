@@ -17,7 +17,6 @@ class ShopInfoViewController: MapViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
-    @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var streetAddressLabel: UILabel!
@@ -96,7 +95,7 @@ class ShopInfoViewController: MapViewController {
     
     func set(url: String?) {
         if let url = url {
-            urlLabel.text = url
+//            urlLabel.text = url
         }
         else {
             linkWrapper.isHidden = true

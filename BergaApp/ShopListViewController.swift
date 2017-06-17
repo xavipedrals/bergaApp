@@ -14,13 +14,14 @@ import RxDataSources
 class ShopListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    let searchBar = UISearchBar()
     var cellWidth: Double?
     var selectedShop: Shop?
     let shopListViewModel = ShopListViewModel()
     let dataSource = RxCollectionViewSectionedReloadDataSource<ShopSection>()
     let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +54,8 @@ class ShopListViewController: UIViewController {
         
         collectionView.rx.modelSelected(Shop.self)
             .subscribe(onNext: { shop in
-//                if shop.isPromoted {
-                    self.selectedShop = shop
-                    self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
-//                }
+                self.selectedShop = shop
+                self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
             })
             .addDisposableTo(disposeBag)
     }
@@ -71,10 +70,6 @@ class ShopListViewController: UIViewController {
     }
 
     func createSearchBar() {
-        searchBar.searchBarStyle = .minimal
-        searchBar.placeholder = "Buscar"
-        self.navigationItem.titleView = searchBar
-        
         searchBar.rx.cancelButtonClicked
             .subscribe(onNext: { _ in
                 self.searchBar.resignFirstResponder()
@@ -102,7 +97,6 @@ class ShopListViewController: UIViewController {
                 self.searchBar.setShowsCancelButton(false, animated: true)
             })
             .addDisposableTo(disposeBag)
-
     }
     
     func hideKeyboard() {

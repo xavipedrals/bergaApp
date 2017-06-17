@@ -199,7 +199,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
+        if indexPath.section == calendarViewModel.CALENDAR_SECTION {
             return getDayCellSize()
         }
         return getEventCellSize()
@@ -215,7 +215,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == self.calendarViewModel.EVENTS_SECTION && self.calendarViewModel.eventsCount > 0 {
+        if section == calendarViewModel.EVENTS_SECTION && calendarViewModel.eventsCount > 0 {
             let width = UIScreen.main.bounds.width
             return CGSize(width: width, height: 15)
         }
@@ -224,13 +224,13 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         let width = UIScreen.main.bounds.width
-        if section == self.calendarViewModel.CALENDAR_SECTION && self.calendarViewModel.eventsCount == 0 {
+        if section == calendarViewModel.CALENDAR_SECTION && calendarViewModel.eventsCount == 0 {
             let height = getFooterHeightWithEvents()
             return CGSize(width: width, height: height < 215 ? 215 : height)
         }
-        else if section == self.calendarViewModel.EVENTS_SECTION && self.calendarViewModel.eventsCount > 0 {
+        else if section == calendarViewModel.EVENTS_SECTION && calendarViewModel.eventsCount > 0 {
             let height = getFooterHeightWithEvents()
-            return CGSize(width: width, height: height < 5 ? 5 : height)
+            return CGSize(width: width, height: height < 0 ? 0 : height)
         }
         return CGSize(width: 0, height: 0)
     }

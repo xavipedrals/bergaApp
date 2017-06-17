@@ -258,7 +258,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="336" height="80"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-dm-Ksn" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
-                                                            <rect key="frame" x="14" y="5" width="308" height="70"/>
+                                                            <rect key="frame" x="14" y="0.0" width="308" height="70"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="majorFest" translatesAutoresizingMaskIntoConstraints="NO" id="yBe-Dl-3Co" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
                                                                     <rect key="frame" x="15" y="15" width="24" height="24"/>
@@ -310,10 +310,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="nbB-dm-Ksn" firstAttribute="top" secondItem="VHU-jX-a8q" secondAttribute="top" constant="5" id="3Ty-bF-DfV"/>
+                                                        <constraint firstItem="nbB-dm-Ksn" firstAttribute="top" secondItem="VHU-jX-a8q" secondAttribute="top" id="3Ty-bF-DfV"/>
                                                         <constraint firstAttribute="trailing" secondItem="nbB-dm-Ksn" secondAttribute="trailing" constant="14" id="SPe-iO-85i"/>
                                                         <constraint firstItem="nbB-dm-Ksn" firstAttribute="leading" secondItem="VHU-jX-a8q" secondAttribute="leading" constant="14" id="TXp-NX-qSN"/>
-                                                        <constraint firstAttribute="bottom" secondItem="nbB-dm-Ksn" secondAttribute="bottom" constant="5" id="hA4-Jc-W2h"/>
+                                                        <constraint firstAttribute="bottom" secondItem="nbB-dm-Ksn" secondAttribute="bottom" constant="10" id="hA4-Jc-W2h"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -980,8 +980,25 @@ Entrada  + extra 15€</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKO-0o-Vrj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Busca una botiga o tag" translatesAutoresizingMaskIntoConstraints="NO" id="c04-bc-yyb">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                        <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="c04-bc-yyb" secondAttribute="trailing" id="04H-b7-JE3"/>
+                                    <constraint firstAttribute="height" constant="64" id="GD5-fT-mL7"/>
+                                    <constraint firstAttribute="bottom" secondItem="c04-bc-yyb" secondAttribute="bottom" id="I8X-pK-c7e"/>
+                                    <constraint firstItem="c04-bc-yyb" firstAttribute="leading" secondItem="OKO-0o-Vrj" secondAttribute="leading" id="hOu-fD-17q"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-Qb-vQs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CCK-Yc-ZhB">
                                     <size key="itemSize" width="312" height="42"/>
@@ -1007,7 +1024,7 @@ Entrada  + extra 15€</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wr1-6h-elR" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
-                                                            <rect key="frame" x="273" y="9" width="24" height="24"/>
+                                                            <rect key="frame" x="250" y="9" width="24" height="24"/>
                                                             <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="qTG-bG-4aX"/>
@@ -1020,11 +1037,14 @@ Entrada  + extra 15€</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os2-lx-kp6">
-                                                            <rect key="frame" x="281" y="12" width="9" height="18"/>
+                                                            <rect key="frame" x="258" y="12" width="9" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure Indicator" translatesAutoresizingMaskIntoConstraints="NO" id="u22-nr-hIb">
+                                                            <rect key="frame" x="289" y="13" width="8" height="13"/>
+                                                        </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCo-SW-cWo">
                                                             <rect key="frame" x="0.0" y="39" width="312" height="1"/>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1035,14 +1055,16 @@ Entrada  + extra 15€</string>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="u22-nr-hIb" secondAttribute="trailing" constant="15" id="2lr-b6-3bq"/>
                                                         <constraint firstItem="Os2-lx-kp6" firstAttribute="centerY" secondItem="Wr1-6h-elR" secondAttribute="centerY" id="4li-aC-2Ei"/>
                                                         <constraint firstAttribute="bottom" secondItem="GCo-SW-cWo" secondAttribute="bottom" id="6gc-hg-VWx"/>
                                                         <constraint firstItem="GCo-SW-cWo" firstAttribute="leading" secondItem="XPU-Eh-9gH" secondAttribute="leading" id="HCy-OG-1lU"/>
                                                         <constraint firstAttribute="trailing" secondItem="GCo-SW-cWo" secondAttribute="trailing" id="Jy1-Rb-k2q"/>
                                                         <constraint firstItem="Wr1-6h-elR" firstAttribute="centerY" secondItem="oBu-FV-A7D" secondAttribute="centerY" id="OpA-Hv-EyF"/>
                                                         <constraint firstItem="Os2-lx-kp6" firstAttribute="centerX" secondItem="Wr1-6h-elR" secondAttribute="centerX" id="Roo-fN-cvg"/>
+                                                        <constraint firstItem="u22-nr-hIb" firstAttribute="centerY" secondItem="XPU-Eh-9gH" secondAttribute="centerY" id="bTW-df-tRD"/>
+                                                        <constraint firstItem="u22-nr-hIb" firstAttribute="leading" secondItem="Wr1-6h-elR" secondAttribute="trailing" constant="15" id="c01-Ri-Y1j"/>
                                                         <constraint firstItem="oBu-FV-A7D" firstAttribute="leading" secondItem="XPU-Eh-9gH" secondAttribute="leading" constant="15" id="s4u-Ne-vfw"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Wr1-6h-elR" secondAttribute="trailing" constant="15" id="s9S-KJ-8No"/>
                                                         <constraint firstItem="oBu-FV-A7D" firstAttribute="centerY" secondItem="XPU-Eh-9gH" secondAttribute="centerY" id="zBu-jO-2bz"/>
                                                     </constraints>
                                                 </view>
@@ -1075,6 +1097,9 @@ Entrada  + extra 15€</string>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure Indicator" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-K5-z5b">
+                                                            <rect key="frame" x="289" y="13.5" width="8" height="13"/>
+                                                        </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-gY-AMX">
                                                             <rect key="frame" x="0.0" y="39" width="312" height="1"/>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1087,7 +1112,9 @@ Entrada  + extra 15€</string>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="hPt-gY-AMX" secondAttribute="bottom" id="23f-WM-12J"/>
                                                         <constraint firstItem="bqd-pK-ZUG" firstAttribute="centerY" secondItem="Lhr-nc-DrW" secondAttribute="centerY" id="43v-L1-NYk"/>
+                                                        <constraint firstItem="XsB-K5-z5b" firstAttribute="centerY" secondItem="Lhr-nc-DrW" secondAttribute="centerY" id="9bN-fA-dJd"/>
                                                         <constraint firstItem="hPt-gY-AMX" firstAttribute="leading" secondItem="Lhr-nc-DrW" secondAttribute="leading" id="Dw4-3b-ovM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XsB-K5-z5b" secondAttribute="trailing" constant="15" id="Mgr-ou-Wyn"/>
                                                         <constraint firstItem="bqd-pK-ZUG" firstAttribute="leading" secondItem="Lhr-nc-DrW" secondAttribute="leading" constant="15" id="w9V-9R-hgL"/>
                                                         <constraint firstAttribute="trailing" secondItem="hPt-gY-AMX" secondAttribute="trailing" id="ymR-B9-ZCL"/>
                                                     </constraints>
@@ -1149,7 +1176,10 @@ Entrada  + extra 15€</string>
                         <constraints>
                             <constraint firstItem="FG4-Qb-vQs" firstAttribute="leading" secondItem="P41-7R-Px1" secondAttribute="leading" id="4Qi-Ks-5Ae"/>
                             <constraint firstAttribute="trailing" secondItem="FG4-Qb-vQs" secondAttribute="trailing" id="5nF-ya-n7o"/>
-                            <constraint firstItem="FG4-Qb-vQs" firstAttribute="top" secondItem="P41-7R-Px1" secondAttribute="topMargin" id="Vgx-hg-dIZ"/>
+                            <constraint firstItem="OKO-0o-Vrj" firstAttribute="top" secondItem="P41-7R-Px1" secondAttribute="topMargin" id="KL2-oB-DZx"/>
+                            <constraint firstItem="FG4-Qb-vQs" firstAttribute="top" secondItem="OKO-0o-Vrj" secondAttribute="bottom" id="SSw-wZ-DKG"/>
+                            <constraint firstAttribute="trailing" secondItem="OKO-0o-Vrj" secondAttribute="trailing" id="XeD-Jb-bqw"/>
+                            <constraint firstItem="OKO-0o-Vrj" firstAttribute="leading" secondItem="P41-7R-Px1" secondAttribute="leading" id="Zxn-m5-CzE"/>
                             <constraint firstAttribute="bottomMargin" secondItem="FG4-Qb-vQs" secondAttribute="bottom" id="nYE-GW-ULK"/>
                         </constraints>
                     </view>
@@ -1157,6 +1187,7 @@ Entrada  + extra 15€</string>
                     <navigationItem key="navigationItem" id="ihv-7U-eVa"/>
                     <connections>
                         <outlet property="collectionView" destination="FG4-Qb-vQs" id="q2W-zt-6zJ"/>
+                        <outlet property="searchBar" destination="c04-bc-yyb" id="cmG-T0-hel"/>
                         <segue destination="zl9-OJ-Axz" kind="show" identifier="goToShopDetail" id="Xbd-vr-6Rz"/>
                     </connections>
                 </viewController>
@@ -1380,7 +1411,7 @@ Entrada  + extra 15€</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1350"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aYS-Am-LtD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1215.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1281"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsy-Me-HWe">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
@@ -1592,10 +1623,10 @@ Entrada  + extra 15€</string>
                                                 <rect key="frame" x="0.0" y="516.5" width="375" height="141.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRB-EO-Ria" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="-0.5" width="355" height="127"/>
+                                                        <rect key="frame" x="10" y="-0.5" width="355" height="132"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vza-Fr-Qdr">
-                                                                <rect key="frame" x="15" y="20" width="325" height="87"/>
+                                                                <rect key="frame" x="15" y="20" width="325" height="92"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB6-vo-euD">
                                                                         <rect key="frame" x="0.0" y="0.0" width="325" height="25"/>
@@ -1630,7 +1661,7 @@ Entrada  + extra 15€</string>
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor tortor vitae urna pharetra ultricies vitae vel lacus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv5-Jx-KlO">
-                                                                        <rect key="frame" x="0.0" y="28" width="325" height="59"/>
+                                                                        <rect key="frame" x="0.0" y="28" width="325" height="64"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -1649,49 +1680,143 @@ Entrada  + extra 15€</string>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="WRB-EO-Ria" secondAttribute="bottom" constant="15" id="M6q-w7-8FG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WRB-EO-Ria" secondAttribute="bottom" constant="10" id="M6q-w7-8FG"/>
                                                     <constraint firstItem="WRB-EO-Ria" firstAttribute="leading" secondItem="yXs-Gq-P5O" secondAttribute="leading" constant="10" id="iZ9-Ob-N0G"/>
                                                     <constraint firstAttribute="trailing" secondItem="WRB-EO-Ria" secondAttribute="trailing" constant="10" id="qdN-aM-Zgd"/>
                                                     <constraint firstItem="WRB-EO-Ria" firstAttribute="top" secondItem="yXs-Gq-P5O" secondAttribute="top" id="rel-4b-QCl"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXE-he-E7C">
-                                                <rect key="frame" x="0.0" y="658" width="375" height="70"/>
+                                                <rect key="frame" x="0.0" y="658" width="375" height="125.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R47-0w-f6z">
-                                                        <rect key="frame" x="144.5" y="5" width="86.5" height="45"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                        <color key="textColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKH-Lm-rhH">
-                                                        <rect key="frame" x="131.5" y="7.5" width="112.5" height="40"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiV-Qk-Xut" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="0.0" width="355" height="115.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Segueix-nos a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b27-po-ztw">
+                                                                <rect key="frame" x="20" y="20" width="108" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2hV-xX-3t3">
+                                                                <rect key="frame" x="20" y="59.5" width="204" height="36"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-0Q-sXc" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-twitter-1" translatesAutoresizingMaskIntoConstraints="NO" id="zbm-Lt-Eh6">
+                                                                                <rect key="frame" x="6.5" y="8" width="24" height="20"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="zbm-Lt-Eh6" firstAttribute="centerY" secondItem="eS0-0Q-sXc" secondAttribute="centerY" id="075-4M-SGz"/>
+                                                                            <constraint firstAttribute="height" constant="36" id="4yA-Pe-9Bp"/>
+                                                                            <constraint firstItem="zbm-Lt-Eh6" firstAttribute="centerX" secondItem="eS0-0Q-sXc" secondAttribute="centerX" id="Gs6-h2-jMq"/>
+                                                                            <constraint firstAttribute="width" secondItem="eS0-0Q-sXc" secondAttribute="height" id="z7w-4e-pi2"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="18"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXN-TR-50Y" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                                        <rect key="frame" x="56" y="0.0" width="36" height="36"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-facebook-1" translatesAutoresizingMaskIntoConstraints="NO" id="OJm-aV-Lbv">
+                                                                                <rect key="frame" x="12.5" y="6" width="12" height="24"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="OJm-aV-Lbv" firstAttribute="centerY" secondItem="HXN-TR-50Y" secondAttribute="centerY" id="AgO-qd-6pD"/>
+                                                                            <constraint firstAttribute="height" constant="36" id="Mx6-9Q-5b5"/>
+                                                                            <constraint firstItem="OJm-aV-Lbv" firstAttribute="centerX" secondItem="HXN-TR-50Y" secondAttribute="centerX" id="d0y-rS-4MH"/>
+                                                                            <constraint firstAttribute="width" secondItem="HXN-TR-50Y" secondAttribute="height" id="oIh-gh-Duh"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="18"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96v-xR-J5l" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                                        <rect key="frame" x="112" y="0.0" width="36" height="36"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-instagram-11" translatesAutoresizingMaskIntoConstraints="NO" id="VjN-6A-V5d">
+                                                                                <rect key="frame" x="6.5" y="6" width="24" height="24"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="36" id="3wq-I6-dki"/>
+                                                                            <constraint firstItem="VjN-6A-V5d" firstAttribute="centerY" secondItem="96v-xR-J5l" secondAttribute="centerY" id="AVw-gy-D0U"/>
+                                                                            <constraint firstItem="VjN-6A-V5d" firstAttribute="centerX" secondItem="96v-xR-J5l" secondAttribute="centerX" id="DpP-A6-gYi"/>
+                                                                            <constraint firstAttribute="width" secondItem="96v-xR-J5l" secondAttribute="height" id="MaQ-Ry-DLB"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="18"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNk-VB-FhZ" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                                        <rect key="frame" x="168" y="0.0" width="36" height="36"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-globe-6" translatesAutoresizingMaskIntoConstraints="NO" id="vh0-wP-DdN">
+                                                                                <rect key="frame" x="6.5" y="6" width="24" height="24"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="36" id="A4C-qN-ieF"/>
+                                                                            <constraint firstAttribute="width" secondItem="rNk-VB-FhZ" secondAttribute="height" id="TYj-2c-bwi"/>
+                                                                            <constraint firstItem="vh0-wP-DdN" firstAttribute="centerX" secondItem="rNk-VB-FhZ" secondAttribute="centerX" id="ijg-0W-Zdf"/>
+                                                                            <constraint firstItem="vh0-wP-DdN" firstAttribute="centerY" secondItem="rNk-VB-FhZ" secondAttribute="centerY" id="lJA-OB-aSV"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="18"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="36" id="2nd-Vl-5b3"/>
+                                                                    <constraint firstItem="96v-xR-J5l" firstAttribute="width" secondItem="96v-xR-J5l" secondAttribute="height" id="3SB-dU-hD4"/>
+                                                                    <constraint firstItem="HXN-TR-50Y" firstAttribute="width" secondItem="HXN-TR-50Y" secondAttribute="height" id="8Jx-8C-g2z"/>
+                                                                    <constraint firstItem="eS0-0Q-sXc" firstAttribute="width" secondItem="eS0-0Q-sXc" secondAttribute="height" id="Zfy-1C-e47"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="4xP-r0-0Pn"/>
+                                                            <constraint firstAttribute="bottom" secondItem="2hV-xX-3t3" secondAttribute="bottom" constant="20" id="2gG-D5-slF"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2hV-xX-3t3" secondAttribute="trailing" constant="20" id="8eJ-in-7rI"/>
+                                                            <constraint firstItem="b27-po-ztw" firstAttribute="top" secondItem="FiV-Qk-Xut" secondAttribute="top" constant="20" id="JJI-FO-cGx"/>
+                                                            <constraint firstItem="2hV-xX-3t3" firstAttribute="leading" secondItem="FiV-Qk-Xut" secondAttribute="leading" constant="20" id="Q8v-OL-eAA"/>
+                                                            <constraint firstItem="2hV-xX-3t3" firstAttribute="top" secondItem="b27-po-ztw" secondAttribute="bottom" constant="20" id="TS8-Jq-7wO"/>
+                                                            <constraint firstItem="b27-po-ztw" firstAttribute="leading" secondItem="FiV-Qk-Xut" secondAttribute="leading" constant="20" id="sN3-zv-iyu"/>
                                                         </constraints>
-                                                        <connections>
-                                                            <action selector="linkPressed:" destination="rqJ-FH-bWy" eventType="touchUpInside" id="GtP-S6-fcc"/>
-                                                        </connections>
-                                                    </button>
+                                                    </view>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.94901960784313721" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="R47-0w-f6z" secondAttribute="bottom" constant="20" id="56E-P2-gns"/>
-                                                    <constraint firstItem="HKH-Lm-rhH" firstAttribute="width" secondItem="R47-0w-f6z" secondAttribute="width" multiplier="1.3" id="MvI-aW-8aX"/>
-                                                    <constraint firstItem="R47-0w-f6z" firstAttribute="top" secondItem="nXE-he-E7C" secondAttribute="top" constant="5" id="Q9P-Zl-jsc"/>
-                                                    <constraint firstItem="HKH-Lm-rhH" firstAttribute="centerY" secondItem="R47-0w-f6z" secondAttribute="centerY" id="W3E-1w-aTp"/>
-                                                    <constraint firstItem="HKH-Lm-rhH" firstAttribute="centerX" secondItem="R47-0w-f6z" secondAttribute="centerX" id="WSA-BK-Nua"/>
-                                                    <constraint firstItem="R47-0w-f6z" firstAttribute="centerX" secondItem="nXE-he-E7C" secondAttribute="centerX" id="w92-6i-Dsa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FiV-Qk-Xut" secondAttribute="bottom" constant="10" id="BW7-Ke-RMG"/>
+                                                    <constraint firstItem="FiV-Qk-Xut" firstAttribute="leading" secondItem="nXE-he-E7C" secondAttribute="leading" constant="10" id="Bg3-zE-2Rv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FiV-Qk-Xut" secondAttribute="trailing" constant="10" id="KQB-sp-6MF"/>
+                                                    <constraint firstItem="FiV-Qk-Xut" firstAttribute="top" secondItem="nXE-he-E7C" secondAttribute="top" id="YLt-Kf-cxV"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-KR-S6W">
-                                                <rect key="frame" x="0.0" y="728" width="375" height="70"/>
+                                                <rect key="frame" x="0.0" y="783.5" width="375" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEO-tz-BP1">
-                                                        <rect key="frame" x="20" y="-0.5" width="335" height="70.5"/>
+                                                        <rect key="frame" x="0.0" y="5" width="375" height="75"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="bOf-5e-z01" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23.5" width="24" height="24"/>
+                                                                <rect key="frame" x="20" y="26" width="24" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="24" id="haD-vH-U45"/>
                                                                     <constraint firstAttribute="width" secondItem="bOf-5e-z01" secondAttribute="height" id="lKD-8w-GUy"/>
@@ -1703,16 +1828,16 @@ Entrada  + extra 15€</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="TiU-WQ-OTM">
-                                                                <rect key="frame" x="34" y="10" width="267" height="50.5"/>
+                                                                <rect key="frame" x="54" y="10" width="267" height="55"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-uw-aAa">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="32.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, postal code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-vw-Akx">
-                                                                        <rect key="frame" x="0.0" y="31" width="267" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="35.5" width="267" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -1720,7 +1845,7 @@ Entrada  + extra 15€</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="5xa-d1-mgl" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                                <rect key="frame" x="311" y="23.5" width="24" height="24"/>
+                                                                <rect key="frame" x="331" y="26" width="24" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="5xa-d1-mgl" secondAttribute="height" id="Jdk-fo-7WK"/>
                                                                     <constraint firstAttribute="height" constant="24" id="xns-pz-Tag"/>
@@ -1735,26 +1860,26 @@ Entrada  + extra 15€</string>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="bOf-5e-z01" firstAttribute="centerY" secondItem="hEO-tz-BP1" secondAttribute="centerY" id="8wk-dM-lnI"/>
-                                                            <constraint firstItem="bOf-5e-z01" firstAttribute="leading" secondItem="hEO-tz-BP1" secondAttribute="leading" id="QYS-1G-IrB"/>
+                                                            <constraint firstItem="bOf-5e-z01" firstAttribute="leading" secondItem="hEO-tz-BP1" secondAttribute="leading" constant="20" id="QYS-1G-IrB"/>
                                                             <constraint firstItem="5xa-d1-mgl" firstAttribute="centerY" secondItem="hEO-tz-BP1" secondAttribute="centerY" id="REz-Jk-t8s"/>
                                                             <constraint firstItem="TiU-WQ-OTM" firstAttribute="top" secondItem="hEO-tz-BP1" secondAttribute="top" constant="10" id="Sis-s7-iMd"/>
                                                             <constraint firstItem="5xa-d1-mgl" firstAttribute="leading" secondItem="TiU-WQ-OTM" secondAttribute="trailing" constant="10" id="a2v-kA-8Ag"/>
-                                                            <constraint firstAttribute="trailing" secondItem="5xa-d1-mgl" secondAttribute="trailing" id="bS1-Tq-c36"/>
+                                                            <constraint firstAttribute="trailing" secondItem="5xa-d1-mgl" secondAttribute="trailing" constant="20" id="bS1-Tq-c36"/>
                                                             <constraint firstAttribute="bottom" secondItem="TiU-WQ-OTM" secondAttribute="bottom" constant="10" id="evc-H6-TMJ"/>
                                                             <constraint firstItem="TiU-WQ-OTM" firstAttribute="leading" secondItem="bOf-5e-z01" secondAttribute="trailing" constant="10" id="j5t-tN-RZt"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="hEO-tz-BP1" secondAttribute="trailing" constant="20" id="Cw6-ci-5X9"/>
-                                                    <constraint firstItem="hEO-tz-BP1" firstAttribute="top" secondItem="ccp-KR-S6W" secondAttribute="top" id="UfU-GH-hTI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hEO-tz-BP1" secondAttribute="trailing" id="Cw6-ci-5X9"/>
+                                                    <constraint firstItem="hEO-tz-BP1" firstAttribute="top" secondItem="ccp-KR-S6W" secondAttribute="top" constant="5" id="UfU-GH-hTI"/>
                                                     <constraint firstAttribute="bottom" secondItem="hEO-tz-BP1" secondAttribute="bottom" id="mlq-Yn-hZM"/>
-                                                    <constraint firstItem="hEO-tz-BP1" firstAttribute="leading" secondItem="ccp-KR-S6W" secondAttribute="leading" constant="20" id="oXL-sh-dnI"/>
+                                                    <constraint firstItem="hEO-tz-BP1" firstAttribute="leading" secondItem="ccp-KR-S6W" secondAttribute="leading" id="oXL-sh-dnI"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KT-Yn-kKu">
-                                                <rect key="frame" x="0.0" y="798" width="375" height="337.5"/>
+                                                <rect key="frame" x="0.0" y="863.5" width="375" height="337.5"/>
                                                 <subviews>
                                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5Ym-sM-ya0">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="337.5"/>
@@ -1772,7 +1897,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnM-87-XoH">
-                                                <rect key="frame" x="0.0" y="1135.5" width="375" height="80"/>
+                                                <rect key="frame" x="0.0" y="1201" width="375" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zw4-Ra-ko9" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
                                                         <rect key="frame" x="15" y="10" width="345" height="60"/>
@@ -1804,7 +1929,7 @@ Entrada  + extra 15€</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="zw4-Ra-ko9" secondAttribute="trailing" constant="15" id="B6D-th-lFH"/>
                                                     <constraint firstItem="zw4-Ra-ko9" firstAttribute="leading" secondItem="PnM-87-XoH" secondAttribute="leading" constant="15" id="TD2-Ll-gSl"/>
@@ -1853,12 +1978,11 @@ Entrada  + extra 15€</string>
                         <outlet property="streetAddressLabel" destination="ASd-uw-aAa" id="syW-qY-2jJ"/>
                         <outlet property="tagsLabel" destination="cQl-mJ-0o2" id="xY8-Qd-0kR"/>
                         <outlet property="townAddressLabel" destination="G23-vw-Akx" id="V0h-an-obJ"/>
-                        <outlet property="urlLabel" destination="R47-0w-f6z" id="t6j-b7-qZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGZ-9C-edr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3385" y="1043"/>
+            <point key="canvasLocation" x="3384.8000000000002" y="1042.5787106446778"/>
         </scene>
         <!--Shop Notifications View Controller-->
         <scene sceneID="8jP-FW-NMc">
@@ -2242,6 +2366,7 @@ Entrada  + extra 15€</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Disclosure Indicator" width="8" height="13"/>
         <image name="arrow" width="24" height="24"/>
         <image name="back-arrow" width="24" height="24"/>
         <image name="calendar" width="25" height="25"/>
