@@ -15,7 +15,7 @@
         <scene sceneID="FrX-QY-Gzv">
             <objects>
                 <navigationController navigationBarHidden="YES" id="x3c-K6-mTo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendari" image="calendar" id="fc5-Xc-nWm"/>
+                    <tabBarItem key="tabBarItem" title="Calendari" image="calendar" selectedImage="calendar-full" id="fc5-Xc-nWm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VvH-fb-4QM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -439,7 +439,7 @@
                             <constraint firstItem="8mv-3N-a4Z" firstAttribute="leading" secondItem="U9g-M4-CUx" secondAttribute="leading" id="rUo-BX-9ik"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendari" image="calendar" id="8cX-HS-E5k"/>
+                    <tabBarItem key="tabBarItem" title="Calendari" image="calendar" selectedImage="calendar-full" id="8cX-HS-E5k"/>
                     <navigationItem key="navigationItem" id="ucQ-5f-OzQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ILM-p7-bAO">
                             <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
@@ -955,7 +955,7 @@ Entrada  + extra 15€</string>
         <scene sceneID="lyb-3m-2c3">
             <objects>
                 <navigationController navigationBarHidden="YES" id="4iO-kn-T6q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Comerços" image="shopping-bag" id="xPR-nl-HIX"/>
+                    <tabBarItem key="tabBarItem" title="Comerços" image="shopping-bag" selectedImage="shopping-bag-full" id="xPR-nl-HIX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dw4-W5-4t0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2370,6 +2370,7 @@ Entrada  + extra 15€</string>
         <image name="arrow" width="24" height="24"/>
         <image name="back-arrow" width="24" height="24"/>
         <image name="calendar" width="25" height="25"/>
+        <image name="calendar-full" width="24" height="25"/>
         <image name="clock" width="24" height="24"/>
         <image name="favorite" width="20" height="19"/>
         <image name="ic_share_white" width="24" height="24"/>
@@ -2383,6 +2384,7 @@ Entrada  + extra 15€</string>
         <image name="newspaper-folded" width="25" height="25"/>
         <image name="park" width="72" height="72"/>
         <image name="shopping-bag" width="25" height="25"/>
+        <image name="shopping-bag-full" width="19" height="25"/>
         <image name="tickets-2" width="61" height="60"/>
     </resources>
 </document>

@@ -28,7 +28,7 @@ extension ShopSection: SectionModelType{
 }
 
 class Shop {
-    
+    //http://beta.json-generator.com/api/json/get/VkzGTe0Mm
     //add var id
     var name: String
     var isPromoted: Bool
