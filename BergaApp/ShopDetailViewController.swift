@@ -15,6 +15,7 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var notificationsContainerView: UIView!
     @IBOutlet weak var topContraint: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var notificationsLabel: UILabel!
     
@@ -25,12 +26,12 @@ class ShopDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.backBarButtonItem?.title = ""
-        if !shop!.isPromoted {
-            self.view.needsUpdateConstraints()
-            self.view.setNeedsLayout()
-            self.view.layoutIfNeeded()
-        }
+        nameLabel.text = shop?.name
+//        if !shop!.isPromoted {
+//            self.view.needsUpdateConstraints()
+//            self.view.setNeedsLayout()
+//            self.view.layoutIfNeeded()
+//        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

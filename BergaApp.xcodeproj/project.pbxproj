@@ -15,6 +15,8 @@
 		435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435295701ECB311C0017FB9E /* CustomAnnotation.swift */; };
 		437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */; };
 		439DF4E11ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DF4E01ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift */; };
+		43F0A9E51EFABD440029922E /* ShopSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0A9E41EFABD440029922E /* ShopSearchViewController.swift */; };
+		43F0A9E71EFABD640029922E /* ShopSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0A9E61EFABD640029922E /* ShopSearchViewModel.swift */; };
 		470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551231EC6F9690016E366 /* CalendarViewController.swift */; };
 		470551261EC704170016E366 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551251EC704170016E366 /* CalendarEvent.swift */; };
 		470551281EC704950016E366 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470551271EC704950016E366 /* CalendarViewModel.swift */; };
@@ -99,6 +101,8 @@
 		435295701ECB311C0017FB9E /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		439DF4E01ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		43F0A9E41EFABD440029922E /* ShopSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSearchViewController.swift; sourceTree = "<group>"; };
+		43F0A9E61EFABD640029922E /* ShopSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSearchViewModel.swift; sourceTree = "<group>"; };
 		470551231EC6F9690016E366 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		470551251EC704170016E366 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		470551271EC704950016E366 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -225,6 +229,15 @@
 				471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */,
 			);
 			name = ShopNotifications;
+			sourceTree = "<group>";
+		};
+		43F0A9E31EFABD150029922E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				43F0A9E41EFABD440029922E /* ShopSearchViewController.swift */,
+				43F0A9E61EFABD640029922E /* ShopSearchViewModel.swift */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		470551211EC6F9290016E366 /* Calendar */ = {
@@ -381,6 +394,7 @@
 				479FFBA81ECE443E00BA8106 /* ShopCollectionViewCell.swift */,
 				471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */,
 				47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */,
+				43F0A9E31EFABD150029922E /* Search */,
 			);
 			name = Shops;
 			sourceTree = "<group>";
@@ -588,12 +602,14 @@
 				470551281EC704950016E366 /* CalendarViewModel.swift in Sources */,
 				47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */,
 				439DF4E11ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift in Sources */,
+				43F0A9E71EFABD640029922E /* ShopSearchViewModel.swift in Sources */,
 				479FFBA91ECE443E00BA8106 /* ShopCollectionViewCell.swift in Sources */,
 				473F514A1ED9991F00008FAC /* Address.swift in Sources */,
 				471D89EE1EED76AE0003D1E5 /* WeatherColors.swift in Sources */,
 				47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */,
 				479316181EC605C400845C6C /* NewsViewModel.swift in Sources */,
 				435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */,
+				43F0A9E51EFABD440029922E /* ShopSearchViewController.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
 				47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,

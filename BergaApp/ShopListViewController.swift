@@ -124,7 +124,7 @@ extension ShopListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth!, height: 42)
+        return CGSize(width: cellWidth!, height: 44)
     }
     
     func setCellWidth () {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -998,7 +998,7 @@ Entrada  + extra 15€</string>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-Qb-vQs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CCK-Yc-ZhB">
                                     <size key="itemSize" width="312" height="42"/>
@@ -1008,23 +1008,23 @@ Entrada  + extra 15€</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="promotedShopCell" id="y5U-7N-GQf" customClass="PromotedShopCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="31.5" y="42" width="312" height="40"/>
+                                        <rect key="frame" x="31.5" y="42" width="312" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="312" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPU-Eh-9gH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBu-FV-A7D">
-                                                            <rect key="frame" x="15" y="11" width="81.5" height="19.5"/>
+                                                            <rect key="frame" x="15" y="12" width="81.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wr1-6h-elR" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
-                                                            <rect key="frame" x="250" y="9" width="24" height="24"/>
+                                                            <rect key="frame" x="250" y="10" width="24" height="24"/>
                                                             <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="qTG-bG-4aX"/>
@@ -1037,16 +1037,16 @@ Entrada  + extra 15€</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os2-lx-kp6">
-                                                            <rect key="frame" x="258" y="12" width="9" height="18"/>
+                                                            <rect key="frame" x="258" y="13" width="9" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure Indicator" translatesAutoresizingMaskIntoConstraints="NO" id="u22-nr-hIb">
-                                                            <rect key="frame" x="289" y="13" width="8" height="13"/>
+                                                            <rect key="frame" x="289" y="15" width="8" height="13"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCo-SW-cWo">
-                                                            <rect key="frame" x="0.0" y="39" width="312" height="1"/>
+                                                            <rect key="frame" x="0.0" y="42" width="312" height="1"/>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="HYP-ez-vqj"/>
@@ -1076,32 +1076,32 @@ Entrada  + extra 15€</string>
                                             <constraint firstItem="XPU-Eh-9gH" firstAttribute="top" secondItem="y5U-7N-GQf" secondAttribute="top" id="ggQ-Iw-iRs"/>
                                             <constraint firstAttribute="bottom" secondItem="XPU-Eh-9gH" secondAttribute="bottom" id="jng-4d-aH8"/>
                                         </constraints>
-                                        <size key="customSize" width="312" height="40"/>
+                                        <size key="customSize" width="312" height="44"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="oBu-FV-A7D" id="b4E-b8-Wtc"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopCell" id="75V-em-eBG" customClass="ShopCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="31.5" y="82" width="312" height="40"/>
+                                        <rect key="frame" x="31.5" y="86" width="312" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="312" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-nc-DrW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqd-pK-ZUG">
-                                                            <rect key="frame" x="15" y="10" width="84" height="19.5"/>
+                                                            <rect key="frame" x="15" y="11.5" width="84" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure Indicator" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-K5-z5b">
-                                                            <rect key="frame" x="289" y="13.5" width="8" height="13"/>
+                                                            <rect key="frame" x="289" y="15" width="8" height="13"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-gY-AMX">
-                                                            <rect key="frame" x="0.0" y="39" width="312" height="1"/>
+                                                            <rect key="frame" x="0.0" y="42" width="312" height="1"/>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="lTd-2q-HEg"/>
@@ -1127,7 +1127,7 @@ Entrada  + extra 15€</string>
                                             <constraint firstItem="Lhr-nc-DrW" firstAttribute="top" secondItem="75V-em-eBG" secondAttribute="top" id="nGk-0b-78X"/>
                                             <constraint firstItem="Lhr-nc-DrW" firstAttribute="leading" secondItem="75V-em-eBG" secondAttribute="leading" id="o3m-kG-pWe"/>
                                         </constraints>
-                                        <size key="customSize" width="312" height="40"/>
+                                        <size key="customSize" width="312" height="44"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="bqd-pK-ZUG" id="LcY-9s-xj9"/>
                                         </connections>
@@ -1180,7 +1180,7 @@ Entrada  + extra 15€</string>
                             <constraint firstItem="FG4-Qb-vQs" firstAttribute="top" secondItem="OKO-0o-Vrj" secondAttribute="bottom" id="SSw-wZ-DKG"/>
                             <constraint firstAttribute="trailing" secondItem="OKO-0o-Vrj" secondAttribute="trailing" id="XeD-Jb-bqw"/>
                             <constraint firstItem="OKO-0o-Vrj" firstAttribute="leading" secondItem="P41-7R-Px1" secondAttribute="leading" id="Zxn-m5-CzE"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="FG4-Qb-vQs" secondAttribute="bottom" id="nYE-GW-ULK"/>
+                            <constraint firstItem="rwZ-Z4-FQ5" firstAttribute="top" secondItem="FG4-Qb-vQs" secondAttribute="bottom" id="n2p-Xa-nBW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Comerços" image="shopping-bag" selectedImage="shopping-bag" id="jVd-bd-BYd"/>
@@ -1213,8 +1213,8 @@ Entrada  + extra 15€</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tY-B1-KhJ">
                                         <rect key="frame" x="0.0" y="18" width="375" height="46"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 d'octubre de 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk9-uw-YLc">
-                                                <rect key="frame" x="112.5" y="13" width="150" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk9-uw-YLc">
+                                                <rect key="frame" x="147" y="13" width="81.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1387,6 +1387,7 @@ Entrada  + extra 15€</string>
                     <connections>
                         <outlet property="infoContainerView" destination="zuA-Jf-M9b" id="Uyl-Vx-Vel"/>
                         <outlet property="infoLabel" destination="CZN-yF-H61" id="Dgm-6h-z6P"/>
+                        <outlet property="nameLabel" destination="Pk9-uw-YLc" id="e2M-An-sgT"/>
                         <outlet property="notificationsContainerView" destination="dNc-tM-nTI" id="8cd-ZV-i2q"/>
                         <outlet property="notificationsLabel" destination="Lwq-Rt-BC5" id="iDd-lu-lOF"/>
                     </connections>
