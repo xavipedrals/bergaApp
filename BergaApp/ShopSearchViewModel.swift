@@ -11,5 +11,25 @@ import RxSwift
 
 class ShopSearchViewModel {
     
+    let searchString = Variable<String>("")
+    let sections = Variable<[ShopSection]>([
+        ShopSection(header: "Tags", items: []),
+        ShopSection(header: "Comerços", items: [])
+        ])
     
+    var fullSections = [ShopSection]()
+    
+    let TAG_SECTION = 0
+    let SHOP_SECTION = 1
+    let disposeBag = DisposeBag()
+    
+    init() {
+        
+        searchString.asObservable()
+            .subscribe(onNext: { search in
+                //perform a Search
+                
+            })
+            .addDisposableTo(disposeBag)
+    }
 }

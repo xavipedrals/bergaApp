@@ -15,6 +15,7 @@ class ShopListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBackground: UIView!
     
     var cellWidth: Double?
     var selectedShop: Shop?
@@ -89,12 +90,22 @@ class ShopListViewController: UIViewController {
         searchBar.rx.textDidBeginEditing
             .subscribe(onNext: {
                 self.searchBar.setShowsCancelButton(true, animated: true)
+                self.searchBackground.alpha = 0
+                self.searchBackground.isHidden = false
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.searchBackground.alpha = 0.5
+                })
             })
             .addDisposableTo(disposeBag)
         
         searchBar.rx.textDidEndEditing
             .subscribe(onNext: {
                 self.searchBar.setShowsCancelButton(false, animated: true)
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.searchBackground.alpha = 0
+                }, completion: { _ in
+                    self.searchBackground.isHidden = true
+                })
             })
             .addDisposableTo(disposeBag)
     }

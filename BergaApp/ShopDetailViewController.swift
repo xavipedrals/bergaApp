@@ -27,11 +27,7 @@ class ShopDetailViewController: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = shop?.name
-//        if !shop!.isPromoted {
-//            self.view.needsUpdateConstraints()
-//            self.view.setNeedsLayout()
-//            self.view.layoutIfNeeded()
-//        }
+        //TODO: Hide options (info - notif)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

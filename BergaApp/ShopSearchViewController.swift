@@ -12,6 +12,10 @@ import RxCocoa
 
 class ShopSearchViewController: UIViewController {
 
+    
+    let shopSearchViewModel = ShopSearchViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
