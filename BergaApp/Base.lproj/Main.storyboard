@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1393,6 +1393,7 @@ Entrada  + extra 15€</string>
                         <outlet property="nameLabel" destination="Pk9-uw-YLc" id="e2M-An-sgT"/>
                         <outlet property="notificationsContainerView" destination="dNc-tM-nTI" id="8cd-ZV-i2q"/>
                         <outlet property="notificationsLabel" destination="Lwq-Rt-BC5" id="iDd-lu-lOF"/>
+                        <outlet property="subMenuContainer" destination="npe-UR-IYb" id="sr1-BW-gch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbr-0m-OfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1697,13 +1698,13 @@ Entrada  + extra 15€</string>
                                                         <rect key="frame" x="10" y="0.0" width="355" height="115.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Segueix-nos a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b27-po-ztw">
-                                                                <rect key="frame" x="20" y="20" width="108" height="19.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                                <rect key="frame" x="15" y="20" width="106" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2hV-xX-3t3">
-                                                                <rect key="frame" x="20" y="59.5" width="204" height="36"/>
+                                                                <rect key="frame" x="15" y="59.5" width="204" height="36"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-0Q-sXc" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -1799,9 +1800,9 @@ Entrada  + extra 15€</string>
                                                             <constraint firstAttribute="bottom" secondItem="2hV-xX-3t3" secondAttribute="bottom" constant="20" id="2gG-D5-slF"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2hV-xX-3t3" secondAttribute="trailing" constant="20" id="8eJ-in-7rI"/>
                                                             <constraint firstItem="b27-po-ztw" firstAttribute="top" secondItem="FiV-Qk-Xut" secondAttribute="top" constant="20" id="JJI-FO-cGx"/>
-                                                            <constraint firstItem="2hV-xX-3t3" firstAttribute="leading" secondItem="FiV-Qk-Xut" secondAttribute="leading" constant="20" id="Q8v-OL-eAA"/>
+                                                            <constraint firstItem="2hV-xX-3t3" firstAttribute="leading" secondItem="FiV-Qk-Xut" secondAttribute="leading" constant="15" id="Q8v-OL-eAA"/>
                                                             <constraint firstItem="2hV-xX-3t3" firstAttribute="top" secondItem="b27-po-ztw" secondAttribute="bottom" constant="20" id="TS8-Jq-7wO"/>
-                                                            <constraint firstItem="b27-po-ztw" firstAttribute="leading" secondItem="FiV-Qk-Xut" secondAttribute="leading" constant="20" id="sN3-zv-iyu"/>
+                                                            <constraint firstItem="b27-po-ztw" firstAttribute="leading" secondItem="FiV-Qk-Xut" secondAttribute="leading" constant="15" id="sN3-zv-iyu"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -1966,6 +1967,7 @@ Entrada  + extra 15€</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1350"/>
                     <connections>
+                        <outlet property="addressWrapper" destination="ccp-KR-S6W" id="dXA-Vw-PTz"/>
                         <outlet property="descriptionLabel" destination="Kdd-L4-jns" id="3Uk-Cp-Rr3"/>
                         <outlet property="descriptionWrapper" destination="Iuv-tW-1qT" id="mfK-cT-nQ8"/>
                         <outlet property="imageCarruselWrapper" destination="wTV-Aj-4wH" id="WUS-jt-3i9"/>

@@ -29,6 +29,7 @@ class ShopInfoViewController: MapViewController {
     @IBOutlet weak var linkWrapper: UIView!
     @IBOutlet weak var mapWrapper: UIView!
     @IBOutlet weak var promoteShopWrapper: UIView!
+    @IBOutlet weak var addressWrapper: UIView!
     
     
     var cellWidth: Double?
@@ -108,6 +109,7 @@ class ShopInfoViewController: MapViewController {
             streetAddressLabel.text = address
         }
         else {
+            addressWrapper.isHidden = true
             mapWrapper.isHidden = true
         }
     }

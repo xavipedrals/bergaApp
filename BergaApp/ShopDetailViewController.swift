@@ -14,10 +14,10 @@ class ShopDetailViewController: UIViewController {
 
     @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var notificationsContainerView: UIView!
-    @IBOutlet weak var topContraint: NSLayoutConstraint!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var notificationsLabel: UILabel!
+    @IBOutlet weak var subMenuContainer: UIView!
     
     var shop: Shop?
     let disposeBag = DisposeBag()
@@ -27,7 +27,13 @@ class ShopDetailViewController: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = shop?.name
-        //TODO: Hide options (info - notif)
+        configSubmenu()
+    }
+    
+    func configSubmenu() {
+        if !shop!.isPromoted {
+            subMenuContainer.isHidden = true
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
