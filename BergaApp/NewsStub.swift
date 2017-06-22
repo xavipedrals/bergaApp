@@ -17,7 +17,7 @@ class NewsStub {
                         url: "http://www.naciodigital.cat/bergueda/noticia/9734/clam/multitudinari/favor/mineria/catalunya/central",
                         provider: NewsProvider(.nacioDigital),
                         imageUrl: "https://dades.naciodigital.cat/redaccio/arxius/imatges/201705/576_1494706347foto_3210528.jpg",
-                        timestamp: Date())
+                        timestamp: Date()) //yyyy-MM-ddThh:mmZ
         
         let new2 = News(title: "La colla dels plens de la Patum manté viu el conflicte dels expulsats",
                         subtitle: "Es resisteix a acatar la readmissió acordada pel patronat i considera suspeses les decisions de la reunió",

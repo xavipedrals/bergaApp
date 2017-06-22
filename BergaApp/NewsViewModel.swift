@@ -18,6 +18,7 @@ class NewsViewModel {
     }
     
     func getNews() {
+        //http://www.mocky.io/v2/594c00501100001f01a3cfba
         data.value = NewsStub().getStub()
     }
     
