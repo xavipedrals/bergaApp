@@ -8,18 +8,37 @@
 
 import Foundation
 import RxSwift
+import RxAlamofire
+import SwiftyJSON
 
 class NewsViewModel {
     
     let data = Variable<[News]>([])
+    let disposeBag = DisposeBag()
     
     init() {
         getNews()
     }
     
     func getNews() {
-        //http://www.mocky.io/v2/594c00501100001f01a3cfba
-        data.value = NewsStub().getStub()
+//        data.value = NewsStub().getStub()
+        RxAlamofire.requestJSON(.get, "http://www.mocky.io/v2/594c00501100001f01a3cfba")
+            .debug()
+            .subscribe(onNext: { response, data in
+                print("HOOOOLA")
+                print(response)
+                if response.statusCode == 200 {
+                    let json = JSON(data)
+                    let news = json["news"].arrayValue
+                    self.data.value = ArrayParser<News>.parseJSONToArray(news)
+                }
+                else {
+                    print("News status code is \(response.statusCode)")
+                }
+            }, onError: { error in
+                print(error)
+            })
+        .addDisposableTo(disposeBag)
     }
     
 }

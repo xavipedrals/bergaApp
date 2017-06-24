@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 enum NewsProviderType {
     case nacioDigital
@@ -19,6 +20,32 @@ enum NewsProviderType {
 struct NewsProvider {
     var name: String
     var imageName: String
+    
+    
+    init(string: String) {
+        var type = NewsProviderType.nacioDigital
+        switch string {
+        case "Nació Digital":
+            type = NewsProviderType.nacioDigital
+            break
+        case "Regió7":
+            type = NewsProviderType.regio7
+            break
+        case "Aquí Berguedà":
+            type = NewsProviderType.aquiBergueda
+            break
+        case "Pànxing":
+            type = NewsProviderType.panxing
+            break
+        case "Ara":
+            type = NewsProviderType.ara
+            break
+        default:
+            type = NewsProviderType.nacioDigital
+            break
+        }
+        self.init(type)
+    }
     
     init(_ provider: NewsProviderType) {
         var name = ""
@@ -50,7 +77,7 @@ struct NewsProvider {
     }
 }
 
-struct News {
+struct News: ParseableObject {
     
     var title: String
     var subtitle: String
@@ -58,5 +85,14 @@ struct News {
     var provider: NewsProvider
     var imageUrl: String
     var timestamp: Date
+    
+    init(from json: JSON) {
+        title = json["title"].stringValue
+        subtitle = json["description"].stringValue
+        url = json["url"].stringValue
+        imageUrl = json["imageUrl"].stringValue
+        timestamp = Date()
+        provider = NewsProvider(string: json["provider"].stringValue)
+    }
     
 }

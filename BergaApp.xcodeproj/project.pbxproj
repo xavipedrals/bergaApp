@@ -35,6 +35,7 @@
 		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
+		47594F3F1EFE7258000B122F /* ArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47594F3E1EFE7258000B122F /* ArrayParser.swift */; };
 		475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475CD2BF1EDB035C006EAA4B /* CustomButton.swift */; };
 		478846691EED5A7E0027E12E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478846681EED5A7E0027E12E /* CardView.swift */; };
 		479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479315D81EC5FDED00845C6C /* AppDelegate.swift */; };
@@ -121,6 +122,7 @@
 		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		47594F3E1EFE7258000B122F /* ArrayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayParser.swift; sourceTree = "<group>"; };
 		475CD2BF1EDB035C006EAA4B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		478846681EED5A7E0027E12E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		479315D51EC5FDED00845C6C /* BergaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BergaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -409,6 +411,7 @@
 				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
 				47416A0F1ED74AE100497A09 /* MapViewController.swift */,
 				473F51491ED9991F00008FAC /* Address.swift */,
+				47594F3E1EFE7258000B122F /* ArrayParser.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */,
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
+				47594F3F1EFE7258000B122F /* ArrayParser.swift in Sources */,
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
 				47A4A41F1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift in Sources */,
 				471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */,
