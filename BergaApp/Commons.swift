@@ -50,6 +50,11 @@ class Commons {
     
 }
 
+enum CustomDateFormat: String {
+    case standard = "YYYY-MM-dd'T'hh:mm:ss"
+    case newsOutput = "EEEE d MMM"
+}
+
 extension Date {
     func startOfMonth() -> Date {
         let comp: DateComponents = Calendar.current.dateComponents([.day], from: self)
@@ -69,6 +74,25 @@ extension Date {
     
     func previousMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: -1), to: self)!
+    }
+    
+    func getString(format: CustomDateFormat) -> String {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = format.rawValue
+        let dateStr = dateFormat.string(from: self)
+        return dateStr
+    }
+    
+    init(date: String, format: CustomDateFormat) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format.rawValue
+        let someDate = formatter.date(from: date)
+        if let someDate = someDate {
+            self = someDate
+        }
+        else {
+            self = Date()
+        }
     }
 }
 

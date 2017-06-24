@@ -22,23 +22,24 @@ class NewsViewModel {
     
     func getNews() {
 //        data.value = NewsStub().getStub()
+        
         RxAlamofire.requestJSON(.get, "http://www.mocky.io/v2/594c00501100001f01a3cfba")
-            .debug()
+//            .debug()
             .subscribe(onNext: { response, data in
-                print("HOOOOLA")
-                print(response)
-                if response.statusCode == 200 {
-                    let json = JSON(data)
-                    let news = json["news"].arrayValue
-                    self.data.value = ArrayParser<News>.parseJSONToArray(news)
-                }
-                else {
-                    print("News status code is \(response.statusCode)")
-                }
-            }, onError: { error in
+                response.statusCode == 200
+                    ? self.fetchNews(data: data)
+                    : print("News status code is \(response.statusCode)")
+            },
+            onError: { error in
                 print(error)
             })
-        .addDisposableTo(disposeBag)
+            .addDisposableTo(disposeBag)
+    }
+    
+    func fetchNews(data: Any) {
+        let json = JSON(data)
+        let news = json["news"].arrayValue
+        self.data.value = ArrayParser<News>.parseJSONToArray(news)
     }
     
 }

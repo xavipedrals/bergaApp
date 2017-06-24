@@ -27,7 +27,7 @@ class NewsTableViewCell: UITableViewCell {
             newsImageView.kf.setImage(with: imageUrl)
         }
         providerImageView.image = UIImage(named: from.provider.imageName)
-        providerName.text = from.provider.name
+        providerName.text = from.provider.name + " - " + from.getStringTime()
 //        wrapper.dropShadow()
     }
 
