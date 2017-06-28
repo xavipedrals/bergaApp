@@ -30,11 +30,13 @@ class ShopInfoViewController: MapViewController {
     @IBOutlet weak var mapWrapper: UIView!
     @IBOutlet weak var promoteShopWrapper: UIView!
     @IBOutlet weak var addressWrapper: UIView!
-    
+    @IBOutlet weak var dotsWrapper: UIView!
+    @IBOutlet var dotViews: [UIView]!
     
     var cellWidth: Double?
     var shopDetailViewModel: ShopDetailViewModel?
     var shop: Shop?
+    var selectedDotIndex = 0
     let disposeBag = DisposeBag()
     
     
@@ -126,6 +128,31 @@ class ShopInfoViewController: MapViewController {
                 cell.initCell(url: url)
             }
             .addDisposableTo(disposeBag)
+        
+        shopDetailViewModel!.photosUrl.asObservable()
+            .map{ $0.count }
+            .subscribe(onNext: { count in
+                if count == 0 {
+                    self.dotsWrapper.isHidden = true
+                }
+                else {
+                    for i in count ..< 5 {
+                        self.dotViews[i].isHidden = true
+                    }
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        photosCollectionView.rx.didEndDecelerating
+            .subscribe(onNext: { _ in
+                let indexs = self.photosCollectionView.indexPathsForVisibleItems
+                let index = indexs[0]
+                self.dotViews[self.selectedDotIndex].backgroundColor = UIColor.darkGray
+                self.dotViews[index.row].backgroundColor = Colors.green
+                self.selectedDotIndex = index.row
+            })
+            .addDisposableTo(disposeBag)
+        
     }
     
     func getPhoneString(_ number: Int) -> String {
