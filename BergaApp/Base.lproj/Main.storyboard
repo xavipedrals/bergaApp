@@ -2004,15 +2004,25 @@ Entrada  + extra 15€</string>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0u-Du-g1U">
+                                                                <rect key="frame" x="0.0" y="0.0" width="345" height="68.5"/>
+                                                                <connections>
+                                                                    <action selector="promoteShopPressed:" destination="rqJ-FH-bWy" eventType="touchUpInside" id="gbr-oF-lB7"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.98431372549019602" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="TmE-ZM-OvR" firstAttribute="leading" secondItem="eQf-yz-WZt" secondAttribute="trailing" constant="10" id="1g8-kt-nvT"/>
                                                             <constraint firstItem="TmE-ZM-OvR" firstAttribute="top" secondItem="zw4-Ra-ko9" secondAttribute="top" constant="15" id="DzQ-v1-3qt"/>
                                                             <constraint firstAttribute="trailing" secondItem="TmE-ZM-OvR" secondAttribute="trailing" constant="59" id="Nlh-AR-hSG"/>
+                                                            <constraint firstItem="z0u-Du-g1U" firstAttribute="leading" secondItem="zw4-Ra-ko9" secondAttribute="leading" id="XCg-bG-0TY"/>
                                                             <constraint firstItem="eQf-yz-WZt" firstAttribute="centerY" secondItem="zw4-Ra-ko9" secondAttribute="centerY" id="Zgc-cI-b4B"/>
                                                             <constraint firstItem="eQf-yz-WZt" firstAttribute="leading" secondItem="zw4-Ra-ko9" secondAttribute="leading" constant="25" id="fcZ-1Q-ggz"/>
+                                                            <constraint firstAttribute="bottom" secondItem="z0u-Du-g1U" secondAttribute="bottom" id="fue-WL-UId"/>
+                                                            <constraint firstItem="z0u-Du-g1U" firstAttribute="top" secondItem="zw4-Ra-ko9" secondAttribute="top" id="pfK-oD-B15"/>
                                                             <constraint firstAttribute="bottom" secondItem="TmE-ZM-OvR" secondAttribute="bottom" constant="15" id="rKL-5r-FAV"/>
+                                                            <constraint firstAttribute="trailing" secondItem="z0u-Du-g1U" secondAttribute="trailing" id="zh9-7D-xZZ"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

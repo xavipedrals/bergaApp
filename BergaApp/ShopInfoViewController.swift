@@ -10,8 +10,9 @@ import UIKit
 import MapKit
 import RxSwift
 import RxCocoa
+import MessageUI
 
-class ShopInfoViewController: MapViewController {
+class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -198,7 +199,18 @@ class ShopInfoViewController: MapViewController {
             }
         }
     }
-
+    
+    @IBAction func promoteShopPressed(_ sender: Any) {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["bergapp@gmail.com"])
+        mailComposerVC.setSubject("Promocionar \(shop!.name)")
+//        mailComposerVC.setMessageBody("", isHTML: false)
+        self.present(mailComposerVC, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
