@@ -25,6 +25,7 @@ class ShopStub {
                                  "http://lh3.googleusercontent.com/-ldH4dMCpO48/ViE15jwk9HI/AAAAAAABF4U/ECNYUJ29y3o/s640/blogger-image-881916915.jpg",
                                  "https://media-cdn.tripadvisor.com/media/photo-s/03/57/95/2e/boulangerie-patisserie.jpg"]
         shop1.address = "Carrer de la Mare de Déu dels Àngels, 15, 08600 Berga, Barcelona"
+        shop1.tags = ["Passtisseria", "Forn", "Dolceria"]
         
         let shop2 = Shop(
             name: "Super2",
@@ -48,6 +49,7 @@ class ShopStub {
         shop4.photosUrls = ["https://media-cdn.tripadvisor.com/media/photo-s/05/fb/ea/3c/bar-ski.jpg",
                             "http://www.stayinbath.org/wp-content/uploads/2015/11/apres_ski_bar.jpg"]
         shop4.address = "Passeig de la Pau, 5, 08600 Berga, Barcelona"
+        shop4.tags = ["Bar", "Restaurant", "Esmorzar"]
         
         let shop5 = Shop(
             name: "Domti",
@@ -64,7 +66,7 @@ class ShopStub {
             description: "",
             isPromoted: true
         )
-        shop7.description = "Cal Alberich és una botiga de Berga que fa pastissos i altres coses de 1981. Som els més bla bla bla de els més bla bla bla, us estimem molt a tots, sigueu benvinguts a casa nostra."
+        shop7.description = "Xauxa és ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus diam neque, laoreet sodales rutrum ac, iaculis in augue. Donec blandit felis eu leo sodales sodales. In ornare mollis lacus a lacinia."
         shop7.phone = 934567889
         shop7.schedule = "Obert tots els dies entre setmana de 8am a 20pm. Els dissabtes obrim de 9am a 15pm"
         shop7.url = "https://www.google.es"
@@ -72,6 +74,7 @@ class ShopStub {
                             "http://lh3.googleusercontent.com/-ldH4dMCpO48/ViE15jwk9HI/AAAAAAABF4U/ECNYUJ29y3o/s640/blogger-image-881916915.jpg",
                             "https://media-cdn.tripadvisor.com/media/photo-s/03/57/95/2e/boulangerie-patisserie.jpg"]
         shop7.address = "Carrer de la Mare de Déu dels Àngels, 15, 08600 Berga, Barcelona"
+        shop7.tags = ["Llaminadures", "Chuches"]
         
         let shop8 = Shop(
             name: "Lladó llums",

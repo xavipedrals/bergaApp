@@ -62,6 +62,7 @@ class ShopInfoViewController: MapViewController {
     
     private func initVisuals(shop: Shop) {
         set(name: shop.name)
+        set(tags: shop.tags)
         set(description: shop.description)
         set(phone: shop.phone)
         set(schedule: shop.schedule)
@@ -72,6 +73,16 @@ class ShopInfoViewController: MapViewController {
     
     func set(name: String) {
         shopNameLabel.attributedText = Commons.getAttributedCharSpacedText(name.uppercased(), charSpacing: 1.15)
+    }
+    
+    func set(tags: [String]?) {
+        if let tags = tags {
+            let tagsText = tags.joined(separator: ", ")
+            tagsLabel.text = tagsText
+        }
+        else {
+            tagsLabel.text = "Negoci no promocionat"
+        }
     }
     
     func set(description: String) {
