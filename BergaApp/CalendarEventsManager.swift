@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxAlamofire
 
 class CalendarEventsManager {
     
