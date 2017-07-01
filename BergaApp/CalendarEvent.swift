@@ -21,6 +21,7 @@ struct CalendarEvent {
     var description: String
     var price: String?
     var imgUrl: String?
+    var address: Address
     var organizer: EventOrganizer
     var type: CalendarEventType
     var typeName: String {
@@ -35,7 +36,7 @@ struct CalendarEvent {
             }
         }
     }
-    var address: Address
+    
     
     init(date: Date, name: String, type: CalendarEventType, townAddress: String) {
         self.date = date
