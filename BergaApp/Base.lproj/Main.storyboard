@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Calendari-->
         <scene sceneID="FrX-QY-Gzv">
@@ -41,7 +47,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-RN-DkT" userLabel="TopBar">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="66"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wun-L3-2My">
                                         <rect key="frame" x="0.0" y="20" width="375" height="46"/>
@@ -88,7 +94,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-iS-5Yf">
-                                                <rect key="frame" x="133.5" y="11" width="107.5" height="24"/>
+                                                <rect key="frame" x="134.5" y="11" width="105.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -119,7 +125,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cjH-6p-iLy">
-                                <rect key="frame" x="10" y="66" width="355" height="40"/>
+                                <rect key="frame" x="10" y="86" width="355" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRE-0T-o9h">
                                         <rect key="frame" x="0.0" y="11" width="50.5" height="18"/>
@@ -170,7 +176,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-3N-a4Z">
-                                <rect key="frame" x="0.0" y="106" width="375" height="512"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="492"/>
                                 <color key="backgroundColor" red="0.30196078431372547" green="0.43529411764705883" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="17y-ij-2gh">
                                     <size key="itemSize" width="73" height="76"/>
@@ -472,7 +478,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtF-IW-6bC" userLabel="TopBar">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="66"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0b-wy-chu">
                                         <rect key="frame" x="0.0" y="20" width="375" height="46"/>
@@ -534,7 +540,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hil-8i-C3d">
-                                <rect key="frame" x="0.0" y="66" width="375" height="934"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="914"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oZw-03-oae">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1162"/>
@@ -981,10 +987,10 @@ Entrada  + extra 15€</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKO-0o-Vrj" userLabel="Top bar">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Busca una botiga o tag" translatesAutoresizingMaskIntoConstraints="NO" id="c04-bc-yyb">
-                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="56"/>
                                         <color key="tintColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
@@ -998,7 +1004,7 @@ Entrada  + extra 15€</string>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-Qb-vQs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CCK-Yc-ZhB">
                                     <size key="itemSize" width="312" height="42"/>
@@ -1172,7 +1178,7 @@ Entrada  + extra 15€</string>
                                 </collectionReusableView>
                             </collectionView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWg-K0-ZxK">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
@@ -1218,7 +1224,7 @@ Entrada  + extra 15€</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3LH-4k-BvV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="107"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-ia-uPh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -1357,13 +1363,13 @@ Entrada  + extra 15€</string>
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuA-Jf-M9b">
-                                <rect key="frame" x="0.0" y="107" width="375" height="849"/>
+                                <rect key="frame" x="0.0" y="127" width="375" height="873"/>
                                 <connections>
                                     <segue destination="rqJ-FH-bWy" kind="embed" identifier="shopInfoSegue" id="tbH-4L-lTn"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNc-tM-nTI">
-                                <rect key="frame" x="0.0" y="107" width="375" height="893"/>
+                                <rect key="frame" x="0.0" y="127" width="375" height="873"/>
                                 <connections>
                                     <segue destination="EGg-DV-jHm" kind="embed" id="Hog-Jy-SmR"/>
                                 </connections>
@@ -1414,7 +1420,7 @@ Entrada  + extra 15€</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwK-KC-KFj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1350"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1330"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aYS-Am-LtD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1314.5"/>
@@ -2106,11 +2112,11 @@ Entrada  + extra 15€</string>
                         <viewControllerLayoutGuide type="bottom" id="bGr-PL-yQb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MH6-kh-S6n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="893"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="873"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hv0-uD-uNi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="893"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="853"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationHeaderCell" rowHeight="53" id="E6M-BY-KLu" customClass="NotificationHeaderTableViewCell" customModule="BergaApp" customModuleProvider="target">
@@ -2178,19 +2184,19 @@ Entrada  + extra 15€</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hy-VU-FRT" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="355" height="170"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="170"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZYc-Bh-S9a">
-                                                            <rect key="frame" x="15" y="20" width="325" height="89"/>
+                                                            <rect key="frame" x="0.0" y="20" width="0.0" height="89"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qce-fE-DxX">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHX-bq-AqL">
-                                                                    <rect key="frame" x="0.0" y="22.5" width="325" height="66.5"/>
+                                                                    <rect key="frame" x="0.0" y="22.5" width="0.0" height="66.5"/>
                                                                     <attributedString key="attributedText">
                                                                         <fragment content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor tortor vitae urna pharetra ultricies vitae vel lacus. ">
                                                                             <attributes>
@@ -2205,17 +2211,17 @@ Entrada  + extra 15€</string>
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJn-xf-EEe" userLabel="separator">
-                                                            <rect key="frame" x="0.0" y="129" width="355" height="1"/>
+                                                            <rect key="frame" x="0.0" y="129" width="0.0" height="1"/>
                                                             <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="l5m-yX-fNC"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SX-iu-i3G">
-                                                            <rect key="frame" x="0.0" y="130" width="355" height="40"/>
+                                                            <rect key="frame" x="0.0" y="130" width="0.0" height="40"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-JL-Pe9" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="15" y="10" width="20" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="10" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="hrQ-JL-Pe9" secondAttribute="height" multiplier="1:1" id="MRo-pk-etX"/>
                                                                         <constraint firstAttribute="height" constant="20" id="wTJ-uf-ucm"/>
@@ -2227,7 +2233,7 @@ Entrada  + extra 15€</string>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Publicat fa 15 hores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABp-Lr-gT9">
-                                                                    <rect key="frame" x="45" y="12.5" width="295" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="12.5" width="0.0" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -2305,7 +2311,7 @@ Entrada  + extra 15€</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="25" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Csm-7L-kga">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="sNS-9U-C8z">
@@ -2334,10 +2340,10 @@ Entrada  + extra 15€</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMp-yZ-99Z" customClass="CardView" customModule="BergaApp" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="355" height="140"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="140"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-mR-wlW">
-                                                            <rect key="frame" x="10" y="15" width="60" height="60"/>
+                                                            <rect key="frame" x="0.0" y="15" width="60" height="60"/>
                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="7LJ-xe-tgS"/>
@@ -2345,16 +2351,16 @@ Entrada  + extra 15€</string>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="HOd-dG-VoG">
-                                                            <rect key="frame" x="80" y="15" width="265" height="74"/>
+                                                            <rect key="frame" x="0.0" y="15" width="0.0" height="23.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titular de la notícia" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fn7-Vh-q2P">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet erat ac neque porttitor viverra. " lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5a-vh-oL4">
-                                                                    <rect key="frame" x="0.0" y="23.5" width="265" height="50.5"/>
+                                                                    <rect key="frame" x="0.0" y="23.5" width="0.0" height="0.0"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -2362,23 +2368,23 @@ Entrada  + extra 15€</string>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UnA-Xn-DHX">
-                                                            <rect key="frame" x="10" y="99" width="335" height="26"/>
+                                                            <rect key="frame" x="0.0" y="48.5" width="0.0" height="76.5"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="chP-LB-hqI">
-                                                                    <rect key="frame" x="0.0" y="3" width="20" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="28.5" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="RHh-jw-4z5"/>
                                                                         <constraint firstAttribute="width" secondItem="chP-LB-hqI" secondAttribute="height" id="yHR-RZ-4V3"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider · 24 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQl-pN-MZK">
-                                                                    <rect key="frame" x="25" y="6" width="281" height="14.5"/>
+                                                                    <rect key="frame" x="0.0" y="31" width="0.0" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_share_white" translatesAutoresizingMaskIntoConstraints="NO" id="mxr-zN-XRX" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="311" y="1" width="24" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="26.5" width="24" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="mxr-zN-XRX" secondAttribute="height" multiplier="1:1" id="wK3-wP-yq5"/>
                                                                     </constraints>
@@ -2405,7 +2411,7 @@ Entrada  + extra 15€</string>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dum-dv-AyT">
-                                                    <rect key="frame" x="318" y="89.5" width="50" height="45"/>
+                                                    <rect key="frame" x="0.0" y="64.5" width="50" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="R9S-zk-zac"/>
                                                         <constraint firstAttribute="width" constant="50" id="gDU-Ka-iE5"/>
@@ -2434,7 +2440,7 @@ Entrada  + extra 15€</string>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.88235294119999996" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Csm-7L-kga" secondAttribute="trailing" id="5ap-gW-2mf"/>
                             <constraint firstItem="n5e-xJ-dD8" firstAttribute="top" secondItem="Csm-7L-kga" secondAttribute="bottom" id="dyj-UV-Q1F"/>
