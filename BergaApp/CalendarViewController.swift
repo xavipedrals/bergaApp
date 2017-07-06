@@ -225,7 +225,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         let width = UIScreen.main.bounds.width
         if section == calendarViewModel.CALENDAR_SECTION && calendarViewModel.eventsCount == 0 {
-            let height = getFooterHeightWithEvents()
+            let height = getFooterHeight()
             return CGSize(width: width, height: height < 215 ? 215 : height)
         }
         else if section == calendarViewModel.EVENTS_SECTION && calendarViewModel.eventsCount > 0 {
@@ -233,6 +233,14 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: height < 0 ? 0 : height)
         }
         return CGSize(width: 0, height: 0)
+    }
+    
+    func getFooterHeightWithoutEvents() -> CGFloat {
+        let footerHeight = getFooterHeight()
+        let eventsHeaderHeight = 15
+        let eventsHeight = self.calendarViewModel.eventsCount * 85
+        let newHeight = footerHeight - CGFloat(eventsHeight + eventsHeaderHeight)
+        return newHeight
     }
     
     func getFooterHeightWithEvents() -> CGFloat {
