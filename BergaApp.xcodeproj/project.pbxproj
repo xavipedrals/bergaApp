@@ -25,6 +25,10 @@
 		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
 		471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */; };
+		4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D0781F1BA63D00D24539 /* CorneredImageView.swift */; };
+		4717D07B1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */; };
+		4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07C1F1BE21D00D24539 /* NewsProvider.swift */; };
+		4717D0801F1BE26000D24539 /* NewsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07F1F1BE26000D24539 /* NewsSection.swift */; };
 		471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 471D89E91EED76200003D1E5 /* WeatherView.xib */; };
 		471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D89EB1EED768F0003D1E5 /* WeatherView.swift */; };
 		471D89EE1EED76AE0003D1E5 /* WeatherColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D89ED1EED76AE0003D1E5 /* WeatherColors.swift */; };
@@ -112,6 +116,10 @@
 		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		4717D0781F1BA63D00D24539 /* CorneredImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorneredImageView.swift; sourceTree = "<group>"; };
+		4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTitleTableViewCell.swift; sourceTree = "<group>"; };
+		4717D07C1F1BE21D00D24539 /* NewsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
+		4717D07F1F1BE26000D24539 /* NewsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSection.swift; sourceTree = "<group>"; };
 		471D89E91EED76200003D1E5 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		471D89EB1EED768F0003D1E5 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		471D89ED1EED76AE0003D1E5 /* WeatherColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherColors.swift; sourceTree = "<group>"; };
@@ -268,6 +276,24 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		4717D0771F1BA38F00D24539 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		4717D07E1F1BE23600D24539 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				479316191EC605E000845C6C /* News.swift */,
+				4717D07C1F1BE21D00D24539 /* NewsProvider.swift */,
+				4705512B1EC717E70016E366 /* NewsStub.swift */,
+				4717D07F1F1BE26000D24539 /* NewsSection.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		471D89E81EED76050003D1E5 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +324,7 @@
 				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 				478846681EED5A7E0027E12E /* CardView.swift */,
+				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -307,6 +334,7 @@
 			children = (
 				479315D71EC5FDED00845C6C /* BergaApp */,
 				479316081EC6039F00845C6C /* Frameworks */,
+				4717D0771F1BA38F00D24539 /* Fonts */,
 				479315EC1EC5FDED00845C6C /* BergaAppTests */,
 				479315F71EC5FDED00845C6C /* BergaAppUITests */,
 				479315D61EC5FDED00845C6C /* Products */,
@@ -377,11 +405,11 @@
 			isa = PBXGroup;
 			children = (
 				471D89E81EED76050003D1E5 /* Weather */,
+				4717D07E1F1BE23600D24539 /* Model */,
 				479316061EC5FE2800845C6C /* NewsViewController.swift */,
 				479316171EC605C400845C6C /* NewsViewModel.swift */,
-				479316191EC605E000845C6C /* News.swift */,
 				4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */,
-				4705512B1EC717E70016E366 /* NewsStub.swift */,
+				4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -590,6 +618,7 @@
 				47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */,
 				4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */,
 				47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */,
+				4717D07B1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
 				432C1AF91EEFCC850043FA36 /* EventOrganizer.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
@@ -597,6 +626,7 @@
 				471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
 				473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */,
+				4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */,
 				4352956E1ECB14710017FB9E /* Colors.swift in Sources */,
 				437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */,
 				47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */,
@@ -617,7 +647,9 @@
 				47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
 				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
+				4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */,
 				479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */,
+				4717D0801F1BE26000D24539 /* NewsSection.swift in Sources */,
 				471D89F01EED7ACA0003D1E5 /* Weather.swift in Sources */,
 				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */,

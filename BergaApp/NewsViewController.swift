@@ -9,18 +9,18 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var weatherView: WeatherView!
     
+    let dataSource = RxTableViewSectionedReloadDataSource<NewsSection>()
     let newsViewModel = NewsViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initVisuals()
         configureTableView()
     }
@@ -31,17 +31,21 @@ class NewsViewController: UIViewController {
     }
     
     func configureTableView() {
-        configureWeather()
         configureNews()
         configureShareNews()
     }
     
-    func configureWeather() {
-        let weather = Weather(celciusGrades: 24, type: .sunny)
-        weatherView.set(weather: weather)
-    }
-    
     func configureNews() {
+        
+        Observable.just(newsViewModel.news)
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .addDisposableTo(disposeBag)
+        
+        dataSource.configureCell { ds, tv, ind, elem in
+            return UITableViewCell()
+        }
+        
+        
         newsViewModel.data.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "newsCell", cellType: NewsTableViewCell.self)){
                 _, news, cell in
@@ -73,12 +77,6 @@ class NewsViewController: UIViewController {
             
             self.present(activityVC, animated: true, completion: nil)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
-        configureWeather()
     }
     
 }
