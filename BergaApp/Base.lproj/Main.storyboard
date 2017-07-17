@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2354,18 +2354,19 @@ Entrada  + extra 15€</string>
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="322" id="cSk-Rd-KCZ" customClass="NewsTitleTableViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="177" width="375" height="322"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsHeaderCell" rowHeight="352" id="cSk-Rd-KCZ" customClass="NewsTitleTableViewCell" customModule="BergaApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="177" width="375" height="352"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cSk-Rd-KCZ" id="r66-Sh-U8o">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="322"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="352"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ial-Gg-I4F">
-                                                    <rect key="frame" x="20" y="20" width="335" height="290"/>
+                                                    <rect key="frame" x="20" y="10" width="335" height="327"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-7U-urt" customClass="CorneredImageView" customModule="BergaApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="201"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="b7Q-7U-urt" secondAttribute="height" multiplier="10:6" id="568-5r-iAP"/>
                                                             </constraints>
@@ -2376,17 +2377,17 @@ Entrada  + extra 15€</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3t-Yd-I2C">
-                                                            <rect key="frame" x="0.0" y="206" width="335" height="20"/>
+                                                            <rect key="frame" x="0.0" y="206" width="335" height="38"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-Yf-nmR">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="9" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="VQa-Yf-nmR" secondAttribute="height" id="BRq-Gx-guB"/>
                                                                         <constraint firstAttribute="height" constant="20" id="lah-UG-zuX"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-gb-IDf">
-                                                                    <rect key="frame" x="30" y="2.5" width="305" height="16"/>
+                                                                    <rect key="frame" x="30" y="11.5" width="305" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -2396,20 +2397,20 @@ Entrada  + extra 15€</string>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="SDd-gb-IDf" secondAttribute="trailing" id="1iQ-v2-m1c"/>
                                                                 <constraint firstItem="VQa-Yf-nmR" firstAttribute="leading" secondItem="E3t-Yd-I2C" secondAttribute="leading" id="APO-Ef-TCo"/>
-                                                                <constraint firstAttribute="height" constant="20" id="D4O-9j-gK9"/>
+                                                                <constraint firstAttribute="height" constant="38" id="D4O-9j-gK9"/>
                                                                 <constraint firstItem="SDd-gb-IDf" firstAttribute="leading" secondItem="VQa-Yf-nmR" secondAttribute="trailing" constant="10" id="Gto-my-rDQ"/>
                                                                 <constraint firstItem="SDd-gb-IDf" firstAttribute="centerY" secondItem="E3t-Yd-I2C" secondAttribute="centerY" id="XOY-b9-Uv1"/>
                                                                 <constraint firstItem="VQa-Yf-nmR" firstAttribute="centerY" secondItem="E3t-Yd-I2C" secondAttribute="centerY" id="p8Y-od-uat"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCB-F3-fo1">
-                                                            <rect key="frame" x="0.0" y="231" width="335" height="29"/>
+                                                            <rect key="frame" x="0.0" y="249" width="335" height="48"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-vM-WeM">
-                                                            <rect key="frame" x="0.0" y="265" width="335" height="25"/>
+                                                            <rect key="frame" x="0.0" y="302" width="335" height="25"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jU2-kg-FS6">
                                                                     <rect key="frame" x="0.0" y="9" width="30" height="16"/>
@@ -2418,10 +2419,10 @@ Entrada  + extra 15€</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share-ios" translatesAutoresizingMaskIntoConstraints="NO" id="PpX-XI-qML">
-                                                                    <rect key="frame" x="315" y="5" width="20" height="20"/>
+                                                                    <rect key="frame" x="319" y="5" width="16" height="20"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="20" id="bwF-UW-H0B"/>
-                                                                        <constraint firstAttribute="width" secondItem="PpX-XI-qML" secondAttribute="height" id="n5n-WP-WQp"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="Ufh-Sg-uLU"/>
+                                                                        <constraint firstAttribute="width" constant="16" id="bwF-UW-H0B"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUe-4Y-m91">
@@ -2447,10 +2448,10 @@ Entrada  + extra 15€</string>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ial-Gg-I4F" secondAttribute="bottom" constant="12" id="4qZ-DW-boe"/>
+                                                <constraint firstAttribute="bottom" secondItem="ial-Gg-I4F" secondAttribute="bottom" constant="15" id="4qZ-DW-boe"/>
                                                 <constraint firstItem="ial-Gg-I4F" firstAttribute="leading" secondItem="r66-Sh-U8o" secondAttribute="leading" constant="20" id="g2q-XU-V27"/>
                                                 <constraint firstAttribute="trailing" secondItem="ial-Gg-I4F" secondAttribute="trailing" constant="20" id="iax-fM-FrO"/>
-                                                <constraint firstItem="ial-Gg-I4F" firstAttribute="top" secondItem="r66-Sh-U8o" secondAttribute="top" constant="20" id="of6-dM-NBm"/>
+                                                <constraint firstItem="ial-Gg-I4F" firstAttribute="top" secondItem="r66-Sh-U8o" secondAttribute="top" constant="10" id="of6-dM-NBm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -2463,7 +2464,7 @@ Entrada  + extra 15€</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="167" id="Aen-cr-eJM" customClass="NewsTableViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="499" width="375" height="167"/>
+                                        <rect key="frame" x="0.0" y="529" width="375" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aen-cr-eJM" id="NRL-qU-87k">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
@@ -2474,6 +2475,7 @@ Entrada  + extra 15€</string>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ECL-Dc-rdF" customClass="CorneredImageView" customModule="BergaApp" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="75" id="WcB-QB-sUT"/>
                                                                 <constraint firstAttribute="width" secondItem="ECL-Dc-rdF" secondAttribute="height" id="wgH-sv-02Q"/>
@@ -2550,10 +2552,10 @@ Entrada  + extra 15€</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share-ios" translatesAutoresizingMaskIntoConstraints="NO" id="Bdk-eo-PdG">
-                                                            <rect key="frame" x="315" y="5" width="20" height="20"/>
+                                                            <rect key="frame" x="319" y="5" width="16" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="Eca-Tu-urk"/>
-                                                                <constraint firstAttribute="width" secondItem="Bdk-eo-PdG" secondAttribute="height" id="tFa-Ku-DLt"/>
+                                                                <constraint firstAttribute="height" constant="20" id="Ctv-Pg-WYa"/>
+                                                                <constraint firstAttribute="width" constant="16" id="Eca-Tu-urk"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Df-iK-2E1">
@@ -2619,7 +2621,7 @@ Entrada  + extra 15€</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ia-Hq-S23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.60000000000002" y="-656.67166416791611"/>
+            <point key="canvasLocation" x="998" y="-677"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="i6z-Dg-dNl">

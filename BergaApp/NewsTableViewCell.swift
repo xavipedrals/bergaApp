@@ -28,7 +28,7 @@ class NewsTableViewCell: UITableViewCell {
         }
         providerImageView.image = UIImage(named: from.provider.imageName)
         providerName.text = from.provider.name
-        timeLabel.text = from.getStringTime()
+        timeLabel.text = from.getStringTime().capitalized
     }
 
 }

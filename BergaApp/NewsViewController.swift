@@ -18,6 +18,8 @@ class NewsViewController: UIViewController {
     let dataSource = RxTableViewSectionedReloadDataSource<NewsSection>()
     let newsViewModel = NewsViewModel()
     let disposeBag = DisposeBag()
+    let headerNewsCellIdentifier = "newsHeaderCell"
+    let newsCellIdentifier = "newsCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,27 +38,40 @@ class NewsViewController: UIViewController {
     }
     
     func configureNews() {
-        
-        Observable.just(newsViewModel.news)
+        newsViewModel.news.asObservable()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
         
-        dataSource.configureCell { ds, tv, ind, elem in
-            return UITableViewCell()
-        }
-        
-        
-        newsViewModel.data.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: "newsCell", cellType: NewsTableViewCell.self)){
-                _, news, cell in
-                cell.initCell(from: news)
-                cell.shareButton.rx.tap
-                    .subscribe(onNext: { _ in
-                        self.share(news: news)
-                    })
-                    .addDisposableTo(self.disposeBag)
+        dataSource.configureCell = { (ds: TableViewSectionedDataSource<NewsSection>, tv: UITableView, index: IndexPath, item: NewsSection.Item) -> UITableViewCell in
+            if index.section == 0 {
+                return self.getHeaderCell(index: index, news: item)
             }
-            .addDisposableTo(disposeBag)
+            else {
+                return self.getNewsCell(index: index, news: item)
+            }
+        }
+    }
+    
+    func getHeaderCell(index: IndexPath, news: News) -> NewsTitleTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: headerNewsCellIdentifier, for: index) as! NewsTitleTableViewCell
+        cell.initCell(from: news)
+        cell.shareButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.share(news: news)
+            })
+            .addDisposableTo(self.disposeBag)
+        return cell
+    }
+    
+    func getNewsCell(index: IndexPath, news: News) -> NewsTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: newsCellIdentifier, for: index) as! NewsTableViewCell
+        cell.initCell(from: news)
+        cell.shareButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.share(news: news)
+            })
+            .addDisposableTo(self.disposeBag)
+        return cell
     }
     
     func configureShareNews() {

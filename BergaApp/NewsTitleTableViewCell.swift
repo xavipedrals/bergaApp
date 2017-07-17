@@ -23,7 +23,7 @@ class NewsTitleTableViewCell: UITableViewCell {
         bigImageView.kf.setImage(with: URL(string: news.imageUrl))
         providerImageView.image = UIImage(named: news.provider.imageName)
         providerLabel.text = news.provider.name
-        timeLabel.text = news.getStringTime()
+        timeLabel.text = news.getStringTime().capitalized
     }
 
 }

@@ -14,18 +14,18 @@ import SwiftyJSON
 class NewsViewModel {
     
     let data = Variable<[News]>([])
-    var news = [NewsSection]([
+    var news = Variable<[NewsSection]>([
         NewsSection(name: "Top news", items: []),
         NewsSection(name: "Other news", items: [])
     ])
     var headerSection: NewsSection {
         get {
-            return news[0]
+            return news.value[0]
         }
     }
     var allNewsSection: NewsSection {
         get {
-            return news[1]
+            return news.value[1]
         }
     }
     let disposeBag = DisposeBag()
@@ -54,9 +54,9 @@ class NewsViewModel {
         let json = JSON(data)
         let newsJson = json["news"].arrayValue
         let newsArray = ArrayParser<News>.parseJSONToArray(newsJson)
-        news[0] = NewsSection(original: headerSection, items: [newsArray[0]])
+        news.value[0] = NewsSection(original: headerSection, items: [newsArray[0]])
         let allNews = [News](newsArray[1..<newsArray.count])
-        news[1] = NewsSection(original: allNewsSection, items: allNews)
+        news.value[1] = NewsSection(original: allNewsSection, items: allNews)
     }
     
 }
