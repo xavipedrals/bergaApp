@@ -28,7 +28,7 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setCalendarTitle()
+//        setCalendarTitle()
         configureCollectionView()
         configureSwipes()
     }
@@ -215,11 +215,11 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == calendarViewModel.EVENTS_SECTION && calendarViewModel.eventsCount > 0 {
-            let width = UIScreen.main.bounds.width
-            return CGSize(width: width, height: 15)
+        if section == calendarViewModel.EVENTS_SECTION {
+            return CGSize(width: 0, height: 0)
         }
-        return CGSize(width: 0, height: 0)
+        let width = UIScreen.main.bounds.width
+        return CGSize(width: width, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -265,7 +265,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == calendarViewModel.CALENDAR_SECTION {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            return UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         }
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
