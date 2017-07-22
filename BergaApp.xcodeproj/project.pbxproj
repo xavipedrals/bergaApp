@@ -72,6 +72,7 @@
 		47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* IconImage.swift */; };
+		47CBCE0D1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */; };
 		47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */; };
 		47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */; };
 		47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */; };
@@ -169,6 +170,7 @@
 		47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* IconImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
+		47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoViewController.swift; sourceTree = "<group>"; };
 		47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewController.swift; sourceTree = "<group>"; };
 		47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */,
 				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
 				430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */,
+				47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				47416A101ED74AE100497A09 /* MapViewController.swift in Sources */,
 				471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */,
+				47CBCE0D1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
 				473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */,
 				4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */,

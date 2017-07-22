@@ -33,27 +33,27 @@ class CalendarViewController: UIViewController {
         configureSwipes()
     }
     
-    func setCalendarTitle() {
-        calendarViewModel.monthYearStr.asObservable()
-            .map({ monthYear -> NSAttributedString in
-                self.getMonthYearAttributedString(monthYear)
-            })
-            .subscribe(onNext: { attributedTitle in
-                self.monthYearLabel.attributedText = attributedTitle
-            })
-            .addDisposableTo(disposeBag)
-    }
+//    func setCalendarTitle() {
+//        calendarViewModel.monthYearStr.asObservable()
+//            .map({ monthYear -> NSAttributedString in
+//                self.getMonthYearAttributedString(monthYear)
+//            })
+//            .subscribe(onNext: { attributedTitle in
+//                self.monthYearLabel.attributedText = attributedTitle
+//            })
+//            .addDisposableTo(disposeBag)
+//    }
     
-    func getMonthYearAttributedString(_ monthYear: String) -> NSAttributedString {
-        let monthYearArr = monthYear.components(separatedBy: " ")
-        let attributedTitle = NSMutableAttributedString(string: monthYear)
-        let monthRange = NSMakeRange(0, monthYearArr[0].length)
-        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightSemibold), range: monthRange)
-        
-        let yearRange = NSMakeRange(monthYearArr[0].length + 1, monthYearArr[1].length)
-        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightLight), range: yearRange)
-        return attributedTitle
-    }
+//    func getMonthYearAttributedString(_ monthYear: String) -> NSAttributedString {
+//        let monthYearArr = monthYear.components(separatedBy: " ")
+//        let attributedTitle = NSMutableAttributedString(string: monthYear)
+//        let monthRange = NSMakeRange(0, monthYearArr[0].length)
+//        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightSemibold), range: monthRange)
+//        
+//        let yearRange = NSMakeRange(monthYearArr[0].length + 1, monthYearArr[1].length)
+//        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightLight), range: yearRange)
+//        return attributedTitle
+//    }
     
     func configureCollectionView() {
         bindDataSource()
@@ -107,7 +107,11 @@ class CalendarViewController: UIViewController {
                 }
             }
             else {
-                let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "separatorHeader", for: indexPath)
+                let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "monthHeader", for: indexPath) as! MonthHeaderCollectionReusableView
+//                self.calendarViewModel.monthYearStr.asObservable()
+//                    .bind(to: header.text)
+//                    .addDisposableTo(self.disposeBag)
+                header.initCell(text: self.calendarViewModel.monthYearStr.value)
                 return header
             }
         }
@@ -179,12 +183,6 @@ class CalendarViewController: UIViewController {
             eventDetail.event = self.selectedEvent
         }
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
-    }
-
 }
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HAO-jH-NF8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,7 +40,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-3N-a4Z">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-3N-a4Z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="17y-ij-2gh">
@@ -200,8 +200,67 @@
                                             <outlet property="placeLabel" destination="vC7-Oj-juo" id="WiU-mC-0m0"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lKD-yt-XE5">
+                                        <rect key="frame" x="88.5" y="310" width="198" height="288"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="288"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5C-cB-30I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="288"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guY-0T-Vyr" customClass="CorneredImageView" customModule="BergaApp" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="198" height="216"/>
+                                                            <color key="backgroundColor" red="0.23921568630000001" green="0.88235294119999996" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="9"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Fkk-YW-3Tq">
+                                                            <rect key="frame" x="2" y="226" width="193" height="62"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYt-CX-26w">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="193" height="31"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-SF-IRM">
+                                                                    <rect key="frame" x="0.0" y="31" width="193" height="31"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Fkk-YW-3Tq" firstAttribute="top" secondItem="guY-0T-Vyr" secondAttribute="bottom" constant="10" id="3rJ-ea-sSh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Fkk-YW-3Tq" secondAttribute="bottom" id="8mH-qq-cib"/>
+                                                        <constraint firstItem="guY-0T-Vyr" firstAttribute="top" secondItem="a5C-cB-30I" secondAttribute="top" id="9ax-1N-QQy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="guY-0T-Vyr" secondAttribute="trailing" id="RY1-7A-F9i"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Fkk-YW-3Tq" secondAttribute="trailing" constant="3" id="X5t-sz-TUu"/>
+                                                        <constraint firstItem="Fkk-YW-3Tq" firstAttribute="leading" secondItem="a5C-cB-30I" secondAttribute="leading" constant="2" id="YiW-zj-Z6q"/>
+                                                        <constraint firstItem="guY-0T-Vyr" firstAttribute="height" secondItem="a5C-cB-30I" secondAttribute="height" multiplier="75/100" id="cDw-hZ-2yU"/>
+                                                        <constraint firstItem="guY-0T-Vyr" firstAttribute="leading" secondItem="a5C-cB-30I" secondAttribute="leading" id="k2r-Ik-D48"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="a5C-cB-30I" secondAttribute="trailing" id="8rF-2u-uzM"/>
+                                            <constraint firstAttribute="bottom" secondItem="a5C-cB-30I" secondAttribute="bottom" id="Mn6-ZT-F0E"/>
+                                            <constraint firstItem="a5C-cB-30I" firstAttribute="leading" secondItem="lKD-yt-XE5" secondAttribute="leading" id="MtZ-Kp-9aJ"/>
+                                            <constraint firstItem="a5C-cB-30I" firstAttribute="top" secondItem="lKD-yt-XE5" secondAttribute="top" id="g6H-eu-9dy"/>
+                                        </constraints>
+                                        <size key="customSize" width="198" height="288"/>
+                                    </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="separatorHeader" id="qNO-R8-O4W">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="monthHeader" id="qNO-R8-O4W" customClass="MonthHeaderCollectionReusableView" customModule="BergaApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -209,7 +268,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcC-jo-ZN9">
-                                                    <rect key="frame" x="20" y="64" width="155.5" height="44.5"/>
+                                                    <rect key="frame" x="20" y="64" width="155.5" height="41"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -273,7 +332,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cjH-6p-iLy" firstAttribute="top" secondItem="HcC-jo-ZN9" secondAttribute="bottom" constant="5" id="PR3-D9-xCJ"/>
+                                                <constraint firstItem="cjH-6p-iLy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HcC-jo-ZN9" secondAttribute="bottom" constant="5" id="PR3-D9-xCJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="cjH-6p-iLy" secondAttribute="bottom" id="TR4-sK-FzK"/>
                                                 <constraint firstAttribute="trailing" secondItem="cjH-6p-iLy" secondAttribute="trailing" constant="16" id="UPy-Gu-aEc"/>
                                                 <constraint firstItem="HcC-jo-ZN9" firstAttribute="leading" secondItem="BwV-hn-KuE" secondAttribute="leading" constant="20" id="Whd-di-HYd"/>
@@ -290,9 +349,12 @@
                                         <constraint firstItem="BwV-hn-KuE" firstAttribute="top" secondItem="qNO-R8-O4W" secondAttribute="top" id="n5X-3J-8ai"/>
                                         <constraint firstAttribute="bottom" secondItem="BwV-hn-KuE" secondAttribute="bottom" id="zz4-KR-0M3"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="monthLabel" destination="HcC-jo-ZN9" id="uHG-tN-r2T"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarFooter" id="a4u-sr-SS9" customClass="CalendarFooterCollectionReusableView" customModule="BergaApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="320" width="375" height="210"/>
+                                    <rect key="frame" x="0.0" y="608" width="375" height="210"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-9w-H9A">
