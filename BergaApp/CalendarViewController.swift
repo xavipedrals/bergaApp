@@ -63,9 +63,10 @@ class CalendarViewController: UIViewController {
             case .calendarEvent(_):
                 let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventsContainerCell", for: indexPath) as! EventsContainerCollectionViewCell
                 
+                cell.setCellWidth()
+                
                 self.calendarViewModel.events.asObservable()
                     .bind(to: cell.collectionView.rx.items(cellIdentifier: "eventCell", cellType: EventCollectionViewCell.self)) { (row, element, cell) in
-                        
                         cell.initCell(from: element)
                     }
                     .addDisposableTo(cell.disposeBag!)
@@ -91,9 +92,6 @@ class CalendarViewController: UIViewController {
             }
             else {
                 let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "monthHeader", for: indexPath) as! MonthHeaderCollectionReusableView
-//                self.calendarViewModel.monthYearStr.asObservable()
-//                    .bind(to: header.text)
-//                    .addDisposableTo(self.disposeBag)
                 header.initCell(text: self.calendarViewModel.monthYearStr.value)
                 return header
             }
@@ -183,16 +181,16 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         if indexPath.section == calendarViewModel.CALENDAR_SECTION {
             return getDayCellSize()
         }
-        return getEventCellSize()
+        return getEventsContainerCellSize()
     }
     
     func getDayCellSize() -> CGSize {
         return CGSize(width: dayCellWidth!, height: dayCellWidth!)
     }
     
-    func getEventCellSize() -> CGSize {
+    func getEventsContainerCellSize() -> CGSize {
         let width = UIScreen.main.bounds.width
-        return CGSize(width: width, height: 85)
+        return CGSize(width: width, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -208,10 +206,6 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         if section == calendarViewModel.CALENDAR_SECTION && calendarViewModel.eventsCount == 0 {
             let height = getFooterHeight()
             return CGSize(width: width, height: height < 215 ? 215 : height)
-        }
-        else if section == calendarViewModel.EVENTS_CONTAINER_SECTION && calendarViewModel.eventsCount > 0 {
-            let height = getFooterHeightWithEvents()
-            return CGSize(width: width, height: height < 0 ? 0 : height)
         }
         return CGSize(width: 0, height: 0)
     }
