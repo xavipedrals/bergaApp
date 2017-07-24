@@ -20,16 +20,18 @@ class CalendarViewModel {
     let disposeBag = DisposeBag()
     
     let CALENDAR_SECTION = 0
-    let EVENTS_SECTION = 1
+    let EVENTS_CONTAINER_SECTION = 1
     
     let sections = Variable<[CalendarSection]>([
         CalendarSection(header: "Days", items: []),
-        CalendarSection(header: "Events", items: [])
+        CalendarSection(header: "EventsContainer", items: [])
     ])
+    
+    let events = Variable<[CalendarEvent]>([])
     
     var eventsCount: Int {
         get {
-            return sections.value[EVENTS_SECTION].items.count
+            return sections.value[EVENTS_CONTAINER_SECTION].items.count
         }
     }
     var daysCount: Int {
@@ -97,14 +99,14 @@ class CalendarViewModel {
     }
     
     private func updateEventsSection(day: Date) {
-        let events = CalendarEventsManager().getEventsFor(day: day)
+        events.value = CalendarEventsManager().getEventsFor(day: day)
         var items = [CalendarModelType]()
-        for event in events {
-            let calendarModel = CalendarModelType.calendarEvent(event)
+        if events.value.count > 0 {
+            let calendarModel = CalendarModelType.calendarEvent(events.value[0])
             items.append(calendarModel)
         }
-        let eventsSection = CalendarSection(original: sections.value[EVENTS_SECTION], items: items)
-        sections.value[EVENTS_SECTION] = eventsSection
+        let eventsSection = CalendarSection(original: sections.value[EVENTS_CONTAINER_SECTION], items: items)
+        sections.value[EVENTS_CONTAINER_SECTION] = eventsSection
     }
     
     func addAMonth() {
@@ -118,8 +120,9 @@ class CalendarViewModel {
     }
     
     func cleanEventsSection() {
-        let eventsSection = CalendarSection(original: sections.value[EVENTS_SECTION], items: [])
-        sections.value[EVENTS_SECTION] = eventsSection
+        events.value = []
+        let eventsSection = CalendarSection(original: sections.value[EVENTS_CONTAINER_SECTION], items: [])
+        sections.value[EVENTS_CONTAINER_SECTION] = eventsSection
     }
     
     func getDay(at: IndexPath) -> Day? {
@@ -134,14 +137,11 @@ class CalendarViewModel {
     }
     
     func getEvent(at: IndexPath) -> CalendarEvent? {
-        let calendarModel = sections.value[EVENTS_SECTION].items[at.row]
-        switch calendarModel {
-        case .calendarEvent(let event):
-            return event
-            
-        default:
-            return nil
+        if at.row < events.value.count {
+            return events.value[at.row]
         }
+        return nil
+        
     }
 }
 

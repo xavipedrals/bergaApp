@@ -14,7 +14,6 @@ import RxDataSources
 class CalendarViewController: UIViewController {
 
     @IBOutlet weak var calendarCollectionView: UICollectionView!
-    @IBOutlet weak var monthYearLabel: UILabel!
     
     var dayCellWidth: Double?
     let dataSource = RxCollectionViewSectionedReloadDataSource<CalendarSection>()
@@ -28,32 +27,9 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setCalendarTitle()
         configureCollectionView()
         configureSwipes()
     }
-    
-//    func setCalendarTitle() {
-//        calendarViewModel.monthYearStr.asObservable()
-//            .map({ monthYear -> NSAttributedString in
-//                self.getMonthYearAttributedString(monthYear)
-//            })
-//            .subscribe(onNext: { attributedTitle in
-//                self.monthYearLabel.attributedText = attributedTitle
-//            })
-//            .addDisposableTo(disposeBag)
-//    }
-    
-//    func getMonthYearAttributedString(_ monthYear: String) -> NSAttributedString {
-//        let monthYearArr = monthYear.components(separatedBy: " ")
-//        let attributedTitle = NSMutableAttributedString(string: monthYear)
-//        let monthRange = NSMakeRange(0, monthYearArr[0].length)
-//        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightSemibold), range: monthRange)
-//        
-//        let yearRange = NSMakeRange(monthYearArr[0].length + 1, monthYearArr[1].length)
-//        attributedTitle.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 17.0, weight: UIFontWeightLight), range: yearRange)
-//        return attributedTitle
-//    }
     
     func configureCollectionView() {
         bindDataSource()
@@ -84,9 +60,16 @@ class CalendarViewController: UIViewController {
                 }
                 return cell
                 
-            case .calendarEvent(let event):
-                let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
-                cell.initCell(from: event)
+            case .calendarEvent(_):
+                let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventsContainerCell", for: indexPath) as! EventsContainerCollectionViewCell
+                
+                self.calendarViewModel.events.asObservable()
+                    .bind(to: cell.collectionView.rx.items(cellIdentifier: "eventCell", cellType: EventCollectionViewCell.self)) { (row, element, cell) in
+                        
+                        cell.initCell(from: element)
+                    }
+                    .addDisposableTo(cell.disposeBag!)
+                
                 return cell
             }
         }
@@ -213,7 +196,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == calendarViewModel.EVENTS_SECTION {
+        if section == calendarViewModel.EVENTS_CONTAINER_SECTION {
             return CGSize(width: 0, height: 0)
         }
         let width = UIScreen.main.bounds.width
@@ -226,7 +209,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
             let height = getFooterHeight()
             return CGSize(width: width, height: height < 215 ? 215 : height)
         }
-        else if section == calendarViewModel.EVENTS_SECTION && calendarViewModel.eventsCount > 0 {
+        else if section == calendarViewModel.EVENTS_CONTAINER_SECTION && calendarViewModel.eventsCount > 0 {
             let height = getFooterHeightWithEvents()
             return CGSize(width: width, height: height < 0 ? 0 : height)
         }
