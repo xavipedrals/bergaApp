@@ -14,7 +14,7 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var disposeBag: DisposeBag? = DisposeBag()
-    var dayCellWidth: Double?
+    var eventCellWidth: Double?
     
     override func prepareForReuse() {
         disposeBag = nil
@@ -23,17 +23,14 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
     
     func setCellWidth() {
         let width = (collectionView.frame.size.width - (10 + 10) * 2) / 2
-        dayCellWidth = Double(width)
+        eventCellWidth = Double(width)
         collectionView.delegate = self
     }
 }
 
 extension EventsContainerCollectionViewCell: UICollectionViewDelegateFlowLayout {
-//    override func viewDidLayoutSubviews() {
-//        setCellWidth()
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: dayCellWidth!, height: 275)
+        return CGSize(width: eventCellWidth!, height: 275)
     }
 }
