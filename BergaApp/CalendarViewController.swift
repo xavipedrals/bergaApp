@@ -65,11 +65,33 @@ class CalendarViewController: UIViewController {
                 
                 cell.setCellWidth()
                 
-                self.calendarViewModel.events.asObservable()
-                    .bind(to: cell.collectionView.rx.items(cellIdentifier: "eventCell", cellType: EventCollectionViewCell.self)) { (row, element, cell) in
-                        cell.initCell(from: element)
+                self.calendarViewModel.eventsSection.asObservable()
+                    .bind(to: cell.collectionView.rx.items(dataSource: cell.cellDataSource))
+                    .disposed(by: cell.disposeBag!)
+                
+                cell.cellDataSource.configureCell = { (ds, cv, indexPath, item) in
+                    let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
+                    cell.initCell(from: item)
+                    return cell
+                }
+                
+                cell.cellDataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
+                    if kind == UICollectionElementKindSectionHeader {
+                        let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "eventsHeader", for: indexPath)
+                        return header
                     }
-                    .addDisposableTo(cell.disposeBag!)
+                    else if kind == UICollectionElementKindSectionFooter {
+                        let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "eventsFooter", for: indexPath)
+                        return footer
+                    }
+                    return UICollectionReusableView()
+                }
+                
+//                self.calendarViewModel.events.asObservable()
+//                    .bind(to: cell.collectionView.rx.items(cellIdentifier: "eventCell", cellType: EventCollectionViewCell.self)) { (row, element, cell) in
+//                        cell.initCell(from: element)
+//                    }
+//                    .addDisposableTo(cell.disposeBag!)
                 
                 return cell
             }

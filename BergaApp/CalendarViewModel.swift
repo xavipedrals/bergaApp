@@ -28,6 +28,9 @@ class CalendarViewModel {
     ])
     
     let events = Variable<[CalendarEvent]>([])
+    let eventsSection = Variable<[CalendarEventSection]>([
+        CalendarEventSection(header: "Events", items: [])
+    ])
     
     var eventsCount: Int {
         get {
@@ -48,6 +51,13 @@ class CalendarViewModel {
         generateMonthYearStringWhenMonthChanges()
         generateDaysWhenMonthChanges()
         updateEventsSection(day: Date())
+        
+        events.asObservable()
+            .subscribe(onNext: { events in
+                let eventsSection = CalendarEventSection(original: self.eventsSection.value[0], items: events)
+                self.eventsSection.value[0] = eventsSection
+            })
+            .addDisposableTo(disposeBag)
     }
     
     private func generateMonthYearStringWhenMonthChanges() {

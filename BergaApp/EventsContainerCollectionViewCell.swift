@@ -9,12 +9,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class EventsContainerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var disposeBag: DisposeBag? = DisposeBag()
     var eventCellWidth: Double?
+    let cellDataSource = RxCollectionViewSectionedReloadDataSource<CalendarEventSection>()
     
     override func prepareForReuse() {
         disposeBag = nil
@@ -22,7 +24,7 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
     }
     
     func setCellWidth() {
-        let width = (collectionView.frame.size.width - (10 + 10) * 2) / 2
+        let width = (collectionView.frame.size.width - (20+15+15) * 2) / 2
         eventCellWidth = Double(width)
         collectionView.delegate = self
     }
