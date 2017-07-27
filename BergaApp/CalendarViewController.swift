@@ -96,6 +96,7 @@ class CalendarViewController: UIViewController {
         dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
             if kind == UICollectionElementKindSectionFooter {
                 let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
+                footer.setBackground(url: "https://source.unsplash.com/500x400/?nature")
                 return footer
             }
             else {
@@ -210,8 +211,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         let width = UIScreen.main.bounds.width
         if section == calendarViewModel.CALENDAR_SECTION && calendarViewModel.eventsCount == 0 {
-            let height = getFooterHeight()
-            return CGSize(width: width, height: height < 215 ? 215 : height)
+            return CGSize(width: width, height: width * 65 / 100)
         }
         return CGSize(width: 0, height: 0)
     }
