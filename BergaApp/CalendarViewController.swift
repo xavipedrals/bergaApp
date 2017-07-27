@@ -95,16 +95,8 @@ class CalendarViewController: UIViewController {
     func configureHeaderAndFooter() {
         dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
             if kind == UICollectionElementKindSectionFooter {
-                if indexPath.section == 0 {
-                    let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
-                    footer.setNormal()
-                    return footer
-                }
-                else {
-                    let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
-                    footer.setFiller()
-                    return footer
-                }
+                let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
+                return footer
             }
             else {
                 let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "monthHeader", for: indexPath) as! MonthHeaderCollectionReusableView
@@ -118,19 +110,17 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
                 if indexPath.section == 0 {
-                    let cell = self.calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
-                    cell.setSelected()
-                    self.selectedIndex = indexPath
-                    self.calendarViewModel.updateEventsSection(dayAt: indexPath)
-                }
-                else {
-                    if let event = self.calendarViewModel.getEvent(at: indexPath) {
-                        self.selectedEvent = event
-                        self.performSegue(withIdentifier: "goToEventDetail", sender: nil)
-                    }
+                    self.manageDayCellClick(indexPath: indexPath)
                 }
             })
             .addDisposableTo(disposeBag)
+    }
+    
+    func manageDayCellClick(indexPath: IndexPath) {
+        let cell = calendarCollectionView.cellForItem(at: indexPath) as! DayCollectionViewCell
+        cell.setSelected()
+        selectedIndex = indexPath
+        calendarViewModel.updateEventsSection(dayAt: indexPath)
     }
     
     func configureItemDeselection() {

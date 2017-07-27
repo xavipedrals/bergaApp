@@ -370,9 +370,6 @@
                                         <constraint firstItem="6bS-9w-H9A" firstAttribute="leading" secondItem="a4u-sr-SS9" secondAttribute="leading" id="Mrh-Oq-m8J"/>
                                         <constraint firstAttribute="trailing" secondItem="6bS-9w-H9A" secondAttribute="trailing" id="iDO-cj-zz3"/>
                                     </constraints>
-                                    <connections>
-                                        <outlet property="cardView" destination="5YV-Xr-aZC" id="HYL-tN-blc"/>
-                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

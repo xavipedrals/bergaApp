@@ -9,15 +9,5 @@
 import UIKit
 
 class CalendarFooterCollectionReusableView: UICollectionReusableView {
-    
-    @IBOutlet weak var cardView: CardView!
-    
-    func setNormal() {
-        cardView.isHidden = false
-    }
-    
-    func setFiller() {
-        cardView.isHidden = true
-    }
-        
+
 }
