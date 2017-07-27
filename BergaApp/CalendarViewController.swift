@@ -87,12 +87,6 @@ class CalendarViewController: UIViewController {
                     return UICollectionReusableView()
                 }
                 
-//                self.calendarViewModel.events.asObservable()
-//                    .bind(to: cell.collectionView.rx.items(cellIdentifier: "eventCell", cellType: EventCollectionViewCell.self)) { (row, element, cell) in
-//                        cell.initCell(from: element)
-//                    }
-//                    .addDisposableTo(cell.disposeBag!)
-                
                 return cell
             }
         }

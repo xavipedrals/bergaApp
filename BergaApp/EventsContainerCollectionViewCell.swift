@@ -24,7 +24,7 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
     }
     
     func setCellWidth() {
-        let width = (collectionView.frame.size.width - (20+15+15) * 2) / 2
+        let width = (collectionView.frame.size.width - (30) * 2) / 2
         eventCellWidth = Double(width)
         collectionView.delegate = self
     }
