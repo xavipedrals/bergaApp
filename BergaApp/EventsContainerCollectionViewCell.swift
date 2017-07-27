@@ -33,6 +33,6 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
 extension EventsContainerCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: eventCellWidth!, height: 275)
+        return CGSize(width: eventCellWidth!, height: 300)
     }
 }
