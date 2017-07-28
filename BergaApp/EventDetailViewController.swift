@@ -44,7 +44,7 @@ class EventDetailViewController: MapViewController {
     
     func initVisuals() {
         set(date: event!.date)
-        set(title: event!.name.uppercased())
+        set(title: event!.name)
         set(type: event!.typeName)
         set(imgUrl: event!.imgUrl)
         set(price: event!.price)
@@ -53,15 +53,16 @@ class EventDetailViewController: MapViewController {
     }
     
     func set(date: Date) {
-        dateLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY")
+//        dateLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY")
+        typeLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY").uppercased()
     }
     
     func set(title: String) {
-        titleLabel.attributedText = Commons.getAttributedCharSpacedText(title, charSpacing: 1.5)
+        titleLabel.text = title
     }
     
     func set(type: String) {
-        typeLabel.attributedText = Commons.getAttributedCharSpacedText(type, charSpacing: 1.4)
+//        typeLabel.text =
     }
     
     func set(imgUrl: String?) {
