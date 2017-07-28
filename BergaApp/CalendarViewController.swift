@@ -51,62 +51,67 @@ class CalendarViewController: UIViewController {
         dataSource.configureCell = { (ds, cv, indexPath, item) in
             switch item {
             case .day(let day):
-                let cell = cv.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
-                cell.initFrom(day: day)
-                if let selectedIndex = self.selectedIndex {
-                    if selectedIndex == indexPath {
-                        cell.setSelected()
-                    }
-                }
-                return cell
+                return self.getDayCell(indexPath: indexPath, day: day)
                 
             case .calendarEvent(_):
-                let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventsContainerCell", for: indexPath) as! EventsContainerCollectionViewCell
-                
-                cell.setCellWidth()
-                
-                self.calendarViewModel.eventsSection.asObservable()
-                    .bind(to: cell.collectionView.rx.items(dataSource: cell.cellDataSource))
-                    .disposed(by: cell.disposeBag!)
-                
-                cell.cellDataSource.configureCell = { (ds, cv, indexPath, item) in
-                    let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
-                    cell.initCell(from: item)
-                    return cell
-                }
-                
-                cell.cellDataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
-                    if kind == UICollectionElementKindSectionHeader {
-                        let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "eventsHeader", for: indexPath)
-                        return header
-                    }
-                    else if kind == UICollectionElementKindSectionFooter {
-                        let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "eventsFooter", for: indexPath)
-                        return footer
-                    }
-                    return UICollectionReusableView()
-                }
-                
-                return cell
+                return self.setupEventCell(cv: cv, indexPath: indexPath)
             }
         }
+    }
+    
+    func getDayCell(indexPath: IndexPath, day: Day) -> DayCollectionViewCell {
+        let cell = calendarCollectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
+        cell.initFrom(day: day)
+        if let selectedIndex = self.selectedIndex {
+            if selectedIndex == indexPath {
+                cell.setSelected()
+            }
+        }
+        return cell
+    }
+    
+    func setupEventCell(cv: UICollectionView, indexPath: IndexPath) -> EventsContainerCollectionViewCell {
+        let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventsContainerCell", for: indexPath) as! EventsContainerCollectionViewCell
+        
+        self.calendarViewModel.eventsSection.asObservable()
+            .bind(to: cell.collectionView.rx.items(dataSource: cell.cellDataSource))
+            .disposed(by: cell.disposeBag!)
+        
+        cell.setupCell()
+        
+        cell.collectionView.rx.modelSelected(CalendarEvent.self)
+            .subscribe(onNext: { event in
+                self.selectedEvent = event
+                self.performSegue(withIdentifier: "goToEventDetail", sender: nil)
+            })
+            .addDisposableTo(cell.disposeBag!)
+        
+        return cell
     }
     
     func configureHeaderAndFooter() {
         dataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
             if kind == UICollectionElementKindSectionFooter {
-                let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
-                footer.setBackground(url: "https://source.unsplash.com/500x400/?nature")
-                return footer
+                return self.getCalendarFooter(indexPath: indexPath)
             }
             else {
-                let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "monthHeader", for: indexPath) as! MonthHeaderCollectionReusableView
-                header.initCell(text: self.calendarViewModel.monthYearStr.value)
-                return header
+                return self.getCalendarHeader(indexPath: indexPath)
             }
         }
     }
     
+    func getCalendarFooter(indexPath: IndexPath) -> CalendarFooterCollectionReusableView {
+        let footer = calendarCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "calendarFooter", for: indexPath) as! CalendarFooterCollectionReusableView
+        footer.setBackground(url: "https://source.unsplash.com/500x400/?nature")
+        return footer
+    }
+    
+    func getCalendarHeader(indexPath: IndexPath) -> MonthHeaderCollectionReusableView {
+        let header = calendarCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "monthHeader", for: indexPath) as! MonthHeaderCollectionReusableView
+        header.initCell(text: self.calendarViewModel.monthYearStr.value)
+        return header
+    }
+
     func configureItemSelection() {
         calendarCollectionView.rx.itemSelected
             .subscribe(onNext: { indexPath in
@@ -214,34 +219,6 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: width * 65 / 100)
         }
         return CGSize(width: 0, height: 0)
-    }
-    
-    func getFooterHeightWithoutEvents() -> CGFloat {
-        let footerHeight = getFooterHeight()
-        let eventsHeaderHeight = 15
-        let eventsHeight = self.calendarViewModel.eventsCount * 85
-        let newHeight = footerHeight - CGFloat(eventsHeight + eventsHeaderHeight)
-        return newHeight
-    }
-    
-    func getFooterHeightWithEvents() -> CGFloat {
-        let footerHeight = getFooterHeight()
-        let eventsHeaderHeight = 15
-        let eventsHeight = self.calendarViewModel.eventsCount * 85
-        let newHeight = footerHeight - CGFloat(eventsHeight + eventsHeaderHeight)
-        return newHeight
-    }
-    
-    func getFooterHeight() -> CGFloat {
-        var dayRows = Double(self.calendarViewModel.daysCount) / 7.0
-        dayRows.round(.up)
-        let rowsHeight = dayRows * dayCellWidth!
-        let headerHeight = 66.0
-        let weekHeader = 40.0
-        let tabBarHeight = 49.0
-        let screenHeight = UIScreen.main.bounds.height
-        let footerHeight = screenHeight - CGFloat(headerHeight + weekHeader + rowsHeight + tabBarHeight)
-        return footerHeight
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

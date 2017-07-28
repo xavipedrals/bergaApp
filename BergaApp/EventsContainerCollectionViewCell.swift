@@ -23,10 +23,38 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
         disposeBag = DisposeBag()
     }
     
-    func setCellWidth() {
+    func setupCell() {
+        setCellWidth()
+        setupCollectionCells()
+        setupCollectionHeaderAndFooter()
+    }
+    
+    private func setCellWidth() {
         let width = (collectionView.frame.size.width - (30) * 2) / 2
         eventCellWidth = Double(width)
         collectionView.delegate = self
+    }
+    
+    private func setupCollectionCells() {
+        cellDataSource.configureCell = { (ds, cv, indexPath, item) in
+            let cell = cv.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCollectionViewCell
+            cell.initCell(from: item)
+            return cell
+        }
+    }
+    
+    private func setupCollectionHeaderAndFooter() {
+        cellDataSource.supplementaryViewFactory = { ds, cv, kind, indexPath in
+            if kind == UICollectionElementKindSectionHeader {
+                let header = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "eventsHeader", for: indexPath)
+                return header
+            }
+            else if kind == UICollectionElementKindSectionFooter {
+                let footer = cv.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "eventsFooter", for: indexPath)
+                return footer
+            }
+            return UICollectionReusableView()
+        }
     }
 }
 
