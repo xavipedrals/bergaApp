@@ -30,7 +30,9 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
     }
     
     private func setCellWidth() {
-        let width = (collectionView.frame.size.width - (30) * 2) / 2
+        let screenWidth = UIScreen.main.bounds.width
+        let width = (screenWidth - (30) * 2) / 2
+//        let width = (collectionView.frame.size.width - (30) * 2) / 2
         eventCellWidth = Double(width)
         collectionView.delegate = self
     }
@@ -61,6 +63,7 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
 extension EventsContainerCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: eventCellWidth!, height: 300)
+        let eventCellHeight = eventCellWidth! * 1.34 + 100
+        return CGSize(width: eventCellWidth!, height: eventCellHeight)
     }
 }

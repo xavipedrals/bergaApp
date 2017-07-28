@@ -202,7 +202,9 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     func getEventsContainerCellSize() -> CGSize {
         let width = UIScreen.main.bounds.width
-        return CGSize(width: width, height: 300)
+        let eventWidth = (width - (30) * 2) / 2
+        let eventHeight = eventWidth * 1.34 + 100 + 10
+        return CGSize(width: width, height: eventHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

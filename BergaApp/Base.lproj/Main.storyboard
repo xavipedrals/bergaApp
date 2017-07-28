@@ -124,10 +124,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7R0-LV-e9R">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="336"/>
+                                                    <rect key="frame" x="0.0" y="10" width="355" height="326"/>
                                                     <subviews>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EYQ-MZ-T13">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="336"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="326"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="YiX-TX-MDe">
                                                                 <size key="itemSize" width="50" height="50"/>
@@ -137,7 +137,7 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="ezh-5u-Unk" customClass="EventCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="20" y="24" width="198" height="288"/>
+                                                                    <rect key="frame" x="20" y="19" width="198" height="288"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                         <rect key="frame" x="0.0" y="0.0" width="198" height="288"/>
@@ -200,11 +200,11 @@
                                                                 </collectionViewCell>
                                                             </cells>
                                                             <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventsHeader" id="8gb-En-PmY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="336"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="326"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </collectionReusableView>
                                                             <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventsFooter" id="zOl-9m-A1n">
-                                                                <rect key="frame" x="218" y="0.0" width="20" height="336"/>
+                                                                <rect key="frame" x="218" y="0.0" width="20" height="326"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </collectionReusableView>
                                                         </collectionView>
@@ -220,7 +220,7 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="7R0-LV-e9R" firstAttribute="top" secondItem="Eu3-BJ-x7w" secondAttribute="top" id="Cc3-IE-M8r"/>
+                                            <constraint firstItem="7R0-LV-e9R" firstAttribute="top" secondItem="Eu3-BJ-x7w" secondAttribute="top" constant="10" id="Cc3-IE-M8r"/>
                                             <constraint firstAttribute="bottom" secondItem="7R0-LV-e9R" secondAttribute="bottom" id="bxb-eC-Nw1"/>
                                             <constraint firstItem="7R0-LV-e9R" firstAttribute="leading" secondItem="Eu3-BJ-x7w" secondAttribute="leading" id="iX5-fa-p9x"/>
                                             <constraint firstAttribute="trailing" secondItem="7R0-LV-e9R" secondAttribute="trailing" id="y3F-D8-6Px"/>
