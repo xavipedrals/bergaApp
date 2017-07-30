@@ -45,13 +45,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="17y-ij-2gh">
                                     <size key="itemSize" width="73" height="76"/>
-                                    <size key="headerReferenceSize" width="50" height="154"/>
+                                    <size key="headerReferenceSize" width="50" height="130"/>
                                     <size key="footerReferenceSize" width="50" height="284"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="PZT-wl-Zfv" customClass="DayCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="152" y="154" width="71" height="76"/>
+                                        <rect key="frame" x="152" y="130" width="71" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="71" height="76"/>
@@ -117,7 +117,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventsContainerCell" id="Eu3-BJ-x7w" customClass="EventsContainerCollectionViewCell" customModule="BergaApp" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="230" width="355" height="336"/>
+                                        <rect key="frame" x="10" y="206" width="355" height="336"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="336"/>
@@ -129,7 +129,7 @@
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EYQ-MZ-T13">
                                                             <rect key="frame" x="0.0" y="0.0" width="355" height="326"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YiX-TX-MDe">
+                                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="YiX-TX-MDe">
                                                                 <size key="itemSize" width="50" height="50"/>
                                                                 <size key="headerReferenceSize" width="20" height="50"/>
                                                                 <size key="footerReferenceSize" width="20" height="50"/>
@@ -245,61 +245,61 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="monthHeader" id="qNO-R8-O4W" customClass="MonthHeaderCollectionReusableView" customModule="BergaApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwV-hn-KuE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcC-jo-ZN9">
-                                                    <rect key="frame" x="20" y="64" width="155.5" height="41"/>
+                                                    <rect key="frame" x="20" y="44" width="155.5" height="40.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cjH-6p-iLy">
-                                                    <rect key="frame" x="16" y="113.5" width="343" height="40.5"/>
+                                                    <rect key="frame" x="16" y="89.5" width="343" height="40.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRE-0T-o9h">
                                                             <rect key="frame" x="0.0" y="10" width="49" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.82745098039215681" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAQ-xz-2dO">
-                                                            <rect key="frame" x="49" y="10.5" width="49" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <color key="textColor" red="0.82745098039999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="49" y="10" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY6-Gu-dBT">
-                                                            <rect key="frame" x="98" y="10.5" width="49" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <color key="textColor" red="0.82745098039999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="98" y="10" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DJ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-2w-asP">
-                                                            <rect key="frame" x="147" y="10.5" width="49" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <color key="textColor" red="0.82745098039999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="147" y="10" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-CL-JBC">
-                                                            <rect key="frame" x="196" y="10.5" width="49" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <color key="textColor" red="0.82745098039999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="196" y="10" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-fo-afA">
-                                                            <rect key="frame" x="245" y="10.5" width="49" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <color key="textColor" red="0.82745098039999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="245" y="10" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eQ-4u-GAO">
-                                                            <rect key="frame" x="294" y="10.5" width="49" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <color key="textColor" red="0.82745098039999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="294" y="10" width="49" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -309,7 +309,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDARI BERGUEDÀ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kly-A3-GXw">
-                                                    <rect key="frame" x="20" y="47.5" width="137" height="14.5"/>
+                                                    <rect key="frame" x="20" y="27.5" width="137" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -321,7 +321,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="cjH-6p-iLy" secondAttribute="trailing" constant="16" id="UPy-Gu-aEc"/>
                                                 <constraint firstItem="HcC-jo-ZN9" firstAttribute="leading" secondItem="BwV-hn-KuE" secondAttribute="leading" constant="20" id="Whd-di-HYd"/>
                                                 <constraint firstItem="cjH-6p-iLy" firstAttribute="leading" secondItem="BwV-hn-KuE" secondAttribute="leading" constant="16" id="afR-hm-NsZ"/>
-                                                <constraint firstItem="HcC-jo-ZN9" firstAttribute="top" secondItem="BwV-hn-KuE" secondAttribute="top" constant="64" id="dgF-Jg-mKP"/>
+                                                <constraint firstItem="HcC-jo-ZN9" firstAttribute="top" secondItem="BwV-hn-KuE" secondAttribute="top" constant="44" id="dgF-Jg-mKP"/>
                                                 <constraint firstItem="HcC-jo-ZN9" firstAttribute="top" secondItem="kly-A3-GXw" secondAttribute="bottom" constant="2" id="h4M-AH-rJh"/>
                                                 <constraint firstItem="kly-A3-GXw" firstAttribute="leading" secondItem="BwV-hn-KuE" secondAttribute="leading" constant="20" id="ydW-Zs-kCc"/>
                                             </constraints>
@@ -338,7 +338,7 @@
                                     </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarFooter" id="a4u-sr-SS9" customClass="CalendarFooterCollectionReusableView" customModule="BergaApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="576" width="375" height="284"/>
+                                    <rect key="frame" x="0.0" y="542" width="375" height="284"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bS-9w-H9A">
