@@ -12,7 +12,8 @@ class CardView: UIView {
     
     override var bounds: CGRect {
         didSet {
-            setupShadow()
+//            setupShadow()
+            setupShadow2()
         }
     }
     
@@ -25,5 +26,15 @@ class CardView: UIView {
         //        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 0, height: 3)).cgPath
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    func setupShadow2() {
+//        let outerView = UIView(frame: CGRect(x: self.frame.minX, y: self.frame.minY, width: self.frame.width, height: self.frame.height))
+        self.clipsToBounds = false
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowRadius = 10
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 10).cgPath
     }
 }

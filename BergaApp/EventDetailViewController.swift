@@ -25,6 +25,7 @@ class EventDetailViewController: MapViewController {
     @IBOutlet weak var webBackground: CustomView!
     @IBOutlet weak var imageSection: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var posterContainer: UIView!
     
     var event: CalendarEvent?
     
@@ -66,6 +67,7 @@ class EventDetailViewController: MapViewController {
     }
     
     func set(imgUrl: String?) {
+        posterContainer.dropShadow()
         if let imgUrl = imgUrl {
             let url = URL(string: imgUrl)
             if let url = url {
