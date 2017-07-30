@@ -81,6 +81,7 @@
 		47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */; };
 		47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */; };
 		47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */; };
+		47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotification.swift; sourceTree = "<group>"; };
 		47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewModel.swift; sourceTree = "<group>"; };
 		47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsStub.swift; sourceTree = "<group>"; };
+		47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialButtonBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +368,7 @@
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 				478846681EED5A7E0027E12E /* CardView.swift */,
 				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
+				47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
 				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
 				4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */,
+				47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */,
 				47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */,

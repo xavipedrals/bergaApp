@@ -19,13 +19,15 @@ class EventDetailViewController: MapViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var organizerLabel: UILabel!
     @IBOutlet weak var organizerImage: UIImageView!
-    @IBOutlet weak var twitterBackground: CustomView!
-    @IBOutlet weak var facebookBackground: CustomView!
-    @IBOutlet weak var instagramBackground: CustomView!
-    @IBOutlet weak var webBackground: CustomView!
+    @IBOutlet weak var twitterBackground: SocialButtonBackground!
+    @IBOutlet weak var facebookBackground: SocialButtonBackground!
+    @IBOutlet weak var instagramBackground: SocialButtonBackground!
+    @IBOutlet weak var webBackground: SocialButtonBackground!
     @IBOutlet weak var imageSection: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var posterContainer: UIView!
+    @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var cityPostalCodeLabel: UILabel!
     
     var event: CalendarEvent?
     
@@ -39,22 +41,19 @@ class EventDetailViewController: MapViewController {
         if let address = event?.address {
             addAddressPin(address.town)
         }
-        
-        
     }
     
     func initVisuals() {
         set(date: event!.date)
         set(title: event!.name)
-        set(type: event!.typeName)
         set(imgUrl: event!.imgUrl)
         set(price: event!.price)
         set(organizer: event!.organizer)
+        set(address: event!.address)
         descriptionLabel.text = event!.description
     }
     
     func set(date: Date) {
-//        dateLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY")
         typeLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY").uppercased()
     }
     
@@ -62,13 +61,9 @@ class EventDetailViewController: MapViewController {
         titleLabel.text = title
     }
     
-    func set(type: String) {
-//        typeLabel.text =
-    }
-    
     func set(imgUrl: String?) {
-        posterContainer.dropShadow()
         if let imgUrl = imgUrl {
+            posterContainer.dropShadow()
             let url = URL(string: imgUrl)
             if let url = url {
                 posterImageView.kf.setImage(with: url)
@@ -98,45 +93,36 @@ class EventDetailViewController: MapViewController {
     }
     
     func set(twitter: String?) {
-        if let twitterUrl = twitter {
-            twitterBackground.backgroundColor = Colors.dimGreen
-        }
-        else {
-            twitterBackground.backgroundColor = UIColor.lightGray
-        }
+        twitterBackground.configure(url: twitter)
     }
     
     func set(facebook: String?) {
-        if let twitterUrl = facebook {
-            facebookBackground.backgroundColor = Colors.dimGreen
-        }
-        else {
-            facebookBackground.backgroundColor = UIColor.lightGray
-        }
+        facebookBackground.configure(url: facebook)
     }
     
     func set(instagram: String?) {
-        if let twitterUrl = instagram {
-            instagramBackground.backgroundColor = Colors.dimGreen
-        }
-        else {
-            instagramBackground.backgroundColor = UIColor.lightGray
-        }
+        instagramBackground.configure(url: instagram)
     }
     
     func set(web: String?) {
-        if let twitterUrl = web {
-            webBackground.backgroundColor = Colors.dimGreen
-        }
-        else {
-            webBackground.backgroundColor = UIColor.lightGray
-        }
+        webBackground.configure(url: web)
     }
     
     func set(organizerImgUrl: String?) {
         if let organizerImgUrl = organizerImgUrl {
             if let url = URL(string: organizerImgUrl) {
                 organizerImage.kf.setImage(with: url)
+            }
+        }
+    }
+    
+    func set(address: Address?) {
+        if let address = address {
+            if let street = address.street {
+                streetLabel.text = street
+            }
+            if let postalCode = address.postalCode {
+                cityPostalCodeLabel.text = address.town + ", " + postalCode
             }
         }
     }

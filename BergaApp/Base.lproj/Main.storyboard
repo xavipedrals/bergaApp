@@ -671,7 +671,7 @@ Entrada  + extra 15€</string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xlj-AC-bky">
                                                         <rect key="frame" x="20" y="99.5" width="204" height="36"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-dt-QZF" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-dt-QZF" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-twitter-1" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-G3-6ZQ">
@@ -703,7 +703,7 @@ Entrada  + extra 15€</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-1M-PsV" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-1M-PsV" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
                                                                 <rect key="frame" x="56" y="0.0" width="36" height="36"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-facebook-1" translatesAutoresizingMaskIntoConstraints="NO" id="KKl-Se-kQ7">
@@ -715,6 +715,9 @@ Entrada  + extra 15€</string>
                                                                             <constraint firstAttribute="width" constant="45" id="Qoh-6M-9dd"/>
                                                                             <constraint firstAttribute="height" constant="45" id="j7y-41-wxb"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <action selector="socialPressed:" destination="8Yj-LY-BeG" eventType="touchUpInside" id="ysg-NU-RrC"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -732,7 +735,7 @@ Entrada  + extra 15€</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2z-p1-yy1" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2z-p1-yy1" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
                                                                 <rect key="frame" x="112" y="0.0" width="36" height="36"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-instagram-11" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-D7-FrM">
@@ -744,6 +747,9 @@ Entrada  + extra 15€</string>
                                                                             <constraint firstAttribute="height" constant="45" id="LWj-XJ-Yhh"/>
                                                                             <constraint firstAttribute="width" constant="45" id="sLq-3J-gSr"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <action selector="socialPressed:" destination="8Yj-LY-BeG" eventType="touchUpInside" id="THv-LF-ANL"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -761,7 +767,7 @@ Entrada  + extra 15€</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrz-Qo-4lq" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrz-Qo-4lq" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
                                                                 <rect key="frame" x="168" y="0.0" width="36" height="36"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-globe-6" translatesAutoresizingMaskIntoConstraints="NO" id="nNd-2I-rpX">
@@ -773,6 +779,9 @@ Entrada  + extra 15€</string>
                                                                             <constraint firstAttribute="width" constant="45" id="ARE-QZ-WbC"/>
                                                                             <constraint firstAttribute="height" constant="45" id="HTt-9c-Wkr"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <action selector="socialPressed:" destination="8Yj-LY-BeG" eventType="touchUpInside" id="j1r-I3-ihi"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.42352941176470588" green="0.83137254901960778" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
@@ -932,6 +941,7 @@ Entrada  + extra 15€</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
+                        <outlet property="cityPostalCodeLabel" destination="x18-eT-Ovw" id="iIF-We-xrD"/>
                         <outlet property="descriptionLabel" destination="1dM-eP-Fmo" id="ucn-I3-ATa"/>
                         <outlet property="facebookBackground" destination="qT7-1M-PsV" id="hP9-RF-RyW"/>
                         <outlet property="imageSection" destination="NkL-4W-qfC" id="XA9-wp-PG2"/>
@@ -942,6 +952,7 @@ Entrada  + extra 15€</string>
                         <outlet property="posterContainer" destination="J3P-xl-WLx" id="ABy-AH-iQ4"/>
                         <outlet property="posterImageView" destination="TCX-23-HVM" id="kHZ-44-rc8"/>
                         <outlet property="priceLabel" destination="tIr-nb-5RW" id="RoS-OU-Kdi"/>
+                        <outlet property="streetLabel" destination="x3t-fo-8ka" id="V7U-6l-9o9"/>
                         <outlet property="titleLabel" destination="DfB-on-FxH" id="q8t-lt-W0g"/>
                         <outlet property="twitterBackground" destination="rVX-dt-QZF" id="pih-bP-0Jm"/>
                         <outlet property="typeLabel" destination="JkB-W6-NJM" id="fQB-ya-Ve2"/>
