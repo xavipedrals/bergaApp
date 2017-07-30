@@ -48,7 +48,7 @@ extension MapViewController: MKMapViewDelegate {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
                 view.canShowCallout = true
-                view.rightCalloutAccessoryView = getDisclosureButton()
+//                view.rightCalloutAccessoryView = getDisclosureButton()
             }
             else {
                 view = getMKAnnotationView(annotation: annotation, identifier: identifier)
@@ -60,7 +60,7 @@ extension MapViewController: MKMapViewDelegate {
     
     func getMKAnnotationView(annotation: MKAnnotation, identifier: String, imgName: String) -> MKPinAnnotationView {
         let view = getMKAnnotationView(annotation: annotation, identifier: identifier)
-        view.leftCalloutAccessoryView = getLeftCalloutAccessoryView(height: view.frame.height, imgName: imgName)
+//        view.leftCalloutAccessoryView = getLeftCalloutAccessoryView(height: view.frame.height, imgName: imgName)
         return view
     }
     

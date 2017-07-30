@@ -10,10 +10,17 @@ import Foundation
 
 class Address {
     var town: String
+    var postalCode: String?
     var street: String?
     
     init(town: String) {
         self.town = town
+    }
+    
+    init(town: String, postalCode: String, street: String) {
+        self.town = town
+        self.postalCode = postalCode
+        self.street = street
     }
 }
 

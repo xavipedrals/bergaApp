@@ -12,73 +12,97 @@ class CalendarEventStub {
     
     func getStub() -> [CalendarEvent] {
         
+        let bergaAddress = Address(town: "Berga", postalCode: "08600", street: "Carrer de la Pietat")
+        let gironellaAddress = Address(town: "Gironella", postalCode: "08700", street: "Carrer de la Pietat")
+        let aviaAddress = Address(town: "Avià", postalCode: "08700", street: "Carrer de la Pietat")
+        let olvanAddress = Address(town: "Olvan", postalCode: "08700", street: "Carrer de la Pietat")
+        let puigreigAddress = Address(town: "Puig-Reig", postalCode: "08700", street: "Carrer de la Pietat")
+        
+        let organizerBerga = EventOrganizer(name: "Ajuntament de Berga", twitter: "https://twitter.com/ajberga", facebook: nil, instagram: nil, web: "http://www.ajberga.cat/ajberga/portada/index.php", image: "https://pbs.twimg.com/profile_images/1261593223/perfil_tweeter_ajberga_400x400.jpg")
+        
+        let organizerGironella = EventOrganizer(name: "Ajuntament de Gironella", twitter: "https://twitter.com/ajgironella", facebook: "https://www.facebook.com/ajuntamentdegironella/", instagram: nil, web: "http://www.gironella.cat", image: "https://pbs.twimg.com/profile_images/538701930151686145/yv64Ap1J_400x400.png")
+        
+        let organizerAvia = EventOrganizer(name: "Grup de Joves d'Avià", twitter: "https://twitter.com/gjavia", facebook: "https://www.facebook.com/gjavia/", instagram: nil, web: nil, image: "https://pbs.twimg.com/profile_images/2996138953/68a4c932a6f00b6facda012f42a111c9_400x400.png")
+        
         let event1 = CalendarEvent(
             date: Date(),
             name: "Festa major d'Avià",
             type: .townFest,
-            townAddress: "Avià",
-            imgUrl: "https://cdn-az.allevents.in/banners/259c33ece099d7fe80134f093a1a98b2"
+            address: aviaAddress,
+            imgUrl: "https://cdn-az.allevents.in/banners/259c33ece099d7fe80134f093a1a98b2",
+            organizer: organizerAvia
         )
         
         let event2 = CalendarEvent(
             date: Commons.getDateFromString(date: "05-31-2017", format: "MM-dd-yyyy")!,
             name: "Fira de Santa Tecla",
             type: .fair,
-            townAddress: "Berga",
-            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/sta_tecla.jpg"
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/sta_tecla.jpg",
+            organizer: organizerBerga
         )
         
         let event3 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-14-2017", format: "MM-dd-yyyy")!,
             name: "La Patum de Berga",
             type: .townFest,
-            townAddress: "Berga",
-            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg"
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg",
+            organizer: organizerBerga
         )
         
         let event4 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-15-2017", format: "MM-dd-yyyy")!,
             name: "La Patum de Berga",
             type: .townFest,
-            townAddress: "Berga",
-            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg"
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg",
+            organizer: organizerBerga
         )
         
         let event11 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
             name: "Patum Infantil",
             type: .townFest,
-            townAddress: "Berga",
-            imgUrl: "http://www.lapatum.cat/fotos/cartell_patum_infantil.jpg"
+            address: bergaAddress,
+            imgUrl: "http://www.lapatum.cat/fotos/cartell_patum_infantil.jpg",
+            organizer: organizerBerga
         )
         
         let event12 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
             name: "Barraques",
             type: .townFest,
-            townAddress: "Berga"
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg",
+            organizer: organizerBerga
         )
         
         let event5 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
             name: "La Patum de Berga",
             type: .townFest,
-            townAddress: "Berga",
-            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg"
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg",
+            organizer: organizerBerga
         )
         
         let event6 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-17-2017", format: "MM-dd-yyyy")!,
             name: "La Patum de Berga",
             type: .townFest,
-            townAddress: "Berga"
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg",
+            organizer: organizerBerga
         )
         
         let event7 = CalendarEvent(
             date: Commons.getDateFromString(date: "06-18-2017", format: "MM-dd-yyyy")!,
             name: "La Patum de Berga",
             type: .townFest,
-            townAddress: "Berga"
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg",
+            organizer: organizerBerga
         )
         
         let event8 = CalendarEvent(

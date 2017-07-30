@@ -94,6 +94,7 @@ class EventDetailViewController: MapViewController {
         set(facebook: organizer.facebookUrl)
         set(instagram: organizer.instagramUrl)
         set(web: organizer.webUrl)
+        set(organizerImgUrl: organizer.imgUrl)
     }
     
     func set(twitter: String?) {
@@ -131,6 +132,34 @@ class EventDetailViewController: MapViewController {
             webBackground.backgroundColor = UIColor.lightGray
         }
     }
+    
+    func set(organizerImgUrl: String?) {
+        if let organizerImgUrl = organizerImgUrl {
+            if let url = URL(string: organizerImgUrl) {
+                organizerImage.kf.setImage(with: url)
+            }
+        }
+    }
+
+    @IBAction func socialPressed(_ sender: UIButton) {
+        var url: String?
+        switch sender.tag {
+        case 0:
+            url = event?.organizer.twitterUrl
+        case 1:
+            url = event?.organizer.facebookUrl
+        case 2:
+            url = event?.organizer.instagramUrl
+        case 3:
+            url = event?.organizer.webUrl
+        default:
+            break
+        }
+        if let url = url {
+            UIApplication.shared.openURL(URL(string: url)!)
+        }
+    }
+    
     
     @IBAction func backPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
