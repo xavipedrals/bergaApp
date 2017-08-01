@@ -12,10 +12,6 @@ import Kingfisher
 
 class EventDetailViewController: MapViewController {
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var organizerLabel: UILabel!
     @IBOutlet weak var organizerImage: UIImageView!
@@ -28,6 +24,8 @@ class EventDetailViewController: MapViewController {
     @IBOutlet weak var posterContainer: UIView!
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var cityPostalCodeLabel: UILabel!
+    @IBOutlet weak var titleSection: TitleSectionView!
+    @IBOutlet weak var descriptionSection: TextSectionView!
     
     var event: CalendarEvent?
     
@@ -44,22 +42,18 @@ class EventDetailViewController: MapViewController {
     }
     
     func initVisuals() {
-        set(date: event!.date)
-        set(title: event!.name)
+        titleSection.set(title: event!.name, subtitle: Commons.getStringFromDate(date: event!.date, format: "dd MMMM YYYY").uppercased())
         set(imgUrl: event!.imgUrl)
         set(price: event!.price)
         set(organizer: event!.organizer)
         set(address: event!.address)
-        descriptionLabel.text = event!.description
+        descriptionSection.set(title: "Descripció", body: event!.description)
     }
     
     func set(date: Date) {
-        typeLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY").uppercased()
+
     }
-    
-    func set(title: String) {
-        titleLabel.text = title
-    }
+
     
     func set(imgUrl: String?) {
         if let imgUrl = imgUrl {

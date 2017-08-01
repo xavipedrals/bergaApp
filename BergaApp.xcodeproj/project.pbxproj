@@ -81,6 +81,10 @@
 		47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */; };
 		47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */; };
 		47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */; };
+		47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889AD1F30A726009A9B8F /* TextSectionView.xib */; };
+		47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889AF1F30A72F009A9B8F /* TextSectionView.swift */; };
+		47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B21F30BC48009A9B8F /* TitleSectionView.xib */; };
+		47E889B51F30BC52009A9B8F /* TitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889B41F30BC52009A9B8F /* TitleSectionView.swift */; };
 		47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +186,10 @@
 		47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotification.swift; sourceTree = "<group>"; };
 		47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewModel.swift; sourceTree = "<group>"; };
 		47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsStub.swift; sourceTree = "<group>"; };
+		47E889AD1F30A726009A9B8F /* TextSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextSectionView.xib; sourceTree = "<group>"; };
+		47E889AF1F30A72F009A9B8F /* TextSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextSectionView.swift; path = ../TextSectionView.swift; sourceTree = "<group>"; };
+		47E889B21F30BC48009A9B8F /* TitleSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSectionView.xib; sourceTree = "<group>"; };
+		47E889B41F30BC52009A9B8F /* TitleSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSectionView.swift; sourceTree = "<group>"; };
 		47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialButtonBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -362,6 +370,8 @@
 		475CD2BE1EDB031E006EAA4B /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				47E889AC1F30A6FC009A9B8F /* TextSectionView */,
+				47E889B11F30BC24009A9B8F /* TitleSectionView */,
 				47C942291EC65B8400B3F617 /* CustomView.swift */,
 				47C9422B1EC65B9800B3F617 /* IconImage.swift */,
 				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
@@ -488,6 +498,24 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		47E889AC1F30A6FC009A9B8F /* TextSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				47E889AF1F30A72F009A9B8F /* TextSectionView.swift */,
+				47E889AD1F30A726009A9B8F /* TextSectionView.xib */,
+			);
+			name = TextSectionView;
+			sourceTree = "<group>";
+		};
+		47E889B11F30BC24009A9B8F /* TitleSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				47E889B41F30BC52009A9B8F /* TitleSectionView.swift */,
+				47E889B21F30BC48009A9B8F /* TitleSectionView.xib */,
+			);
+			name = TitleSectionView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,8 +628,10 @@
 				471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */,
 				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
+				47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
 				479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */,
+				47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +695,7 @@
 				47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */,
 				4717D07B1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
+				47E889B51F30BC52009A9B8F /* TitleSectionView.swift in Sources */,
 				432C1AF91EEFCC850043FA36 /* EventOrganizer.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				47416A101ED74AE100497A09 /* MapViewController.swift in Sources */,
@@ -692,6 +723,7 @@
 				435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */,
 				43F0A9E51EFABD440029922E /* ShopSearchViewController.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
+				47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */,
 				47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
 				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
