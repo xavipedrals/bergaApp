@@ -85,6 +85,8 @@
 		47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889AF1F30A72F009A9B8F /* TextSectionView.swift */; };
 		47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B21F30BC48009A9B8F /* TitleSectionView.xib */; };
 		47E889B51F30BC52009A9B8F /* TitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889B41F30BC52009A9B8F /* TitleSectionView.swift */; };
+		47E889B81F30C892009A9B8F /* SocialBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889B71F30C892009A9B8F /* SocialBarView.swift */; };
+		47E889BA1F30C89B009A9B8F /* SocialBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B91F30C89B009A9B8F /* SocialBarView.xib */; };
 		47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +192,8 @@
 		47E889AF1F30A72F009A9B8F /* TextSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextSectionView.swift; path = ../TextSectionView.swift; sourceTree = "<group>"; };
 		47E889B21F30BC48009A9B8F /* TitleSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSectionView.xib; sourceTree = "<group>"; };
 		47E889B41F30BC52009A9B8F /* TitleSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSectionView.swift; sourceTree = "<group>"; };
+		47E889B71F30C892009A9B8F /* SocialBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialBarView.swift; sourceTree = "<group>"; };
+		47E889B91F30C89B009A9B8F /* SocialBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialBarView.xib; sourceTree = "<group>"; };
 		47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialButtonBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -372,13 +376,13 @@
 			children = (
 				47E889AC1F30A6FC009A9B8F /* TextSectionView */,
 				47E889B11F30BC24009A9B8F /* TitleSectionView */,
+				47E889B61F30C871009A9B8F /* SocialBarView */,
 				47C942291EC65B8400B3F617 /* CustomView.swift */,
 				47C9422B1EC65B9800B3F617 /* IconImage.swift */,
 				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 				478846681EED5A7E0027E12E /* CardView.swift */,
 				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
-				47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -516,6 +520,16 @@
 			name = TitleSectionView;
 			sourceTree = "<group>";
 		};
+		47E889B61F30C871009A9B8F /* SocialBarView */ = {
+			isa = PBXGroup;
+			children = (
+				47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */,
+				47E889B71F30C892009A9B8F /* SocialBarView.swift */,
+				47E889B91F30C89B009A9B8F /* SocialBarView.xib */,
+			);
+			name = SocialBarView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -630,6 +644,7 @@
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
 				47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
+				47E889BA1F30C89B009A9B8F /* SocialBarView.xib in Resources */,
 				479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */,
 				47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */,
 			);
@@ -736,6 +751,7 @@
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
 				47594F3F1EFE7258000B122F /* ArrayParser.swift in Sources */,
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
+				47E889B81F30C892009A9B8F /* SocialBarView.swift in Sources */,
 				47A4A41F1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift in Sources */,
 				471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,

@@ -13,7 +13,7 @@ class SocialButtonBackground: CustomView {
     
     func configure(url: String?) {
         self.backgroundColor = url != nil
-            ? Colors.dimGreen
-            : UIColor.lightGray
+            ? Colors.strongRed
+            : Colors.veryLightGray
     }
 }

@@ -487,7 +487,7 @@
                                 <rect key="frame" x="0.0" y="66" width="375" height="1234"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oZw-03-oae">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1215.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1216.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKt-8I-t78">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
@@ -591,26 +591,16 @@ Entrada  + extra 15€</string>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRF-7N-rZk" userLabel="line">
-                                                        <rect key="frame" x="20" y="89" width="335" height="1"/>
-                                                        <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="N3c-gi-hwE"/>
-                                                        </constraints>
-                                                    </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="QMo-09-Rd2" firstAttribute="leading" secondItem="t9y-v6-ka5" secondAttribute="leading" constant="20" id="4Tf-Uu-jKc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="TRF-7N-rZk" secondAttribute="trailing" constant="20" id="EoO-4R-wwZ"/>
                                                     <constraint firstItem="QMo-09-Rd2" firstAttribute="top" secondItem="t9y-v6-ka5" secondAttribute="top" id="Kks-Vw-b5G"/>
-                                                    <constraint firstAttribute="bottom" secondItem="TRF-7N-rZk" secondAttribute="bottom" id="S5v-jw-Zgk"/>
-                                                    <constraint firstItem="TRF-7N-rZk" firstAttribute="leading" secondItem="t9y-v6-ka5" secondAttribute="leading" constant="20" id="TKG-TV-IRl"/>
                                                     <constraint firstAttribute="trailing" secondItem="QMo-09-Rd2" secondAttribute="trailing" constant="20" id="giq-zS-ldf"/>
                                                     <constraint firstAttribute="bottom" secondItem="QMo-09-Rd2" secondAttribute="bottom" id="tBb-oK-aot"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-Ci-4jO">
-                                                <rect key="frame" x="0.0" y="610" width="375" height="155.5"/>
+                                                <rect key="frame" x="0.0" y="610" width="375" height="156.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Organitza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuf-GK-Qqn">
                                                         <rect key="frame" x="20" y="20" width="103.5" height="26.5"/>
@@ -626,7 +616,6 @@ Entrada  + extra 15€</string>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NHd-UT-5sk" customClass="CorneredImageView" customModule="BergaApp" customModuleProvider="target">
                                                         <rect key="frame" x="305" y="20" width="50" height="50"/>
-                                                        <color key="backgroundColor" red="0.68235294117647061" green="0.84313725490196079" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="NHd-UT-5sk" secondAttribute="height" id="J85-gu-RrB"/>
                                                             <constraint firstAttribute="height" constant="50" id="Zdw-jM-AOx"/>
@@ -637,147 +626,12 @@ Entrada  + extra 15€</string>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xlj-AC-bky">
-                                                        <rect key="frame" x="20" y="99.5" width="204" height="36"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-dt-QZF" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-twitter-1" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-G3-6ZQ">
-                                                                        <rect key="frame" x="6.5" y="8" width="24" height="20"/>
-                                                                    </imageView>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGm-xu-Isb">
-                                                                        <rect key="frame" x="-4.5" y="-4.5" width="45" height="45"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="aii-6X-a6u"/>
-                                                                            <constraint firstAttribute="width" constant="45" id="qHL-4V-rhC"/>
-                                                                        </constraints>
-                                                                        <connections>
-                                                                            <action selector="socialPressed:" destination="8Yj-LY-BeG" eventType="touchUpInside" id="YXs-eA-a3i"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="jGm-xu-Isb" firstAttribute="centerX" secondItem="rVX-dt-QZF" secondAttribute="centerX" id="3hd-yK-1gT"/>
-                                                                    <constraint firstItem="jGm-xu-Isb" firstAttribute="centerY" secondItem="rVX-dt-QZF" secondAttribute="centerY" id="AHk-22-6e4"/>
-                                                                    <constraint firstItem="ydx-G3-6ZQ" firstAttribute="centerY" secondItem="rVX-dt-QZF" secondAttribute="centerY" id="EtK-s2-ug5"/>
-                                                                    <constraint firstItem="ydx-G3-6ZQ" firstAttribute="centerX" secondItem="rVX-dt-QZF" secondAttribute="centerX" id="Ku7-0W-tom"/>
-                                                                    <constraint firstAttribute="height" constant="36" id="d8i-6U-wxc"/>
-                                                                    <constraint firstAttribute="width" secondItem="rVX-dt-QZF" secondAttribute="height" id="y6n-UT-O3w"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="18"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qT7-1M-PsV" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
-                                                                <rect key="frame" x="56" y="0.0" width="36" height="36"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-facebook-1" translatesAutoresizingMaskIntoConstraints="NO" id="KKl-Se-kQ7">
-                                                                        <rect key="frame" x="12.5" y="6" width="12" height="24"/>
-                                                                    </imageView>
-                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1df-i8-hbt">
-                                                                        <rect key="frame" x="-5" y="-5" width="45" height="45"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="45" id="Qoh-6M-9dd"/>
-                                                                            <constraint firstAttribute="height" constant="45" id="j7y-41-wxb"/>
-                                                                        </constraints>
-                                                                        <connections>
-                                                                            <action selector="socialPressed:" destination="8Yj-LY-BeG" eventType="touchUpInside" id="ysg-NU-RrC"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="qT7-1M-PsV" secondAttribute="height" id="Gva-ji-bTj"/>
-                                                                    <constraint firstItem="1df-i8-hbt" firstAttribute="centerY" secondItem="qT7-1M-PsV" secondAttribute="centerY" id="RCd-dV-lo9"/>
-                                                                    <constraint firstItem="KKl-Se-kQ7" firstAttribute="centerY" secondItem="qT7-1M-PsV" secondAttribute="centerY" id="Ufn-OF-h0V"/>
-                                                                    <constraint firstItem="1df-i8-hbt" firstAttribute="centerX" secondItem="qT7-1M-PsV" secondAttribute="centerX" id="aEs-tH-Rge"/>
-                                                                    <constraint firstAttribute="height" constant="36" id="kuM-tN-7AF"/>
-                                                                    <constraint firstItem="KKl-Se-kQ7" firstAttribute="centerX" secondItem="qT7-1M-PsV" secondAttribute="centerX" id="rfQ-TT-zBS"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="18"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2z-p1-yy1" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
-                                                                <rect key="frame" x="112" y="0.0" width="36" height="36"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-instagram-11" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-D7-FrM">
-                                                                        <rect key="frame" x="6.5" y="6" width="24" height="24"/>
-                                                                    </imageView>
-                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymx-gw-mE0">
-                                                                        <rect key="frame" x="-5" y="-5" width="45" height="45"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="LWj-XJ-Yhh"/>
-                                                                            <constraint firstAttribute="width" constant="45" id="sLq-3J-gSr"/>
-                                                                        </constraints>
-                                                                        <connections>
-                                                                            <action selector="socialPressed:" destination="8Yj-LY-BeG" eventType="touchUpInside" id="THv-LF-ANL"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="gCb-D7-FrM" firstAttribute="centerX" secondItem="l2z-p1-yy1" secondAttribute="centerX" id="EZd-eg-ndl"/>
-                                                                    <constraint firstItem="ymx-gw-mE0" firstAttribute="centerX" secondItem="l2z-p1-yy1" secondAttribute="centerX" id="SEe-gU-6cJ"/>
-                                                                    <constraint firstItem="ymx-gw-mE0" firstAttribute="centerY" secondItem="l2z-p1-yy1" secondAttribute="centerY" id="e5I-46-KTh"/>
-                                                                    <constraint firstItem="gCb-D7-FrM" firstAttribute="centerY" secondItem="l2z-p1-yy1" secondAttribute="centerY" id="hrl-fc-8Un"/>
-                                                                    <constraint firstAttribute="width" secondItem="l2z-p1-yy1" secondAttribute="height" id="mP2-4h-28U"/>
-                                                                    <constraint firstAttribute="height" constant="36" id="yZW-et-yzC"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="18"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrz-Qo-4lq" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
-                                                                <rect key="frame" x="168" y="0.0" width="36" height="36"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-globe-6" translatesAutoresizingMaskIntoConstraints="NO" id="nNd-2I-rpX">
-                                                                        <rect key="frame" x="6.5" y="6" width="24" height="24"/>
-                                                                    </imageView>
-                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V0-mD-Q7h">
-                                                                        <rect key="frame" x="-5" y="-5" width="45" height="45"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="45" id="ARE-QZ-WbC"/>
-                                                                            <constraint firstAttribute="height" constant="45" id="HTt-9c-Wkr"/>
-                                                                        </constraints>
-                                                                        <connections>
-                                                                            <action selector="socialPressed:" destination="8Yj-LY-BeG" eventType="touchUpInside" id="j1r-I3-ihi"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.42352941176470588" green="0.83137254901960778" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="2V0-mD-Q7h" firstAttribute="centerX" secondItem="wrz-Qo-4lq" secondAttribute="centerX" id="Diq-uQ-pPW"/>
-                                                                    <constraint firstAttribute="width" secondItem="wrz-Qo-4lq" secondAttribute="height" id="NMm-Xn-h47"/>
-                                                                    <constraint firstAttribute="height" constant="36" id="RMe-rC-Kmp"/>
-                                                                    <constraint firstItem="2V0-mD-Q7h" firstAttribute="centerY" secondItem="wrz-Qo-4lq" secondAttribute="centerY" id="awB-pr-8fZ"/>
-                                                                    <constraint firstItem="nNd-2I-rpX" firstAttribute="centerX" secondItem="wrz-Qo-4lq" secondAttribute="centerX" id="gBL-wV-k3M"/>
-                                                                    <constraint firstItem="nNd-2I-rpX" firstAttribute="centerY" secondItem="wrz-Qo-4lq" secondAttribute="centerY" id="zjL-c0-D96"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="18"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="l2z-p1-yy1" firstAttribute="width" secondItem="l2z-p1-yy1" secondAttribute="height" id="3UT-JF-RMn"/>
-                                                            <constraint firstAttribute="height" constant="36" id="Au9-VW-6bN"/>
-                                                            <constraint firstItem="qT7-1M-PsV" firstAttribute="width" secondItem="qT7-1M-PsV" secondAttribute="height" id="FjC-gX-Kfb"/>
-                                                            <constraint firstItem="rVX-dt-QZF" firstAttribute="width" secondItem="rVX-dt-QZF" secondAttribute="height" id="ill-eS-dhH"/>
-                                                        </constraints>
-                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svM-Ax-cio" customClass="SocialBarView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="99.5" width="375" height="36"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFD-Z5-IvT" userLabel="line">
-                                                        <rect key="frame" x="20" y="154.5" width="335" height="1"/>
+                                                        <rect key="frame" x="20" y="155.5" width="335" height="1"/>
                                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="fIg-nu-qJr"/>
@@ -785,23 +639,24 @@ Entrada  + extra 15€</string>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="xlj-AC-bky" firstAttribute="leading" secondItem="oPe-Ci-4jO" secondAttribute="leading" constant="20" id="Dzb-r5-D9T"/>
-                                                    <constraint firstItem="xlj-AC-bky" firstAttribute="top" secondItem="Gnf-fp-LQX" secondAttribute="bottom" constant="20" id="TIM-Ui-Ici"/>
+                                                    <constraint firstAttribute="trailing" secondItem="svM-Ax-cio" secondAttribute="trailing" id="Q8f-uW-5Po"/>
                                                     <constraint firstItem="Cuf-GK-Qqn" firstAttribute="top" secondItem="oPe-Ci-4jO" secondAttribute="top" constant="20" id="VOF-Ee-eOT"/>
                                                     <constraint firstItem="NHd-UT-5sk" firstAttribute="top" secondItem="oPe-Ci-4jO" secondAttribute="top" constant="20" id="WxN-Ox-MeS"/>
+                                                    <constraint firstItem="svM-Ax-cio" firstAttribute="top" secondItem="Gnf-fp-LQX" secondAttribute="bottom" constant="20" id="YXh-4y-1zJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="vFD-Z5-IvT" secondAttribute="trailing" constant="20" id="fjv-OZ-nbV"/>
+                                                    <constraint firstItem="vFD-Z5-IvT" firstAttribute="top" secondItem="svM-Ax-cio" secondAttribute="bottom" constant="20" id="kJb-np-IJE"/>
                                                     <constraint firstItem="Gnf-fp-LQX" firstAttribute="leading" secondItem="oPe-Ci-4jO" secondAttribute="leading" constant="20" id="kiB-QD-YvO"/>
                                                     <constraint firstItem="Cuf-GK-Qqn" firstAttribute="leading" secondItem="oPe-Ci-4jO" secondAttribute="leading" constant="20" id="lmB-E3-jNE"/>
                                                     <constraint firstAttribute="trailing" secondItem="NHd-UT-5sk" secondAttribute="trailing" constant="20" id="qYu-I4-etn"/>
                                                     <constraint firstItem="Gnf-fp-LQX" firstAttribute="top" secondItem="Cuf-GK-Qqn" secondAttribute="bottom" constant="15" id="sA7-4k-eRw"/>
                                                     <constraint firstAttribute="bottom" secondItem="vFD-Z5-IvT" secondAttribute="bottom" id="sWm-LA-QmW"/>
+                                                    <constraint firstItem="svM-Ax-cio" firstAttribute="leading" secondItem="oPe-Ci-4jO" secondAttribute="leading" id="swo-tC-Hvl"/>
                                                     <constraint firstItem="NHd-UT-5sk" firstAttribute="leading" secondItem="Gnf-fp-LQX" secondAttribute="trailing" constant="15" id="u0F-6r-Zmm"/>
-                                                    <constraint firstAttribute="bottom" secondItem="xlj-AC-bky" secondAttribute="bottom" constant="20" id="xyL-IL-dBx"/>
                                                     <constraint firstItem="vFD-Z5-IvT" firstAttribute="leading" secondItem="oPe-Ci-4jO" secondAttribute="leading" constant="20" id="y4g-1g-lvt"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-Mj-pU5">
-                                                <rect key="frame" x="0.0" y="765.5" width="375" height="112"/>
+                                                <rect key="frame" x="0.0" y="766.5" width="375" height="112"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direcció" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-11-iYr">
                                                         <rect key="frame" x="20" y="20" width="87" height="22"/>
@@ -879,7 +734,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </view>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-pj-tGs">
-                                                <rect key="frame" x="0.0" y="877.5" width="375" height="338"/>
+                                                <rect key="frame" x="0.0" y="878.5" width="375" height="338"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WV3-pj-tGs" secondAttribute="height" multiplier="10/9" id="zLt-sA-scB"/>
                                                 </constraints>
@@ -912,24 +767,21 @@ Entrada  + extra 15€</string>
                     <connections>
                         <outlet property="cityPostalCodeLabel" destination="x18-eT-Ovw" id="iIF-We-xrD"/>
                         <outlet property="descriptionSection" destination="gYg-8T-2LF" id="JqJ-sH-OT0"/>
-                        <outlet property="facebookBackground" destination="qT7-1M-PsV" id="hP9-RF-RyW"/>
                         <outlet property="imageSection" destination="NkL-4W-qfC" id="XA9-wp-PG2"/>
-                        <outlet property="instagramBackground" destination="l2z-p1-yy1" id="ekK-aX-Oox"/>
                         <outlet property="mapView" destination="WV3-pj-tGs" id="W8m-wb-kAc"/>
                         <outlet property="organizerImage" destination="NHd-UT-5sk" id="2xa-aL-gUP"/>
                         <outlet property="organizerLabel" destination="Gnf-fp-LQX" id="paY-n6-jCW"/>
                         <outlet property="posterContainer" destination="J3P-xl-WLx" id="ABy-AH-iQ4"/>
                         <outlet property="posterImageView" destination="TCX-23-HVM" id="kHZ-44-rc8"/>
                         <outlet property="priceLabel" destination="tIr-nb-5RW" id="RoS-OU-Kdi"/>
+                        <outlet property="socialBar" destination="svM-Ax-cio" id="1Y5-e5-jDx"/>
                         <outlet property="streetLabel" destination="x3t-fo-8ka" id="V7U-6l-9o9"/>
                         <outlet property="titleSection" destination="CRw-QX-Zca" id="3fR-di-aDm"/>
-                        <outlet property="twitterBackground" destination="rVX-dt-QZF" id="pih-bP-0Jm"/>
-                        <outlet property="webBackground" destination="wrz-Qo-4lq" id="PQG-pU-NLG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRv-CT-nPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2604" y="-200"/>
+            <point key="canvasLocation" x="2604" y="-200.59970014992504"/>
         </scene>
         <!--Comerços-->
         <scene sceneID="lyb-3m-2c3">

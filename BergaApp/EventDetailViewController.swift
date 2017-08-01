@@ -9,16 +9,14 @@
 import UIKit
 import MapKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 class EventDetailViewController: MapViewController {
 
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var organizerLabel: UILabel!
     @IBOutlet weak var organizerImage: UIImageView!
-    @IBOutlet weak var twitterBackground: SocialButtonBackground!
-    @IBOutlet weak var facebookBackground: SocialButtonBackground!
-    @IBOutlet weak var instagramBackground: SocialButtonBackground!
-    @IBOutlet weak var webBackground: SocialButtonBackground!
     @IBOutlet weak var imageSection: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var posterContainer: UIView!
@@ -26,9 +24,10 @@ class EventDetailViewController: MapViewController {
     @IBOutlet weak var cityPostalCodeLabel: UILabel!
     @IBOutlet weak var titleSection: TitleSectionView!
     @IBOutlet weak var descriptionSection: TextSectionView!
+    @IBOutlet weak var socialBar: SocialBarView!
     
     var event: CalendarEvent?
-    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +48,7 @@ class EventDetailViewController: MapViewController {
         set(address: event!.address)
         descriptionSection.set(title: "Descripció", body: event!.description)
     }
-    
-    func set(date: Date) {
 
-    }
-
-    
     func set(imgUrl: String?) {
         if let imgUrl = imgUrl {
             posterContainer.dropShadow()
@@ -79,27 +73,35 @@ class EventDetailViewController: MapViewController {
     
     func set(organizer: EventOrganizer) {
         organizerLabel.text = organizer.name
-        set(twitter: organizer.twitterUrl)
-        set(facebook: organizer.facebookUrl)
-        set(instagram: organizer.instagramUrl)
-        set(web: organizer.webUrl)
         set(organizerImgUrl: organizer.imgUrl)
+        socialBar.setUrls(twitter: organizer.twitterUrl, facebook: organizer.facebookUrl, instagram: organizer.instagramUrl, web: organizer.webUrl)
+        observeSocialButtons()
     }
     
-    func set(twitter: String?) {
-        twitterBackground.configure(url: twitter)
-    }
-    
-    func set(facebook: String?) {
-        facebookBackground.configure(url: facebook)
-    }
-    
-    func set(instagram: String?) {
-        instagramBackground.configure(url: instagram)
-    }
-    
-    func set(web: String?) {
-        webBackground.configure(url: web)
+    func observeSocialButtons() {
+        socialBar.twitterButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.twitterUrl)
+            })
+            .addDisposableTo(disposeBag)
+        
+        socialBar.facebookButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.facebookUrl)
+            })
+            .addDisposableTo(disposeBag)
+        
+        socialBar.instagramButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.instagramUrl)
+            })
+            .addDisposableTo(disposeBag)
+        
+        socialBar.webButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.webUrl)
+            })
+            .addDisposableTo(disposeBag)
     }
     
     func set(organizerImgUrl: String?) {
@@ -107,6 +109,9 @@ class EventDetailViewController: MapViewController {
             if let url = URL(string: organizerImgUrl) {
                 organizerImage.kf.setImage(with: url)
             }
+        }
+        else {
+            organizerImage.isHidden = true
         }
     }
     
@@ -120,26 +125,14 @@ class EventDetailViewController: MapViewController {
             }
         }
     }
-
-    @IBAction func socialPressed(_ sender: UIButton) {
-        var url: String?
-        switch sender.tag {
-        case 0:
-            url = event?.organizer.twitterUrl
-        case 1:
-            url = event?.organizer.facebookUrl
-        case 2:
-            url = event?.organizer.instagramUrl
-        case 3:
-            url = event?.organizer.webUrl
-        default:
-            break
-        }
+    
+    func open(url: String?) {
         if let url = url {
-            UIApplication.shared.openURL(URL(string: url)!)
+            if let url = URL(string: url) {
+                UIApplication.shared.openURL(url)
+            }
         }
     }
-    
     
     @IBAction func backPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
