@@ -19,6 +19,7 @@ class NewsTitleTableViewCell: UITableViewCell {
     @IBOutlet weak var shareButton: UIButton!
     
     func initCell(from news: News) {
+        self.selectionStyle = .none
         newsTitleLabel.text = news.title
         bigImageView.kf.setImage(with: URL(string: news.imageUrl))
         providerImageView.image = UIImage(named: news.provider.imageName)

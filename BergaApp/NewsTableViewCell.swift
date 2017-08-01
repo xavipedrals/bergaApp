@@ -21,6 +21,7 @@ class NewsTableViewCell: UITableViewCell {
     
     
     func initCell(from: News) {
+        self.selectionStyle = .none
         titleLabel.text = from.title
         subtitleLabel.text = from.subtitle
         if let imageUrl = URL(string: from.imageUrl) {
