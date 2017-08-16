@@ -117,10 +117,10 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
         }
     }
     
-    func set(address: String?) {
+    func set(address: Address?) {
         if let address = address {
             addAddressPin(address)
-            streetAddressLabel.text = address
+            streetAddressLabel.text = address.street ?? address.town
         }
         else {
             addressWrapper.isHidden = true

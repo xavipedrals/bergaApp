@@ -12,6 +12,11 @@ class ShopStub {
     
     func getStub() -> [Shop] {
         
+        let address1 = Address(town: "Berga", postalCode: "08600", street: "Carrer de la Mare de Déu dels Àngels, 15")
+        let address2 = Address(town: "Berga", postalCode: "08600", street: "Passeig de la Pau, 5")
+        let address3 = Address(town: "Berga", postalCode: "08600", street: "Carrer de la Ciutat, 18")
+
+        
         let shop1 = Shop(
             name: "Cal Alberich",
             description: "",
@@ -24,7 +29,7 @@ class ShopStub {
         shop1.photosUrls = ["https://s-media-cache-ak0.pinimg.com/originals/cb/32/66/cb32666ae5aa7d180083b2fc1f76be1d.jpg",
                                  "http://lh3.googleusercontent.com/-ldH4dMCpO48/ViE15jwk9HI/AAAAAAABF4U/ECNYUJ29y3o/s640/blogger-image-881916915.jpg",
                                  "https://media-cdn.tripadvisor.com/media/photo-s/03/57/95/2e/boulangerie-patisserie.jpg"]
-        shop1.address = "Carrer de la Mare de Déu dels Àngels, 15, 08600 Berga, Barcelona"
+        shop1.address = address1
         shop1.tags = ["Passtisseria", "Forn", "Dolceria"]
         
         let shop2 = Shop(
@@ -48,7 +53,7 @@ class ShopStub {
 //        shop4.url = "https://www.google.es"
         shop4.photosUrls = ["https://media-cdn.tripadvisor.com/media/photo-s/05/fb/ea/3c/bar-ski.jpg",
                             "http://www.stayinbath.org/wp-content/uploads/2015/11/apres_ski_bar.jpg"]
-        shop4.address = "Passeig de la Pau, 5, 08600 Berga, Barcelona"
+        shop4.address = address2
         shop4.tags = ["Bar", "Restaurant", "Esmorzar"]
         
         let shop5 = Shop(
@@ -73,7 +78,7 @@ class ShopStub {
         shop7.photosUrls = ["https://s-media-cache-ak0.pinimg.com/originals/cb/32/66/cb32666ae5aa7d180083b2fc1f76be1d.jpg",
                             "http://lh3.googleusercontent.com/-ldH4dMCpO48/ViE15jwk9HI/AAAAAAABF4U/ECNYUJ29y3o/s640/blogger-image-881916915.jpg",
                             "https://media-cdn.tripadvisor.com/media/photo-s/03/57/95/2e/boulangerie-patisserie.jpg"]
-        shop7.address = "Carrer de la Mare de Déu dels Àngels, 15, 08600 Berga, Barcelona"
+        shop7.address = address3
         shop7.tags = ["Llaminadures", "Chuches"]
         
         let shop8 = Shop(

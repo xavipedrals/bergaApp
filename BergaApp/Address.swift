@@ -22,6 +22,19 @@ class Address {
         self.postalCode = postalCode
         self.street = street
     }
+    
+    func getStringified() -> String {
+        var address = ""
+
+        if let street = self.street {
+            address = street + ", "
+        }
+        if let postalCode = self.postalCode {
+            address = address + postalCode + " "
+        }
+        address = address + town
+        return address
+    }
 }
 
 extension Address: Equatable {

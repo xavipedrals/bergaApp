@@ -37,7 +37,7 @@ class Shop {
     var schedule: String?
     var url: String?
     var photosUrls: [String]?
-    var address: String?
+    var address: Address?
     var tags: [String]?
     
     init(name: String, description: String, isPromoted: Bool = false) {

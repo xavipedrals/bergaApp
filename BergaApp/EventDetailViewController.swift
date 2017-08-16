@@ -35,9 +35,9 @@ class EventDetailViewController: MapViewController {
         mapView.delegate = self
         initVisuals()
         
-        if let address = event?.address {
-            addAddressPin(address.town)
-        }
+//        if let address = event?.address {
+//            addAddressPin(address.town)
+//        }
     }
     
     func initVisuals() {
@@ -123,6 +123,7 @@ class EventDetailViewController: MapViewController {
             if let postalCode = address.postalCode {
                 cityPostalCodeLabel.text = address.town + ", " + postalCode
             }
+            addAddressPin(address)
         }
     }
     
@@ -152,15 +153,13 @@ extension EventDetailViewController {
         if let annotation = annotation as? CustomAnnotation {
             let identifier = "pin"
             var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-                as? MKPinAnnotationView {
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
                 view.canShowCallout = true
-                view.rightCalloutAccessoryView = getDisclosureButton()
             }
             else {
-                view = getMKAnnotationView(annotation: annotation, identifier: identifier, imgName: event!.type.rawValue)
+                view = getMKAnnotationView(annotation: annotation, identifier: identifier)
             }
             return view
         }

@@ -12,11 +12,11 @@ class CalendarEventStub {
     
     func getStub() -> [CalendarEvent] {
         
-        let bergaAddress = Address(town: "Berga", postalCode: "08600", street: "Carrer de la Pietat")
-        let gironellaAddress = Address(town: "Gironella", postalCode: "08700", street: "Carrer de la Pietat")
-        let aviaAddress = Address(town: "Avià", postalCode: "08700", street: "Carrer de la Pietat")
-        let olvanAddress = Address(town: "Olvan", postalCode: "08700", street: "Carrer de la Pietat")
-        let puigreigAddress = Address(town: "Puig-Reig", postalCode: "08700", street: "Carrer de la Pietat")
+        let bergaAddress = Address(town: "Berga", postalCode: "08600", street: "Carrer de la Pietat, 17")
+        let gironellaAddress = Address(town: "Gironella", postalCode: "08680", street: "Carrer Verdaguer, 7")
+        let aviaAddress = Address(town: "Avià", postalCode: "08610", street: "Ronda de Queralt, 10")
+        let olvanAddress = Address(town: "Olvan", postalCode: "08611", street: "Carrer Cal Magí, 15")
+        let puigreigAddress = Address(town: "Puig-reig", postalCode: "08692", street: "Carrer Lleida, 1")
         
         let organizerBerga = EventOrganizer(name: "Ajuntament de Berga", twitter: "https://twitter.com/ajberga", facebook: nil, instagram: nil, web: "http://www.ajberga.cat/ajberga/portada/index.php", image: "https://pbs.twimg.com/profile_images/1261593223/perfil_tweeter_ajberga_400x400.jpg")
         
