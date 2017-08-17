@@ -135,6 +135,17 @@ class EventDetailViewController: MapViewController {
         }
     }
     
+    @IBAction func imagePressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToImageDisplay", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToImageDisplay" {
+            let vc = segue.destination as! ImageDisplayViewController
+            vc.imgUrl = self.event!.imgUrl
+        }
+    }
+    
     @IBAction func backPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

@@ -72,6 +72,7 @@
 		47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9C8B21EC882E200CA173E /* RxDataSources.framework */; };
 		47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */; };
 		47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */; };
+		47BEE62F1F45915C00D4B947 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* IconImage.swift */; };
 		47CBCE0D1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */; };
@@ -179,6 +180,7 @@
 		47A9C8B21EC882E200CA173E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDaysGenerator.swift; sourceTree = "<group>"; };
 		47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* IconImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 				4705512F1EC751ED0016E366 /* Commons.swift */,
 				4352956D1ECB14710017FB9E /* Colors.swift */,
 				437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */,
+				47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */,
 				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
 				47416A0F1ED74AE100497A09 /* MapViewController.swift */,
 				473F51491ED9991F00008FAC /* Address.swift */,
@@ -756,6 +759,7 @@
 				471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
 				479FFBA11ECE407300BA8106 /* ShopListViewController.swift in Sources */,
+				47BEE62F1F45915C00D4B947 /* ImageDisplayViewController.swift in Sources */,
 				478846691EED5A7E0027E12E /* CardView.swift in Sources */,
 				47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */,
 			);
