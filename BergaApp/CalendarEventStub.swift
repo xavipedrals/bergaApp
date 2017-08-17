@@ -158,6 +158,15 @@ class CalendarEventStub {
             imgUrl: "http://www.olesademontserrat.cat/media/site1/cache/images/cartell-color-torneig-futbol-sala-femeni-2.png"
         )
         
-        return [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12, event13, event14, event15, event16]
+        let event17 = CalendarEvent(
+            date: Commons.getDateFromString(date: "06-16-2017", format: "MM-dd-yyyy")!,
+            name: "Sida",
+            type: .townFest,
+            address: bergaAddress,
+            imgUrl: "http://www.ajberga.cat/perfil/berga/recursos/arxiuimatges/grans/cartell_actesweb.jpg",
+            organizer: organizerBerga
+        )
+        
+        return [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12, event13, event14, event15, event16, event17]
     }
 }
