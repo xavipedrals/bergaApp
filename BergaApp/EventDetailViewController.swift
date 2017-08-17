@@ -117,12 +117,8 @@ class EventDetailViewController: MapViewController {
     
     func set(address: Address?) {
         if let address = address {
-            if let street = address.street {
-                streetLabel.text = street
-            }
-            if let postalCode = address.postalCode {
-                cityPostalCodeLabel.text = address.town + ", " + postalCode
-            }
+            streetLabel.text = address.getTitle()
+            cityPostalCodeLabel.text = address.getSubtitle()
             addAddressPin(address)
         }
     }

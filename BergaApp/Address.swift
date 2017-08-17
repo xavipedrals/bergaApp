@@ -35,6 +35,20 @@ class Address {
         address = address + town
         return address
     }
+    
+    func getTitle() -> String {
+        return street ?? town
+    }
+    
+    func getSubtitle() -> String {
+        let subtitleStr = postalCode == nil
+            ? town
+            : town + ", " + postalCode!
+        
+        return street == nil
+            ? "Barcelona"
+            : subtitleStr
+    }
 }
 
 extension Address: Equatable {

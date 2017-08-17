@@ -18,7 +18,7 @@ class ImageDisplayViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setImage()
-        scrollView.maximumZoomScale = 3.0
+        scrollView.maximumZoomScale = 2.0
         scrollView.delegate = self
     }
     
