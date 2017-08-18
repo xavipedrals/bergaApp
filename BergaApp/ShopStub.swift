@@ -75,11 +75,11 @@ class ShopStub {
         shop7.phone = 934567889
         shop7.schedule = "Obert tots els dies entre setmana de 8am a 20pm. Els dissabtes obrim de 9am a 15pm"
         shop7.url = "https://www.google.es"
-        shop7.photosUrls = ["https://s-media-cache-ak0.pinimg.com/originals/cb/32/66/cb32666ae5aa7d180083b2fc1f76be1d.jpg",
+        shop7.photosUrls = ["https://silverrockfunding.com/images/candy_shop_business_loan.jpg",
                             "http://lh3.googleusercontent.com/-ldH4dMCpO48/ViE15jwk9HI/AAAAAAABF4U/ECNYUJ29y3o/s640/blogger-image-881916915.jpg",
                             "https://media-cdn.tripadvisor.com/media/photo-s/03/57/95/2e/boulangerie-patisserie.jpg"]
         shop7.address = address3
-        shop7.tags = ["Llaminadures", "Chuches"]
+        shop7.tags = ["Llaminadures", "Dolços"]
         
         let shop8 = Shop(
             name: "Lladó llums",
