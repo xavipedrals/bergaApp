@@ -24,6 +24,12 @@ class CalendarViewController: UIViewController {
     var selectedIndex: IndexPath?
     var selectedEvent: CalendarEvent?
     
+    let collectionMargin = CGFloat(20)
+    let itemSpacing = CGFloat(15)
+    var cellHeight = CGFloat(0)
+    var cellWidth = CGFloat(0)
+    var currentItem = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -229,4 +235,33 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         }
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+}
+
+extension CalendarViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let pageWidth = Float(cellWidth + itemSpacing)
+        let targetXContentOffset = Float(targetContentOffset.pointee.x)
+        let contentWidth = Float(calendarCollectionView!.contentSize.width)
+        
+        var newPage = Float(currentItem)
+        
+        if velocity.x == 0 {
+            newPage = floor( (targetXContentOffset - Float(pageWidth) / 2) / Float(pageWidth)) + 1.0
+        }
+        else {
+            newPage = Float(velocity.x > 0 ? currentItem + 1 : currentItem - 1)
+            if newPage < 0 {
+                newPage = 0
+            }
+            if (newPage > contentWidth / pageWidth) {
+                newPage = ceil(contentWidth / pageWidth) - 1.0
+            }
+        }
+        currentItem = Int(newPage)
+        let point = CGPoint (x: CGFloat(newPage * pageWidth), y: targetContentOffset.pointee.y)
+        targetContentOffset.pointee = point
+    }
+    
 }
