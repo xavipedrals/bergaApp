@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="AFN-kg-2qT" id="BjA-xA-3On"/>
+                <outlet property="dayButton" destination="0SV-DC-r6O" id="BPd-Ao-vjy"/>
+                <outlet property="dotView" destination="F9t-qP-fjh" id="6LM-4u-HTr"/>
+                <outlet property="numberLabel" destination="edI-Ol-m5P" id="H6X-Mi-vut"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFN-kg-2qT" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                    <rect key="frame" x="25" y="25" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="iSQ-sN-14Y"/>
+                        <constraint firstAttribute="width" secondItem="AFN-kg-2qT" secondAttribute="height" id="w2k-0D-ZA3"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edI-Ol-m5P">
+                    <rect key="frame" x="30" y="30" width="19.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9t-qP-fjh" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                    <rect key="frame" x="38" y="52.5" width="4" height="4"/>
+                    <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="F9t-qP-fjh" secondAttribute="height" id="ic0-Mi-7fM"/>
+                        <constraint firstAttribute="height" constant="4" id="mUh-GS-dvb"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SV-DC-r6O">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0SV-DC-r6O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9gP-cx-veL"/>
+                <constraint firstItem="edI-Ol-m5P" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ADL-4f-ieK"/>
+                <constraint firstItem="AFN-kg-2qT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Iej-eh-SJ1"/>
+                <constraint firstItem="F9t-qP-fjh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="R8l-LV-FvT"/>
+                <constraint firstAttribute="trailing" secondItem="0SV-DC-r6O" secondAttribute="trailing" id="Tfn-wR-bTb"/>
+                <constraint firstAttribute="bottom" secondItem="0SV-DC-r6O" secondAttribute="bottom" id="USt-Sp-9XJ"/>
+                <constraint firstItem="0SV-DC-r6O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cDa-rc-iC2"/>
+                <constraint firstItem="AFN-kg-2qT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ceN-dk-dDr"/>
+                <constraint firstItem="F9t-qP-fjh" firstAttribute="top" secondItem="edI-Ol-m5P" secondAttribute="bottom" constant="3" id="jlM-YH-yhY"/>
+                <constraint firstItem="edI-Ol-m5P" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pvW-P4-pSI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-111.5" y="-269"/>
+        </view>
+    </objects>
+</document>

@@ -27,6 +27,7 @@ class CalendarViewModel {
         CalendarSection(header: "EventsContainer", items: [])
     ])
     
+    let days = Variable<[Day]>([])
     let events = Variable<[CalendarEvent]>([])
     let eventsSection = Variable<[CalendarEventSection]>([
         CalendarEventSection(header: "Events", items: [])
@@ -86,6 +87,7 @@ class CalendarViewModel {
     private func updateDaysSection() {
         let daysWithEvents = calendarEventsManager.getDaysNumberWithEvents(from: monthPointer.value)
         let days = daysGenerator.generate(from: monthPointer.value, markedDays: daysWithEvents)
+        self.days.value = days
         let calendarModels = generateCalendarModels(from: days)
         let calendarSection = CalendarSection(original: sections.value[CALENDAR_SECTION], items: calendarModels)
         sections.value[CALENDAR_SECTION] = calendarSection

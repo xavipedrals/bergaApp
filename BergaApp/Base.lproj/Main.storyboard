@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="hl4-iZ-yoD" kind="relationship" relationship="rootViewController" id="jtY-sp-5jc"/>
+                        <segue destination="IV9-eq-bNz" kind="relationship" relationship="rootViewController" id="b36-vt-z2i"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5n-j1-E49" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-3N-a4Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1151"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="17y-ij-2gh">
                                     <size key="itemSize" width="73" height="76"/>
@@ -408,7 +408,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </collectionReusableView>
             </objects>
-            <point key="canvasLocation" x="1792.8" y="-169.11544227886057"/>
+            <point key="canvasLocation" x="1793" y="-181"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="Je8-1j-d7i">
@@ -912,7 +912,7 @@ Entrada  + extra 15€</string>
                                         <rect key="frame" x="31.5" y="42" width="312" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPU-Eh-9gH">
@@ -986,7 +986,7 @@ Entrada  + extra 15€</string>
                                         <rect key="frame" x="31.5" y="86" width="312" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-nc-DrW">
@@ -2687,6 +2687,211 @@ Entrada  + extra 15€</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krO-em-k3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="159" y="71"/>
+        </scene>
+        <!--Calendari-->
+        <scene sceneID="qm4-zm-KaT">
+            <objects>
+                <viewController id="IV9-eq-bNz" customClass="NewCalendarViewController" customModule="BergaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vf3-Ds-0Ys"/>
+                        <viewControllerLayoutGuide type="bottom" id="xWr-Eh-DkL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JJa-jR-nza">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWL-E8-jnj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ON1-BI-6M2" userLabel="Container">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8P-Ed-13i" userLabel="Header">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-QI-FlI">
+                                                        <rect key="frame" x="20" y="44" width="155.5" height="41"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WJX-r8-fV3">
+                                                        <rect key="frame" x="16" y="89.5" width="343" height="40.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNA-0U-aua">
+                                                                <rect key="frame" x="0.0" y="10" width="49" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYf-fQ-URl">
+                                                                <rect key="frame" x="49" y="10" width="49" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nio-bg-a7G">
+                                                                <rect key="frame" x="98" y="10" width="49" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DJ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCn-oo-LiY">
+                                                                <rect key="frame" x="147" y="10" width="49" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEZ-UH-KFX">
+                                                                <rect key="frame" x="196" y="10" width="49" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-sM-Jcf">
+                                                                <rect key="frame" x="245" y="10" width="49" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnc-Dq-gcz">
+                                                                <rect key="frame" x="294" y="10" width="49" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                <color key="textColor" red="0.95294117649999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="gg9-Cr-kPM"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDARI BERGUEDÀ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtA-VS-tCO">
+                                                        <rect key="frame" x="20" y="27.5" width="137" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="WJX-r8-fV3" secondAttribute="trailing" constant="16" id="0Vt-lF-nAM"/>
+                                                    <constraint firstItem="WJX-r8-fV3" firstAttribute="leading" secondItem="G8P-Ed-13i" secondAttribute="leading" constant="16" id="BiK-Ai-bep"/>
+                                                    <constraint firstItem="HtA-VS-tCO" firstAttribute="leading" secondItem="G8P-Ed-13i" secondAttribute="leading" constant="20" id="FXx-lC-me4"/>
+                                                    <constraint firstItem="rNI-QI-FlI" firstAttribute="leading" secondItem="G8P-Ed-13i" secondAttribute="leading" constant="20" id="MNr-lu-dmN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rNI-QI-FlI" secondAttribute="bottom" constant="45" id="Prm-v4-bfq"/>
+                                                    <constraint firstItem="WJX-r8-fV3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rNI-QI-FlI" secondAttribute="bottom" constant="5" id="U5e-Nb-naJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WJX-r8-fV3" secondAttribute="bottom" id="bl9-JN-kv5"/>
+                                                    <constraint firstItem="rNI-QI-FlI" firstAttribute="top" secondItem="G8P-Ed-13i" secondAttribute="top" constant="44" id="cNC-ZG-CoM"/>
+                                                    <constraint firstItem="rNI-QI-FlI" firstAttribute="top" secondItem="HtA-VS-tCO" secondAttribute="bottom" constant="2" id="hsa-el-uzr"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n4m-mh-4PB">
+                                                <rect key="frame" x="14" y="130" width="347" height="300"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaD-cr-fTg" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="347" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqG-4F-hOO" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="347" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdo-ed-JwD" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="100" width="347" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amc-qc-7gs" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="150" width="347" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJF-tl-FXQ" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="200" width="347" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uF2-gR-edu" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="250" width="347" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="ql9-Lh-aa6"/>
+                                                </constraints>
+                                            </stackView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5O-8d-eKc">
+                                                <rect key="frame" x="0.0" y="440" width="375" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="vjX-9Q-jqS"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="24O-W0-ORw" kind="embed" id="bVw-Pe-Iwo"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="n4m-mh-4PB" firstAttribute="leading" secondItem="ON1-BI-6M2" secondAttribute="leading" constant="14" id="00P-8D-Mgo"/>
+                                            <constraint firstItem="n4m-mh-4PB" firstAttribute="top" secondItem="G8P-Ed-13i" secondAttribute="bottom" id="AYe-GO-b5G"/>
+                                            <constraint firstAttribute="trailing" secondItem="G8P-Ed-13i" secondAttribute="trailing" id="B5n-UY-oYB"/>
+                                            <constraint firstItem="G8P-Ed-13i" firstAttribute="leading" secondItem="ON1-BI-6M2" secondAttribute="leading" id="JNS-5c-XUi"/>
+                                            <constraint firstItem="G8P-Ed-13i" firstAttribute="top" secondItem="ON1-BI-6M2" secondAttribute="top" id="Rog-1p-6sn"/>
+                                            <constraint firstAttribute="trailing" secondItem="e5O-8d-eKc" secondAttribute="trailing" id="SFm-tj-ivI"/>
+                                            <constraint firstItem="e5O-8d-eKc" firstAttribute="top" secondItem="n4m-mh-4PB" secondAttribute="bottom" constant="10" id="cEO-MS-qgp"/>
+                                            <constraint firstAttribute="bottom" secondItem="e5O-8d-eKc" secondAttribute="bottom" id="eg2-B6-NB0"/>
+                                            <constraint firstItem="e5O-8d-eKc" firstAttribute="leading" secondItem="ON1-BI-6M2" secondAttribute="leading" id="fXI-4H-bmy"/>
+                                            <constraint firstAttribute="trailing" secondItem="n4m-mh-4PB" secondAttribute="trailing" constant="14" id="fnE-k9-APA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ON1-BI-6M2" firstAttribute="top" secondItem="BWL-E8-jnj" secondAttribute="top" id="Ft4-aJ-rQd"/>
+                                    <constraint firstAttribute="bottom" secondItem="ON1-BI-6M2" secondAttribute="bottom" id="Gm9-3V-Nhe"/>
+                                    <constraint firstItem="ON1-BI-6M2" firstAttribute="width" secondItem="BWL-E8-jnj" secondAttribute="width" id="J7b-Ny-7o5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ON1-BI-6M2" secondAttribute="trailing" id="iJo-zE-Scf"/>
+                                    <constraint firstItem="ON1-BI-6M2" firstAttribute="leading" secondItem="BWL-E8-jnj" secondAttribute="leading" id="jxB-g7-7jj"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="BWL-E8-jnj" secondAttribute="bottom" id="D4b-vG-FKy"/>
+                            <constraint firstItem="BWL-E8-jnj" firstAttribute="leading" secondItem="JJa-jR-nza" secondAttribute="leading" id="Mqb-JF-lUZ"/>
+                            <constraint firstAttribute="trailing" secondItem="BWL-E8-jnj" secondAttribute="trailing" id="fFv-Hw-khM"/>
+                            <constraint firstItem="BWL-E8-jnj" firstAttribute="top" secondItem="JJa-jR-nza" secondAttribute="topMargin" id="ozU-Mc-kp5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calendari" image="calendar" selectedImage="calendar-full" id="eI2-eu-jso"/>
+                    <navigationItem key="navigationItem" id="4Xz-ZE-o3X"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1200"/>
+                    <connections>
+                        <outlet property="calendarContainer" destination="n4m-mh-4PB" id="YLs-o2-9lh"/>
+                        <outlet property="calendarHeightConstrint" destination="ql9-Lh-aa6" id="4o7-99-5sR"/>
+                        <outlet property="monthYearLabel" destination="rNI-QI-FlI" id="bZ3-uf-e9U"/>
+                        <outletCollection property="dayRowViews" destination="UaD-cr-fTg" collectionClass="NSMutableArray" id="d5C-Vv-24W"/>
+                        <outletCollection property="dayRowViews" destination="lqG-4F-hOO" collectionClass="NSMutableArray" id="FAb-eR-tVG"/>
+                        <outletCollection property="dayRowViews" destination="Pdo-ed-JwD" collectionClass="NSMutableArray" id="Xyj-1D-kXt"/>
+                        <outletCollection property="dayRowViews" destination="amc-qc-7gs" collectionClass="NSMutableArray" id="0sp-q8-bhz"/>
+                        <outletCollection property="dayRowViews" destination="iJF-tl-FXQ" collectionClass="NSMutableArray" id="abo-w7-7t8"/>
+                        <outletCollection property="dayRowViews" destination="uF2-gR-edu" collectionClass="NSMutableArray" id="bbr-Ze-O4u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qnx-FZ-ha9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="-1382"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0po-nl-BLz">
+            <objects>
+                <viewController id="24O-W0-ORw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dXJ-OS-quj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.88235294119999996" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1a-1N-RlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2577" y="-1787"/>
         </scene>
     </scenes>
     <resources>

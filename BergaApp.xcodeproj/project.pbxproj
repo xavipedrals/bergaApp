@@ -43,6 +43,11 @@
 		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
+		474E746D1F499932006031AF /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474E746C1F499932006031AF /* DayCellView.xib */; };
+		474E74701F499A25006031AF /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E746F1F499A25006031AF /* DayCellView.swift */; };
+		474E74721F499DDB006031AF /* DayRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474E74711F499DDB006031AF /* DayRowView.xib */; };
+		474E74741F499DEB006031AF /* DayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E74731F499DEB006031AF /* DayRowView.swift */; };
+		474E74761F49AD92006031AF /* NewCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E74751F49AD92006031AF /* NewCalendarViewController.swift */; };
 		47594F3F1EFE7258000B122F /* ArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47594F3E1EFE7258000B122F /* ArrayParser.swift */; };
 		475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475CD2BF1EDB035C006EAA4B /* CustomButton.swift */; };
 		478846691EED5A7E0027E12E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478846681EED5A7E0027E12E /* CardView.swift */; };
@@ -147,6 +152,11 @@
 		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		474E746C1F499932006031AF /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCellView.xib; sourceTree = "<group>"; };
+		474E746F1F499A25006031AF /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
+		474E74711F499DDB006031AF /* DayRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayRowView.xib; sourceTree = "<group>"; };
+		474E74731F499DEB006031AF /* DayRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayRowView.swift; sourceTree = "<group>"; };
+		474E74751F49AD92006031AF /* NewCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCalendarViewController.swift; sourceTree = "<group>"; };
 		47594F3E1EFE7258000B122F /* ArrayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayParser.swift; sourceTree = "<group>"; };
 		475CD2BF1EDB035C006EAA4B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		478846681EED5A7E0027E12E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -267,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				470551231EC6F9690016E366 /* CalendarViewController.swift */,
+				474E74751F49AD92006031AF /* NewCalendarViewController.swift */,
 				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
 				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
 				430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */,
@@ -377,6 +388,17 @@
 			name = ShopDetail;
 			sourceTree = "<group>";
 		};
+		474E746E1F499A0D006031AF /* DayViews */ = {
+			isa = PBXGroup;
+			children = (
+				474E746C1F499932006031AF /* DayCellView.xib */,
+				474E746F1F499A25006031AF /* DayCellView.swift */,
+				474E74711F499DDB006031AF /* DayRowView.xib */,
+				474E74731F499DEB006031AF /* DayRowView.swift */,
+			);
+			name = DayViews;
+			sourceTree = "<group>";
+		};
 		475CD2BE1EDB031E006EAA4B /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +411,7 @@
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 				478846681EED5A7E0027E12E /* CardView.swift */,
 				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
+				474E746E1F499A0D006031AF /* DayViews */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -650,11 +673,13 @@
 			files = (
 				471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */,
 				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
+				474E746D1F499932006031AF /* DayCellView.xib in Resources */,
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
 				47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
 				47E889BA1F30C89B009A9B8F /* SocialBarView.xib in Resources */,
 				479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */,
+				474E74721F499DDB006031AF /* DayRowView.xib in Resources */,
 				47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,11 +730,14 @@
 			files = (
 				4351A3E01ED431B900B18D9B /* ShopDetailViewModel.swift in Sources */,
 				470551301EC751ED0016E366 /* Commons.swift in Sources */,
+				474E74741F499DEB006031AF /* DayRowView.swift in Sources */,
 				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
 				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
 				4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */,
+				474E74701F499A25006031AF /* DayCellView.swift in Sources */,
 				47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */,
 				470F48B31F45CBFC00C084F3 /* TopShopCollectionViewCell.swift in Sources */,
+				474E74761F49AD92006031AF /* NewCalendarViewController.swift in Sources */,
 				47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */,

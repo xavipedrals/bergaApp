@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
+            <connections>
+                <outletCollection property="dayCellViews" destination="KAU-cG-6CO" collectionClass="NSMutableArray" id="Rom-HR-ZkH"/>
+                <outletCollection property="dayCellViews" destination="LNt-wt-6gL" collectionClass="NSMutableArray" id="F7i-r2-C25"/>
+                <outletCollection property="dayCellViews" destination="Z1l-hd-cXr" collectionClass="NSMutableArray" id="d4R-9e-rKR"/>
+                <outletCollection property="dayCellViews" destination="rj1-6o-CDg" collectionClass="NSMutableArray" id="rPu-na-4ue"/>
+                <outletCollection property="dayCellViews" destination="R9z-OO-4fV" collectionClass="NSMutableArray" id="nq1-ke-mbz"/>
+                <outletCollection property="dayCellViews" destination="ezg-SW-5N0" collectionClass="NSMutableArray" id="ghM-ss-eB6"/>
+                <outletCollection property="dayCellViews" destination="IU2-d0-dqg" collectionClass="NSMutableArray" id="ibT-t5-vs6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="560" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gAk-bO-K2d">
+                    <rect key="frame" x="0.0" y="0.0" width="560" height="80"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAU-cG-6CO" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-wt-6gL" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="80" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1l-hd-cXr" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="160" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rj1-6o-CDg" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="240" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9z-OO-4fV" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="320" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-SW-5N0" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="400" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IU2-d0-dqg" customClass="DayCellView" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="480" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gAk-bO-K2d" secondAttribute="trailing" id="GcC-PI-dWS"/>
+                <constraint firstItem="gAk-bO-K2d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LPm-aI-edK"/>
+                <constraint firstItem="gAk-bO-K2d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="q0y-vX-5zd"/>
+                <constraint firstAttribute="bottom" secondItem="gAk-bO-K2d" secondAttribute="bottom" id="xee-k3-gL1"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

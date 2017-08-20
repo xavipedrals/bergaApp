@@ -27,11 +27,12 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         disposeBag = nil
         disposeBag = DisposeBag()
+//        setupCollectionLayout()
     }
     
     func setupCell() {
         setCellWidth()
-        setupCollectionLayout()
+//        setupCollectionLayout()
         setupCollectionCells()
         setupCollectionHeaderAndFooter()
     }
@@ -53,15 +54,18 @@ class EventsContainerCollectionViewCell: UICollectionViewCell {
     private func setCollectionItemSize() {
         cellWidth =  UIScreen.main.bounds.width - 40
         cellHeight = CGFloat(eventCellWidth! * 1.34 + Double(110))
+//        let eventCellHeight = eventCellWidth! * 1.34 + 110
     }
     
     private func getCollectionLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        layout.itemSize = CGSize(width: CGFloat(eventCellWidth!), height: cellHeight)
+
         layout.headerReferenceSize = CGSize(width: 20, height: 0)
         layout.footerReferenceSize = CGSize(width: 20, height: 0)
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 15
         layout.scrollDirection = .horizontal
         return layout
     }
