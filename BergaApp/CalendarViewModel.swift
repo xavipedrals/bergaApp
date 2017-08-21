@@ -14,18 +14,15 @@ class CalendarViewModel {
     
     let monthYearStr = Variable<String>("")
     var monthPointer: Variable<Date>
-    let daysGenerator: MonthDaysGenerator
-    let calendarEventsManager: CalendarEventsManager
-    let days = Variable<[Day]>([])
+    let daysGenerator = MonthDaysGenerator()
+    let calendarEventsManager = CalendarEventsManager()
     let events = Variable<[CalendarEvent]>([])
+    let daysInRowsSubject = BehaviorSubject<[[Day]]>(value: [])
     let disposeBag = DisposeBag()
 
 
     init() {
         monthPointer = Variable<Date>(Date().startOfMonth())
-        daysGenerator = MonthDaysGenerator()
-        calendarEventsManager = CalendarEventsManager()
-        
         generateMonthYearStringWhenMonthChanges()
         generateDaysWhenMonthChanges()
         updateEventsSection(day: Date())
@@ -56,16 +53,13 @@ class CalendarViewModel {
     
     private func updateDaysSection() {
         let daysWithEvents = calendarEventsManager.getDaysNumberWithEvents(from: monthPointer.value)
-        let days = daysGenerator.generate(from: monthPointer.value, markedDays: daysWithEvents)
-        self.days.value = days
+        let daysInRows = daysGenerator.generateMatrix(date: monthPointer.value, markedDays: daysWithEvents)
+        self.daysInRowsSubject.onNext(daysInRows)
     }
     
     func updateEvents(dayNumber: Int) {
-        let index = days.value.index(where: { $0.number == dayNumber })
-        if let index = index {
-            if let date = daysGenerator.getDate(number: days.value[index].number) {
-                updateEventsSection(day: date)
-            }
+        if let date = daysGenerator.getDate(number: dayNumber) {
+            updateEventsSection(day: date)
         }
     }
     
@@ -85,6 +79,10 @@ class CalendarViewModel {
     
     func cleanEventsSection() {
         events.value = []
+    }
+    
+    func getDayIndex(number: Int) -> Int? {
+        return daysGenerator.getIndexFor(dayNumber: number)
     }
 
 }

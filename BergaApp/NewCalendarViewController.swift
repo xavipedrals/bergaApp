@@ -20,7 +20,6 @@ class NewCalendarViewController: UIViewController {
     
     let calendarViewModel = CalendarViewModel()
     let disposeBag = DisposeBag()
-    var daysInRows = [[Day]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,68 +37,34 @@ class NewCalendarViewController: UIViewController {
     }
     
     func setupCalendar() {
-        calendarViewModel.days.asObservable()
+        calendarViewModel.daysInRowsSubject.asObservable()
             .subscribe(onNext: { days in
-                self.setup(days: days)
-                self.initRowViews()
-                self.setCalendarHeight()
+                self.initRowViews(days: days)
+                self.setCalendarHeight(rowsNumber: days.count)
             })
             .addDisposableTo(disposeBag)
     }
     
-    func initMatrix() {
-        daysInRows = [[Day]]()
-        for _ in 1 ... 6 {
-            daysInRows.append([])
-        }
-    }
-    
-    func setup(days: [Day]) {
-        initMatrix()
-        for (i, day) in days.enumerated() {
-            let row = i / 7
-            daysInRows[row].append(day)
-        }
-        addMonthEmptyDays()
-    }
-    
-    func addMonthEmptyDays() {
-        for i in 0 ..< daysInRows.count {
-            if daysInRows[i].count > 0 {
-                while daysInRows[i].count < 7 {
-                    daysInRows[i].append(Day(number: 0, month: 1))
-                }
-            }
-        }
-    }
-    
-    func initRowViews() {
+    func initRowViews(days: [[Day]]) {
         for (i, rowView) in dayRowViews.enumerated() {
-            if daysInRows[i].count > 0 {
-                rowView.initView(days: daysInRows[i])
-                rowView.isHidden = false
+            if i < days.count {
+                rowView.initView(days: days[i])
             }
-            else {
-                rowView.isHidden = true
-            }
+            rowView.isHidden = (i >= days.count)
         }
     }
     
-    func setCalendarHeight() {
-        calendarHeightConstrint.constant = getCalendarHeight()
+    func setCalendarHeight(rowsNumber: Int) {
+        calendarHeightConstrint.constant = getCalendarHeight(rowsNumber: rowsNumber)
         eventsContainerHeight.constant = getEventsHeight()
         self.view.layoutIfNeeded()
     }
     
-    func getCalendarHeight() -> CGFloat {
+    func getCalendarHeight(rowsNumber: Int) -> CGFloat {
         var height = CGFloat(0)
         var rowHeight = (UIScreen.main.bounds.width - 28) / 7
         rowHeight = ceil(rowHeight)
-        for row in daysInRows {
-            if row.count > 0 {
-                height += rowHeight
-            }
-        }
+        height = rowHeight * CGFloat(rowsNumber)
         return height
     }
     
@@ -146,7 +111,7 @@ class NewCalendarViewController: UIViewController {
     }
     
     func selectDay(number: Int) {
-        let index = calendarViewModel.days.value.index(where: { $0.number == number })
+        let index = calendarViewModel.getDayIndex(number: number)
         if let index = index {
             let row = index / 7
             let column = index % 7

@@ -11,6 +11,7 @@ import Foundation
 class MonthDaysGenerator {
     
     var monthPointer: Date
+    var daysInRows: [[Day]]
     private var days: [Day]
     private var todayDayNumber: Int
     private var todayMonthNumber: Int
@@ -19,19 +20,12 @@ class MonthDaysGenerator {
     init(){
         self.monthPointer = Date()
         self.days = []
+        self.daysInRows = []
         let today = Date()
         let calendar = Calendar.current
         todayDayNumber = calendar.component(.day, from: today)
         todayMonthNumber = calendar.component(.month, from: today)
         todayYearNumber = calendar.component(.year, from: today)
-    }
-    
-    func generate(from: Date) -> [Day] {
-        monthPointer = from
-        days.removeAll()
-        addDaysBeforeMonthFirstDay()
-        loadMonthDays(markedDays: [])
-        return self.days
     }
     
     func generate(from: Date, markedDays: [Int]) -> [Day] {
@@ -40,6 +34,15 @@ class MonthDaysGenerator {
         addDaysBeforeMonthFirstDay()
         loadMonthDays(markedDays: markedDays)
         return self.days
+    }
+    
+    func generateMatrix(date: Date, markedDays: [Int]) -> [[Day]] {
+        monthPointer = date
+        days.removeAll()
+        addDaysBeforeMonthFirstDay()
+        loadMonthDays(markedDays: markedDays)
+        initMatrix(days: self.days)
+        return self.daysInRows
     }
     
     func addDaysBeforeMonthFirstDay() {
@@ -75,7 +78,6 @@ class MonthDaysGenerator {
     
     func getDate(number: Int) -> Date? {
         let calendar = Calendar.current
-        
         var dateComponents = DateComponents()
         dateComponents.year = calendar.component(.year, from: monthPointer)
         dateComponents.month = calendar.component(.month, from: monthPointer)
@@ -83,5 +85,29 @@ class MonthDaysGenerator {
         
         let someDateTime = calendar.date(from: dateComponents)
         return someDateTime
+    }
+    
+    private func initMatrix(days: [Day]) {
+        daysInRows = []
+        for (i, day) in days.enumerated() {
+            let row = i / 7
+            if row >= daysInRows.count {
+                daysInRows.append([])
+            }
+            daysInRows[row].append(day)
+        }
+        addMonthEmptyDays()
+    }
+    
+    private func addMonthEmptyDays() {
+        for i in 0 ..< daysInRows.count {
+            while daysInRows[i].count > 0 && daysInRows[i].count < 7 {
+                daysInRows[i].append(Day(number: 0, month: 1))
+            }
+        }
+    }
+    
+    func getIndexFor(dayNumber: Int) -> Int? {
+        return days.index(where: { $0.number == dayNumber })
     }
 }
