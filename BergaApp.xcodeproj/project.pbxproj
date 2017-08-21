@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		430026571EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */; };
+		430D88561F288525008F3E7C /* CalendarEventSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D88551F288525008F3E7C /* CalendarEventSection.swift */; };
 		432C1AF91EEFCC850043FA36 /* EventOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C1AF81EEFCC850043FA36 /* EventOrganizer.swift */; };
 		4351A3E01ED431B900B18D9B /* ShopDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */; };
 		4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */; };
 		4352956E1ECB14710017FB9E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4352956D1ECB14710017FB9E /* Colors.swift */; };
 		435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435295701ECB311C0017FB9E /* CustomAnnotation.swift */; };
+		4364A8171F260E4C0005607C /* EventsContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4364A8161F260E4C0005607C /* EventsContainerCollectionViewCell.swift */; };
 		437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */; };
 		439DF4E11ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DF4E01ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift */; };
 		43F0A9E51EFABD440029922E /* ShopSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0A9E41EFABD440029922E /* ShopSearchViewController.swift */; };
@@ -24,7 +26,13 @@
 		4705512C1EC717E70016E366 /* NewsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512B1EC717E70016E366 /* NewsStub.swift */; };
 		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
+		470F48B31F45CBFC00C084F3 /* TopShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */; };
+		470F48B51F45D57C00C084F3 /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F48B41F45D57C00C084F3 /* ShopsViewController.swift */; };
 		471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */; };
+		4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D0781F1BA63D00D24539 /* CorneredImageView.swift */; };
+		4717D07B1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */; };
+		4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07C1F1BE21D00D24539 /* NewsProvider.swift */; };
+		4717D0801F1BE26000D24539 /* NewsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07F1F1BE26000D24539 /* NewsSection.swift */; };
 		471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 471D89E91EED76200003D1E5 /* WeatherView.xib */; };
 		471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D89EB1EED768F0003D1E5 /* WeatherView.swift */; };
 		471D89EE1EED76AE0003D1E5 /* WeatherColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D89ED1EED76AE0003D1E5 /* WeatherColors.swift */; };
@@ -35,6 +43,11 @@
 		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
+		474E746D1F499932006031AF /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474E746C1F499932006031AF /* DayCellView.xib */; };
+		474E74701F499A25006031AF /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E746F1F499A25006031AF /* DayCellView.swift */; };
+		474E74721F499DDB006031AF /* DayRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474E74711F499DDB006031AF /* DayRowView.xib */; };
+		474E74741F499DEB006031AF /* DayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E74731F499DEB006031AF /* DayRowView.swift */; };
+		474E74761F49AD92006031AF /* NewCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474E74751F49AD92006031AF /* NewCalendarViewController.swift */; };
 		47594F3F1EFE7258000B122F /* ArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47594F3E1EFE7258000B122F /* ArrayParser.swift */; };
 		475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475CD2BF1EDB035C006EAA4B /* CustomButton.swift */; };
 		478846691EED5A7E0027E12E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478846681EED5A7E0027E12E /* CardView.swift */; };
@@ -66,14 +79,24 @@
 		47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9C8B21EC882E200CA173E /* RxDataSources.framework */; };
 		47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */; };
 		47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */; };
+		47BEE62F1F45915C00D4B947 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* IconImage.swift */; };
+		47CBCE0D1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */; };
 		47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */; };
 		47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */; };
 		47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */; };
 		47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */; };
 		47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */; };
 		47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */; };
+		47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889AD1F30A726009A9B8F /* TextSectionView.xib */; };
+		47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889AF1F30A72F009A9B8F /* TextSectionView.swift */; };
+		47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B21F30BC48009A9B8F /* TitleSectionView.xib */; };
+		47E889B51F30BC52009A9B8F /* TitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889B41F30BC52009A9B8F /* TitleSectionView.swift */; };
+		47E889B81F30C892009A9B8F /* SocialBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889B71F30C892009A9B8F /* SocialBarView.swift */; };
+		47E889BA1F30C89B009A9B8F /* SocialBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B91F30C89B009A9B8F /* SocialBarView.xib */; };
+		47F5AB861F4AC42B009730B1 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5AB851F4AC42B009730B1 /* EventsViewController.swift */; };
+		47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,11 +118,13 @@
 
 /* Begin PBXFileReference section */
 		430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarFooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		430D88551F288525008F3E7C /* CalendarEventSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventSection.swift; sourceTree = "<group>"; };
 		432C1AF81EEFCC850043FA36 /* EventOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventOrganizer.swift; sourceTree = "<group>"; };
 		4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewModel.swift; sourceTree = "<group>"; };
 		4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		4352956D1ECB14710017FB9E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		435295701ECB311C0017FB9E /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		4364A8161F260E4C0005607C /* EventsContainerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsContainerCollectionViewCell.swift; sourceTree = "<group>"; };
 		437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		439DF4E01ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		43F0A9E41EFABD440029922E /* ShopSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSearchViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +136,13 @@
 		4705512B1EC717E70016E366 /* NewsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStub.swift; sourceTree = "<group>"; };
 		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		470F48B41F45D57C00C084F3 /* ShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
 		471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		4717D0781F1BA63D00D24539 /* CorneredImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorneredImageView.swift; sourceTree = "<group>"; };
+		4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTitleTableViewCell.swift; sourceTree = "<group>"; };
+		4717D07C1F1BE21D00D24539 /* NewsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
+		4717D07F1F1BE26000D24539 /* NewsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSection.swift; sourceTree = "<group>"; };
 		471D89E91EED76200003D1E5 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		471D89EB1EED768F0003D1E5 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		471D89ED1EED76AE0003D1E5 /* WeatherColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherColors.swift; sourceTree = "<group>"; };
@@ -122,6 +153,11 @@
 		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		474E746C1F499932006031AF /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCellView.xib; sourceTree = "<group>"; };
+		474E746F1F499A25006031AF /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
+		474E74711F499DDB006031AF /* DayRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayRowView.xib; sourceTree = "<group>"; };
+		474E74731F499DEB006031AF /* DayRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayRowView.swift; sourceTree = "<group>"; };
+		474E74751F49AD92006031AF /* NewCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCalendarViewController.swift; sourceTree = "<group>"; };
 		47594F3E1EFE7258000B122F /* ArrayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayParser.swift; sourceTree = "<group>"; };
 		475CD2BF1EDB035C006EAA4B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		478846681EED5A7E0027E12E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -159,14 +195,24 @@
 		47A9C8B21EC882E200CA173E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDaysGenerator.swift; sourceTree = "<group>"; };
 		47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* IconImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
+		47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoViewController.swift; sourceTree = "<group>"; };
 		47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewController.swift; sourceTree = "<group>"; };
 		47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotification.swift; sourceTree = "<group>"; };
 		47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewModel.swift; sourceTree = "<group>"; };
 		47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsStub.swift; sourceTree = "<group>"; };
+		47E889AD1F30A726009A9B8F /* TextSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextSectionView.xib; sourceTree = "<group>"; };
+		47E889AF1F30A72F009A9B8F /* TextSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextSectionView.swift; path = ../TextSectionView.swift; sourceTree = "<group>"; };
+		47E889B21F30BC48009A9B8F /* TitleSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSectionView.xib; sourceTree = "<group>"; };
+		47E889B41F30BC52009A9B8F /* TitleSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSectionView.swift; sourceTree = "<group>"; };
+		47E889B71F30C892009A9B8F /* SocialBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialBarView.swift; sourceTree = "<group>"; };
+		47E889B91F30C89B009A9B8F /* SocialBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialBarView.xib; sourceTree = "<group>"; };
+		47F5AB851F4AC42B009730B1 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialButtonBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +247,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430D88511F288480008F3E7C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				470551271EC704950016E366 /* CalendarViewModel.swift */,
+				47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */,
+				4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		430D88521F288498008F3E7C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4705512D1EC74BDA0016E366 /* Day.swift */,
+				47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */,
+				430D88551F288525008F3E7C /* CalendarEventSection.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		430D88531F2884BF008F3E7C /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
+		430D88541F2884F0008F3E7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				474E746E1F499A0D006031AF /* DayViews */,
+				470551231EC6F9690016E366 /* CalendarViewController.swift */,
+				474E74751F49AD92006031AF /* NewCalendarViewController.swift */,
+				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
+				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
+				430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */,
+				47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */,
+				4364A8161F260E4C0005607C /* EventsContainerCollectionViewCell.swift */,
+				47F5AB851F4AC42B009730B1 /* EventsViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		4352956F1ECB30D90017FB9E /* EventDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,16 +335,10 @@
 		470551211EC6F9290016E366 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				470551231EC6F9690016E366 /* CalendarViewController.swift */,
-				4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */,
-				470551271EC704950016E366 /* CalendarViewModel.swift */,
-				47A9C8B41EC890E300CA173E /* MonthDaysGenerator.swift */,
-				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
-				4705512D1EC74BDA0016E366 /* Day.swift */,
-				47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */,
-				47A9C8B01EC8827B00CA173E /* CalendarModelType.swift */,
-				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
-				430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */,
+				430D88521F288498008F3E7C /* Models */,
+				430D88511F288480008F3E7C /* ViewModels */,
+				430D88541F2884F0008F3E7C /* Views */,
+				430D88531F2884BF008F3E7C /* Stubs */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -266,6 +350,24 @@
 				4793161F1EC60B7400845C6C /* Media.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		4717D0771F1BA38F00D24539 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		4717D07E1F1BE23600D24539 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				479316191EC605E000845C6C /* News.swift */,
+				4717D07C1F1BE21D00D24539 /* NewsProvider.swift */,
+				4705512B1EC717E70016E366 /* NewsStub.swift */,
+				4717D07F1F1BE26000D24539 /* NewsSection.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		471D89E81EED76050003D1E5 /* Weather */ = {
@@ -290,14 +392,29 @@
 			name = ShopDetail;
 			sourceTree = "<group>";
 		};
+		474E746E1F499A0D006031AF /* DayViews */ = {
+			isa = PBXGroup;
+			children = (
+				474E746C1F499932006031AF /* DayCellView.xib */,
+				474E746F1F499A25006031AF /* DayCellView.swift */,
+				474E74711F499DDB006031AF /* DayRowView.xib */,
+				474E74731F499DEB006031AF /* DayRowView.swift */,
+			);
+			name = DayViews;
+			sourceTree = "<group>";
+		};
 		475CD2BE1EDB031E006EAA4B /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				47E889AC1F30A6FC009A9B8F /* TextSectionView */,
+				47E889B11F30BC24009A9B8F /* TitleSectionView */,
+				47E889B61F30C871009A9B8F /* SocialBarView */,
 				47C942291EC65B8400B3F617 /* CustomView.swift */,
 				47C9422B1EC65B9800B3F617 /* IconImage.swift */,
 				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 				478846681EED5A7E0027E12E /* CardView.swift */,
+				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -307,6 +424,7 @@
 			children = (
 				479315D71EC5FDED00845C6C /* BergaApp */,
 				479316081EC6039F00845C6C /* Frameworks */,
+				4717D0771F1BA38F00D24539 /* Fonts */,
 				479315EC1EC5FDED00845C6C /* BergaAppTests */,
 				479315F71EC5FDED00845C6C /* BergaAppUITests */,
 				479315D61EC5FDED00845C6C /* Products */,
@@ -377,11 +495,11 @@
 			isa = PBXGroup;
 			children = (
 				471D89E81EED76050003D1E5 /* Weather */,
+				4717D07E1F1BE23600D24539 /* Model */,
 				479316061EC5FE2800845C6C /* NewsViewController.swift */,
 				479316171EC605C400845C6C /* NewsViewModel.swift */,
-				479316191EC605E000845C6C /* News.swift */,
 				4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */,
-				4705512B1EC717E70016E366 /* NewsStub.swift */,
+				4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -397,6 +515,8 @@
 				471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */,
 				47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */,
 				43F0A9E31EFABD150029922E /* Search */,
+				470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */,
+				470F48B41F45D57C00C084F3 /* ShopsViewController.swift */,
 			);
 			name = Shops;
 			sourceTree = "<group>";
@@ -408,12 +528,41 @@
 				4705512F1EC751ED0016E366 /* Commons.swift */,
 				4352956D1ECB14710017FB9E /* Colors.swift */,
 				437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */,
+				47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */,
 				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
 				47416A0F1ED74AE100497A09 /* MapViewController.swift */,
 				473F51491ED9991F00008FAC /* Address.swift */,
 				47594F3E1EFE7258000B122F /* ArrayParser.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		47E889AC1F30A6FC009A9B8F /* TextSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				47E889AF1F30A72F009A9B8F /* TextSectionView.swift */,
+				47E889AD1F30A726009A9B8F /* TextSectionView.xib */,
+			);
+			name = TextSectionView;
+			sourceTree = "<group>";
+		};
+		47E889B11F30BC24009A9B8F /* TitleSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				47E889B41F30BC52009A9B8F /* TitleSectionView.swift */,
+				47E889B21F30BC48009A9B8F /* TitleSectionView.xib */,
+			);
+			name = TitleSectionView;
+			sourceTree = "<group>";
+		};
+		47E889B61F30C871009A9B8F /* SocialBarView */ = {
+			isa = PBXGroup;
+			children = (
+				47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */,
+				47E889B71F30C892009A9B8F /* SocialBarView.swift */,
+				47E889B91F30C89B009A9B8F /* SocialBarView.xib */,
+			);
+			name = SocialBarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,7 +634,7 @@
 				TargetAttributes = {
 					479315D41EC5FDED00845C6C = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 7XMX4W3K45;
+						DevelopmentTeam = DHMTBABACN;
 						ProvisioningStyle = Automatic;
 					};
 					479315E81EC5FDED00845C6C = {
@@ -527,9 +676,14 @@
 			files = (
 				471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */,
 				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
+				474E746D1F499932006031AF /* DayCellView.xib in Resources */,
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
+				47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
+				47E889BA1F30C89B009A9B8F /* SocialBarView.xib in Resources */,
 				479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */,
+				474E74721F499DDB006031AF /* DayRowView.xib in Resources */,
+				47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,9 +733,15 @@
 			files = (
 				4351A3E01ED431B900B18D9B /* ShopDetailViewModel.swift in Sources */,
 				470551301EC751ED0016E366 /* Commons.swift in Sources */,
+				474E74741F499DEB006031AF /* DayRowView.swift in Sources */,
 				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
 				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
 				4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */,
+				47F5AB861F4AC42B009730B1 /* EventsViewController.swift in Sources */,
+				474E74701F499A25006031AF /* DayCellView.swift in Sources */,
+				47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */,
+				470F48B31F45CBFC00C084F3 /* TopShopCollectionViewCell.swift in Sources */,
+				474E74761F49AD92006031AF /* NewCalendarViewController.swift in Sources */,
 				47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */,
 				4705512A1EC7067A0016E366 /* DayCollectionViewCell.swift in Sources */,
 				4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */,
@@ -590,13 +750,19 @@
 				47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */,
 				4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */,
 				47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */,
+				4717D07B1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
+				47E889B51F30BC52009A9B8F /* TitleSectionView.swift in Sources */,
 				432C1AF91EEFCC850043FA36 /* EventOrganizer.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				47416A101ED74AE100497A09 /* MapViewController.swift in Sources */,
 				471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */,
+				47CBCE0D1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift in Sources */,
+				4364A8171F260E4C0005607C /* EventsContainerCollectionViewCell.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
+				430D88561F288525008F3E7C /* CalendarEventSection.swift in Sources */,
 				473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */,
+				4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */,
 				4352956E1ECB14710017FB9E /* Colors.swift in Sources */,
 				437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */,
 				47A9C8B51EC890E300CA173E /* MonthDaysGenerator.swift in Sources */,
@@ -614,20 +780,26 @@
 				435295711ECB311C0017FB9E /* CustomAnnotation.swift in Sources */,
 				43F0A9E51EFABD440029922E /* ShopSearchViewController.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
+				47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */,
 				47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
 				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
+				4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */,
+				470F48B51F45D57C00C084F3 /* ShopsViewController.swift in Sources */,
 				479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */,
+				4717D0801F1BE26000D24539 /* NewsSection.swift in Sources */,
 				471D89F01EED7ACA0003D1E5 /* Weather.swift in Sources */,
 				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */,
 				47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */,
 				47594F3F1EFE7258000B122F /* ArrayParser.swift in Sources */,
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
+				47E889B81F30C892009A9B8F /* SocialBarView.swift in Sources */,
 				47A4A41F1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift in Sources */,
 				471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
 				479FFBA11ECE407300BA8106 /* ShopListViewController.swift in Sources */,
+				47BEE62F1F45915C00D4B947 /* ImageDisplayViewController.swift in Sources */,
 				478846691EED5A7E0027E12E /* CardView.swift in Sources */,
 				47A9C8B11EC8827B00CA173E /* CalendarModelType.swift in Sources */,
 			);
@@ -783,7 +955,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7XMX4W3K45;
+				DEVELOPMENT_TEAM = DHMTBABACN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -802,7 +974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7XMX4W3K45;
+				DEVELOPMENT_TEAM = DHMTBABACN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

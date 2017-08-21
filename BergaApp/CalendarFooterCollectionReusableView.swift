@@ -7,20 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CalendarFooterCollectionReusableView: UICollectionReusableView {
+
+    @IBOutlet weak var backgroundImageView: CorneredImageView!
     
-    @IBOutlet weak var topView: ShadowView!
-    @IBOutlet weak var cardView: CardView!
-    
-    func setNormal() {
-        topView.isHidden = false
-        cardView.isHidden = false
+    func setBackground(url: String) {
+        backgroundImageView.kf.setImage(with: URL(string: url))
     }
-    
-    func setFiller() {
-        topView.isHidden = true
-        cardView.isHidden = true
-    }
-        
 }

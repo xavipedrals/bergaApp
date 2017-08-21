@@ -17,18 +17,19 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var providerImageView: UIImageView!
     @IBOutlet weak var providerName: UILabel!
     @IBOutlet weak var shareButton: UIButton!
-//    @IBOutlet weak var wrapper: CustomView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     
     func initCell(from: News) {
+        self.selectionStyle = .none
         titleLabel.text = from.title
         subtitleLabel.text = from.subtitle
         if let imageUrl = URL(string: from.imageUrl) {
             newsImageView.kf.setImage(with: imageUrl)
         }
         providerImageView.image = UIImage(named: from.provider.imageName)
-        providerName.text = from.provider.name + " - " + from.getStringTime()
-//        wrapper.dropShadow()
+        providerName.text = from.provider.name
+        timeLabel.text = from.getStringTime().capitalized
     }
 
 }

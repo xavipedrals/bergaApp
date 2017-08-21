@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialBarView" customModule="BergaApp" customModuleProvider="target">
+            <connections>
+                <outlet property="facebookBackground" destination="oUY-nc-cHI" id="Rwm-sI-r4d"/>
+                <outlet property="facebookButton" destination="Omo-BL-wrD" id="aIp-1A-erH"/>
+                <outlet property="instagramBackground" destination="fke-bZ-Z6w" id="srA-HW-avo"/>
+                <outlet property="instagramButton" destination="lVb-rA-dSN" id="UhS-Su-hlf"/>
+                <outlet property="twitterBackground" destination="shA-dL-I8z" id="snz-tO-OgX"/>
+                <outlet property="twitterButton" destination="5oe-Cr-Ice" id="xIy-xP-hjw"/>
+                <outlet property="webBackground" destination="gne-rB-X7W" id="sNf-WR-Yvi"/>
+                <outlet property="webButton" destination="Afs-zY-zgB" id="dzs-nh-4Sp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iCq-i3-crw">
+                    <rect key="frame" x="20" y="0.0" width="204" height="36"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shA-dL-I8z" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-twitter-1" translatesAutoresizingMaskIntoConstraints="NO" id="hZU-IT-ijm">
+                                    <rect key="frame" x="6.5" y="8" width="24" height="20"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oe-Cr-Ice">
+                                    <rect key="frame" x="-4.5" y="-4.5" width="45" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="JMr-rT-qhw"/>
+                                        <constraint firstAttribute="width" constant="45" id="Wfv-sw-ehp"/>
+                                    </constraints>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="hZU-IT-ijm" firstAttribute="centerX" secondItem="shA-dL-I8z" secondAttribute="centerX" id="IQ4-ID-tYH"/>
+                                <constraint firstAttribute="height" constant="36" id="ZtG-Tp-Yoa"/>
+                                <constraint firstItem="5oe-Cr-Ice" firstAttribute="centerY" secondItem="shA-dL-I8z" secondAttribute="centerY" id="i7J-eS-Swb"/>
+                                <constraint firstItem="hZU-IT-ijm" firstAttribute="centerY" secondItem="shA-dL-I8z" secondAttribute="centerY" id="pYC-D5-haM"/>
+                                <constraint firstItem="5oe-Cr-Ice" firstAttribute="centerX" secondItem="shA-dL-I8z" secondAttribute="centerX" id="qKU-1A-ty9"/>
+                                <constraint firstAttribute="width" secondItem="shA-dL-I8z" secondAttribute="height" id="zGi-bu-M3C"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-nc-cHI" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="56" y="0.0" width="36" height="36"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-facebook-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yhh-PX-ZMe">
+                                    <rect key="frame" x="12.5" y="6" width="12" height="24"/>
+                                </imageView>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-BL-wrD">
+                                    <rect key="frame" x="-5" y="-5" width="45" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="45" id="heU-9S-EaL"/>
+                                        <constraint firstAttribute="height" constant="45" id="mvx-qP-45l"/>
+                                    </constraints>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="Yhh-PX-ZMe" firstAttribute="centerY" secondItem="oUY-nc-cHI" secondAttribute="centerY" id="5ul-du-kV2"/>
+                                <constraint firstAttribute="width" secondItem="oUY-nc-cHI" secondAttribute="height" id="BhQ-XV-OZF"/>
+                                <constraint firstAttribute="height" constant="36" id="CH0-cO-9Y2"/>
+                                <constraint firstItem="Yhh-PX-ZMe" firstAttribute="centerX" secondItem="oUY-nc-cHI" secondAttribute="centerX" id="dKe-PI-8ec"/>
+                                <constraint firstItem="Omo-BL-wrD" firstAttribute="centerY" secondItem="oUY-nc-cHI" secondAttribute="centerY" id="lgx-se-HR5"/>
+                                <constraint firstItem="Omo-BL-wrD" firstAttribute="centerX" secondItem="oUY-nc-cHI" secondAttribute="centerX" id="wIk-bS-E4U"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fke-bZ-Z6w" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="112" y="0.0" width="36" height="36"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-instagram-11" translatesAutoresizingMaskIntoConstraints="NO" id="bAM-1h-Svi">
+                                    <rect key="frame" x="6.5" y="6" width="24" height="24"/>
+                                </imageView>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVb-rA-dSN">
+                                    <rect key="frame" x="-5" y="-5" width="45" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="c9e-mc-8Ti"/>
+                                        <constraint firstAttribute="width" constant="45" id="pft-Sb-dkF"/>
+                                    </constraints>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="fke-bZ-Z6w" secondAttribute="height" id="Uch-GD-tDj"/>
+                                <constraint firstItem="bAM-1h-Svi" firstAttribute="centerY" secondItem="fke-bZ-Z6w" secondAttribute="centerY" id="g0N-pn-cq2"/>
+                                <constraint firstItem="lVb-rA-dSN" firstAttribute="centerX" secondItem="fke-bZ-Z6w" secondAttribute="centerX" id="gAx-6I-Dt4"/>
+                                <constraint firstAttribute="height" constant="36" id="iOd-Un-zGg"/>
+                                <constraint firstItem="bAM-1h-Svi" firstAttribute="centerX" secondItem="fke-bZ-Z6w" secondAttribute="centerX" id="pgF-jT-UrB"/>
+                                <constraint firstItem="lVb-rA-dSN" firstAttribute="centerY" secondItem="fke-bZ-Z6w" secondAttribute="centerY" id="qU3-9E-9Wr"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gne-rB-X7W" customClass="SocialButtonBackground" customModule="BergaApp" customModuleProvider="target">
+                            <rect key="frame" x="168" y="0.0" width="36" height="36"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-globe-6" translatesAutoresizingMaskIntoConstraints="NO" id="Q5S-h4-13c">
+                                    <rect key="frame" x="6.5" y="6" width="24" height="24"/>
+                                </imageView>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afs-zY-zgB">
+                                    <rect key="frame" x="-5" y="-5" width="45" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="45" id="Dcf-61-J2Q"/>
+                                        <constraint firstAttribute="height" constant="45" id="P33-FV-sfD"/>
+                                    </constraints>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.42352941179999998" green="0.83137254900000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="Afs-zY-zgB" firstAttribute="centerX" secondItem="gne-rB-X7W" secondAttribute="centerX" id="Fa5-Sj-eWw"/>
+                                <constraint firstItem="Q5S-h4-13c" firstAttribute="centerX" secondItem="gne-rB-X7W" secondAttribute="centerX" id="Wcv-iF-C14"/>
+                                <constraint firstAttribute="height" constant="36" id="bMe-jo-6U9"/>
+                                <constraint firstAttribute="width" secondItem="gne-rB-X7W" secondAttribute="height" id="eeh-ED-9yQ"/>
+                                <constraint firstItem="Q5S-h4-13c" firstAttribute="centerY" secondItem="gne-rB-X7W" secondAttribute="centerY" id="iyk-hS-Jm2"/>
+                                <constraint firstItem="Afs-zY-zgB" firstAttribute="centerY" secondItem="gne-rB-X7W" secondAttribute="centerY" id="m53-od-Yxu"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="oUY-nc-cHI" firstAttribute="width" secondItem="oUY-nc-cHI" secondAttribute="height" id="EbA-rj-KCf"/>
+                        <constraint firstItem="fke-bZ-Z6w" firstAttribute="width" secondItem="fke-bZ-Z6w" secondAttribute="height" id="Q0M-yi-xe8"/>
+                        <constraint firstItem="shA-dL-I8z" firstAttribute="width" secondItem="shA-dL-I8z" secondAttribute="height" id="Q4f-cE-nuF"/>
+                        <constraint firstAttribute="height" constant="36" id="Wu1-T1-yeU"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iCq-i3-crw" secondAttribute="bottom" id="NTK-cd-cWA"/>
+                <constraint firstItem="iCq-i3-crw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RN8-Wl-UAk"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iCq-i3-crw" secondAttribute="trailing" constant="20" id="UaB-S1-Jaf"/>
+                <constraint firstItem="iCq-i3-crw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="vOm-OK-pOe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="24.5" y="368"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconmonstr-facebook-1" width="12" height="24"/>
+        <image name="iconmonstr-globe-6" width="24" height="24"/>
+        <image name="iconmonstr-instagram-11" width="24" height="24"/>
+        <image name="iconmonstr-twitter-1" width="24" height="20"/>
+    </resources>
+</document>

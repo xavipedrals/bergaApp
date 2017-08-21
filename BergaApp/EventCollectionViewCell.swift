@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EventCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var eventIcon: IconImage!
+    @IBOutlet weak var posterImageView: CorneredImageView!
     @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var imageContainer: UIView!
     
     func initCell(from event: CalendarEvent) {
         nameLabel.text = event.name
-        eventIcon.image = UIImage(named: event.type.rawValue)
-        eventIcon.iconTint = UIColor.darkGray
+//        posterImageView.setupShadow()
+        if let imageUrl = event.imgUrl {
+            posterImageView.kf.setImage(with: URL(string: imageUrl))
+            imageContainer.dropShadow()
+        }
         placeLabel.text = event.address.town
     }
 }

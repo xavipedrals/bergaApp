@@ -47,4 +47,24 @@ struct CalendarEvent {
         self.imgUrl = "https://scontent.fmad3-3.fna.fbcdn.net/v/t1.0-9/13394139_1134146096646399_918156780983641389_n.jpg?oh=16e6052a81459c5f216305470d002d0a&oe=59DFCA3D"
         self.organizer = EventOrganizer(name: "Ajuntament de Berga", twitter: "", facebook: "")
     }
+    
+    init(date: Date, name: String, type: CalendarEventType, townAddress: String, imgUrl: String) {
+        self.date = date
+        self.name = name
+        self.type = type
+        self.address = Address(town: townAddress)
+        self.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor tortor vitae urna"
+        self.imgUrl = imgUrl
+        self.organizer = EventOrganizer(name: "Ajuntament de Berga", twitter: "", facebook: "")
+    }
+    
+    init(date: Date, name: String, type: CalendarEventType, address: Address, imgUrl: String, organizer: EventOrganizer) {
+        self.date = date
+        self.name = name
+        self.type = type
+        self.address = address
+        self.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque nulla, accumsan vel lacus vel, viverra ultricies ante. Aliquam vel leo at purus fermentum dignissim laoreet et nibh. Donec vitae consequat nunc, eu ultrices quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer lacinia, sem sit amet fermentum porttitor, dolor magna lacinia urna, dapibus bibendum felis arcu eleifend orci."
+        self.imgUrl = imgUrl
+        self.organizer = organizer
+    }
 }

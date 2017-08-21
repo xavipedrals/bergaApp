@@ -9,25 +9,25 @@
 import UIKit
 import MapKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 class EventDetailViewController: MapViewController {
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var organizerLabel: UILabel!
     @IBOutlet weak var organizerImage: UIImageView!
-    @IBOutlet weak var twitterBackground: CustomView!
-    @IBOutlet weak var facebookBackground: CustomView!
-    @IBOutlet weak var instagramBackground: CustomView!
-    @IBOutlet weak var webBackground: CustomView!
     @IBOutlet weak var imageSection: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var posterContainer: UIView!
+    @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var cityPostalCodeLabel: UILabel!
+    @IBOutlet weak var titleSection: TitleSectionView!
+    @IBOutlet weak var descriptionSection: TextSectionView!
+    @IBOutlet weak var socialBar: SocialBarView!
     
     var event: CalendarEvent?
-    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,37 +35,23 @@ class EventDetailViewController: MapViewController {
         mapView.delegate = self
         initVisuals()
         
-        if let address = event?.address {
-            addAddressPin(address.town)
-        }
-        
-        
+//        if let address = event?.address {
+//            addAddressPin(address.town)
+//        }
     }
     
     func initVisuals() {
-        set(date: event!.date)
-        set(title: event!.name.uppercased())
-        set(type: event!.typeName)
+        titleSection.set(title: event!.name, subtitle: Commons.getStringFromDate(date: event!.date, format: "dd MMMM YYYY").uppercased())
         set(imgUrl: event!.imgUrl)
         set(price: event!.price)
         set(organizer: event!.organizer)
-        descriptionLabel.text = event!.description
+        set(address: event!.address)
+        descriptionSection.set(title: "Descripció", body: event!.description)
     }
-    
-    func set(date: Date) {
-        dateLabel.text = Commons.getStringFromDate(date: date, format: "dd MMMM YYYY")
-    }
-    
-    func set(title: String) {
-        titleLabel.attributedText = Commons.getAttributedCharSpacedText(title, charSpacing: 1.5)
-    }
-    
-    func set(type: String) {
-        typeLabel.attributedText = Commons.getAttributedCharSpacedText(type, charSpacing: 1.4)
-    }
-    
+
     func set(imgUrl: String?) {
         if let imgUrl = imgUrl {
+            posterContainer.dropShadow()
             let url = URL(string: imgUrl)
             if let url = url {
                 posterImageView.kf.setImage(with: url)
@@ -87,45 +73,72 @@ class EventDetailViewController: MapViewController {
     
     func set(organizer: EventOrganizer) {
         organizerLabel.text = organizer.name
-        set(twitter: organizer.twitterUrl)
-        set(facebook: organizer.facebookUrl)
-        set(instagram: organizer.instagramUrl)
-        set(web: organizer.webUrl)
+        set(organizerImgUrl: organizer.imgUrl)
+        socialBar.setUrls(twitter: organizer.twitterUrl, facebook: organizer.facebookUrl, instagram: organizer.instagramUrl, web: organizer.webUrl)
+        observeSocialButtons()
     }
     
-    func set(twitter: String?) {
-        if let twitterUrl = twitter {
-            twitterBackground.backgroundColor = Colors.dimGreen
+    func observeSocialButtons() {
+        socialBar.twitterButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.twitterUrl)
+            })
+            .addDisposableTo(disposeBag)
+        
+        socialBar.facebookButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.facebookUrl)
+            })
+            .addDisposableTo(disposeBag)
+        
+        socialBar.instagramButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.instagramUrl)
+            })
+            .addDisposableTo(disposeBag)
+        
+        socialBar.webButton.rx.tap
+            .subscribe(onNext: { _ in
+                self.open(url: self.event!.organizer.webUrl)
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func set(organizerImgUrl: String?) {
+        if let organizerImgUrl = organizerImgUrl {
+            if let url = URL(string: organizerImgUrl) {
+                organizerImage.kf.setImage(with: url)
+            }
         }
         else {
-            twitterBackground.backgroundColor = UIColor.lightGray
+            organizerImage.isHidden = true
         }
     }
     
-    func set(facebook: String?) {
-        if let twitterUrl = facebook {
-            facebookBackground.backgroundColor = Colors.dimGreen
-        }
-        else {
-            facebookBackground.backgroundColor = UIColor.lightGray
-        }
-    }
-    
-    func set(instagram: String?) {
-        if let twitterUrl = instagram {
-            instagramBackground.backgroundColor = Colors.dimGreen
-        }
-        else {
-            instagramBackground.backgroundColor = UIColor.lightGray
+    func set(address: Address?) {
+        if let address = address {
+            streetLabel.text = address.getTitle()
+            cityPostalCodeLabel.text = address.getSubtitle()
+            addAddressPin(address)
         }
     }
     
-    func set(web: String?) {
-        if let twitterUrl = web {
-            webBackground.backgroundColor = Colors.dimGreen
+    func open(url: String?) {
+        if let url = url {
+            if let url = URL(string: url) {
+                UIApplication.shared.openURL(url)
+            }
         }
-        else {
-            webBackground.backgroundColor = UIColor.lightGray
+    }
+    
+    @IBAction func imagePressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToImageDisplay", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToImageDisplay" {
+            let vc = segue.destination as! ImageDisplayViewController
+            vc.imgUrl = self.event!.imgUrl
         }
     }
     
@@ -147,15 +160,13 @@ extension EventDetailViewController {
         if let annotation = annotation as? CustomAnnotation {
             let identifier = "pin"
             var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-                as? MKPinAnnotationView {
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
                 view.canShowCallout = true
-                view.rightCalloutAccessoryView = getDisclosureButton()
             }
             else {
-                view = getMKAnnotationView(annotation: annotation, identifier: identifier, imgName: event!.type.rawValue)
+                view = getMKAnnotationView(annotation: annotation, identifier: identifier)
             }
             return view
         }
