@@ -9,10 +9,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class EventsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noEventsView: UIView!
+    @IBOutlet weak var noEventsImageView: CorneredImageView!
+    
     
     let events = Variable<[CalendarEvent]>([])
     let disposeBag = DisposeBag()
@@ -28,8 +32,16 @@ class EventsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupNoEventsView()
         setupCollectionView()
+    }
+    
+    func setupNoEventsView() {
+        noEventsImageView.kf.setImage(with: URL(string: "https://source.unsplash.com/500x400/?nature"))
+        events.asObservable()
+            .map({ $0.count != 0 })
+            .bind(to: noEventsView.rx.isHidden)
+            .addDisposableTo(disposeBag)
     }
     
     func setupCollectionView() {
@@ -47,7 +59,7 @@ class EventsViewController: UIViewController {
     }
     
     func setCollectionItemSize() {
-        pageWidth =  UIScreen.main.bounds.width - 40
+        pageWidth =  UIScreen.main.bounds.width - 55
         let screenWidth = UIScreen.main.bounds.width
         cellWidth = (screenWidth - (30) * 2) / 2
         cellHeight = cellWidth * 1.34 + 110
@@ -56,7 +68,7 @@ class EventsViewController: UIViewController {
     func getCollectionLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: pageWidth, height: cellHeight)
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.headerReferenceSize = CGSize(width: 20, height: 0)
         layout.footerReferenceSize = CGSize(width: 20, height: 0)
         layout.minimumLineSpacing = itemSpacing
@@ -116,7 +128,7 @@ extension EventsViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        let pageWidth = Float(cellWidth + itemSpacing)
+        let pageWidth = Float(cellWidth * 2 + itemSpacing * 2)
         let targetXContentOffset = Float(targetContentOffset.pointee.x)
         let contentWidth = Float(collectionView!.contentSize.width)
         

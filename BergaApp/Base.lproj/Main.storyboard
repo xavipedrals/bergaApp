@@ -2704,7 +2704,7 @@ Entrada  + extra 15€</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ON1-BI-6M2" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8P-Ed-13i" userLabel="Header">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
@@ -2818,7 +2818,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5O-8d-eKc">
-                                                <rect key="frame" x="0.0" y="440" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="430" width="375" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="vjX-9Q-jqS"/>
                                                 </constraints>
@@ -2835,7 +2835,7 @@ Entrada  + extra 15€</string>
                                             <constraint firstItem="G8P-Ed-13i" firstAttribute="leading" secondItem="ON1-BI-6M2" secondAttribute="leading" id="JNS-5c-XUi"/>
                                             <constraint firstItem="G8P-Ed-13i" firstAttribute="top" secondItem="ON1-BI-6M2" secondAttribute="top" id="Rog-1p-6sn"/>
                                             <constraint firstAttribute="trailing" secondItem="e5O-8d-eKc" secondAttribute="trailing" id="SFm-tj-ivI"/>
-                                            <constraint firstItem="e5O-8d-eKc" firstAttribute="top" secondItem="n4m-mh-4PB" secondAttribute="bottom" constant="10" id="cEO-MS-qgp"/>
+                                            <constraint firstItem="e5O-8d-eKc" firstAttribute="top" secondItem="n4m-mh-4PB" secondAttribute="bottom" id="cEO-MS-qgp"/>
                                             <constraint firstAttribute="bottom" secondItem="e5O-8d-eKc" secondAttribute="bottom" id="eg2-B6-NB0"/>
                                             <constraint firstItem="e5O-8d-eKc" firstAttribute="leading" secondItem="ON1-BI-6M2" secondAttribute="leading" id="fXI-4H-bmy"/>
                                             <constraint firstAttribute="trailing" secondItem="n4m-mh-4PB" secondAttribute="trailing" constant="14" id="fnE-k9-APA"/>
@@ -2979,9 +2979,53 @@ Entrada  + extra 15€</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVe-tn-rAs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tp2-I3-fvR" customClass="CorneredImageView" customModule="BergaApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="218"/>
+                                        <color key="backgroundColor" red="0.23921568630000001" green="0.88235294119999996" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tp2-I3-fvR" secondAttribute="height" multiplier="100:65" id="i2I-Ia-tvg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hi ha esdeveniments prevists per aquest dia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLg-Xq-1JX">
+                                        <rect key="frame" x="40" y="157" width="295" height="41"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foto proporcionada per Unsplash" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tus-Ge-Rk6">
+                                        <rect key="frame" x="23" y="226" width="332" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tus-Ge-Rk6" firstAttribute="trailing" secondItem="tp2-I3-fvR" secondAttribute="trailing" id="0zF-OI-bFw"/>
+                                    <constraint firstItem="OLg-Xq-1JX" firstAttribute="bottom" secondItem="tp2-I3-fvR" secondAttribute="bottom" constant="-20" id="4nR-v3-jEM"/>
+                                    <constraint firstItem="OLg-Xq-1JX" firstAttribute="leading" secondItem="tp2-I3-fvR" secondAttribute="leading" constant="20" id="E1v-dF-hqG"/>
+                                    <constraint firstAttribute="trailing" secondItem="tp2-I3-fvR" secondAttribute="trailing" constant="20" id="Ijv-EE-z5C"/>
+                                    <constraint firstItem="tp2-I3-fvR" firstAttribute="leading" secondItem="JVe-tn-rAs" secondAttribute="leading" constant="20" id="dL0-L3-NAQ"/>
+                                    <constraint firstItem="Tus-Ge-Rk6" firstAttribute="leading" secondItem="tp2-I3-fvR" secondAttribute="leading" constant="3" id="iFp-cd-bCM"/>
+                                    <constraint firstItem="tp2-I3-fvR" firstAttribute="top" secondItem="JVe-tn-rAs" secondAttribute="top" id="nao-Gq-3v1"/>
+                                    <constraint firstItem="OLg-Xq-1JX" firstAttribute="trailing" secondItem="tp2-I3-fvR" secondAttribute="trailing" constant="-20" id="q11-k0-orW"/>
+                                    <constraint firstItem="Tus-Ge-Rk6" firstAttribute="top" secondItem="tp2-I3-fvR" secondAttribute="bottom" constant="8" id="z2v-Oo-s9F"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="JVe-tn-rAs" firstAttribute="leading" secondItem="dXJ-OS-quj" secondAttribute="leading" id="3IX-H6-wyh"/>
+                            <constraint firstAttribute="trailing" secondItem="JVe-tn-rAs" secondAttribute="trailing" id="3vb-CJ-gzd"/>
+                            <constraint firstItem="JVe-tn-rAs" firstAttribute="top" secondItem="dXJ-OS-quj" secondAttribute="topMargin" id="Rhv-fk-Nh9"/>
                             <constraint firstAttribute="trailing" secondItem="TmA-kW-b8q" secondAttribute="trailing" id="T7b-ZY-0nL"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="JVe-tn-rAs" secondAttribute="bottom" id="TTY-kV-jdx"/>
                             <constraint firstItem="TmA-kW-b8q" firstAttribute="top" secondItem="dXJ-OS-quj" secondAttribute="topMargin" id="V97-Oe-IK2"/>
                             <constraint firstItem="TmA-kW-b8q" firstAttribute="leading" secondItem="dXJ-OS-quj" secondAttribute="leading" id="j59-MR-J4x"/>
                             <constraint firstAttribute="bottomMargin" secondItem="TmA-kW-b8q" secondAttribute="bottom" id="yff-4D-usT"/>
@@ -2989,6 +3033,8 @@ Entrada  + extra 15€</string>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="TmA-kW-b8q" id="5Jl-Gz-OiL"/>
+                        <outlet property="noEventsImageView" destination="tp2-I3-fvR" id="Hmo-6H-0HS"/>
+                        <outlet property="noEventsView" destination="JVe-tn-rAs" id="qYt-WE-F84"/>
                         <segue destination="8Yj-LY-BeG" kind="show" identifier="goToEventDetail" id="rqE-ao-JEr"/>
                     </connections>
                 </viewController>
