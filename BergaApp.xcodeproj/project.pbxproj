@@ -95,6 +95,7 @@
 		47E889B51F30BC52009A9B8F /* TitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889B41F30BC52009A9B8F /* TitleSectionView.swift */; };
 		47E889B81F30C892009A9B8F /* SocialBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889B71F30C892009A9B8F /* SocialBarView.swift */; };
 		47E889BA1F30C89B009A9B8F /* SocialBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B91F30C89B009A9B8F /* SocialBarView.xib */; };
+		47F5AB861F4AC42B009730B1 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5AB851F4AC42B009730B1 /* EventsViewController.swift */; };
 		47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +211,7 @@
 		47E889B41F30BC52009A9B8F /* TitleSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSectionView.swift; sourceTree = "<group>"; };
 		47E889B71F30C892009A9B8F /* SocialBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialBarView.swift; sourceTree = "<group>"; };
 		47E889B91F30C89B009A9B8F /* SocialBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialBarView.xib; sourceTree = "<group>"; };
+		47F5AB851F4AC42B009730B1 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		47FBD21A1F2E69760033B7F3 /* SocialButtonBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialButtonBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,6 +278,7 @@
 		430D88541F2884F0008F3E7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				474E746E1F499A0D006031AF /* DayViews */,
 				470551231EC6F9690016E366 /* CalendarViewController.swift */,
 				474E74751F49AD92006031AF /* NewCalendarViewController.swift */,
 				470551291EC7067A0016E366 /* DayCollectionViewCell.swift */,
@@ -283,6 +286,7 @@
 				430026561EEEAE5700A5B0B8 /* CalendarFooterCollectionReusableView.swift */,
 				47CBCE0C1F2364CD004E752F /* MonthHeaderCollectionReusableView.swift */,
 				4364A8161F260E4C0005607C /* EventsContainerCollectionViewCell.swift */,
+				47F5AB851F4AC42B009730B1 /* EventsViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -411,7 +415,6 @@
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 				478846681EED5A7E0027E12E /* CardView.swift */,
 				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
-				474E746E1F499A0D006031AF /* DayViews */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				470551241EC6F9690016E366 /* CalendarViewController.swift in Sources */,
 				470551261EC704170016E366 /* CalendarEvent.swift in Sources */,
 				4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */,
+				47F5AB861F4AC42B009730B1 /* EventsViewController.swift in Sources */,
 				474E74701F499A25006031AF /* DayCellView.swift in Sources */,
 				47FBD21B1F2E69760033B7F3 /* SocialButtonBackground.swift in Sources */,
 				470F48B31F45CBFC00C084F3 /* TopShopCollectionViewCell.swift in Sources */,

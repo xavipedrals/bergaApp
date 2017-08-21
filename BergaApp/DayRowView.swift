@@ -10,12 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+
 @IBDesignable
 class DayRowView: UIView {
     
     @IBOutlet var dayCellViews: [DayCellView]!
+    let disposeBag = DisposeBag()
     
-    //dayViews
     let selectedDay = Variable<Int>(-1)
     
     func initView(days: [Day]) {
@@ -26,9 +27,28 @@ class DayRowView: UIView {
         for (i, dayView) in dayCellViews.enumerated() {
             dayView.initView(from: days[i])
         }
+        observeDayClicks()
     }
     
+    func cleanSelectedDays() {
+        for dayView in dayCellViews {
+            dayView.setUnselected()
+        }
+    }
     
+    func observeDayClicks() {
+        for dayView in dayCellViews {
+            dayView.dayButton.rx.tap
+                .subscribe(onNext: { _ in
+                    self.selectedDay.value = Int(dayView.numberLabel.text!)!
+                })
+                .addDisposableTo(disposeBag)
+        }
+    }
+    
+    func selectDay(at i: Int) {
+        dayCellViews[i].setSelected()
+    }
     
     //MARK: Default implementation
     

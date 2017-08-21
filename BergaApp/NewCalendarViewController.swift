@@ -16,6 +16,7 @@ class NewCalendarViewController: UIViewController {
     @IBOutlet var dayRowViews: [DayRowView]!
     @IBOutlet weak var calendarHeightConstrint: NSLayoutConstraint!
     @IBOutlet weak var calendarContainer: UIStackView!
+    @IBOutlet weak var eventsContainerHeight: NSLayoutConstraint!
     
     let calendarViewModel = CalendarViewModel()
     let disposeBag = DisposeBag()
@@ -27,6 +28,7 @@ class NewCalendarViewController: UIViewController {
         setupMonthLabel()
         setupCalendar()
         configureSwipes()
+        observeSelectedDay()
     }
     
     func setupMonthLabel() {
@@ -85,6 +87,7 @@ class NewCalendarViewController: UIViewController {
     
     func setCalendarHeight() {
         calendarHeightConstrint.constant = getCalendarHeight()
+        eventsContainerHeight.constant = getEventsHeight()
         self.view.layoutIfNeeded()
     }
     
@@ -100,6 +103,12 @@ class NewCalendarViewController: UIViewController {
         return height
     }
     
+    func getEventsHeight() -> CGFloat {
+        let screenWidth = UIScreen.main.bounds.width
+        let cellWidth = (screenWidth - (30) * 2) / 2
+        return cellWidth * 1.34 + 125
+    }
+    
     func configureSwipes() {
         configureSwipe(right: true)
         configureSwipe(right: false)
@@ -113,11 +122,46 @@ class NewCalendarViewController: UIViewController {
                 right
                     ? self.calendarViewModel.substractAMonth()
                     : self.calendarViewModel.addAMonth()
-//                self.selectedIndex = nil
             })
             .addDisposableTo(disposeBag)
         
         calendarContainer.addGestureRecognizer(swipeGesture)
+    }
+    
+    func observeSelectedDay() {
+        for dayRowView in dayRowViews {
+            dayRowView.selectedDay.asObservable()
+                .subscribe(onNext: { num in
+                    self.cleanAllSelectedDays()
+                    self.selectDay(number: num)
+                })
+                .addDisposableTo(disposeBag)
+        }
+    }
+    
+    func cleanAllSelectedDays() {
+        for dayRowView in dayRowViews {
+            dayRowView.cleanSelectedDays()
+        }
+    }
+    
+    func selectDay(number: Int) {
+        let index = calendarViewModel.days.value.index(where: { $0.number == number })
+        if let index = index {
+            let row = index / 7
+            let column = index % 7
+            dayRowViews[row].selectDay(at: column)
+        }
+        calendarViewModel.updateEvents(dayNumber: number)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embededEvents" {
+            let vc = segue.destination as! EventsViewController
+            calendarViewModel.events.asObservable()
+                .bind(to: vc.events)
+                .addDisposableTo(disposeBag)
+        }
     }
     
 }

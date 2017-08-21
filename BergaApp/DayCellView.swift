@@ -36,14 +36,14 @@ class DayCellView: UIView {
     }
     
     func setSelected() {
-        if (!isToday!) {
+        if (isToday != nil && !isToday!) {
             backgroundView.backgroundColor = Colors.red
             numberLabel.textColor = UIColor.white
         }
     }
     
     func setUnselected() {
-        if (!isToday!) {
+        if (isToday != nil && !isToday!) {
             backgroundView.backgroundColor = UIColor.clear
             numberLabel.textColor = UIColor.black
         }
