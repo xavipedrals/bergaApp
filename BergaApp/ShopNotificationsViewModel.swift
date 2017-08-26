@@ -12,31 +12,25 @@ import RxSwift
 class ShopNotificationsViewModel {
 
     let notifications = Variable<[ShopNotification]>([])
-    let sections = Variable<[NotificationSection]>([
-        NotificationSection(isNewest: true, items: []),
-        NotificationSection(isNewest: false, items: []),
-        ])
-    
-    var newNotificationsCount: Int {
-        get {
-            return sections.value[0].items.count - 1
-        }
-    }
+//    let sections = Variable<[NotificationSection]>([
+//        NotificationSection(isNewest: true, items: []),
+//        NotificationSection(isNewest: false, items: []),
+//        ])
     
     init() {
         getNotifications()
     }
     
     func getNotifications() {
-        let notifications = ShopNotificationsStub.get()
-        var notificationModels = [NotificationModel]()
-        notificationModels.append(NotificationModel.header(true))
-        
-        for notification in notifications {
-            notificationModels.append(NotificationModel.shopNotification(notification))
-        }
-        
-        sections.value[0] = NotificationSection(original: sections.value[0], items: notificationModels)
+        notifications.value = ShopNotificationsStub.get()
+//        var notificationModels = [NotificationModel]()
+//        notificationModels.append(NotificationModel.header(true))
+//        
+//        for notification in notifications {
+//            notificationModels.append(NotificationModel.shopNotification(notification))
+//        }
+//        
+//        sections.value[0] = NotificationSection(original: sections.value[0], items: notificationModels)
     }
     
 }

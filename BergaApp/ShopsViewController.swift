@@ -30,6 +30,7 @@ class ShopsViewController: UIViewController {
         
         setupCollectionLayout()
         setupCollectionCells()
+        observeCellClicks()
         
         collectionView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
@@ -65,6 +66,22 @@ class ShopsViewController: UIViewController {
                 cell.initCell(from: shop)
             }
             .addDisposableTo(disposeBag)
+    }
+    
+    func observeCellClicks() {
+        collectionView.rx.modelSelected(Shop.self)
+            .subscribe(onNext: { shop in
+                self.selectedShop = shop
+                self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToShopDetail" {
+            let vc = segue.destination as! ShopInfoViewController
+            vc.shop = selectedShop
+        }
     }
     
 }

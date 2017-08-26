@@ -23,7 +23,6 @@
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
 		470F48B31F45CBFC00C084F3 /* TopShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */; };
 		470F48B51F45D57C00C084F3 /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F48B41F45D57C00C084F3 /* ShopsViewController.swift */; };
-		471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */; };
 		4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D0781F1BA63D00D24539 /* CorneredImageView.swift */; };
 		4717D07B1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */; };
 		4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D07C1F1BE21D00D24539 /* NewsProvider.swift */; };
@@ -35,7 +34,6 @@
 		471DACDE1ED233250090C6CD /* PromotedShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */; };
 		4721F2FD1EC8A7F700E2CEE4 /* CalendarEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */; };
 		4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */; };
-		473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */; };
 		473F514A1ED9991F00008FAC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473F51491ED9991F00008FAC /* Address.swift */; };
 		47416A101ED74AE100497A09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47416A0F1ED74AE100497A09 /* MapViewController.swift */; };
 		474E746D1F499932006031AF /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474E746C1F499932006031AF /* DayCellView.xib */; };
@@ -63,6 +61,8 @@
 		4793161A1EC605E000845C6C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479316191EC605E000845C6C /* News.swift */; };
 		4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */; };
 		479316201EC60B7400845C6C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4793161F1EC60B7400845C6C /* Media.xcassets */; };
+		479EBB301F4C236900526A31 /* ShopListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479EBB2F1F4C236900526A31 /* ShopListItemView.xib */; };
+		479EBB321F4C237C00526A31 /* ShopListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479EBB311F4C237C00526A31 /* ShopListItemView.swift */; };
 		479FFBA11ECE407300BA8106 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA01ECE407300BA8106 /* ShopListViewController.swift */; };
 		479FFBA31ECE40E100BA8106 /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA21ECE40E100BA8106 /* ShopListViewModel.swift */; };
 		479FFBA51ECE415000BA8106 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA41ECE415000BA8106 /* Shop.swift */; };
@@ -77,8 +77,6 @@
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* IconImage.swift */; };
 		47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */; };
-		47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */; };
-		47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */; };
 		47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */; };
 		47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */; };
 		47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */; };
@@ -126,7 +124,6 @@
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		470F48B41F45D57C00C084F3 /* ShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
-		471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		4717D0781F1BA63D00D24539 /* CorneredImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorneredImageView.swift; sourceTree = "<group>"; };
 		4717D07A1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTitleTableViewCell.swift; sourceTree = "<group>"; };
 		4717D07C1F1BE21D00D24539 /* NewsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
@@ -138,7 +135,6 @@
 		471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotedShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		4721F2FC1EC8A7F700E2CEE4 /* CalendarEventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsManager.swift; sourceTree = "<group>"; };
 		4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
-		473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		473F51491ED9991F00008FAC /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		47416A0F1ED74AE100497A09 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		474E746C1F499932006031AF /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCellView.xib; sourceTree = "<group>"; };
@@ -172,6 +168,8 @@
 		479316191EC605E000845C6C /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4793161D1EC6080F00845C6C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		4793161F1EC60B7400845C6C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		479EBB2F1F4C236900526A31 /* ShopListItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopListItemView.xib; sourceTree = "<group>"; };
+		479EBB311F4C237C00526A31 /* ShopListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopListItemView.swift; path = ../ShopListItemView.swift; sourceTree = "<group>"; };
 		479FFBA01ECE407300BA8106 /* ShopListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		479FFBA21ECE40E100BA8106 /* ShopListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 		479FFBA41ECE415000BA8106 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
@@ -186,8 +184,6 @@
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* IconImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoViewController.swift; sourceTree = "<group>"; };
-		47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewController.swift; sourceTree = "<group>"; };
-		47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotification.swift; sourceTree = "<group>"; };
 		47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewModel.swift; sourceTree = "<group>"; };
 		47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsStub.swift; sourceTree = "<group>"; };
@@ -292,12 +288,9 @@
 		439DF4E31ED6DBB20089F00B /* ShopNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				47CF167F1ED5ED72008D3E3F /* ShopNotificationsViewController.swift */,
-				47CF16811ED5F9B9008D3E3F /* NotificationTableViewCell.swift */,
 				47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */,
 				47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */,
 				47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */,
-				471335FC1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift */,
 			);
 			name = ShopNotifications;
 			sourceTree = "<group>";
@@ -363,7 +356,6 @@
 		473EE0171ED0579F006AAC71 /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
-				473EE0181ED057CC006AAC71 /* ShopDetailViewController.swift */,
 				4351A3DF1ED431B900B18D9B /* ShopDetailViewModel.swift */,
 				439DF4E21ED6DBAA0089F00B /* ShopInfo */,
 				439DF4E31ED6DBB20089F00B /* ShopNotifications */,
@@ -483,6 +475,15 @@
 			name = News;
 			sourceTree = "<group>";
 		};
+		479EBB2C1F4C232C00526A31 /* ShopListView */ = {
+			isa = PBXGroup;
+			children = (
+				479EBB311F4C237C00526A31 /* ShopListItemView.swift */,
+				479EBB2F1F4C236900526A31 /* ShopListItemView.xib */,
+			);
+			name = ShopListView;
+			sourceTree = "<group>";
+		};
 		479FFB9F1ECE404A00BA8106 /* Shops */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +495,7 @@
 				471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */,
 				47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */,
 				43F0A9E31EFABD150029922E /* Search */,
+				479EBB2C1F4C232C00526A31 /* ShopListView */,
 				470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */,
 				470F48B41F45D57C00C084F3 /* ShopsViewController.swift */,
 			);
@@ -656,6 +658,7 @@
 				471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */,
 				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
 				474E746D1F499932006031AF /* DayCellView.xib in Resources */,
+				479EBB301F4C236900526A31 /* ShopListItemView.xib in Resources */,
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
 				47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
@@ -722,9 +725,9 @@
 				474E74761F49AD92006031AF /* NewCalendarViewController.swift in Sources */,
 				47CF167E1ED5ED60008D3E3F /* ShopInfoViewController.swift in Sources */,
 				4733FBAD1EE89FDA00EE7E55 /* ShadowView.swift in Sources */,
-				47CF16801ED5ED72008D3E3F /* ShopNotificationsViewController.swift in Sources */,
 				47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */,
 				4352956C1ECB0D8F0017FB9E /* EventDetailViewController.swift in Sources */,
+				479EBB321F4C237C00526A31 /* ShopListItemView.swift in Sources */,
 				47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */,
 				4717D07B1F1BAEEA00D24539 /* NewsTitleTableViewCell.swift in Sources */,
 				4705512C1EC717E70016E366 /* NewsStub.swift in Sources */,
@@ -734,7 +737,6 @@
 				47416A101ED74AE100497A09 /* MapViewController.swift in Sources */,
 				471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
-				473EE0191ED057CC006AAC71 /* ShopDetailViewController.swift in Sources */,
 				4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */,
 				4352956E1ECB14710017FB9E /* Colors.swift in Sources */,
 				437CA31F1ECF237C001EE22C /* KeyboardViewController.swift in Sources */,
@@ -754,7 +756,6 @@
 				43F0A9E51EFABD440029922E /* ShopSearchViewController.swift in Sources */,
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
 				47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */,
-				47CF16821ED5F9B9008D3E3F /* NotificationTableViewCell.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
 				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
 				4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */,
@@ -769,7 +770,6 @@
 				4793161A1EC605E000845C6C /* News.swift in Sources */,
 				47E889B81F30C892009A9B8F /* SocialBarView.swift in Sources */,
 				47A4A41F1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift in Sources */,
-				471335FD1EF3205C00A51635 /* NotificationHeaderTableViewCell.swift in Sources */,
 				479316071EC5FE2800845C6C /* NewsViewController.swift in Sources */,
 				479FFBA11ECE407300BA8106 /* ShopListViewController.swift in Sources */,
 				47BEE62F1F45915C00D4B947 /* ImageDisplayViewController.swift in Sources */,

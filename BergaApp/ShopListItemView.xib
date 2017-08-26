@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShopListItemView" customModule="BergaApp" customModuleProvider="target">
+            <connections>
+                <outlet property="nameLabel" destination="1ZN-zl-qWu" id="SS6-ap-bnn"/>
+                <outlet property="numberContainer" destination="T27-UN-EPu" id="vGK-p6-hWJ"/>
+                <outlet property="numberLabel" destination="byR-FK-Bgn" id="HNS-EF-Q8q"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-zl-qWu">
+                    <rect key="frame" x="20" y="12" width="86.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGo-Pz-9cq" userLabel="line">
+                    <rect key="frame" x="20" y="43" width="355" height="1"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="KAk-m7-ocv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T27-UN-EPu" customClass="CustomView" customModule="BergaApp" customModuleProvider="target">
+                    <rect key="frame" x="304" y="8" width="28" height="28"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byR-FK-Bgn">
+                            <rect key="frame" x="10" y="5" width="9.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="byR-FK-Bgn" firstAttribute="centerX" secondItem="T27-UN-EPu" secondAttribute="centerX" id="7to-BA-vOD"/>
+                        <constraint firstItem="byR-FK-Bgn" firstAttribute="centerY" secondItem="T27-UN-EPu" secondAttribute="centerY" id="Gus-TX-NJT"/>
+                        <constraint firstAttribute="width" secondItem="T27-UN-EPu" secondAttribute="height" id="TIX-Z9-bll"/>
+                        <constraint firstAttribute="width" constant="28" id="YEe-D0-Mpv"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="v5o-VO-8Q4" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
+                    <rect key="frame" x="342" y="15.5" width="13" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="NlV-Su-FYG"/>
+                        <constraint firstAttribute="width" secondItem="v5o-VO-8Q4" secondAttribute="height" multiplier="1:1" id="NqD-RE-eNq"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uGo-Pz-9cq" secondAttribute="trailing" id="Agw-OT-wqL"/>
+                <constraint firstAttribute="trailing" secondItem="v5o-VO-8Q4" secondAttribute="trailing" constant="20" id="LPS-sO-O6m"/>
+                <constraint firstItem="v5o-VO-8Q4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1ZN-zl-qWu" secondAttribute="trailing" constant="10" id="P13-Hs-nqY"/>
+                <constraint firstItem="T27-UN-EPu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1ZN-zl-qWu" secondAttribute="trailing" constant="10" id="Xdw-U1-xqz"/>
+                <constraint firstItem="uGo-Pz-9cq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Zaz-rV-wfV"/>
+                <constraint firstItem="1ZN-zl-qWu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bNW-k3-n7E"/>
+                <constraint firstItem="v5o-VO-8Q4" firstAttribute="leading" secondItem="T27-UN-EPu" secondAttribute="trailing" constant="10" id="dJu-AO-uKu"/>
+                <constraint firstItem="v5o-VO-8Q4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kxf-Am-odY"/>
+                <constraint firstAttribute="bottom" secondItem="uGo-Pz-9cq" secondAttribute="bottom" id="pUR-32-Qie"/>
+                <constraint firstItem="1ZN-zl-qWu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="w0Z-aT-5a0"/>
+                <constraint firstItem="T27-UN-EPu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zIQ-Ox-FVP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow" width="24" height="24"/>
+    </resources>
+</document>

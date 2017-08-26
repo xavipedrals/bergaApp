@@ -67,7 +67,7 @@ class ShopStub {
         )
         
         let shop7 = Shop(
-            name: "Xauxa",
+            name: "Xauxa la millor botiga de caramels del món",
             description: "",
             isPromoted: true
         )

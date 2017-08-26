@@ -18,10 +18,9 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
-    @IBOutlet weak var shopNameLabel: UILabel!
-    @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var townAddressLabel: UILabel!
+    @IBOutlet weak var titleSectionView: TitleSectionView!
     
     @IBOutlet weak var descriptionWrapper: UIView!
     @IBOutlet weak var phoneWrapper: UIView!
@@ -31,13 +30,11 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     @IBOutlet weak var mapWrapper: UIView!
     @IBOutlet weak var promoteShopWrapper: UIView!
     @IBOutlet weak var addressWrapper: UIView!
-    @IBOutlet weak var dotsWrapper: UIView!
-    @IBOutlet var dotViews: [UIView]!
+
     
     var cellWidth: Double?
     var shopDetailViewModel: ShopDetailViewModel?
     var shop: Shop?
-    var selectedDotIndex = 0
     let disposeBag = DisposeBag()
     
     
@@ -62,8 +59,7 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     }
     
     private func initVisuals(shop: Shop) {
-        set(name: shop.name)
-        set(tags: shop.tags)
+        set(name: shop.name, tags: shop.tags)
         set(description: shop.description)
         set(phone: shop.phone)
         set(schedule: shop.schedule)
@@ -72,18 +68,15 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
         set(isPromoted: shop.isPromoted)
     }
     
-    func set(name: String) {
-        shopNameLabel.attributedText = Commons.getAttributedCharSpacedText(name.uppercased(), charSpacing: 1.15)
-    }
-    
-    func set(tags: [String]?) {
+    func set(name: String, tags: [String]?) {
+        var tagsText = ""
         if let tags = tags {
-            let tagsText = tags.joined(separator: ", ")
-            tagsLabel.text = tagsText
+            tagsText = tags.joined(separator: ", ")
         }
         else {
-            tagsLabel.text = "Negoci no promocionat"
+            tagsText = "Negoci no promocionat"
         }
+        titleSectionView.set(title: name, subtitle: tagsText.uppercased())
     }
     
     func set(description: String) {
@@ -140,31 +133,6 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
                 cell.initCell(url: url)
             }
             .addDisposableTo(disposeBag)
-        
-        shopDetailViewModel!.photosUrl.asObservable()
-            .map{ $0.count }
-            .subscribe(onNext: { count in
-                if count == 0 {
-                    self.dotsWrapper.isHidden = true
-                }
-                else {
-                    for i in count ..< 5 {
-                        self.dotViews[i].isHidden = true
-                    }
-                }
-            })
-            .addDisposableTo(disposeBag)
-        
-        photosCollectionView.rx.didEndDecelerating
-            .subscribe(onNext: { _ in
-                let indexs = self.photosCollectionView.indexPathsForVisibleItems
-                let index = indexs[0]
-                self.dotViews[self.selectedDotIndex].backgroundColor = UIColor.darkGray
-                self.dotViews[index.row].backgroundColor = Colors.green
-                self.selectedDotIndex = index.row
-            })
-            .addDisposableTo(disposeBag)
-        
     }
     
     func getPhoneString(_ number: Int) -> String {
@@ -211,6 +179,11 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {        dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {

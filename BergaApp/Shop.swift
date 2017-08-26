@@ -39,6 +39,7 @@ class Shop {
     var photosUrls: [String]?
     var address: Address?
     var tags: [String]?
+    var notifications: [ShopNotification]?
     
     init(name: String, description: String, isPromoted: Bool = false) {
         self.name = name

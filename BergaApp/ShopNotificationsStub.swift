@@ -14,7 +14,7 @@ class ShopNotificationsStub {
         
         var notifications = [ShopNotification]()
         
-        for i in 1...20 {
+        for i in 1...5 {
             let notification1 = ShopNotification(
                 title: "Test " + String(i),
                 body: "Això és una notificaió de prova")
