@@ -14,16 +14,15 @@ import MessageUI
 
 class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDelegate {
 
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var townAddressLabel: UILabel!
     @IBOutlet weak var titleSectionView: TitleSectionView!
+    @IBOutlet weak var descriptionSectionView: TextSectionView!
     
     @IBOutlet weak var descriptionWrapper: UIView!
-    @IBOutlet weak var phoneWrapper: UIView!
     @IBOutlet weak var scheduleWrapper: UIView!
     @IBOutlet weak var imageCarruselWrapper: UIView!
     @IBOutlet weak var linkWrapper: UIView!
@@ -31,8 +30,11 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     @IBOutlet weak var promoteShopWrapper: UIView!
     @IBOutlet weak var addressWrapper: UIView!
 
-    
-    var cellWidth: Double?
+    let collectionMargin = CGFloat(20)
+    let itemSpacing = CGFloat(10)
+    var cellHeight = CGFloat(0)
+    var cellWidth = CGFloat(0)
+    var currentItem = 0
     var shopDetailViewModel: ShopDetailViewModel?
     var shop: Shop?
     let disposeBag = DisposeBag()
@@ -80,7 +82,8 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     }
     
     func set(description: String) {
-        self.descriptionLabel.attributedText = Commons.getAttributedLineSpaceText(description, lineSpacing: 5)
+//        self.descriptionLabel.attributedText = Commons.getAttributedLineSpaceText(description, lineSpacing: 5)
+        descriptionSectionView.set(title: "Descripció", body: description)
     }
     
     func set(phone: Int?) {
@@ -88,7 +91,7 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
             phoneLabel.text = getPhoneString(phone)
         }
         else {
-            phoneWrapper.isHidden = true
+            phoneLabel.text = "Telèfon no disponible"
         }
     }
     
@@ -127,12 +130,37 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     }
     
     func configurePhotoCollection() {
+        setupCollectionLayout()
+        
         shopDetailViewModel!.photosUrl.asObservable()
             .bind(to: photosCollectionView.rx.items(cellIdentifier: "shopPhotoCell", cellType: ShopPhotoCollectionViewCell.self)) {
                 _, url, cell in
                 cell.initCell(url: url)
             }
             .addDisposableTo(disposeBag)
+    }
+    
+    func setupCollectionLayout() {
+        setCollectionItemSize()
+        let layout = getCollectionLayout()
+        photosCollectionView!.collectionViewLayout = layout
+        photosCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+    }
+    
+    func setCollectionItemSize() {
+        cellWidth =  UIScreen.main.bounds.width - 40
+        cellHeight = UIScreen.main.bounds.width * 0.8
+    }
+    
+    func getCollectionLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        layout.headerReferenceSize = CGSize(width: 20, height: 0)
+        layout.footerReferenceSize = CGSize(width: 20, height: 0)
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .horizontal
+        return layout
     }
     
     func getPhoneString(_ number: Int) -> String {
@@ -193,13 +221,42 @@ extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth!, height: cellWidth! / 1.75)
+        return CGSize(width: cellWidth, height: cellWidth * 0.8)
     }
     
     func setCellWidth () {
-        let flow: UICollectionViewFlowLayout = photosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let width = (photosCollectionView.frame.size.width - (flow.sectionInset.right + flow.sectionInset.left) * 2)
-        cellWidth = Double(width)
+        cellWidth =  UIScreen.main.bounds.width - 40
     }
 }
+
+extension ShopInfoViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let pageWidth = Float(cellWidth + itemSpacing)
+        let targetXContentOffset = Float(targetContentOffset.pointee.x)
+        let contentWidth = Float(photosCollectionView!.contentSize.width)
+        
+        var newPage = Float(currentItem)
+        
+        if velocity.x == 0 {
+            newPage = floor( (targetXContentOffset - Float(pageWidth) / 2) / Float(pageWidth)) + 1.0
+        }
+        else {
+            newPage = Float(velocity.x > 0 ? currentItem + 1 : currentItem - 1)
+            if newPage < 0 {
+                newPage = 0
+            }
+            if (newPage > contentWidth / pageWidth) {
+                newPage = ceil(contentWidth / pageWidth) - 1.0
+            }
+        }
+        currentItem = Int(newPage)
+        let point = CGPoint (x: CGFloat(newPage * pageWidth), y: targetContentOffset.pointee.y)
+        targetContentOffset.pointee = point
+    }
+    
+}
+
+
 

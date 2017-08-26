@@ -11,10 +11,11 @@ import Kingfisher
 
 class ShopPhotoCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+//    @IBOutlet weak var imageView: CorneredImageView!
+    @IBOutlet weak var shopImageView: CorneredImageView!
     
     func initCell(url: String) {
-        imageView.kf.setImage(with: URL(string: url))
+        shopImageView.kf.setImage(with: URL(string: url))
     }
     
 }
