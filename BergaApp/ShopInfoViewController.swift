@@ -15,12 +15,13 @@ import MessageUI
 class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var scheduleLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
     @IBOutlet weak var streetAddressLabel: UILabel!
     @IBOutlet weak var townAddressLabel: UILabel!
     @IBOutlet weak var titleSectionView: TitleSectionView!
     @IBOutlet weak var descriptionSectionView: TextSectionView!
+    @IBOutlet weak var scheduleSectionView: TextSectionView!
+    @IBOutlet weak var socialBarView: SocialBarView!
     
     @IBOutlet weak var descriptionWrapper: UIView!
     @IBOutlet weak var scheduleWrapper: UIView!
@@ -96,7 +97,7 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     
     func set(schedule: String?) {
         if let schedule = schedule {
-            self.scheduleLabel.attributedText = Commons.getAttributedLineSpaceText(schedule, lineSpacing: 5)
+            scheduleSectionView.set(title: "Horari", body: schedule)
         }
         else {
             scheduleWrapper.isHidden = true
@@ -105,7 +106,7 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     
     func set(url: String?) {
         if let url = url {
-//            urlLabel.text = url
+            socialBarView.setUrls(twitter: nil, facebook: nil, instagram: nil, web: url)
         }
         else {
             linkWrapper.isHidden = true
