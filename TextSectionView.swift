@@ -16,7 +16,8 @@ class TextSectionView: UIView {
     
     func set(title: String, body: String) {
         titleLabel.text = title
-        bodyLabel.text = body
+        let text = Commons.getAttributedLineSpaceText(body, lineSpacing: 2)
+        bodyLabel.attributedText = text
     }
     
     //MARK: Default implementation

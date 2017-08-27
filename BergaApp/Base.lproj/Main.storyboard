@@ -16,7 +16,7 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="x3c-K6-mTo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendari" image="calendar" selectedImage="calendar-full" id="fc5-Xc-nWm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VvH-fb-4QM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VvH-fb-4QM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -97,7 +97,7 @@
                                 <rect key="frame" x="0.0" y="66" width="375" height="1234"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oZw-03-oae">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1216.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1218"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKt-8I-t78">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
@@ -220,7 +220,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-Ci-4jO">
-                                                <rect key="frame" x="0.0" y="610" width="375" height="156.5"/>
+                                                <rect key="frame" x="0.0" y="610" width="375" height="158"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Organitza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuf-GK-Qqn">
                                                         <rect key="frame" x="20" y="20" width="103.5" height="26.5"/>
@@ -229,9 +229,9 @@ Entrada  + extra 15€</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grup de Joves d'Avià" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnf-fp-LQX">
-                                                        <rect key="frame" x="20" y="61.5" width="270" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <rect key="frame" x="20" y="61.5" width="270" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NHd-UT-5sk" customClass="CorneredImageView" customModule="BergaApp" customModuleProvider="target">
@@ -247,11 +247,11 @@ Entrada  + extra 15€</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svM-Ax-cio" customClass="SocialBarView" customModule="BergaApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="99.5" width="375" height="36"/>
+                                                        <rect key="frame" x="0.0" y="101" width="375" height="36"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFD-Z5-IvT" userLabel="line">
-                                                        <rect key="frame" x="20" y="155.5" width="335" height="1"/>
+                                                        <rect key="frame" x="20" y="157" width="335" height="1"/>
                                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="fIg-nu-qJr"/>
@@ -276,7 +276,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-Mj-pU5">
-                                                <rect key="frame" x="0.0" y="766.5" width="375" height="112"/>
+                                                <rect key="frame" x="0.0" y="768" width="375" height="112"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direcció" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-11-iYr">
                                                         <rect key="frame" x="20" y="20" width="87" height="22"/>
@@ -305,13 +305,13 @@ Entrada  + extra 15€</string>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3t-fo-8ka">
                                                                         <rect key="frame" x="0.0" y="0.0" width="278" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, postal code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x18-eT-Ovw">
                                                                         <rect key="frame" x="0.0" y="22.5" width="278" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -354,7 +354,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </view>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-pj-tGs">
-                                                <rect key="frame" x="0.0" y="878.5" width="375" height="338"/>
+                                                <rect key="frame" x="0.0" y="880" width="375" height="338"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WV3-pj-tGs" secondAttribute="height" multiplier="10/9" id="zLt-sA-scB"/>
                                                 </constraints>
@@ -475,7 +475,7 @@ Entrada  + extra 15€</string>
             <objects>
                 <navigationController navigationBarHidden="YES" id="4iO-kn-T6q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Comerços" image="shopping-bag" selectedImage="shopping-bag-full" id="xPR-nl-HIX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dw4-W5-4t0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dw4-W5-4t0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

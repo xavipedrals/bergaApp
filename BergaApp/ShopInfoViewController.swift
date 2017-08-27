@@ -82,13 +82,12 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     }
     
     func set(description: String) {
-//        self.descriptionLabel.attributedText = Commons.getAttributedLineSpaceText(description, lineSpacing: 5)
         descriptionSectionView.set(title: "Descripció", body: description)
     }
     
     func set(phone: Int?) {
         if let phone = phone {
-            phoneLabel.text = getPhoneString(phone)
+            phoneLabel.text = "Trucar al " + getPhoneString(phone)
         }
         else {
             phoneLabel.text = "Telèfon no disponible"
