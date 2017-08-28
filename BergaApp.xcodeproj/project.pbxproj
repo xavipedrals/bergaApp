@@ -82,6 +82,7 @@
 		47CF16841ED5F9E8008D3E3F /* ShopNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */; };
 		47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */; };
 		47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */; };
+		47E5674F1F5444B50034D911 /* CustomReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5674E1F5444B50034D911 /* CustomReusableView.swift */; };
 		47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889AD1F30A726009A9B8F /* TextSectionView.xib */; };
 		47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889AF1F30A72F009A9B8F /* TextSectionView.swift */; };
 		47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B21F30BC48009A9B8F /* TitleSectionView.xib */; };
@@ -191,6 +192,7 @@
 		47CF16831ED5F9E8008D3E3F /* ShopNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotification.swift; sourceTree = "<group>"; };
 		47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewModel.swift; sourceTree = "<group>"; };
 		47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsStub.swift; sourceTree = "<group>"; };
+		47E5674E1F5444B50034D911 /* CustomReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReusableView.swift; sourceTree = "<group>"; };
 		47E889AD1F30A726009A9B8F /* TextSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextSectionView.xib; sourceTree = "<group>"; };
 		47E889AF1F30A72F009A9B8F /* TextSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextSectionView.swift; path = ../TextSectionView.swift; sourceTree = "<group>"; };
 		47E889B21F30BC48009A9B8F /* TitleSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSectionView.xib; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				4733FBAC1EE89FDA00EE7E55 /* ShadowView.swift */,
 				478846681EED5A7E0027E12E /* CardView.swift */,
 				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
+				47E5674E1F5444B50034D911 /* CustomReusableView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				4793161E1EC6080F00845C6C /* NewsTableViewCell.swift in Sources */,
 				47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */,
 				479FFBA51ECE415000BA8106 /* Shop.swift in Sources */,
+				47E5674F1F5444B50034D911 /* CustomReusableView.swift in Sources */,
 				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
 				4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */,
 				470F48B51F45D57C00C084F3 /* ShopsViewController.swift in Sources */,
