@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import MapKit
 import Kingfisher
 import RxSwift
 import RxCocoa
 
-class EventDetailViewController: MapViewController {
+class EventDetailViewController: UIViewController {
 
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var organizerLabel: UILabel!
@@ -20,24 +19,17 @@ class EventDetailViewController: MapViewController {
     @IBOutlet weak var imageSection: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var posterContainer: UIView!
-    @IBOutlet weak var streetLabel: UILabel!
-    @IBOutlet weak var cityPostalCodeLabel: UILabel!
     @IBOutlet weak var titleSection: TitleSectionView!
     @IBOutlet weak var descriptionSection: TextSectionView!
     @IBOutlet weak var socialBar: SocialBarView!
+    @IBOutlet weak var mapSectionView: MapSectionView!
     
     var event: CalendarEvent?
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        mapView.delegate = self
         initVisuals()
-        
-//        if let address = event?.address {
-//            addAddressPin(address.town)
-//        }
     }
     
     func initVisuals() {
@@ -63,45 +55,13 @@ class EventDetailViewController: MapViewController {
     }
     
     func set(price: String?) {
-        if let price = price {
-            priceLabel.text = price
-        }
-        else {
-            priceLabel.text = "Esdeveniment gratuït"
-        }
+        priceLabel.text = price ?? "Esdeveniment gratuït"
     }
     
     func set(organizer: EventOrganizer) {
         organizerLabel.text = organizer.name
         set(organizerImgUrl: organizer.imgUrl)
         socialBar.setUrls(twitter: organizer.twitterUrl, facebook: organizer.facebookUrl, instagram: organizer.instagramUrl, web: organizer.webUrl)
-        observeSocialButtons()
-    }
-    
-    func observeSocialButtons() {
-        socialBar.twitterButton.rx.tap
-            .subscribe(onNext: { _ in
-                self.open(url: self.event!.organizer.twitterUrl)
-            })
-            .addDisposableTo(disposeBag)
-        
-        socialBar.facebookButton.rx.tap
-            .subscribe(onNext: { _ in
-                self.open(url: self.event!.organizer.facebookUrl)
-            })
-            .addDisposableTo(disposeBag)
-        
-        socialBar.instagramButton.rx.tap
-            .subscribe(onNext: { _ in
-                self.open(url: self.event!.organizer.instagramUrl)
-            })
-            .addDisposableTo(disposeBag)
-        
-        socialBar.webButton.rx.tap
-            .subscribe(onNext: { _ in
-                self.open(url: self.event!.organizer.webUrl)
-            })
-            .addDisposableTo(disposeBag)
     }
     
     func set(organizerImgUrl: String?) {
@@ -117,17 +77,7 @@ class EventDetailViewController: MapViewController {
     
     func set(address: Address?) {
         if let address = address {
-            streetLabel.text = address.getTitle()
-            cityPostalCodeLabel.text = address.getSubtitle()
-            addAddressPin(address)
-        }
-    }
-    
-    func open(url: String?) {
-        if let url = url {
-            if let url = URL(string: url) {
-                UIApplication.shared.openURL(url)
-            }
+            mapSectionView.set(address: address)
         }
     }
     
@@ -145,32 +95,4 @@ class EventDetailViewController: MapViewController {
     @IBAction func backPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-    }
-
-}
-
-
-extension EventDetailViewController {
-    
-    override func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? CustomAnnotation {
-            let identifier = "pin"
-            var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
-                dequeuedView.annotation = annotation
-                view = dequeuedView
-                view.canShowCallout = true
-            }
-            else {
-                view = getMKAnnotationView(annotation: annotation, identifier: identifier)
-            }
-            return view
-        }
-        return nil
-    }
-    
 }

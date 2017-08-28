@@ -83,6 +83,8 @@
 		47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */; };
 		47CF16881ED5FBD3008D3E3F /* ShopNotificationsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */; };
 		47E5674F1F5444B50034D911 /* CustomReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5674E1F5444B50034D911 /* CustomReusableView.swift */; };
+		47E567521F54491E0034D911 /* MapSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E567511F54491E0034D911 /* MapSectionView.xib */; };
+		47E567541F54492D0034D911 /* MapSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E567531F54492D0034D911 /* MapSectionView.swift */; };
 		47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889AD1F30A726009A9B8F /* TextSectionView.xib */; };
 		47E889B01F30A72F009A9B8F /* TextSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E889AF1F30A72F009A9B8F /* TextSectionView.swift */; };
 		47E889B31F30BC48009A9B8F /* TitleSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E889B21F30BC48009A9B8F /* TitleSectionView.xib */; };
@@ -193,6 +195,8 @@
 		47CF16851ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewModel.swift; sourceTree = "<group>"; };
 		47CF16871ED5FBD3008D3E3F /* ShopNotificationsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsStub.swift; sourceTree = "<group>"; };
 		47E5674E1F5444B50034D911 /* CustomReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReusableView.swift; sourceTree = "<group>"; };
+		47E567511F54491E0034D911 /* MapSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapSectionView.xib; sourceTree = "<group>"; };
+		47E567531F54492D0034D911 /* MapSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSectionView.swift; sourceTree = "<group>"; };
 		47E889AD1F30A726009A9B8F /* TextSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextSectionView.xib; sourceTree = "<group>"; };
 		47E889AF1F30A72F009A9B8F /* TextSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextSectionView.swift; path = ../TextSectionView.swift; sourceTree = "<group>"; };
 		47E889B21F30BC48009A9B8F /* TitleSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleSectionView.xib; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 				47E889AC1F30A6FC009A9B8F /* TextSectionView */,
 				47E889B11F30BC24009A9B8F /* TitleSectionView */,
 				47E889B61F30C871009A9B8F /* SocialBarView */,
+				47E567501F5449010034D911 /* MapSectionView */,
 				47C942291EC65B8400B3F617 /* CustomView.swift */,
 				47C9422B1EC65B9800B3F617 /* IconImage.swift */,
 				475CD2BF1EDB035C006EAA4B /* CustomButton.swift */,
@@ -525,6 +530,15 @@
 				47594F3E1EFE7258000B122F /* ArrayParser.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		47E567501F5449010034D911 /* MapSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				47E567511F54491E0034D911 /* MapSectionView.xib */,
+				47E567531F54492D0034D911 /* MapSectionView.swift */,
+			);
+			name = MapSectionView;
 			sourceTree = "<group>";
 		};
 		47E889AC1F30A6FC009A9B8F /* TextSectionView */ = {
@@ -669,6 +683,7 @@
 				47284BD71F52E6B100614B88 /* SF-Pro-Text-Light.otf in Resources */,
 				474E746D1F499932006031AF /* DayCellView.xib in Resources */,
 				479EBB301F4C236900526A31 /* ShopListItemView.xib in Resources */,
+				47E567521F54491E0034D911 /* MapSectionView.xib in Resources */,
 				479315E01EC5FDED00845C6C /* Assets.xcassets in Resources */,
 				47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
@@ -774,6 +789,7 @@
 				470F48B51F45D57C00C084F3 /* ShopsViewController.swift in Sources */,
 				479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */,
 				4717D0801F1BE26000D24539 /* NewsSection.swift in Sources */,
+				47E567541F54492D0034D911 /* MapSectionView.swift in Sources */,
 				471D89F01EED7ACA0003D1E5 /* Weather.swift in Sources */,
 				47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */,
 				47CF16861ED5FB7D008D3E3F /* ShopNotificationsViewModel.swift in Sources */,
