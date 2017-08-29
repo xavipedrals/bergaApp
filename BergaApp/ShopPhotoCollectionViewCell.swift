@@ -11,7 +11,6 @@ import Kingfisher
 
 class ShopPhotoCollectionViewCell: UICollectionViewCell {
     
-//    @IBOutlet weak var imageView: CorneredImageView!
     @IBOutlet weak var shopImageView: CorneredImageView!
     
     func initCell(url: String) {

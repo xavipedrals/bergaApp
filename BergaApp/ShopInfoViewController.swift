@@ -12,24 +12,21 @@ import RxSwift
 import RxCocoa
 import MessageUI
 
-class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDelegate {
+class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var photosCollectionView: UICollectionView!
-    @IBOutlet weak var streetAddressLabel: UILabel!
-    @IBOutlet weak var townAddressLabel: UILabel!
     @IBOutlet weak var titleSectionView: TitleSectionView!
     @IBOutlet weak var descriptionSectionView: TextSectionView!
     @IBOutlet weak var scheduleSectionView: TextSectionView!
     @IBOutlet weak var socialBarView: SocialBarView!
+    @IBOutlet weak var mapSectionView: MapSectionView!
     
     @IBOutlet weak var descriptionWrapper: UIView!
     @IBOutlet weak var scheduleWrapper: UIView!
     @IBOutlet weak var imageCarruselWrapper: UIView!
     @IBOutlet weak var linkWrapper: UIView!
-    @IBOutlet weak var mapWrapper: UIView!
     @IBOutlet weak var promoteShopWrapper: UIView!
-    @IBOutlet weak var addressWrapper: UIView!
 
     let collectionMargin = CGFloat(20)
     let itemSpacing = CGFloat(10)
@@ -47,7 +44,6 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
         shopDetailViewModel = ShopDetailViewModel(shop: shop!)
         displayInfo()
         configurePhotoCollection()
-        mapView.delegate = self
         
         photosCollectionView.rx.setDelegate(self)
         .addDisposableTo(disposeBag)
@@ -87,12 +83,9 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     }
     
     func set(phone: Int?) {
-        if let phone = phone {
-            phoneLabel.text = "Trucar al " + getPhoneString(phone)
-        }
-        else {
-            phoneLabel.text = "Telèfon no disponible"
-        }
+        phoneLabel.text = phone != nil
+            ? "Trucar al " + getPhoneString(phone!)
+            : "Telèfon no disponible"
     }
     
     func set(schedule: String?) {
@@ -115,12 +108,10 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     
     func set(address: Address?) {
         if let address = address {
-            addAddressPin(address)
-            streetAddressLabel.text = address.street ?? address.town
+            mapSectionView.set(address: address)
         }
         else {
-            addressWrapper.isHidden = true
-            mapWrapper.isHidden = true
+            mapSectionView.isHidden = true
         }
     }
     
@@ -141,15 +132,10 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
     }
     
     func setupCollectionLayout() {
-        setCollectionItemSize()
+        setCellSize()
         let layout = getCollectionLayout()
         photosCollectionView!.collectionViewLayout = layout
         photosCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
-    }
-    
-    func setCollectionItemSize() {
-        cellWidth =  UIScreen.main.bounds.width - 40
-        cellHeight = UIScreen.main.bounds.width * 0.8
     }
     
     func getCollectionLayout() -> UICollectionViewFlowLayout {
@@ -217,15 +203,16 @@ class ShopInfoViewController: MapViewController, MFMailComposeViewControllerDele
 extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
     
     override func viewDidLayoutSubviews() {
-        setCellWidth()
+        setCellSize()
+    }
+    
+    func setCellSize () {
+        cellWidth =  UIScreen.main.bounds.width - 40
+        cellHeight = UIScreen.main.bounds.width / 1.6 - 20
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellWidth, height: cellWidth * 0.8)
-    }
-    
-    func setCellWidth () {
-        cellWidth =  UIScreen.main.bounds.width - 40
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }
 
