@@ -535,17 +535,13 @@
 		479FFB9F1ECE404A00BA8106 /* Shops */ = {
 			isa = PBXGroup;
 			children = (
-				479FFBA01ECE407300BA8106 /* ShopListViewController.swift */,
-				479FFBA21ECE40E100BA8106 /* ShopListViewModel.swift */,
-				479FFBA41ECE415000BA8106 /* Shop.swift */,
-				479FFBA61ECE425600BA8106 /* ShopStub.swift */,
-				479FFBA81ECE443E00BA8106 /* ShopCollectionViewCell.swift */,
-				471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */,
-				47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */,
+				47B9BFB71F56B78B008F22A4 /* Stubs */,
+				47B9BFB81F56B79A008F22A4 /* ViewModel */,
+				47B9BFB91F56B7B4008F22A4 /* Controllers */,
+				47B9BFBA1F56B7BF008F22A4 /* Model */,
+				47B9BFBB1F56B7E2008F22A4 /* Views */,
 				43F0A9E31EFABD150029922E /* Search */,
 				479EBB2C1F4C232C00526A31 /* ShopListView */,
-				470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */,
-				470F48B41F45D57C00C084F3 /* ShopsViewController.swift */,
 			);
 			name = Shops;
 			sourceTree = "<group>";
@@ -557,6 +553,50 @@
 				47B9BFB51F56B294008F22A4 /* PhoneView.swift */,
 			);
 			name = PhoneView;
+			sourceTree = "<group>";
+		};
+		47B9BFB71F56B78B008F22A4 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				479FFBA61ECE425600BA8106 /* ShopStub.swift */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
+		47B9BFB81F56B79A008F22A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				479FFBA21ECE40E100BA8106 /* ShopListViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		47B9BFB91F56B7B4008F22A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				470F48B41F45D57C00C084F3 /* ShopsViewController.swift */,
+				479FFBA01ECE407300BA8106 /* ShopListViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		47B9BFBA1F56B7BF008F22A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				479FFBA41ECE415000BA8106 /* Shop.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		47B9BFBB1F56B7E2008F22A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */,
+				479FFBA81ECE443E00BA8106 /* ShopCollectionViewCell.swift */,
+				470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */,
+				47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		47C942281EC65B4F00B3F617 /* Utils */ = {

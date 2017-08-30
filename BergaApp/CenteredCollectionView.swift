@@ -33,7 +33,7 @@ class CenteredCollectionView: UICollectionView {
     }    
 }
 
-class CenteredCollectionViewManager: NSObject {
+class CenteredScrollManager: NSObject {
 
     var pageWidth: Float!
     var currentItem = 0
@@ -42,7 +42,7 @@ class CenteredCollectionViewManager: NSObject {
         self.pageWidth = Float(pageWidth)
     }
     
-    func centerItemOnScroll(velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>, collectionContentSize: CGFloat) -> CGPoint {
+    func getNextItemPoint(velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>, collectionContentSize: CGFloat) -> CGPoint {
         let pageWidth = self.pageWidth!
         let targetXContentOffset = Float(targetContentOffset.pointee.x)
         let contentWidth = Float(collectionContentSize)

@@ -35,10 +35,9 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
     var cellWidth = CGFloat(0)
     var currentItem = 0
     var shopDetailViewModel: ShopDetailViewModel?
+    var centeredScrollManager = CenteredScrollManager()
     var shop: Shop?
     let disposeBag = DisposeBag()
-    
-    var centeredCollectionViewManager: CenteredCollectionViewManager!
     
     
     override func viewDidLoad() {
@@ -46,7 +45,6 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
 
         shopDetailViewModel = ShopDetailViewModel(shop: shop!)
         displayInfo()
-        centeredCollectionViewManager = CenteredCollectionViewManager()
         configurePhotoCollection()
     }
     
@@ -169,7 +167,7 @@ extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
     func setCellSize () {
         cellWidth =  UIScreen.main.bounds.width - 40
         cellHeight = UIScreen.main.bounds.width / 1.6 - 20
-        centeredCollectionViewManager.set(pageWidth: cellWidth + 10)
+        centeredScrollManager.set(pageWidth: cellWidth + 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -180,7 +178,7 @@ extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
 extension ShopInfoViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let point = centeredCollectionViewManager.centerItemOnScroll(velocity: velocity, targetContentOffset: targetContentOffset, collectionContentSize: photosCollectionView!.contentSize.width)
+        let point = centeredScrollManager.getNextItemPoint(velocity: velocity, targetContentOffset: targetContentOffset, collectionContentSize: photosCollectionView!.contentSize.width)
         
         targetContentOffset.pointee = point
     }
