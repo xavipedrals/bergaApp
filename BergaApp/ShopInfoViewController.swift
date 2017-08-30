@@ -14,13 +14,14 @@ import MessageUI
 
 class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var photosCollectionView: UICollectionView!
+    @IBOutlet weak var photosCollectionView: CenteredCollectionView!
     @IBOutlet weak var titleSectionView: TitleSectionView!
     @IBOutlet weak var descriptionSectionView: TextSectionView!
     @IBOutlet weak var scheduleSectionView: TextSectionView!
     @IBOutlet weak var socialBarView: SocialBarView!
     @IBOutlet weak var mapSectionView: MapSectionView!
+    @IBOutlet weak var notificationsCollectionView: UICollectionView!
+    @IBOutlet weak var phoneView: PhoneView!
     
     @IBOutlet weak var descriptionWrapper: UIView!
     @IBOutlet weak var scheduleWrapper: UIView!
@@ -37,16 +38,16 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
     var shop: Shop?
     let disposeBag = DisposeBag()
     
+    var centeredCollectionViewManager: CenteredCollectionViewManager!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         shopDetailViewModel = ShopDetailViewModel(shop: shop!)
         displayInfo()
+        centeredCollectionViewManager = CenteredCollectionViewManager()
         configurePhotoCollection()
-        
-        photosCollectionView.rx.setDelegate(self)
-        .addDisposableTo(disposeBag)
     }
     
     private func displayInfo() {
@@ -83,9 +84,7 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     func set(phone: Int?) {
-        phoneLabel.text = phone != nil
-            ? "Trucar al " + getPhoneString(phone!)
-            : "Telèfon no disponible"
+        phoneView.set(phone: phone)
     }
     
     func set(schedule: String?) {
@@ -129,57 +128,18 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
                 cell.initCell(url: url)
             }
             .addDisposableTo(disposeBag)
+        
+        photosCollectionView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
     }
     
     func setupCollectionLayout() {
         setCellSize()
-        let layout = getCollectionLayout()
-        photosCollectionView!.collectionViewLayout = layout
-        photosCollectionView?.decelerationRate = UIScrollViewDecelerationRateFast
+        photosCollectionView.setup(cellWidth: cellWidth, cellHeight: cellHeight)
     }
     
-    func getCollectionLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.headerReferenceSize = CGSize(width: 20, height: 0)
-        layout.footerReferenceSize = CGSize(width: 20, height: 0)
-        layout.minimumLineSpacing = 10
-        layout.scrollDirection = .horizontal
-        return layout
-    }
-    
-    func getPhoneString(_ number: Int) -> String {
-        var phoneStr = String(number)
-        if phoneStr.length >= 9 {
-            phoneStr.insert(" ", at: phoneStr.index(phoneStr.startIndex, offsetBy: 2))
-            phoneStr.insert(" ", at: phoneStr.index(phoneStr.startIndex, offsetBy: 6))
-            phoneStr.insert(" ", at: phoneStr.index(phoneStr.startIndex, offsetBy: 9))
-        }
-        return phoneStr
-        
-    }
-
-    @IBAction func callPressed(_ sender: Any) {
-        if let number = shopDetailViewModel!.shop.value.phone {
-            callNumber(String(number))
-        }
-    }
-    
-    private func callNumber(_ phoneNumber: String) {
-        if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
-            if UIApplication.shared.canOpenURL(phoneCallURL) {
-                UIApplication.shared.openURL(phoneCallURL)
-            }
-        }
-    }
-    
-    @IBAction func linkPressed(_ sender: Any) {
-        if let url = shopDetailViewModel!.shop.value.url {
-            if let urlFormated = URL(string: url) {
-                UIApplication.shared.openURL(urlFormated)
-            }
-        }
+    @IBAction func notificationsPressed(_ sender: Any) {
+        //TODO: Change notification state
     }
     
     @IBAction func promoteShopPressed(_ sender: Any) {
@@ -209,6 +169,7 @@ extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
     func setCellSize () {
         cellWidth =  UIScreen.main.bounds.width - 40
         cellHeight = UIScreen.main.bounds.width / 1.6 - 20
+        centeredCollectionViewManager.set(pageWidth: cellWidth + 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -219,27 +180,8 @@ extension ShopInfoViewController: UICollectionViewDelegateFlowLayout {
 extension ShopInfoViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let point = centeredCollectionViewManager.centerItemOnScroll(velocity: velocity, targetContentOffset: targetContentOffset, collectionContentSize: photosCollectionView!.contentSize.width)
         
-        let pageWidth = Float(cellWidth + itemSpacing)
-        let targetXContentOffset = Float(targetContentOffset.pointee.x)
-        let contentWidth = Float(photosCollectionView!.contentSize.width)
-        
-        var newPage = Float(currentItem)
-        
-        if velocity.x == 0 {
-            newPage = floor( (targetXContentOffset - Float(pageWidth) / 2) / Float(pageWidth)) + 1.0
-        }
-        else {
-            newPage = Float(velocity.x > 0 ? currentItem + 1 : currentItem - 1)
-            if newPage < 0 {
-                newPage = 0
-            }
-            if (newPage > contentWidth / pageWidth) {
-                newPage = ceil(contentWidth / pageWidth) - 1.0
-            }
-        }
-        currentItem = Int(newPage)
-        let point = CGPoint (x: CGFloat(newPage * pageWidth), y: targetContentOffset.pointee.y)
         targetContentOffset.pointee = point
     }
     

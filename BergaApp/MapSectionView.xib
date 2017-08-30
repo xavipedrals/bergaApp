@@ -8,6 +8,11 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapSectionView" customModule="BergaApp" customModuleProvider="target">
             <connections>
@@ -18,11 +23,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="462"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eF-M7-kDl">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direcció" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5e-b2-URy">
                             <rect key="frame" x="20" y="20" width="87" height="22"/>
@@ -31,39 +36,27 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbR-40-I1a">
-                            <rect key="frame" x="20" y="50" width="335" height="63.5"/>
+                            <rect key="frame" x="20" y="50" width="335" height="74.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="PwN-zo-zcC" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="20" width="24" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="Cbp-81-UIv"/>
-                                        <constraint firstAttribute="width" secondItem="PwN-zo-zcC" secondAttribute="height" id="Hv5-6m-dnR"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="iconTint">
-                                            <color key="value" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="gDp-Av-Wr7">
-                                    <rect key="frame" x="34" y="10" width="278" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="10" width="312" height="49.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Street address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBf-6f-0hA">
-                                            <rect key="frame" x="0.0" y="0.0" width="278" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="312" height="27"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                             <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, postal code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyy-e3-IFK">
-                                            <rect key="frame" x="0.0" y="24" width="278" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="0.0" y="30" width="312" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="rMG-U8-iTA" customClass="IconImage" customModule="BergaApp" customModuleProvider="target">
-                                    <rect key="frame" x="322" y="25.5" width="13" height="13"/>
+                                    <rect key="frame" x="322" y="31" width="13" height="13"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="13" id="Iih-9Y-9QL"/>
                                         <constraint firstAttribute="width" secondItem="rMG-U8-iTA" secondAttribute="height" id="YTq-rb-Ic4"/>
@@ -77,14 +70,12 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="PwN-zo-zcC" firstAttribute="leading" secondItem="cbR-40-I1a" secondAttribute="leading" id="28s-7d-9hW"/>
                                 <constraint firstItem="rMG-U8-iTA" firstAttribute="centerY" secondItem="cbR-40-I1a" secondAttribute="centerY" id="2rl-wK-RpF"/>
+                                <constraint firstItem="gDp-Av-Wr7" firstAttribute="leading" secondItem="cbR-40-I1a" secondAttribute="leading" id="4z4-Un-ELv"/>
                                 <constraint firstItem="rMG-U8-iTA" firstAttribute="leading" secondItem="gDp-Av-Wr7" secondAttribute="trailing" constant="10" id="8nI-wI-27E"/>
-                                <constraint firstItem="PwN-zo-zcC" firstAttribute="centerY" secondItem="cbR-40-I1a" secondAttribute="centerY" id="C6G-ou-PGq"/>
                                 <constraint firstAttribute="trailing" secondItem="rMG-U8-iTA" secondAttribute="trailing" id="KOR-r3-ZXU"/>
                                 <constraint firstItem="gDp-Av-Wr7" firstAttribute="top" secondItem="cbR-40-I1a" secondAttribute="top" constant="10" id="Rxg-KH-702"/>
-                                <constraint firstItem="gDp-Av-Wr7" firstAttribute="leading" secondItem="PwN-zo-zcC" secondAttribute="trailing" constant="10" id="Vs6-cJ-eZC"/>
-                                <constraint firstAttribute="bottom" secondItem="gDp-Av-Wr7" secondAttribute="bottom" constant="10" id="crj-PE-v2U"/>
+                                <constraint firstAttribute="bottom" secondItem="gDp-Av-Wr7" secondAttribute="bottom" constant="15" id="crj-PE-v2U"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -100,7 +91,7 @@
                     </constraints>
                 </view>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zqI-h7-Xxk">
-                    <rect key="frame" x="0.0" y="113.5" width="375" height="337.5"/>
+                    <rect key="frame" x="0.0" y="124.5" width="375" height="337.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="zqI-h7-Xxk" secondAttribute="height" multiplier="10/9" id="sEA-dH-MuL"/>
                     </constraints>
@@ -117,11 +108,10 @@
                 <constraint firstAttribute="bottom" secondItem="zqI-h7-Xxk" secondAttribute="bottom" id="muV-LC-BHN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="24.5" y="-55.5"/>
+            <point key="canvasLocation" x="24.5" y="-61"/>
         </view>
     </objects>
     <resources>
         <image name="arrow" width="24" height="24"/>
-        <image name="map-pin" width="24" height="24"/>
     </resources>
 </document>

@@ -32,8 +32,6 @@ class CustomAnnotation: NSObject, MKAnnotation {
     }
     
     init(from placemark: MKPlacemark) {
-//        print(placemark.title)
-//        print(placemark.subtitle)
         let titleArr = placemark.title?.components(separatedBy: ",")
         self.title = titleArr![0].replacingOccurrences(of: "Carrer", with: "C/")
         if let subtitle = titleArr?[1] {
