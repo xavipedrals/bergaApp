@@ -133,7 +133,7 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     func setupCollectionLayout() {
         setCellSize()
-        photosCollectionView.setup(cellWidth: cellWidth, cellHeight: cellHeight)
+        photosCollectionView.setup()
     }
     
     @IBAction func notificationsPressed(_ sender: Any) {

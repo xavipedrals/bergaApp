@@ -13,22 +13,20 @@ import Kingfisher
 
 class EventsViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: CenteredCollectionView!
     @IBOutlet weak var noEventsView: UIView!
     @IBOutlet weak var noEventsImageView: CorneredImageView!
     
-    
     let events = Variable<[CalendarEvent]>([])
+    var centeredScrollManager = CenteredScrollManager()
     let disposeBag = DisposeBag()
     var selectedIndex: IndexPath?
     var selectedEvent: CalendarEvent?
     
-    let collectionMargin = CGFloat(20)
     let itemSpacing = CGFloat(15)
     var cellHeight = CGFloat(0)
     var cellWidth = CGFloat(0)
-    var pageWidth = CGFloat(0)
-    var currentItem = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,28 +50,8 @@ class EventsViewController: UIViewController {
     }
     
     func setupCollectionLayout() {
-        setCollectionItemSize()
-        let layout = getCollectionLayout()
-        collectionView!.collectionViewLayout = layout
-        collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
-    }
-    
-    func setCollectionItemSize() {
-        pageWidth =  UIScreen.main.bounds.width - 55
-        let screenWidth = UIScreen.main.bounds.width
-        cellWidth = (screenWidth - (30) * 2) / 2
-        cellHeight = cellWidth * 1.34 + 110
-    }
-    
-    func getCollectionLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.headerReferenceSize = CGSize(width: 20, height: 0)
-        layout.footerReferenceSize = CGSize(width: 20, height: 0)
-        layout.minimumLineSpacing = itemSpacing
-        layout.scrollDirection = .horizontal
-        return layout
+        setCellSize()
+        collectionView.setup(itemSpacing: itemSpacing)
     }
     
     func setupCollectionViewCells() {
@@ -104,18 +82,19 @@ class EventsViewController: UIViewController {
             eventDetail.event = self.selectedEvent
         }
     }
-
 }
 
 extension EventsViewController: UICollectionViewDelegateFlowLayout {
     
     override func viewDidLayoutSubviews() {
-        setCellWidth()
+        setCellSize()
     }
     
-    func setCellWidth() {
+    func setCellSize() {
         let screenWidth = UIScreen.main.bounds.width
         cellWidth = (screenWidth - (30) * 2) / 2
+        cellHeight = cellWidth * 1.34 + 110
+        centeredScrollManager.set(pageWidth: cellWidth * 2 + itemSpacing * 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -127,28 +106,7 @@ extension EventsViewController: UICollectionViewDelegateFlowLayout {
 extension EventsViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        let pageWidth = Float(cellWidth * 2 + itemSpacing * 2)
-        let targetXContentOffset = Float(targetContentOffset.pointee.x)
-        let contentWidth = Float(collectionView!.contentSize.width)
-        
-        var newPage = Float(currentItem)
-        
-        if velocity.x == 0 {
-            newPage = floor( (targetXContentOffset - Float(pageWidth) / 2) / Float(pageWidth)) + 1.0
-        }
-        else {
-            newPage = Float(velocity.x > 0 ? currentItem + 1 : currentItem - 1)
-            if newPage < 0 {
-                newPage = 0
-            }
-            if (newPage > contentWidth / pageWidth) {
-                newPage = ceil(contentWidth / pageWidth) - 1.0
-            }
-        }
-        currentItem = Int(newPage)
-        let point = CGPoint (x: CGFloat(newPage * pageWidth), y: targetContentOffset.pointee.y)
+        let point = centeredScrollManager.getNextItemPoint(velocity: velocity, targetContentOffset: targetContentOffset, collectionContentSize: collectionView!.contentSize.width)
         targetContentOffset.pointee = point
     }
-    
 }

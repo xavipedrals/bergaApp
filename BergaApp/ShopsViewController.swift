@@ -36,7 +36,7 @@ class ShopsViewController: UIViewController {
     
     func setupCollectionLayout() {
         setCollectionItemSize()
-        collectionView.setup(cellWidth: cellWidth, cellHeight: cellHeight)
+        collectionView.setup()
     }
     
     func setupCollectionCells() {

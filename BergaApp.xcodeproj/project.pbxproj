@@ -277,9 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				474E746E1F499A0D006031AF /* DayViews */,
-				474E74751F49AD92006031AF /* NewCalendarViewController.swift */,
 				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
-				47F5AB851F4AC42B009730B1 /* EventsViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -306,6 +304,7 @@
 		470551211EC6F9290016E366 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				47B9BFBC1F56BDEF008F22A4 /* Controllers */,
 				430D88521F288498008F3E7C /* Models */,
 				430D88511F288480008F3E7C /* ViewModels */,
 				430D88541F2884F0008F3E7C /* Views */,
@@ -597,6 +596,15 @@
 				47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		47B9BFBC1F56BDEF008F22A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				474E74751F49AD92006031AF /* NewCalendarViewController.swift */,
+				47F5AB851F4AC42B009730B1 /* EventsViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		47C942281EC65B4F00B3F617 /* Utils */ = {

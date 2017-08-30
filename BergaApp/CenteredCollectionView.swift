@@ -12,10 +12,9 @@ class CenteredCollectionView: UICollectionView {
     
     var collectionMargin = CGFloat(20)
     var itemSpacing = CGFloat(10)
-    var cellHeight = CGFloat(0)
-    var cellWidth = CGFloat(0)
     
-    func setup(cellWidth: CGFloat, cellHeight: CGFloat, itemSpacing: CGFloat = 10, collectionMargin: CGFloat = 20) {
+    func setup(itemSpacing: CGFloat = 10, collectionMargin: CGFloat = 20) {
+        self.itemSpacing = itemSpacing
         let layout = getCollectionLayout()
         self.collectionViewLayout = layout
         self.decelerationRate = UIScrollViewDecelerationRateFast
@@ -24,7 +23,7 @@ class CenteredCollectionView: UICollectionView {
     private func getCollectionLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+//        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.headerReferenceSize = CGSize(width: collectionMargin, height: 0)
         layout.footerReferenceSize = CGSize(width: collectionMargin, height: 0)
         layout.minimumLineSpacing = itemSpacing
