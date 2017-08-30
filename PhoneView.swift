@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class PhoneView: CustomReusableView {
     
     @IBOutlet weak var phoneLabel: UILabel!

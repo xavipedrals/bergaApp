@@ -22,6 +22,7 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var mapSectionView: MapSectionView!
     @IBOutlet weak var notificationsCollectionView: UICollectionView!
     @IBOutlet weak var phoneView: PhoneView!
+    @IBOutlet weak var notificationsActionView: NotificationActionView!
     
     @IBOutlet weak var descriptionWrapper: UIView!
     @IBOutlet weak var scheduleWrapper: UIView!
@@ -46,6 +47,7 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
         shopDetailViewModel = ShopDetailViewModel(shop: shop!)
         displayInfo()
         configurePhotoCollection()
+        notificationsActionView.set(activated: true)
     }
     
     private func displayInfo() {
@@ -136,10 +138,6 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
         photosCollectionView.setup()
     }
     
-    @IBAction func notificationsPressed(_ sender: Any) {
-        //TODO: Change notification state
-    }
-    
     @IBAction func promoteShopPressed(_ sender: Any) {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -179,7 +177,6 @@ extension ShopInfoViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let point = centeredScrollManager.getNextItemPoint(velocity: velocity, targetContentOffset: targetContentOffset, collectionContentSize: photosCollectionView!.contentSize.width)
-        
         targetContentOffset.pointee = point
     }
     

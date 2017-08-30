@@ -72,6 +72,8 @@
 		479FFBA51ECE415000BA8106 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA41ECE415000BA8106 /* Shop.swift */; };
 		479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA61ECE425600BA8106 /* ShopStub.swift */; };
 		479FFBA91ECE443E00BA8106 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479FFBA81ECE443E00BA8106 /* ShopCollectionViewCell.swift */; };
+		47A2E6141F56D5B100BA8824 /* Shops.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A2E6131F56D5B100BA8824 /* Shops.storyboard */; };
+		47A2E6161F56D6C700BA8824 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A2E6151F56D6C700BA8824 /* Calendar.storyboard */; };
 		47A4A41F1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */; };
 		47A9C8AF1EC87F6800CA173E /* CalendarEventStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */; };
 		47A9C8B31EC882E200CA173E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A9C8B21EC882E200CA173E /* RxDataSources.framework */; };
@@ -79,6 +81,8 @@
 		47A9C8B71EC898B700CA173E /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */; };
 		47B9BFB41F56B285008F22A4 /* PhoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B9BFB31F56B285008F22A4 /* PhoneView.xib */; };
 		47B9BFB61F56B294008F22A4 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B9BFB51F56B294008F22A4 /* PhoneView.swift */; };
+		47B9BFC01F56D0A3008F22A4 /* NotificationActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B9BFBF1F56D0A3008F22A4 /* NotificationActionView.swift */; };
+		47B9BFC21F56D0B3008F22A4 /* NotificationActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B9BFC11F56D0B3008F22A4 /* NotificationActionView.xib */; };
 		47BEE62F1F45915C00D4B947 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */; };
 		47C9422A1EC65B8400B3F617 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C942291EC65B8400B3F617 /* CustomView.swift */; };
 		47C9422C1EC65B9800B3F617 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C9422B1EC65B9800B3F617 /* IconImage.swift */; };
@@ -188,6 +192,8 @@
 		479FFBA41ECE415000BA8106 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		479FFBA61ECE425600BA8106 /* ShopStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopStub.swift; sourceTree = "<group>"; };
 		479FFBA81ECE443E00BA8106 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		47A2E6131F56D5B100BA8824 /* Shops.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shops.storyboard; sourceTree = "<group>"; };
+		47A2E6151F56D6C700BA8824 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		47A9C8AE1EC87F6800CA173E /* CalendarEventStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventStub.swift; sourceTree = "<group>"; };
 		47A9C8B21EC882E200CA173E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -195,6 +201,8 @@
 		47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		47B9BFB31F56B285008F22A4 /* PhoneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneView.xib; sourceTree = "<group>"; };
 		47B9BFB51F56B294008F22A4 /* PhoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneView.swift; path = ../PhoneView.swift; sourceTree = "<group>"; };
+		47B9BFBF1F56D0A3008F22A4 /* NotificationActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationActionView.swift; sourceTree = "<group>"; };
+		47B9BFC11F56D0B3008F22A4 /* NotificationActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationActionView.xib; sourceTree = "<group>"; };
 		47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
 		47C942291EC65B8400B3F617 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		47C9422B1EC65B9800B3F617 /* IconImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
@@ -276,6 +284,7 @@
 		430D88541F2884F0008F3E7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47A2E6151F56D6C700BA8824 /* Calendar.storyboard */,
 				474E746E1F499A0D006031AF /* DayViews */,
 				47A9C8B61EC898B700CA173E /* EventCollectionViewCell.swift */,
 			);
@@ -286,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				470551251EC704170016E366 /* CalendarEvent.swift */,
+				473F51491ED9991F00008FAC /* Address.swift */,
 				4352956B1ECB0D8F0017FB9E /* EventDetailViewController.swift */,
 				432C1AF81EEFCC850043FA36 /* EventOrganizer.swift */,
 			);
@@ -370,6 +380,7 @@
 			children = (
 				439DF4E01ED6DBA10089F00B /* ShopPhotoCollectionViewCell.swift */,
 				473F024E1F558AA100D0FADF /* NotificationCollectionViewCell.swift */,
+				47B9BFBE1F56D066008F22A4 /* NotificationActionView */,
 				47B9BFB21F56B25A008F22A4 /* PhoneView */,
 			);
 			name = Views;
@@ -433,6 +444,7 @@
 				478846681EED5A7E0027E12E /* CardView.swift */,
 				4717D0781F1BA63D00D24539 /* CorneredImageView.swift */,
 				47E5674E1F5444B50034D911 /* CustomReusableView.swift */,
+				473F02541F558F7100D0FADF /* CenteredCollectionView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -590,6 +602,7 @@
 		47B9BFBB1F56B7E2008F22A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47A2E6131F56D5B100BA8824 /* Shops.storyboard */,
 				471DACDD1ED233250090C6CD /* PromotedShopCollectionViewCell.swift */,
 				479FFBA81ECE443E00BA8106 /* ShopCollectionViewCell.swift */,
 				470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */,
@@ -607,18 +620,33 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		47B9BFBD1F56C2EB008F22A4 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
+				47416A0F1ED74AE100497A09 /* MapViewController.swift */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		47B9BFBE1F56D066008F22A4 /* NotificationActionView */ = {
+			isa = PBXGroup;
+			children = (
+				47B9BFC11F56D0B3008F22A4 /* NotificationActionView.xib */,
+				47B9BFBF1F56D0A3008F22A4 /* NotificationActionView.swift */,
+			);
+			name = NotificationActionView;
+			sourceTree = "<group>";
+		};
 		47C942281EC65B4F00B3F617 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				475CD2BE1EDB031E006EAA4B /* CustomViews */,
+				47B9BFBD1F56C2EB008F22A4 /* Maps */,
 				4705512F1EC751ED0016E366 /* Commons.swift */,
 				4352956D1ECB14710017FB9E /* Colors.swift */,
 				437CA31E1ECF237C001EE22C /* KeyboardViewController.swift */,
 				47BEE62E1F45915C00D4B947 /* ImageDisplayViewController.swift */,
-				473F02541F558F7100D0FADF /* CenteredCollectionView.swift */,
-				435295701ECB311C0017FB9E /* CustomAnnotation.swift */,
-				47416A0F1ED74AE100497A09 /* MapViewController.swift */,
-				473F51491ED9991F00008FAC /* Address.swift */,
 				47594F3E1EFE7258000B122F /* ArrayParser.swift */,
 			);
 			name = Utils;
@@ -770,8 +798,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47A2E6161F56D6C700BA8824 /* Calendar.storyboard in Resources */,
 				471D89EA1EED76200003D1E5 /* WeatherView.xib in Resources */,
 				479315E31EC5FDED00845C6C /* LaunchScreen.storyboard in Resources */,
+				47A2E6141F56D5B100BA8824 /* Shops.storyboard in Resources */,
 				47284BD71F52E6B100614B88 /* SF-Pro-Text-Light.otf in Resources */,
 				474E746D1F499932006031AF /* DayCellView.xib in Resources */,
 				479EBB301F4C236900526A31 /* ShopListItemView.xib in Resources */,
@@ -781,6 +811,7 @@
 				47E889AE1F30A726009A9B8F /* TextSectionView.xib in Resources */,
 				479316201EC60B7400845C6C /* Media.xcassets in Resources */,
 				47E889BA1F30C89B009A9B8F /* SocialBarView.xib in Resources */,
+				47B9BFC21F56D0B3008F22A4 /* NotificationActionView.xib in Resources */,
 				47284BD81F52E6B100614B88 /* SF-Pro-Text-Regular.otf in Resources */,
 				479315DE1EC5FDED00845C6C /* Main.storyboard in Resources */,
 				474E74721F499DDB006031AF /* DayRowView.xib in Resources */,
@@ -883,6 +914,7 @@
 				475CD2C01EDB035C006EAA4B /* CustomButton.swift in Sources */,
 				4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */,
 				470F48B51F45D57C00C084F3 /* ShopsViewController.swift in Sources */,
+				47B9BFC01F56D0A3008F22A4 /* NotificationActionView.swift in Sources */,
 				479FFBA71ECE425600BA8106 /* ShopStub.swift in Sources */,
 				4717D0801F1BE26000D24539 /* NewsSection.swift in Sources */,
 				47E567541F54492D0034D911 /* MapSectionView.swift in Sources */,
