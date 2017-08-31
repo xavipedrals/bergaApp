@@ -16,8 +16,8 @@ class ShopNotificationsStub {
         
         for i in 1...5 {
             let notification1 = ShopNotification(
-                title: "Test " + String(i),
-                body: "Això és una notificaió de prova")
+                title: "Test lorem ipsum " + String(i),
+                body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam condimentum maximus sagittis. Sed posuere et lorem ut fermentum. Phasellus nec molestie nulla.")
             
             notifications.append(notification1)
         }

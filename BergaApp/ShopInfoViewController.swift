@@ -30,11 +30,8 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var linkWrapper: UIView!
     @IBOutlet weak var promoteShopWrapper: UIView!
 
-    let collectionMargin = CGFloat(20)
-    let itemSpacing = CGFloat(10)
     var cellHeight = CGFloat(0)
     var cellWidth = CGFloat(0)
-    var currentItem = 0
     var shopDetailViewModel: ShopDetailViewModel?
     var centeredScrollManager = CenteredScrollManager()
     var shop: Shop?
@@ -148,6 +145,13 @@ class ShopInfoViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {        dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embededNotifications" {
+            let vc = segue.destination as! ShopNotificationsViewController
+            //TODO: Do something
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {

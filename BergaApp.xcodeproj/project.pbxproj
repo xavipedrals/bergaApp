@@ -21,6 +21,7 @@
 		4705512C1EC717E70016E366 /* NewsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512B1EC717E70016E366 /* NewsStub.swift */; };
 		4705512E1EC74BDA0016E366 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512D1EC74BDA0016E366 /* Day.swift */; };
 		470551301EC751ED0016E366 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705512F1EC751ED0016E366 /* Commons.swift */; };
+		470828E81F589A96003C6181 /* ShopNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470828E71F589A96003C6181 /* ShopNotificationsViewController.swift */; };
 		470F48B31F45CBFC00C084F3 /* TopShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */; };
 		470F48B51F45D57C00C084F3 /* ShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F48B41F45D57C00C084F3 /* ShopsViewController.swift */; };
 		4717D0791F1BA63D00D24539 /* CorneredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717D0781F1BA63D00D24539 /* CorneredImageView.swift */; };
@@ -135,6 +136,7 @@
 		4705512B1EC717E70016E366 /* NewsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStub.swift; sourceTree = "<group>"; };
 		4705512D1EC74BDA0016E366 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		4705512F1EC751ED0016E366 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		470828E71F589A96003C6181 /* ShopNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopNotificationsViewController.swift; sourceTree = "<group>"; };
 		470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		470F48B41F45D57C00C084F3 /* ShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsViewController.swift; sourceTree = "<group>"; };
 		4717D0781F1BA63D00D24539 /* CorneredImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorneredImageView.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		473F02501F558AAC00D0FADF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				470828E71F589A96003C6181 /* ShopNotificationsViewController.swift */,
 				47CF167D1ED5ED60008D3E3F /* ShopInfoViewController.swift */,
 			);
 			name = Controllers;
@@ -886,6 +889,7 @@
 				432C1AF91EEFCC850043FA36 /* EventOrganizer.swift in Sources */,
 				479315D91EC5FDED00845C6C /* AppDelegate.swift in Sources */,
 				47416A101ED74AE100497A09 /* MapViewController.swift in Sources */,
+				470828E81F589A96003C6181 /* ShopNotificationsViewController.swift in Sources */,
 				471D89EC1EED768F0003D1E5 /* WeatherView.swift in Sources */,
 				4705512E1EC74BDA0016E366 /* Day.swift in Sources */,
 				4717D07D1F1BE21D00D24539 /* NewsProvider.swift in Sources */,
