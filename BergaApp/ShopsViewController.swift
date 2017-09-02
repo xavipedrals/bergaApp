@@ -13,6 +13,8 @@ import RxCocoa
 class ShopsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: CenteredCollectionView!
+    @IBOutlet var promotedShopViews: [ShopListItemView]!
+    @IBOutlet var nonPromotedShopViews: [ShopListItemView]!
     
     var selectedShop: Shop?
     let shopListViewModel = ShopListViewModel()
@@ -29,6 +31,8 @@ class ShopsViewController: UIViewController {
         setupCollectionLayout()
         setupCollectionCells()
         observeCellClicks()
+        setupPromotedList()
+        setupNonPromotedList()
         
         collectionView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
@@ -53,6 +57,30 @@ class ShopsViewController: UIViewController {
             .subscribe(onNext: { shop in
                 self.selectedShop = shop
                 self.performSegue(withIdentifier: "goToShopDetail", sender: nil)
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func setupPromotedList() {
+        shopListViewModel.promotedShops.asObservable()
+            .subscribe(onNext: { shops in
+                var i = 0
+                while i < 4 && i < shops.count {
+                    self.promotedShopViews[i].initView(from: shops[i])
+                    i += 1
+                }
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
+    func setupNonPromotedList() {
+        shopListViewModel.nonPromotedShops.asObservable()
+            .subscribe(onNext: { shops in
+                var i = 0
+                while i < 4 && i < shops.count {
+                    self.nonPromotedShopViews[i].initView(from: shops[i])
+                    i += 1
+                }
             })
             .addDisposableTo(disposeBag)
     }

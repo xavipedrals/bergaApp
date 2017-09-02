@@ -19,6 +19,8 @@ class ShopListViewModel {
     
     var fullSections = [ShopSection]()
     var topShops = Variable<[Shop]>([])
+    var promotedShops = Variable<[Shop]>([])
+    var nonPromotedShops = Variable<[Shop]>([])
     
     let PROMOTED_SECTION = 0
     let NON_PROMOTED_SECTION = 1
@@ -52,12 +54,12 @@ class ShopListViewModel {
     
     func getShops() {
         let shops = ShopStub().getStub()
-        let promotedShops = shops.filter({ $0.isPromoted })
-        let nonPromotedShops = shops.filter({ !$0.isPromoted })
-        topShops.value = promotedShops
+        promotedShops.value = shops.filter({ $0.isPromoted })
+        nonPromotedShops.value = shops.filter({ !$0.isPromoted })
+        topShops.value = promotedShops.value
         
-        let promotedSection = ShopSection(original: sections.value[PROMOTED_SECTION], items: promotedShops)
-        let nonPromotedSection = ShopSection(original: sections.value[NON_PROMOTED_SECTION], items: nonPromotedShops)
+        let promotedSection = ShopSection(original: sections.value[PROMOTED_SECTION], items: promotedShops.value)
+        let nonPromotedSection = ShopSection(original: sections.value[NON_PROMOTED_SECTION], items: nonPromotedShops.value)
         sections.value[PROMOTED_SECTION] = promotedSection
         sections.value[NON_PROMOTED_SECTION] = nonPromotedSection
         fullSections = sections.value

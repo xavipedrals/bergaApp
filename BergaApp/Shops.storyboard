@@ -287,6 +287,14 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="collectionView" destination="dle-rW-alE" id="UzL-ro-2vV"/>
+                        <outletCollection property="promotedShopViews" destination="4zr-GG-oqa" collectionClass="NSMutableArray" id="qa8-aX-ns1"/>
+                        <outletCollection property="promotedShopViews" destination="Ls1-SI-Sl6" collectionClass="NSMutableArray" id="6ot-Md-PbU"/>
+                        <outletCollection property="promotedShopViews" destination="crP-zA-CNM" collectionClass="NSMutableArray" id="PAI-wZ-f4v"/>
+                        <outletCollection property="promotedShopViews" destination="IXv-YG-VEh" collectionClass="NSMutableArray" id="hrW-LE-Z5z"/>
+                        <outletCollection property="nonPromotedShopViews" destination="fn7-ML-aC3" collectionClass="NSMutableArray" id="i9D-59-5ba"/>
+                        <outletCollection property="nonPromotedShopViews" destination="qNa-31-Azy" collectionClass="NSMutableArray" id="qUK-9K-zmC"/>
+                        <outletCollection property="nonPromotedShopViews" destination="ClP-no-n4J" collectionClass="NSMutableArray" id="WN6-hz-wWB"/>
+                        <outletCollection property="nonPromotedShopViews" destination="5xZ-Rc-1eS" collectionClass="NSMutableArray" id="24W-Qg-ZMW"/>
                         <segue destination="b86-Mb-xdk" kind="show" identifier="goToShopDetail" id="bhZ-vv-LSW">
                             <nil key="action"/>
                         </segue>

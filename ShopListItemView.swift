@@ -16,7 +16,18 @@ class ShopListItemView: UIView {
     @IBOutlet weak var numberLabel: UILabel!
     
     func initView(from shop: Shop) {
-
+        nameLabel.text = shop.name
+        if shop.isPromoted {
+            if shop.notifications != nil && shop.notifications!.count > 0 {
+                numberLabel.text = String(describing: shop.notifications?.count)
+            }
+            else {
+                numberContainer.isHidden = true
+            }
+        }
+        else {
+            numberContainer.isHidden = true
+        }
     }
     
     //MARK: Default implementation

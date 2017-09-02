@@ -34,8 +34,16 @@ class ShopStub {
         
         let shop2 = Shop(
             name: "Super2",
-            description: "Quiosc i botiga de joguines."
+            description: "Quiosc i botiga de joguines de tota la vida.",
+            isPromoted: true
         )
+        shop2.phone = 934567889
+        shop2.schedule = "Obert tots els dies entre setmana de 8am a 20pm. Els dissabtes obrim de 9am a 15pm"
+        shop2.url = "https://www.google.es"
+        shop2.photosUrls = ["http://www.the-toyshop.co.uk/wp-content/uploads/2016/02/the-toy-shop-about.jpg",
+                            "https://i.pinimg.com/originals/76/f8/9f/76f89f16683402a2e319532057fa3a11.jpg"]
+        shop2.address = address1
+        shop2.tags = ["Quiosc", "Joguines", "Electrònica"]
         
         let shop3 = Shop(
             name: "Cal Negre",

@@ -555,7 +555,6 @@
 				47B9BFBA1F56B7BF008F22A4 /* Model */,
 				47B9BFBB1F56B7E2008F22A4 /* Views */,
 				43F0A9E31EFABD150029922E /* Search */,
-				479EBB2C1F4C232C00526A31 /* ShopListView */,
 			);
 			name = Shops;
 			sourceTree = "<group>";
@@ -610,6 +609,7 @@
 				479FFBA81ECE443E00BA8106 /* ShopCollectionViewCell.swift */,
 				470F48B21F45CBFC00C084F3 /* TopShopCollectionViewCell.swift */,
 				47A4A41E1ED35656007D01DF /* SectionHeaderCollectionReusableView.swift */,
+				479EBB2C1F4C232C00526A31 /* ShopListView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
