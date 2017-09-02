@@ -693,6 +693,10 @@
         <scene sceneID="8FA-uz-fmM">
             <objects>
                 <viewController id="Xb4-9M-SHA" customClass="ShopNotificationsViewController" customModule="BergaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eXP-79-m8u"/>
+                        <viewControllerLayoutGuide type="bottom" id="dYx-7T-sqF"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QUb-IY-v2L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -797,7 +801,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qra-10-4hO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3458" y="2007"/>
+            <point key="canvasLocation" x="3412" y="2007"/>
         </scene>
     </scenes>
     <resources>

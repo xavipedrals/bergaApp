@@ -53,6 +53,8 @@ class Commons {
 enum CustomDateFormat: String {
     case standard = "YYYY-MM-dd'T'hh:mm:ss"
     case newsOutput = "EEEE d MMM"
+    case shopNotification = "d MMM"
+    case stub = "dd/MM/yyyy"
 }
 
 extension Date {
@@ -74,6 +76,13 @@ extension Date {
     
     func previousMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: -1), to: self)!
+    }
+    
+    func interval(ofComponent comp: Calendar.Component, fromDate date: Date) -> Int {
+        let currentCalendar = Calendar.current
+        guard let start = currentCalendar.ordinality(of: comp, in: .era, for: date) else { return 0 }
+        guard let end = currentCalendar.ordinality(of: comp, in: .era, for: self) else { return 0 }
+        return end - start
     }
     
     func getString(format: CustomDateFormat) -> String {

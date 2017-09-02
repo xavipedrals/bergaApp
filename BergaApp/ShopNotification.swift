@@ -14,9 +14,9 @@ struct ShopNotification {
     var body: String
     var date: Date
     
-    init(title: String, body: String) {
+    init(title: String, body: String, date: Date) {
         self.title = title
         self.body = body
-        self.date = Date()
+        self.date = date
     }
 }

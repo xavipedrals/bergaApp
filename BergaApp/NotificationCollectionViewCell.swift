@@ -16,7 +16,19 @@ class NotificationCollectionViewCell: UICollectionViewCell {
     
     func initCell(notification: ShopNotification) {
         notificationTitleLabel.text = notification.title
-//        dateLabel.text = notification.date
+        let daysDiff = Date().interval(ofComponent: .day, fromDate: notification.date)
+        if daysDiff == 0 {
+            dateLabel.text = "Avui"
+        }
+        else if daysDiff == 1 {
+            dateLabel.text = "Ahir"
+        }
+        else if daysDiff <= 7 {
+            dateLabel.text = "Fa " + String(daysDiff) + " dies"
+        }
+        else {
+            dateLabel.text = notification.date.getString(format: .shopNotification)
+        }
         bodyLabel.text = notification.body
     }
 }
