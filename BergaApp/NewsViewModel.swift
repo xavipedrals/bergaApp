@@ -35,17 +35,17 @@ class NewsViewModel {
     }
     
     func getNews() {
-//        data.value = NewsStub().getStub()
-        
         RxAlamofire.requestJSON(.get, "http://www.mocky.io/v2/594c00501100001f01a3cfba")
 //            .debug()
             .subscribe(onNext: { response, data in
                 response.statusCode == 200
                     ? self.fetchNews(data: data)
-                    : print("News status code is \(response.statusCode)")
+                    : self.getStubNews()
+//                    : print("News status code is \(response.statusCode)")
             },
             onError: { error in
                 print(error)
+                self.getStubNews()
             })
             .addDisposableTo(disposeBag)
     }
@@ -54,6 +54,13 @@ class NewsViewModel {
         let json = JSON(data)
         let newsJson = json["news"].arrayValue
         let newsArray = ArrayParser<News>.parseJSONToArray(newsJson)
+        news.value[0] = NewsSection(original: headerSection, items: [newsArray[0]])
+        let allNews = [News](newsArray[1..<newsArray.count])
+        news.value[1] = NewsSection(original: allNewsSection, items: allNews)
+    }
+    
+    private func getStubNews() {
+        let newsArray = NewsStub().getStub()
         news.value[0] = NewsSection(original: headerSection, items: [newsArray[0]])
         let allNews = [News](newsArray[1..<newsArray.count])
         news.value[1] = NewsSection(original: allNewsSection, items: allNews)

@@ -27,6 +27,15 @@ struct News: ParseableObject {
         provider = NewsProvider(string: json["provider"].stringValue)
     }
     
+    init(title: String, subtitle: String, url: String, provider: NewsProvider, imageUrl: String, timestamp: Date) {
+        self.title = title
+        self.subtitle = subtitle
+        self.url = url
+        self.provider = provider
+        self.imageUrl = imageUrl
+        self.timestamp = timestamp
+    }
+    
     func getStringTime() -> String {
         return timestamp.getString(format: CustomDateFormat.newsOutput)
     }
