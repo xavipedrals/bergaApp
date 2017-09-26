@@ -29,23 +29,23 @@ class KeyboardViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    func hideKeyboard() {
+    @objc func hideKeyboard() {
         self.view.endEditing(true)
     }
     
-    func keyboardWillShow(notification: NSNotification) {
+    @objc func keyboardWillShow(notification: NSNotification) {
         
     }
     
-    func keyboardDidShow(notification: NSNotification) {
+    @objc func keyboardDidShow(notification: NSNotification) {
         isKeyboardShowing = true
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
         
     }
     
-    func keyboardDidHide(notification: NSNotification) {
+    @objc func keyboardDidHide(notification: NSNotification) {
         isKeyboardShowing = false
     }
     

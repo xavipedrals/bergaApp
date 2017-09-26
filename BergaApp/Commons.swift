@@ -28,13 +28,13 @@ class Commons {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = CGFloat(lineSpacing)
         let attrString = NSMutableAttributedString(string: text)
-        attrString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
         return attrString
     }
     
     static func getAttributedCharSpacedText(_ text: String, charSpacing: Double) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: text)
-        attributedString.addAttribute(NSKernAttributeName, value: CGFloat(charSpacing), range: NSRange(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedStringKey.kern, value: CGFloat(charSpacing), range: NSRange(location: 0, length: attributedString.length))
         return attributedString
     }
     
