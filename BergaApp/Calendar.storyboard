@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -24,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZG-3Q-rc8" userLabel="TopBar">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="66"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yee-SL-zB2">
                                         <rect key="frame" x="0.0" y="20" width="375" height="46"/>
@@ -77,7 +78,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TiD-QF-v7x">
-                                <rect key="frame" x="0.0" y="66" width="375" height="1234"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="1214"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yyD-Vl-cnm">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1296.5"/>
@@ -206,7 +207,7 @@ Entrada  + extra 15€</string>
                                                 <rect key="frame" x="0.0" y="610" width="375" height="158"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Organitza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6z-xn-U9X">
-                                                        <rect key="frame" x="20" y="20" width="103.5" height="26.5"/>
+                                                        <rect key="frame" x="20" y="20" width="101.5" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -316,14 +317,14 @@ Entrada  + extra 15€</string>
                         <viewControllerLayoutGuide type="bottom" id="iCt-Xi-eEO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XPj-cf-3xf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-9o-o3x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MgT-kd-ivt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -389,19 +390,19 @@ Entrada  + extra 15€</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqG-uN-kxX" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="730"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-qN-n9u" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-uB-vOr">
-                                                        <rect key="frame" x="20" y="44" width="155.5" height="41"/>
+                                                        <rect key="frame" x="20" y="64" width="154" height="41"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1ek-x7-2rn">
-                                                        <rect key="frame" x="16" y="89.5" width="343" height="40.5"/>
+                                                        <rect key="frame" x="16" y="109.5" width="343" height="40.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-vP-Hvp">
                                                                 <rect key="frame" x="0.0" y="10" width="49" height="20.5"/>
@@ -452,7 +453,7 @@ Entrada  + extra 15€</string>
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDARI BERGUEDÀ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn6-Wo-ENL">
-                                                        <rect key="frame" x="20" y="27.5" width="137" height="14.5"/>
+                                                        <rect key="frame" x="20" y="47.5" width="137" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -461,7 +462,7 @@ Entrada  + extra 15€</string>
                                                 <constraints>
                                                     <constraint firstItem="qSL-uB-vOr" firstAttribute="leading" secondItem="K2K-qN-n9u" secondAttribute="leading" constant="20" id="1sz-hW-M0V"/>
                                                     <constraint firstAttribute="trailing" secondItem="1ek-x7-2rn" secondAttribute="trailing" constant="16" id="BeX-5Q-rfn"/>
-                                                    <constraint firstItem="qSL-uB-vOr" firstAttribute="top" secondItem="K2K-qN-n9u" secondAttribute="top" constant="44" id="W5O-UU-3Nb"/>
+                                                    <constraint firstItem="qSL-uB-vOr" firstAttribute="top" secondItem="K2K-qN-n9u" secondAttribute="top" constant="64" id="W5O-UU-3Nb"/>
                                                     <constraint firstItem="1ek-x7-2rn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qSL-uB-vOr" secondAttribute="bottom" constant="5" id="gSI-Jr-cSe"/>
                                                     <constraint firstAttribute="bottom" secondItem="1ek-x7-2rn" secondAttribute="bottom" id="nf2-BQ-rPf"/>
                                                     <constraint firstAttribute="bottom" secondItem="qSL-uB-vOr" secondAttribute="bottom" constant="45" id="oBV-hN-Ryh"/>
@@ -471,7 +472,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gth-OT-VxZ">
-                                                <rect key="frame" x="14" y="130" width="347" height="300"/>
+                                                <rect key="frame" x="14" y="150" width="347" height="300"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-jw-8rw" customClass="DayRowView" customModule="BergaApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="347" height="50"/>
@@ -503,7 +504,7 @@ Entrada  + extra 15€</string>
                                                 </constraints>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6b-CL-Ki6">
-                                                <rect key="frame" x="0.0" y="430" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="450" width="375" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="ErZ-K7-72a"/>
                                                 </constraints>
@@ -538,7 +539,7 @@ Entrada  + extra 15€</string>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="xzN-4s-9Ra" firstAttribute="top" secondItem="XNn-1f-tyW" secondAttribute="topMargin" id="Kr0-L1-9Zf"/>
+                            <constraint firstItem="xzN-4s-9Ra" firstAttribute="top" secondItem="XNn-1f-tyW" secondAttribute="top" id="Kr0-L1-9Zf"/>
                             <constraint firstAttribute="bottomMargin" secondItem="xzN-4s-9Ra" secondAttribute="bottom" id="TxL-ap-Rdr"/>
                             <constraint firstItem="xzN-4s-9Ra" firstAttribute="leading" secondItem="XNn-1f-tyW" secondAttribute="leading" id="fPb-YB-oLw"/>
                             <constraint firstAttribute="trailing" secondItem="xzN-4s-9Ra" secondAttribute="trailing" id="mXG-TP-Wtd"/>
